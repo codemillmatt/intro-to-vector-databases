@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vector DB Tuning Demo</title>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #4338ca;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --success: #22c55e;
+            --warning: #f59e0b;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+        }
+        
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
+        }
+        
+        .card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        input[type="text"]:focus,
+        input[type="number"]:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+        
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        input[type="range"] {
+            flex: 1;
+            height: 8px;
+            -webkit-appearance: none;
+            background: var(--border);
+            border-radius: 4px;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        .slider-value {
+            min-width: 3rem;
+            text-align: center;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        input[type="checkbox"] {
+            width: 1.25rem;
+            height: 1.25rem;
+            accent-color: var(--primary);
+        }
+        
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        button:hover {
+            background: var(--primary-dark);
+        }
+        
+        button:disabled {
+            background: var(--text-muted);
+            cursor: not-allowed;
+        }
+        
+        .btn-secondary {
+            background: var(--text-muted);
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .metric {
+            text-align: center;
+            padding: 1rem;
+            background: var(--bg);
+            border-radius: 8px;
+        }
+        
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .metric-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+        
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .results-table th,
+        .results-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .results-table th {
+            font-weight: 600;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+        }
+        
+        .results-table tr:hover {
+            background: var(--bg);
+        }
+        
+        .score-badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+        
+        .score-high {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .score-medium {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .score-low {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+        }
+        
+        .loading.active {
+            display: block;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-muted);
+        }
+        
+        .info-box {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            color: #1e40af;
+        }
+        
+        .benchmark-results {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: var(--bg);
+            border-radius: 8px;
+            display: none;
+        }
+        
+        .benchmark-results.active {
+            display: block;
+        }
+        
+        .benchmark-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .benchmark-row:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎛️ Vector Database Tuning Demo</h1>
+        <p class="subtitle">Explore how parameters affect query latency and result quality</p>
+        
+        <div class="grid">
+            <div class="controls">
+                <div class="card">
+                    <h2>Search Parameters</h2>
+                    
+                    <div class="form-group">
+                        <label for="query">Search Query</label>
+                        <input type="text" id="query" placeholder="e.g., adventure in space" value="adventure in space">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Results to Return (top_k): <span id="topk-value" class="slider-value">10</span></label>
+                        <div class="slider-container">
+                            <span>1</span>
+                            <input type="range" id="topk" min="1" max="20" value="10">
+                            <span>20</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="include-metadata" checked>
+                            <label for="include-metadata" style="margin-bottom: 0;">Include Metadata</label>
+                        </div>
+                    </div>
+                    
+                    <div class="btn-group">
+                        <button id="search-btn" onclick="runSearch()">🔍 Search</button>
+                        <button id="benchmark-btn" class="btn-secondary" onclick="runBenchmark()">⏱️ Benchmark</button>
+                    </div>
+                    
+                    <div class="info-box">
+                        <strong>💡 Tip:</strong> Try adjusting top_k to see how returning more results affects latency. Toggle metadata to compare fetch times.
+                    </div>
+                    
+                    <div id="benchmark-results" class="benchmark-results">
+                        <h3 style="margin-bottom: 0.5rem;">Benchmark Results (5 iterations)</h3>
+                        <div class="benchmark-row">
+                            <span>Embedding Time (avg)</span>
+                            <span id="bench-embed-avg">-</span>
+                        </div>
+                        <div class="benchmark-row">
+                            <span>Search Time (avg)</span>
+                            <span id="bench-search-avg">-</span>
+                        </div>
+                        <div class="benchmark-row">
+                            <span>Search Time (min/max)</span>
+                            <span id="bench-search-range">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="results-area">
+                <div class="card">
+                    <h2>Results</h2>
+                    
+                    <div id="metrics" class="metrics" style="display: none;">
+                        <div class="metric">
+                            <div id="metric-embed" class="metric-value">-</div>
+                            <div class="metric-label">Embedding (ms)</div>
+                        </div>
+                        <div class="metric">
+                            <div id="metric-search" class="metric-value">-</div>
+                            <div class="metric-label">Search (ms)</div>
+                        </div>
+                        <div class="metric">
+                            <div id="metric-total" class="metric-value">-</div>
+                            <div class="metric-label">Total (ms)</div>
+                        </div>
+                    </div>
+                    
+                    <div id="loading" class="loading">
+                        Searching...
+                    </div>
+                    
+                    <div id="empty-state" class="empty-state">
+                        <p>Enter a search query and click Search to see results</p>
+                    </div>
+                    
+                    <table id="results-table" class="results-table" style="display: none;">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Genre</th>
+                                <th>Score</th>
+                            </tr>
+                        </thead>
+                        <tbody id="results-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Update slider value display
+        const topkSlider = document.getElementById('topk');
+        const topkValue = document.getElementById('topk-value');
+        
+        topkSlider.addEventListener('input', () => {
+            topkValue.textContent = topkSlider.value;
+        });
+        
+        function getScoreClass(score) {
+            if (score >= 0.7) return 'score-high';
+            if (score >= 0.4) return 'score-medium';
+            return 'score-low';
+        }
+        
+        async function runSearch() {
+            const query = document.getElementById('query').value;
+            const topK = parseInt(document.getElementById('topk').value);
+            const includeMetadata = document.getElementById('include-metadata').checked;
+            
+            if (!query.trim()) {
+                alert('Please enter a search query');
+                return;
+            }
+            
+            // Show loading state
+            document.getElementById('loading').classList.add('active');
+            document.getElementById('empty-state').style.display = 'none';
+            document.getElementById('results-table').style.display = 'none';
+            document.getElementById('metrics').style.display = 'none';
+            document.getElementById('search-btn').disabled = true;
+            
+            try {
+                const response = await fetch('/api/search', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        query: query,
+                        top_k: topK,
+                        include_metadata: includeMetadata
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                    return;
+                }
+                
+                // Update metrics
+                document.getElementById('metric-embed').textContent = data.timing.embedding_ms;
+                document.getElementById('metric-search').textContent = data.timing.search_ms;
+                document.getElementById('metric-total').textContent = data.timing.total_ms;
+                document.getElementById('metrics').style.display = 'grid';
+                
+                // Update results table
+                const tbody = document.getElementById('results-body');
+                tbody.innerHTML = '';
+                
+                data.results.forEach((result, index) => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>${index + 1}</td>
+                        <td>${result.title || '-'}</td>
+                        <td>${result.author || '-'}</td>
+                        <td>${result.genre || '-'}</td>
+                        <td><span class="score-badge ${getScoreClass(result.score)}">${result.score}</span></td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+                
+                document.getElementById('results-table').style.display = 'table';
+                
+            } catch (error) {
+                alert('Error: ' + error.message);
+            } finally {
+                document.getElementById('loading').classList.remove('active');
+                document.getElementById('search-btn').disabled = false;
+            }
+        }
+        
+        async function runBenchmark() {
+            const query = document.getElementById('query').value;
+            const topK = parseInt(document.getElementById('topk').value);
+            
+            if (!query.trim()) {
+                alert('Please enter a search query');
+                return;
+            }
+            
+            document.getElementById('benchmark-btn').disabled = true;
+            document.getElementById('benchmark-btn').textContent = 'Running...';
+            
+            try {
+                const response = await fetch('/api/benchmark', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        query: query,
+                        iterations: 5,
+                        top_k: topK
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                    return;
+                }
+                
+                document.getElementById('bench-embed-avg').textContent = data.embedding_times.avg + ' ms';
+                document.getElementById('bench-search-avg').textContent = data.search_times.avg + ' ms';
+                document.getElementById('bench-search-range').textContent = 
+                    data.search_times.min + ' - ' + data.search_times.max + ' ms';
+                
+                document.getElementById('benchmark-results').classList.add('active');
+                
+            } catch (error) {
+                alert('Error: ' + error.message);
+            } finally {
+                document.getElementById('benchmark-btn').disabled = false;
+                document.getElementById('benchmark-btn').textContent = '⏱️ Benchmark';
+            }
+        }
+        
+        // Allow Enter key to search
+        document.getElementById('query').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                runSearch();
+            }
+        });
+    </script>
+</body>
+</html>

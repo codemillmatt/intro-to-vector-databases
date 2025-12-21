@@ -1,0 +1,18 @@
+# Core dependencies
+pinecone-client>=3.0.0
+psycopg2-binary>=2.9.9
+ollama>=0.1.0
+
+# Embedding models
+sentence-transformers>=2.2.0
+
+# Web framework (for Module 5 tuning demo)
+flask>=3.0.0
+
+# Data handling
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Utilities
+python-dotenv>=1.0.0
+rich>=13.0.0
