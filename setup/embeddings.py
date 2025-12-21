@@ -117,7 +117,13 @@ class EmbeddingClient:
         
         embeddings = []
         for text in texts:
-            response = ollama.embed(model=self.model, input=text)
+            # Try the newer 'input' parameter first, fall back to 'prompt'
+            try:
+                response = ollama.embed(model=self.model, input=text)
+            except TypeError:
+                # Fallback for older ollama versions using 'prompt'
+                response = ollama.embeddings(model=self.model, prompt=text)
+            
             # Handle both old and new ollama response formats
             if hasattr(response, 'embeddings'):
                 embeddings.append(response.embeddings[0])

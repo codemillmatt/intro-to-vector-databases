@@ -172,4 +172,7 @@ if __name__ == "__main__":
     templates_dir = os.path.join(os.path.dirname(__file__), "templates")
     os.makedirs(templates_dir, exist_ok=True)
     
-    app.run(host="0.0.0.0", port=8000, debug=True)
+    # Debug mode should only be enabled in development
+    # Set FLASK_DEBUG=1 environment variable to enable debug mode
+    debug_mode = os.getenv("FLASK_DEBUG", "0") == "1"
+    app.run(host="0.0.0.0", port=8000, debug=debug_mode)

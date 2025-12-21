@@ -14,6 +14,8 @@ from embeddings import get_embedding_client
 # Pinecone settings
 PINECONE_API_KEY = os.getenv("PINECONE_API_KEY", "local")
 PINECONE_HOST = os.getenv("PINECONE_HOST", "http://localhost:5081")
+PINECONE_CLOUD = os.getenv("PINECONE_CLOUD", "aws")
+PINECONE_REGION = os.getenv("PINECONE_REGION", "us-east-1")
 INDEX_NAME = "bookstore"
 
 
@@ -53,7 +55,7 @@ def create_index(pc, embedding_dim=384):
             name=INDEX_NAME,
             dimension=embedding_dim,
             metric="cosine",
-            spec=ServerlessSpec(cloud="aws", region="us-east-1")
+            spec=ServerlessSpec(cloud=PINECONE_CLOUD, region=PINECONE_REGION)
         )
         # Wait for index to be ready
         time.sleep(2)
