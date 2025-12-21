@@ -1,0 +1,62 @@
+[
+  {
+    "user_id": "user_001",
+    "name": "Alice Johnson",
+    "liked_books": ["book_001", "book_014", "book_016"],
+    "reading_history": ["book_001", "book_003", "book_014", "book_016", "book_010"]
+  },
+  {
+    "user_id": "user_002",
+    "name": "Bob Smith",
+    "liked_books": ["book_002", "book_007", "book_009"],
+    "reading_history": ["book_002", "book_005", "book_007", "book_009", "book_015"]
+  },
+  {
+    "user_id": "user_003",
+    "name": "Carol Martinez",
+    "liked_books": ["book_004", "book_012", "book_018"],
+    "reading_history": ["book_004", "book_006", "book_012", "book_018", "book_008"]
+  },
+  {
+    "user_id": "user_004",
+    "name": "David Lee",
+    "liked_books": ["book_001", "book_016", "book_010"],
+    "reading_history": ["book_001", "book_010", "book_014", "book_016", "book_019"]
+  },
+  {
+    "user_id": "user_005",
+    "name": "Emma Wilson",
+    "liked_books": ["book_005", "book_015", "book_020"],
+    "reading_history": ["book_002", "book_005", "book_015", "book_017", "book_020"]
+  },
+  {
+    "user_id": "user_006",
+    "name": "Frank Brown",
+    "liked_books": ["book_003", "book_019", "book_013"],
+    "reading_history": ["book_003", "book_008", "book_013", "book_019", "book_010"]
+  },
+  {
+    "user_id": "user_007",
+    "name": "Grace Taylor",
+    "liked_books": ["book_007", "book_002", "book_017"],
+    "reading_history": ["book_002", "book_007", "book_009", "book_015", "book_017"]
+  },
+  {
+    "user_id": "user_008",
+    "name": "Henry Chen",
+    "liked_books": ["book_011", "book_014", "book_001"],
+    "reading_history": ["book_001", "book_011", "book_014", "book_016", "book_006"]
+  },
+  {
+    "user_id": "user_009",
+    "name": "Isabella Davis",
+    "liked_books": ["book_008", "book_013", "book_006"],
+    "reading_history": ["book_006", "book_008", "book_013", "book_018", "book_003"]
+  },
+  {
+    "user_id": "user_010",
+    "name": "Jack Thompson",
+    "liked_books": ["book_020", "book_004", "book_012"],
+    "reading_history": ["book_004", "book_012", "book_018", "book_020", "book_005"]
+  }
+]

@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/workspace:cached
+    command: sleep infinity
+    network_mode: service:db
+    depends_on:
+      - db
+      - pinecone
+      - ollama
+
+  db:
+    image: postgres:15
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: bookstore
+      POSTGRES_PASSWORD: bookstore
+      POSTGRES_DB: bookstore
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  pinecone:
+    image: ghcr.io/pinecone-io/pinecone-local:latest
+    restart: unless-stopped
+    environment:
+      PORT: 5081
+      DIMENSION: 384
+    ports:
+      - "5081:5081"
+
+  ollama:
+    image: ollama/ollama:latest
+    restart: unless-stopped
+    volumes:
+      - ollama-data:/root/.ollama
+    ports:
+      - "11434:11434"
+
+volumes:
+  postgres-data:
+  ollama-data:
