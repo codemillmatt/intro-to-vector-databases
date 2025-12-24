@@ -28,6 +28,43 @@ This project uses DevContainers to provide a consistent development environment.
    python init_pinecone.py
    ```
 
+Known-good init command (DevContainer):
+
+```bash
+export PINECONE_HOST=http://pinecone:5081
+export PINECONE_INDEX_HOST=http://pinecone.:5082
+export OLLAMA_HOST=http://ollama:11434
+
+cd setup
+python init_postgres.py
+python init_pinecone.py
+```
+
+### Services & Environment Variables
+
+This repo is designed to run inside the DevContainer, where Docker Compose starts these services:
+
+- **Postgres** (database)
+- **Pinecone Local** (vector DB)
+- **Ollama** (optional embedding server)
+
+The Python code reads configuration from environment variables. Defaults are chosen for the DevContainer.
+
+- `PINECONE_HOST`
+   - DevContainer default: `http://pinecone:5081`
+   - If running from your host machine (outside the container): `http://localhost:5081`
+- `PINECONE_INDEX_HOST` (optional override for Pinecone “data plane”)
+   - DevContainer recommended override (only if needed): `http://pinecone.:5082`
+   - Host-machine override (only if needed): `http://localhost:5082`
+- `OLLAMA_HOST`
+   - DevContainer default: `http://ollama:11434`
+   - Host-machine default: `http://localhost:11434`
+
+Notes:
+
+- Pinecone Local typically uses **5081** for control-plane operations and **5082** for vector upserts/queries.
+- The Pinecone SDK validates custom hosts by requiring a dot (`.`) in the hostname. In Docker DNS, `pinecone.` (with a trailing dot) resolves correctly and satisfies this check.
+
 ## Project Structure
 
 ```
@@ -123,6 +160,54 @@ To reset the databases and start fresh:
 cd setup
 python init_postgres.py --reset
 python init_pinecone.py --reset
+```
+
+## Troubleshooting
+
+### Error: package renamed from `pinecone-client` to `pinecone`
+
+If you see an exception like:
+
+> The official Pinecone python package has been renamed from `pinecone-client` to `pinecone`...
+
+It means your active Python environment has `pinecone-client` installed.
+
+Fix (run inside the DevContainer):
+
+```bash
+python -m pip uninstall -y pinecone-client
+python -m pip install -U pinecone
+```
+
+Also confirm your dependencies do not list `pinecone-client` (this repo uses `pinecone`).
+
+### Error: failed to connect to Ollama
+
+If embedding generation fails with an Ollama connection error:
+
+- Make sure the `ollama` service is running in Docker Compose (DevContainer handles this by default).
+- If you’re running outside the container, set:
+
+```bash
+export OLLAMA_HOST=http://localhost:11434
+```
+
+This repo also supports a fallback to `sentence-transformers` (it may download a model the first time it runs).
+
+### Error: Pinecone upsert/query tries `localhost:5082`
+
+Inside containers, `localhost` points at the container itself, not the Pinecone Local service. If you see retries against `localhost:5082` or connection refused, set:
+
+```bash
+export PINECONE_HOST=http://pinecone:5081
+export PINECONE_INDEX_HOST=http://pinecone.:5082
+```
+
+Then rerun:
+
+```bash
+cd setup
+python init_pinecone.py
 ```
 
 ## License

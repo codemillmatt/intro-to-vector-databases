@@ -7,16 +7,51 @@ and their associated metadata.
 import json
 import os
 import time
+from urllib.parse import urlparse
 
 from pinecone import Pinecone, ServerlessSpec
 from embeddings import get_embedding_client
 
 # Pinecone settings
 PINECONE_API_KEY = os.getenv("PINECONE_API_KEY", "local")
-PINECONE_HOST = os.getenv("PINECONE_HOST", "http://localhost:5081")
+PINECONE_HOST = os.getenv("PINECONE_HOST", "http://pinecone:5081")
 PINECONE_CLOUD = os.getenv("PINECONE_CLOUD", "aws")
 PINECONE_REGION = os.getenv("PINECONE_REGION", "us-east-1")
 INDEX_NAME = "bookstore"
+
+
+def get_pinecone_index_host() -> str:
+    """Return an override host for index operations (data plane).
+
+    Pinecone Local commonly exposes a separate data-plane port (5082).
+    In some environments the SDK may resolve this as localhost, which
+    fails inside containers. This helper allows overriding the index
+    host via env var and auto-detects the common local setup.
+    """
+    override = os.getenv("PINECONE_INDEX_HOST")
+    if override:
+        return override
+
+    parsed = urlparse(PINECONE_HOST)
+    hostname = parsed.hostname
+    port = parsed.port
+    scheme = parsed.scheme or "http"
+
+    def _dotted(h: str | None) -> str | None:
+        if not h:
+            return h
+        if h in {"localhost", "127.0.0.1"}:
+            return h
+        # The Pinecone SDK validates hosts by requiring a dot (.) in the host.
+        # Docker service names like "pinecone" don't include one, but "pinecone."
+        # resolves correctly in Docker DNS and satisfies the SDK check.
+        return f"{h}." if "." not in h else h
+
+    if hostname in {"pinecone", "localhost", "127.0.0.1"} and (port in {None, 5081}):
+        dotted = _dotted(hostname)
+        return f"{scheme}://{dotted}:5082"
+
+    return ""
 
 
 def load_books_data():
@@ -63,7 +98,8 @@ def create_index(pc, embedding_dim=384):
     else:
         print(f"Index '{INDEX_NAME}' already exists")
     
-    return pc.Index(INDEX_NAME)
+    index_host = get_pinecone_index_host()
+    return pc.Index(INDEX_NAME, host=index_host) if index_host else pc.Index(INDEX_NAME)
 
 
 def chunk_text(text, chunk_size=500, overlap=50):

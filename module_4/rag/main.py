@@ -26,7 +26,7 @@ from embeddings import get_embedding_client
 
 # Configuration
 PINECONE_API_KEY = os.getenv("PINECONE_API_KEY", "local")
-PINECONE_HOST = os.getenv("PINECONE_HOST", "http://localhost:5081")
+PINECONE_HOST = os.getenv("PINECONE_HOST", "http://pinecone:5081")
 INDEX_NAME = "bookstore"
 
 console = Console()

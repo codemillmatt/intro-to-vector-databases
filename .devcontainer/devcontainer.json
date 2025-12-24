@@ -23,6 +23,6 @@
     }
   },
   "forwardPorts": [5432, 8000, 8080],
-  "postCreateCommand": "pip install -r requirements.txt",
+  "postCreateCommand": "pip uninstall -y pinecone-client || true && pip install -r requirements.txt",
   "remoteUser": "vscode"
 }

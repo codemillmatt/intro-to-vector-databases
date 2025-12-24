@@ -47,7 +47,11 @@ class EmbeddingClient:
         """
         self.provider = self._select_provider(provider)
         self.model = model
-        self.ollama_host = ollama_host or os.getenv("OLLAMA_HOST", "http://localhost:11434")
+        # In this repo's devcontainer, the Ollama server runs as a docker-compose
+        # service named "ollama". Using localhost inside the app container may
+        # point at a different container (e.g., when network_mode is used), so
+        # default to the service hostname.
+        self.ollama_host = ollama_host or os.getenv("OLLAMA_HOST", "http://ollama:11434")
         self._st_model = None
         
         # Set default models based on provider
@@ -56,6 +60,11 @@ class EmbeddingClient:
                 self.model = "all-minilm"
             elif self.provider == "sentence-transformers":
                 self.model = "all-MiniLM-L6-v2"
+
+        # Ensure the underlying ollama client uses the configured host.
+        # The ollama python package reads OLLAMA_HOST from the environment.
+        if self.provider == "ollama":
+            os.environ["OLLAMA_HOST"] = self.ollama_host
     
     def _select_provider(self, provider: str) -> str:
         """Select the best available provider."""
@@ -104,7 +113,21 @@ class EmbeddingClient:
             A list of embedding vectors
         """
         if self.provider == "ollama":
-            return self._embed_ollama(texts)
+            try:
+                return self._embed_ollama(texts)
+            except Exception as exc:
+                # If Ollama isn't reachable (common in local/dev), fall back to
+                # sentence-transformers when available.
+                if SENTENCE_TRANSFORMERS_AVAILABLE:
+                    self.provider = "sentence-transformers"
+                    if self.model in ("all-minilm", None):
+                        self.model = "all-MiniLM-L6-v2"
+                    return self._embed_sentence_transformers(texts)
+                raise RuntimeError(
+                    f"Failed to generate embeddings via Ollama at {self.ollama_host}. "
+                    "Either start the Ollama server or install/use sentence-transformers. "
+                    f"Original error: {exc}"
+                ) from exc
         elif self.provider == "sentence-transformers":
             return self._embed_sentence_transformers(texts)
         else:
