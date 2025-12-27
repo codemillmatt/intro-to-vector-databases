@@ -170,9 +170,9 @@ def get_pinecone_sample() -> list[dict]:
     # Query with a dummy vector to get some results
     stats = index.describe_index_stats()
     
-    # Get a few sample vectors by querying with a zero vector
-    # This will return some vectors from the index
-    dummy_dimension = 384  # all-minilm dimension
+    # Get dimension from embedding client to ensure consistency
+    embedding_client = get_embedding_client()
+    dummy_dimension = embedding_client.dimension
     dummy_vector = [0.0] * dummy_dimension
     
     results = index.query(
@@ -216,7 +216,13 @@ def display_results(title: str, results: list[dict], show_score: bool = False, s
         table.add_column("Score", justify="center", width=10)
     
     if not results:
-        table.add_row("[dim]No results found[/dim]", "", "", "" if not show_description else "", "")
+        empty_row = ["[dim]No results found[/dim]", ""]
+        if show_description:
+            empty_row.append("")
+        empty_row.extend(["", ""])
+        if show_score:
+            empty_row.append("")
+        table.add_row(*empty_row)
     else:
         for book in results:
             row = [
