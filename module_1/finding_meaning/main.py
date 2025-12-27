@@ -157,7 +157,7 @@ def get_all_books() -> list[dict]:
         conn.close()
 
 
-def get_pinecone_sample() -> list[dict]:
+def get_pinecone_sample() -> tuple[list[dict], dict]:
     """
     Get a limited sample of embedding data from Pinecone.
     
