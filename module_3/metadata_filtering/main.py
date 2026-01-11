@@ -12,18 +12,13 @@ import sys
 # Add setup directory to path for shared utilities
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "setup"))
 
-from pinecone import Pinecone
 from rich.console import Console
 from rich.table import Table
 from rich.panel import Panel
 from rich.prompt import Prompt, Confirm
 
 from embeddings import get_embedding_client
-
-# Configuration
-PINECONE_API_KEY = os.getenv("PINECONE_API_KEY", "local")
-PINECONE_HOST = os.getenv("PINECONE_HOST", "http://pinecone:5081")
-INDEX_NAME = "bookstore"
+from pinecone_utils import get_pinecone_index
 
 console = Console()
 
@@ -64,8 +59,7 @@ def semantic_search_with_filter(
         filters["in_stock"] = True
     
     # Search in Pinecone
-    pc = Pinecone(api_key=PINECONE_API_KEY, host=PINECONE_HOST)
-    index = pc.Index(INDEX_NAME)
+    index = get_pinecone_index()
     
     results = index.query(
         vector=query_embedding,
@@ -163,6 +157,11 @@ def run_comparison(query: str):
     console.print()
     
     # Genre filter
+    genres = [
+        "Fantasy", "Science Fiction", "Mystery", "Historical Fiction",
+        "Literary Fiction", "Thriller", "Romance", "Memoir"
+    ]
+    console.print(f"[dim]Available genres: {', '.join(genres)}[/dim]")
     genre = Prompt.ask(
         "Filter by genre (or press Enter to skip)",
         default=""
@@ -229,19 +228,9 @@ def interactive_demo():
     ))
     console.print()
     
-    # Available genres for reference
-    genres = [
-        "Fantasy", "Science Fiction", "Mystery", "Historical Fiction",
-        "Literary Fiction", "Thriller", "Romance", "Memoir"
-    ]
-    
-    console.print("[dim]Available genres:[/dim]")
-    console.print(f"  {', '.join(genres)}")
-    console.print()
-    
     while True:
         query = Prompt.ask(
-            "[bold]Enter your search query[/bold] (or 'quit' to exit)"
+            "[bold]Enter a semantic search query[/bold] (e.g., 'exciting adventure', 'books about love') or 'quit' to exit"
         )
         
         if query.lower() in ("quit", "exit", "q"):

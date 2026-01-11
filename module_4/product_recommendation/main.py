@@ -12,18 +12,13 @@ import json
 # Add setup directory to path for shared utilities
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "setup"))
 
-from pinecone import Pinecone
 from rich.console import Console
 from rich.table import Table
 from rich.panel import Panel
 from rich.prompt import Prompt
 
 from embeddings import get_embedding_client
-
-# Configuration
-PINECONE_API_KEY = os.getenv("PINECONE_API_KEY", "local")
-PINECONE_HOST = os.getenv("PINECONE_HOST", "http://pinecone:5081")
-INDEX_NAME = "bookstore"
+from pinecone_utils import get_pinecone_index
 
 console = Console()
 
@@ -48,8 +43,7 @@ def load_users():
 
 def get_book_embeddings(book_ids: list[str]) -> list[list[float]]:
     """Get embeddings for a list of books."""
-    pc = Pinecone(api_key=PINECONE_API_KEY, host=PINECONE_HOST)
-    index = pc.Index(INDEX_NAME)
+    index = get_pinecone_index()
     
     # Fetch book vectors
     results = index.fetch(ids=book_ids)
@@ -97,8 +91,7 @@ def recommend_similar_books(
     preference_vector = average_embeddings(embeddings)
     
     # Search for similar books
-    pc = Pinecone(api_key=PINECONE_API_KEY, host=PINECONE_HOST)
-    index = pc.Index(INDEX_NAME)
+    index = get_pinecone_index()
     
     results = index.query(
         vector=preference_vector,

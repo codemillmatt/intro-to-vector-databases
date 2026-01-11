@@ -15,7 +15,6 @@ import sys
 # Add setup directory to path for shared utilities
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "setup"))
 
-from pinecone import Pinecone
 from rich.console import Console
 from rich.table import Table
 from rich.panel import Panel
@@ -23,11 +22,7 @@ from rich.prompt import Prompt
 from rich.markdown import Markdown
 
 from embeddings import get_embedding_client
-
-# Configuration
-PINECONE_API_KEY = os.getenv("PINECONE_API_KEY", "local")
-PINECONE_HOST = os.getenv("PINECONE_HOST", "http://pinecone:5081")
-INDEX_NAME = "bookstore"
+from pinecone_utils import get_pinecone_index
 
 console = Console()
 
@@ -60,8 +55,7 @@ def retrieve_relevant_chunks(
         filters["book_id"] = book_id
     
     # Search in Pinecone
-    pc = Pinecone(api_key=PINECONE_API_KEY, host=PINECONE_HOST)
-    index = pc.Index(INDEX_NAME)
+    index = get_pinecone_index()
     
     results = index.query(
         vector=query_embedding,
@@ -87,8 +81,7 @@ def retrieve_relevant_chunks(
 
 def get_available_books() -> list[dict]:
     """Get list of books that have full text available."""
-    pc = Pinecone(api_key=PINECONE_API_KEY, host=PINECONE_HOST)
-    index = pc.Index(INDEX_NAME)
+    index = get_pinecone_index()
     
     # Query for chunk type to find books with text
     results = index.query(
