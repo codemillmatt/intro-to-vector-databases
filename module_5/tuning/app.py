@@ -8,43 +8,14 @@ affect vector database query performance and result quality.
 import os
 import sys
 import time
-from urllib.parse import urlparse
 
 # Add setup directory to path for shared utilities
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "setup"))
 
 from flask import Flask, render_template, request, jsonify
-from pinecone import Pinecone
 
 from embeddings import get_embedding_client
-
-# Configuration
-PINECONE_API_KEY = os.getenv("PINECONE_API_KEY", "local")
-PINECONE_HOST = os.getenv("PINECONE_HOST", "http://pinecone:5081")
-INDEX_NAME = "bookstore"
-
-
-def _get_pinecone_index_host() -> str:
-    override = os.getenv("PINECONE_INDEX_HOST")
-    if override:
-        return override
-
-    parsed = urlparse(PINECONE_HOST)
-    hostname = parsed.hostname
-    port = parsed.port
-    scheme = parsed.scheme or "http"
-
-    def _dotted(h: str | None) -> str | None:
-        if not h:
-            return h
-        if h in {"localhost", "127.0.0.1"}:
-            return h
-        return f"{h}." if "." not in h else h
-
-    if hostname in {"pinecone", "localhost", "127.0.0.1"} and (port in {None, 5081}):
-        dotted = _dotted(hostname)
-        return f"{scheme}://{dotted}:5082"
-    return ""
+from pinecone_utils import get_pinecone_index
 
 app = Flask(__name__)
 
@@ -68,9 +39,7 @@ def search_with_timing(
     embed_time = (time.perf_counter() - embed_start) * 1000  # ms
     
     # Connect to Pinecone
-    pc = Pinecone(api_key=PINECONE_API_KEY, host=PINECONE_HOST)
-    index_host = _get_pinecone_index_host()
-    index = pc.Index(INDEX_NAME, host=index_host) if index_host else pc.Index(INDEX_NAME)
+    index = get_pinecone_index()
     
     # Time the vector search
     search_start = time.perf_counter()
@@ -156,8 +125,7 @@ def api_benchmark():
         search_times = []
         
         embedding_client = get_embedding_client()
-        pc = Pinecone(api_key=PINECONE_API_KEY, host=PINECONE_HOST)
-        index = pc.Index(INDEX_NAME)
+        index = get_pinecone_index()
         
         for _ in range(iterations):
             # Time embedding
