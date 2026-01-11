@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faceted Search Demo | Module 3</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        
+        header h1 {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+        
+        header p {
+            opacity: 0.9;
+            font-size: 0.95em;
+        }
+        
+        .search-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .search-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Sidebar Filters */
+        .filters {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+        
+        .filters h2 {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .filter-section {
+            margin-bottom: 25px;
+        }
+        
+        .filter-section h3 {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .genre-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .genre-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+        
+        .genre-item input {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        
+        .genre-item label {
+            cursor: pointer;
+            font-size: 0.95em;
+        }
+        
+        /* Range Sliders */
+        .range-container {
+            padding: 5px 0;
+        }
+        
+        .range-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+        }
+        
+        .range-value {
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        input[type="range"] {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #667eea;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        /* Toggle Switch */
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .toggle {
+            position: relative;
+            width: 50px;
+            height: 26px;
+        }
+        
+        .toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.3s;
+            border-radius: 26px;
+        }
+        
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.3s;
+            border-radius: 50%;
+        }
+        
+        .toggle input:checked + .toggle-slider {
+            background-color: #667eea;
+        }
+        
+        .toggle input:checked + .toggle-slider:before {
+            transform: translateX(24px);
+        }
+        
+        .clear-filters {
+            width: 100%;
+            padding: 10px;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+            color: #666;
+            transition: background 0.2s;
+        }
+        
+        .clear-filters:hover {
+            background: #e0e0e0;
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        /* Search Box */
+        .search-box {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 10px;
+        }
+        
+        .search-box input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 1em;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        
+        .search-box input:focus {
+            border-color: #667eea;
+        }
+        
+        .search-box button {
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: transform 0.1s, box-shadow 0.2s;
+        }
+        
+        .search-box button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        /* Results Info */
+        .results-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+        
+        .results-count {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .active-filters {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-tag {
+            background: #667eea20;
+            color: #667eea;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+        
+        /* Results Grid */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        
+        .book-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .book-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .book-card h3 {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .book-author {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        
+        .book-meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+        
+        .book-genre {
+            background: #f0f0f0;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            color: #666;
+        }
+        
+        .book-rating {
+            color: #f5a623;
+            font-size: 0.9em;
+        }
+        
+        .book-price {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .book-stock {
+            font-size: 0.85em;
+        }
+        
+        .book-stock.in-stock {
+            color: #27ae60;
+        }
+        
+        .book-stock.out-of-stock {
+            color: #e74c3c;
+        }
+        
+        .book-description {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+        
+        .book-score {
+            font-size: 0.75em;
+            color: #999;
+            margin-top: 10px;
+        }
+        
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+        }
+        
+        .empty-state h3 {
+            margin-bottom: 10px;
+        }
+        
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        .loading::after {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #667eea;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* How It Works Panel */
+        .how-it-works {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-top: 20px;
+        }
+        
+        .how-it-works h4 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        .how-it-works p {
+            color: #856404;
+            font-size: 0.9em;
+        }
+        
+        .how-it-works code {
+            background: rgba(0,0,0,0.1);
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Bookstore Search</h1>
+            <p>Faceted Search Demo — Semantic search + metadata filters</p>
+        </header>
+        
+        <div class="search-layout">
+            <!-- Sidebar Filters -->
+            <aside class="filters">
+                <h2>🔍 Filters</h2>
+                
+                <!-- Genre Filter -->
+                <div class="filter-section">
+                    <h3>Genre</h3>
+                    <div class="genre-list" id="genre-filters">
+                        {% for genre in genres %}
+                        <div class="genre-item">
+                            <input type="checkbox" id="genre-{{ loop.index }}" value="{{ genre }}">
+                            <label for="genre-{{ loop.index }}">{{ genre }}</label>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                
+                <!-- Rating Filter -->
+                <div class="filter-section">
+                    <h3>Minimum Rating</h3>
+                    <div class="range-container">
+                        <div class="range-header">
+                            <span>Any</span>
+                            <span class="range-value" id="rating-value">Any</span>
+                        </div>
+                        <input type="range" id="rating-filter" min="0" max="5" step="0.5" value="0">
+                    </div>
+                </div>
+                
+                <!-- Price Filter -->
+                <div class="filter-section">
+                    <h3>Maximum Price</h3>
+                    <div class="range-container">
+                        <div class="range-header">
+                            <span>$0</span>
+                            <span class="range-value" id="price-value">Any</span>
+                        </div>
+                        <input type="range" id="price-filter" min="0" max="50" step="1" value="50">
+                    </div>
+                </div>
+                
+                <!-- In Stock Filter -->
+                <div class="filter-section">
+                    <h3>Availability</h3>
+                    <div class="toggle-container">
+                        <label class="toggle">
+                            <input type="checkbox" id="stock-filter">
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <span>In Stock Only</span>
+                    </div>
+                </div>
+                
+                <button class="clear-filters" onclick="clearFilters()">Clear All Filters</button>
+            </aside>
+            
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Search Box -->
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Search books... (e.g., 'magical adventure', 'mystery thriller')">
+                    <button onclick="performSearch()">Search</button>
+                </div>
+                
+                <!-- Results Info -->
+                <div class="results-info">
+                    <span class="results-count" id="results-count">Enter a search query or select filters</span>
+                    <div class="active-filters" id="active-filters"></div>
+                </div>
+                
+                <!-- Results Grid -->
+                <div class="results-grid" id="results-grid">
+                    <div class="empty-state">
+                        <h3>🔎 Start Searching</h3>
+                        <p>Enter a search term or select filters to find books</p>
+                    </div>
+                </div>
+                
+                <!-- How It Works -->
+                <div class="how-it-works">
+                    <h4>💡 How This Works</h4>
+                    <p>
+                        <strong>1. Semantic Search:</strong> Your query is converted to a vector and matched against book embeddings.<br>
+                        <strong>2. Metadata Filters:</strong> The checkboxes/sliders create <code>filter</code> conditions in Pinecone.<br>
+                        <strong>3. Combined Query:</strong> Pinecone returns books that are semantically similar AND match your filters.
+                    </p>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <script>
+        // Debounce function for auto-search
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+        
+        // Update rating display
+        document.getElementById('rating-filter').addEventListener('input', function() {
+            const value = parseFloat(this.value);
+            document.getElementById('rating-value').textContent = value > 0 ? value + '★+' : 'Any';
+        });
+        
+        // Update price display
+        document.getElementById('price-filter').addEventListener('input', function() {
+            const value = parseInt(this.value);
+            document.getElementById('price-value').textContent = value < 50 ? '$' + value : 'Any';
+        });
+        
+        // Auto-search on filter change
+        const debouncedSearch = debounce(performSearch, 300);
+        
+        document.querySelectorAll('#genre-filters input').forEach(cb => {
+            cb.addEventListener('change', debouncedSearch);
+        });
+        document.getElementById('rating-filter').addEventListener('change', debouncedSearch);
+        document.getElementById('price-filter').addEventListener('change', debouncedSearch);
+        document.getElementById('stock-filter').addEventListener('change', debouncedSearch);
+        
+        // Search on Enter key
+        document.getElementById('search-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+        
+        function getSelectedGenres() {
+            const checkboxes = document.querySelectorAll('#genre-filters input:checked');
+            return Array.from(checkboxes).map(cb => cb.value);
+        }
+        
+        function clearFilters() {
+            document.querySelectorAll('#genre-filters input').forEach(cb => cb.checked = false);
+            document.getElementById('rating-filter').value = 0;
+            document.getElementById('rating-value').textContent = 'Any';
+            document.getElementById('price-filter').value = 50;
+            document.getElementById('price-value').textContent = 'Any';
+            document.getElementById('stock-filter').checked = false;
+            performSearch();
+        }
+        
+        async function performSearch() {
+            const query = document.getElementById('search-input').value;
+            const genres = getSelectedGenres();
+            const minRating = parseFloat(document.getElementById('rating-filter').value);
+            const maxPrice = parseInt(document.getElementById('price-filter').value);
+            const inStockOnly = document.getElementById('stock-filter').checked;
+            
+            // Show loading
+            document.getElementById('results-grid').innerHTML = '<div class="loading">Searching</div>';
+            
+            try {
+                const response = await fetch('/api/search', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        query: query,
+                        genres: genres,
+                        min_rating: minRating > 0 ? minRating : null,
+                        max_price: maxPrice < 50 ? maxPrice : null,
+                        in_stock_only: inStockOnly
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+                
+                // Update results count
+                const queryText = query ? `"${query}"` : 'all books';
+                document.getElementById('results-count').textContent = 
+                    `${data.count} results for ${queryText}`;
+                
+                // Update active filters display
+                const filtersContainer = document.getElementById('active-filters');
+                filtersContainer.innerHTML = data.active_filters
+                    .map(f => `<span class="filter-tag">${f}</span>`)
+                    .join('');
+                
+                // Render results
+                const grid = document.getElementById('results-grid');
+                
+                if (data.results.length === 0) {
+                    grid.innerHTML = `
+                        <div class="empty-state">
+                            <h3>No results found</h3>
+                            <p>Try adjusting your filters or search term</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                grid.innerHTML = data.results.map(book => `
+                    <div class="book-card">
+                        <h3>${escapeHtml(book.title)}</h3>
+                        <div class="book-author">by ${escapeHtml(book.author)}</div>
+                        <div class="book-meta">
+                            <span class="book-genre">${escapeHtml(book.genre)}</span>
+                            <span class="book-rating">★ ${book.rating.toFixed(1)}</span>
+                            <span class="book-price">$${book.price.toFixed(2)}</span>
+                            <span class="book-stock ${book.in_stock ? 'in-stock' : 'out-of-stock'}">
+                                ${book.in_stock ? '✓ In Stock' : '✗ Out of Stock'}
+                            </span>
+                        </div>
+                        <div class="book-description">${escapeHtml(book.description)}</div>
+                        <div class="book-score">Similarity: ${book.score}</div>
+                    </div>
+                `).join('');
+                
+            } catch (error) {
+                document.getElementById('results-grid').innerHTML = `
+                    <div class="empty-state">
+                        <h3>Error</h3>
+                        <p>${escapeHtml(error.message)}</p>
+                    </div>
+                `;
+            }
+        }
+        
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        // Initial search on page load
+        performSearch();
+    </script>
+</body>
+</html>
