@@ -48,9 +48,12 @@ def get_available_books() -> list[dict]:
     """
     index = get_pinecone_index()
     
+    # Get embedding client for proper dimension
+    embedding_client = get_embedding_client()
+    
     # Query for chunk type to find books with text
     results = index.query(
-        vector=[0.0] * 384,  # Dummy vector for metadata scan
+        vector=[0.0] * embedding_client.dimension,  # Dummy vector for metadata scan
         top_k=100,
         include_metadata=True,
         filter={"type": "chunk"}

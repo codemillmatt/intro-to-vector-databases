@@ -59,7 +59,9 @@ def get_book_embeddings(book_ids: list[str]) -> list[list[float]]:
 def average_embeddings(embeddings: list[list[float]]) -> list[float]:
     """Calculate the average of multiple embedding vectors."""
     if not embeddings:
-        return [0.0] * 384
+        # Get dimension from embedding client for consistency
+        embedding_client = get_embedding_client()
+        return [0.0] * embedding_client.dimension
     
     num_dims = len(embeddings[0])
     avg = []

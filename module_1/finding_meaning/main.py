@@ -21,7 +21,7 @@ from rich.panel import Panel
 from rich.prompt import Prompt
 
 from embeddings import get_embedding_client
-from pinecone_utils import get_pinecone_index
+from pinecone_utils import get_pinecone_index, get_pinecone_client, get_pinecone_index_host
 
 # Configuration
 POSTGRES_CONFIG = {
@@ -133,17 +133,14 @@ def get_pinecone_sample() -> tuple[list[dict], dict]:
     
     Returns a few vectors with their metadata to show what's stored.
     """
-    pc = Pinecone(api_key=PINECONE_API_KEY, host=PINECONE_HOST)
-    index_host = _get_pinecone_index_host()
-    index = pc.Index(INDEX_NAME, host=index_host) if index_host else pc.Index(INDEX_NAME)
+    index = get_pinecone_index()
     
     # Query with a dummy vector to get some results
     stats = index.describe_index_stats()
     
     # Get dimension from embedding client to ensure consistency
     embedding_client = get_embedding_client()
-    dummy_dimension = embedding_client.dimension
-    dummy_vector = [0.0] * dummy_dimension
+    dummy_vector = [0.0] * embedding_client.dimension
     
     results = index.query(
         vector=dummy_vector,

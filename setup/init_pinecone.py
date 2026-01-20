@@ -67,7 +67,18 @@ def create_index(pc, embedding_dim=384):
 
 
 def chunk_text(text, chunk_size=500, overlap=50):
-    """Split text into overlapping chunks."""
+    """
+    Split text into overlapping chunks.
+    
+    Args:
+        text: The text to split into chunks
+        chunk_size: Number of words per chunk (default: 500)
+        overlap: Number of words to overlap between chunks (default: 50)
+                 Overlap helps maintain context at chunk boundaries
+    
+    Returns:
+        List of text chunks
+    """
     chunks = []
     words = text.split()
     
@@ -95,8 +106,9 @@ def init_vector_database(include_book_texts=True):
     # Clear existing vectors
     try:
         index.delete(delete_all=True)
-    except Exception:
-        pass  # Index might be empty
+        print("Cleared existing vectors from index")
+    except Exception as e:
+        print(f"Note: Could not clear index (may be empty): {e}")
     
     vectors = []
     
@@ -149,6 +161,7 @@ def init_vector_database(include_book_texts=True):
                 })
     
     # Upsert vectors in batches
+    # Batch size of 100 is a good balance between API call overhead and request size
     batch_size = 100
     for i in range(0, len(vectors), batch_size):
         batch = vectors[i:i + batch_size]
