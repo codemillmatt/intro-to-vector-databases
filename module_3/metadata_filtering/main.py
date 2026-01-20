@@ -41,15 +41,19 @@ def semantic_search_with_filter(
     query_embedding = embedding_client.embed(query)
     
     # Build metadata filter
+    # Start with base filter to only search book descriptions (not text chunks)
     filters = {"type": "book"}
     
     if genre:
         filters["genre"] = genre
     
     if min_rating is not None:
+        # Use $gte (greater than or equal) for minimum rating
         filters["rating"] = {"$gte": min_rating}
     
     if max_price is not None:
+        # Use $lte (less than or equal) for maximum price
+        # Check if we already have a price filter to combine conditions
         if "price" in filters:
             filters["price"]["$lte"] = max_price
         else:

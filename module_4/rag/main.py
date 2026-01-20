@@ -174,7 +174,14 @@ def display_chunks(chunks: list[dict]):
 
 
 def ask_question(query: str, book_id: str | None = None):
-    """Process a question using RAG."""
+    """
+    Process a question using the RAG (Retrieval Augmented Generation) pattern.
+    
+    This demonstrates the three-step RAG process:
+    1. Retrieve: Find relevant text passages using vector similarity
+    2. Augment: Add the retrieved text as context to the prompt
+    3. Generate: Use an LLM to answer based on the context
+    """
     console.print(Panel(f"[bold]Question:[/bold] {query}", style="blue"))
     console.print()
     
@@ -190,6 +197,8 @@ def ask_question(query: str, book_id: str | None = None):
     
     # Step 2: Build context from chunks
     console.print("[bold cyan]Step 2: Building context...[/bold cyan]")
+    # Combine all retrieved chunks into a single context string
+    # Each chunk is labeled with its source book for attribution
     context = "\n\n---\n\n".join([
         f"From '{chunk['title']}' by {chunk['author']}:\n{chunk['text']}"
         for chunk in chunks
