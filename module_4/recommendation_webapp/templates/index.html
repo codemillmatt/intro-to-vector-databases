@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendations | Module 4</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border: 1px solid #0f3460;
+        }
+        
+        header h1 {
+            font-size: 1.8em;
+            margin-bottom: 8px;
+            color: #e94560;
+        }
+        
+        header p {
+            opacity: 0.8;
+            font-size: 0.95em;
+        }
+        
+        /* Tab Navigation */
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .tab-btn {
+            padding: 12px 24px;
+            background: #16213e;
+            border: 2px solid #0f3460;
+            color: #aaa;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95em;
+            transition: all 0.2s;
+        }
+        
+        .tab-btn:hover {
+            border-color: #e94560;
+            color: #fff;
+        }
+        
+        .tab-btn.active {
+            background: #e94560;
+            border-color: #e94560;
+            color: #fff;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Users Section */
+        .users-section {
+            background: #16213e;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid #0f3460;
+        }
+        
+        .users-section h2 {
+            font-size: 1.2em;
+            margin-bottom: 8px;
+            color: #e94560;
+        }
+        
+        .users-section > p {
+            font-size: 0.9em;
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+        
+        .user-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        
+        .user-card {
+            background: #1a1a2e;
+            border: 2px solid #0f3460;
+            border-radius: 10px;
+            padding: 18px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .user-card:hover {
+            border-color: #e94560;
+            transform: translateY(-2px);
+        }
+        
+        .user-card.selected {
+            border-color: #e94560;
+            background: rgba(233, 69, 96, 0.1);
+        }
+        
+        .user-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #e94560 0%, #0f3460 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        .user-name {
+            font-weight: 600;
+            font-size: 1.05em;
+        }
+        
+        .user-id {
+            font-size: 0.8em;
+            color: #888;
+        }
+        
+        .liked-books-label {
+            font-size: 0.85em;
+            color: #888;
+            margin-bottom: 8px;
+        }
+        
+        .liked-books-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        
+        .liked-book-tag {
+            background: #0f3460;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            color: #ddd;
+        }
+        
+        /* Books Selection Section */
+        .books-section {
+            background: #16213e;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid #0f3460;
+        }
+        
+        .books-section h2 {
+            font-size: 1.2em;
+            margin-bottom: 8px;
+            color: #e94560;
+        }
+        
+        .books-section > p {
+            font-size: 0.9em;
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+        
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 12px;
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+        
+        .book-option {
+            background: #1a1a2e;
+            border: 2px solid #0f3460;
+            border-radius: 8px;
+            padding: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .book-option:hover {
+            border-color: #e94560;
+        }
+        
+        .book-option.selected {
+            border-color: #e94560;
+            background: rgba(233, 69, 96, 0.15);
+        }
+        
+        .book-option h3 {
+            font-size: 0.95em;
+            margin-bottom: 4px;
+            color: #fff;
+        }
+        
+        .book-option .author {
+            font-size: 0.8em;
+            color: #888;
+            margin-bottom: 6px;
+        }
+        
+        .book-option .genre {
+            display: inline-block;
+            background: #0f3460;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.75em;
+            color: #aaa;
+        }
+        
+        .book-option .checkmark {
+            float: right;
+            color: #e94560;
+            font-size: 1.2em;
+            display: none;
+        }
+        
+        .book-option.selected .checkmark {
+            display: inline;
+        }
+        
+        /* Get Recommendations Button */
+        .action-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #0f3460;
+        }
+        
+        .selection-count {
+            color: #aaa;
+            font-size: 0.9em;
+        }
+        
+        .selection-count strong {
+            color: #e94560;
+        }
+        
+        .recommend-btn {
+            background: linear-gradient(135deg, #e94560 0%, #c23a53 100%);
+            border: none;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .recommend-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(233, 69, 96, 0.4);
+        }
+        
+        .recommend-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        /* Results Section */
+        .results-section {
+            display: none;
+        }
+        
+        .results-section.visible {
+            display: block;
+        }
+        
+        .back-btn {
+            background: #16213e;
+            border: 1px solid #0f3460;
+            color: #aaa;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+            transition: all 0.2s;
+        }
+        
+        .back-btn:hover {
+            border-color: #e94560;
+            color: #fff;
+        }
+        
+        /* Liked Books Banner */
+        .liked-banner {
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border: 1px solid #0f3460;
+        }
+        
+        .liked-banner h3 {
+            font-size: 1em;
+            color: #e94560;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .liked-books-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .liked-book-card {
+            background: #1a1a2e;
+            border: 1px solid #0f3460;
+            border-radius: 8px;
+            padding: 12px 16px;
+        }
+        
+        .liked-book-card .title {
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        
+        .liked-book-card .meta {
+            font-size: 0.8em;
+            color: #888;
+        }
+        
+        /* Recommendation Results */
+        .recommendation-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 800px) {
+            .recommendation-columns {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .recommendation-column {
+            background: #16213e;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #0f3460;
+        }
+        
+        .column-header {
+            margin-bottom: 20px;
+        }
+        
+        .column-header h3 {
+            font-size: 1.1em;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .column-header h3.content-based {
+            color: #3498db;
+        }
+        
+        .column-header h3.collaborative {
+            color: #27ae60;
+        }
+        
+        .column-header p {
+            font-size: 0.85em;
+            color: #888;
+        }
+        
+        /* Similar Users Info */
+        .similar-users {
+            background: rgba(39, 174, 96, 0.1);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(39, 174, 96, 0.2);
+        }
+        
+        .similar-users-label {
+            font-size: 0.8em;
+            color: #27ae60;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .similar-user-tag {
+            display: inline-block;
+            background: rgba(39, 174, 96, 0.2);
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            color: #27ae60;
+            margin-right: 6px;
+            margin-bottom: 4px;
+        }
+        
+        .similar-user-tag .overlap {
+            opacity: 0.7;
+        }
+        
+        /* Recommendation Cards */
+        .rec-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .rec-card {
+            background: #1a1a2e;
+            border: 1px solid #0f3460;
+            border-radius: 8px;
+            padding: 15px;
+            transition: all 0.2s;
+        }
+        
+        .rec-card:hover {
+            border-color: #e94560;
+        }
+        
+        .rec-card .rank {
+            display: inline-flex;
+            width: 26px;
+            height: 26px;
+            background: #0f3460;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-right: 10px;
+            color: #e94560;
+        }
+        
+        .rec-card .title {
+            font-weight: 600;
+            font-size: 0.95em;
+            display: inline;
+        }
+        
+        .rec-card .meta {
+            font-size: 0.85em;
+            color: #888;
+            margin: 6px 0;
+        }
+        
+        .rec-card .description {
+            font-size: 0.85em;
+            color: #aaa;
+            margin-top: 8px;
+            line-height: 1.5;
+        }
+        
+        .rec-card .score-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            margin-top: 8px;
+        }
+        
+        .rec-card .score-badge.content {
+            background: rgba(52, 152, 219, 0.2);
+            color: #3498db;
+        }
+        
+        .rec-card .score-badge.collab {
+            background: rgba(39, 174, 96, 0.2);
+            color: #27ae60;
+        }
+        
+        .rec-card .recommended-by {
+            font-size: 0.8em;
+            color: #27ae60;
+            margin-top: 6px;
+        }
+        
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: 30px;
+            color: #888;
+        }
+        
+        .empty-state .icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        /* Loading */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            color: #888;
+        }
+        
+        .loading.visible {
+            display: block;
+        }
+        
+        .spinner {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border: 3px solid #0f3460;
+            border-top-color: #e94560;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Explanation Panel */
+        .explanation-panel {
+            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 25px;
+            border: 1px solid #0f3460;
+        }
+        
+        .explanation-panel h3 {
+            color: #e94560;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .explanation-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 600px) {
+            .explanation-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .explanation-item {
+            background: rgba(0,0,0,0.2);
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .explanation-item h4 {
+            font-size: 0.95em;
+            margin-bottom: 8px;
+        }
+        
+        .explanation-item h4.content-based {
+            color: #3498db;
+        }
+        
+        .explanation-item h4.collaborative {
+            color: #27ae60;
+        }
+        
+        .explanation-item p {
+            font-size: 0.85em;
+            color: #aaa;
+            line-height: 1.5;
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #0f3460;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #e94560;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Book Recommendation Engine</h1>
+            <p>Explore how vector databases power modern recommendation systems using content-based and collaborative filtering.</p>
+        </header>
+
+        <!-- Tab Navigation -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="users">👥 Browse User Preferences</button>
+            <button class="tab-btn" data-tab="custom">🎯 Custom Selection</button>
+        </div>
+
+        <!-- Users Tab -->
+        <div id="users-tab" class="tab-content active">
+            <div class="users-section">
+                <h2>👥 User Reading Profiles</h2>
+                <p>Click on a user to see their liked books and get personalized recommendations based on their preferences.</p>
+                
+                <div class="user-grid">
+                    {% for user in users %}
+                    <div class="user-card" data-user-id="{{ user.user_id }}">
+                        <div class="user-header">
+                            <div class="user-avatar">{{ user.name[0] }}</div>
+                            <div>
+                                <div class="user-name">{{ user.name }}</div>
+                                <div class="user-id">{{ user.user_id }}</div>
+                            </div>
+                        </div>
+                        <div class="liked-books-label">❤️ Liked Books:</div>
+                        <div class="liked-books-list">
+                            {% for book in user.liked_books %}
+                            <span class="liked-book-tag">{{ book.title[:25] }}{% if book.title|length > 25 %}...{% endif %}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Selection Tab -->
+        <div id="custom-tab" class="tab-content">
+            <div class="books-section">
+                <h2>📖 Select Books You've Enjoyed</h2>
+                <p>Choose one or more books to receive personalized recommendations.</p>
+                
+                <div class="book-grid">
+                    {% for book in books %}
+                    <div class="book-option" data-book-id="{{ book.id }}">
+                        <span class="checkmark">✓</span>
+                        <h3>{{ book.title }}</h3>
+                        <div class="author">by {{ book.author }}</div>
+                        <span class="genre">{{ book.genre }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="action-bar">
+                    <div class="selection-count">
+                        <strong id="selected-count">0</strong> books selected
+                    </div>
+                    <button class="recommend-btn" id="get-recommendations-btn" disabled>
+                        Get Recommendations →
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading State -->
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p style="margin-top: 15px;">Finding recommendations...</p>
+        </div>
+
+        <!-- Results Section -->
+        <div class="results-section" id="results-section">
+            <button class="back-btn" id="back-btn">← Back to Selection</button>
+            
+            <!-- Liked Books Banner -->
+            <div class="liked-banner">
+                <h3>❤️ Based on your liked books:</h3>
+                <div class="liked-books-row" id="liked-books-display"></div>
+            </div>
+            
+            <!-- Recommendations -->
+            <div class="recommendation-columns">
+                <!-- Content-Based Column -->
+                <div class="recommendation-column">
+                    <div class="column-header">
+                        <h3 class="content-based">🧠 Content-Based Filtering</h3>
+                        <p>Books with similar themes, topics, and writing style based on semantic similarity of embeddings.</p>
+                    </div>
+                    <div class="rec-list" id="content-based-results"></div>
+                </div>
+                
+                <!-- Collaborative Column -->
+                <div class="recommendation-column">
+                    <div class="column-header">
+                        <h3 class="collaborative">👥 Collaborative Filtering</h3>
+                        <p>Books enjoyed by other readers who share your taste in literature.</p>
+                    </div>
+                    <div class="similar-users" id="similar-users-display"></div>
+                    <div class="rec-list" id="collaborative-results"></div>
+                </div>
+            </div>
+            
+            <!-- Explanation Panel -->
+            <div class="explanation-panel">
+                <h3>🔍 How These Recommendations Work</h3>
+                <div class="explanation-grid">
+                    <div class="explanation-item">
+                        <h4 class="content-based">Content-Based Filtering</h4>
+                        <p>Creates a "preference vector" by averaging the embeddings of your liked books, then finds books with the highest cosine similarity to this preference profile. This captures semantic relationships between book content.</p>
+                    </div>
+                    <div class="explanation-item">
+                        <h4 class="collaborative">Collaborative Filtering</h4>
+                        <p>Identifies users who liked the same books as you, weighted by how many books you share. Then recommends books those similar users enjoyed that you haven't read yet. More shared likes = higher influence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // State
+        let selectedBooks = new Set();
+        let currentMode = 'users'; // 'users' or 'custom'
+
+        // Tab switching
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tab = btn.dataset.tab;
+                currentMode = tab;
+                
+                // Update active tab
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Show correct content
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                document.getElementById(`${tab}-tab`).classList.add('active');
+                
+                // Hide results
+                hideResults();
+            });
+        });
+
+        // User card click
+        document.querySelectorAll('.user-card').forEach(card => {
+            card.addEventListener('click', async () => {
+                // Highlight selected user
+                document.querySelectorAll('.user-card').forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+                
+                const userId = card.dataset.userId;
+                await loadUserRecommendations(userId);
+            });
+        });
+
+        // Book selection in custom mode
+        document.querySelectorAll('.book-option').forEach(option => {
+            option.addEventListener('click', () => {
+                const bookId = option.dataset.bookId;
+                
+                if (selectedBooks.has(bookId)) {
+                    selectedBooks.delete(bookId);
+                    option.classList.remove('selected');
+                } else {
+                    selectedBooks.add(bookId);
+                    option.classList.add('selected');
+                }
+                
+                updateSelectionCount();
+            });
+        });
+
+        function updateSelectionCount() {
+            const count = selectedBooks.size;
+            document.getElementById('selected-count').textContent = count;
+            document.getElementById('get-recommendations-btn').disabled = count === 0;
+        }
+
+        // Get recommendations button
+        document.getElementById('get-recommendations-btn').addEventListener('click', async () => {
+            if (selectedBooks.size === 0) return;
+            await loadCustomRecommendations([...selectedBooks]);
+        });
+
+        // Back button
+        document.getElementById('back-btn').addEventListener('click', hideResults);
+
+        async function loadUserRecommendations(userId) {
+            showLoading();
+            
+            try {
+                const response = await fetch(`/api/user/${userId}/recommendations`);
+                const data = await response.json();
+                
+                if (response.ok) {
+                    displayResults(data);
+                } else {
+                    alert('Error loading recommendations: ' + data.error);
+                    hideResults();
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Failed to load recommendations');
+                hideResults();
+            }
+        }
+
+        async function loadCustomRecommendations(bookIds) {
+            showLoading();
+            
+            try {
+                const response = await fetch('/api/recommend', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ liked_books: bookIds })
+                });
+                const data = await response.json();
+                
+                if (response.ok) {
+                    displayResults(data);
+                } else {
+                    alert('Error loading recommendations: ' + data.error);
+                    hideResults();
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Failed to load recommendations');
+                hideResults();
+            }
+        }
+
+        function showLoading() {
+            document.getElementById('loading').classList.add('visible');
+            document.getElementById('results-section').classList.remove('visible');
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        }
+
+        function hideResults() {
+            document.getElementById('loading').classList.remove('visible');
+            document.getElementById('results-section').classList.remove('visible');
+            document.getElementById(`${currentMode}-tab`).classList.add('active');
+        }
+
+        function displayResults(data) {
+            document.getElementById('loading').classList.remove('visible');
+            
+            // Display liked books
+            const likedBooksHtml = data.liked_books.map(book => `
+                <div class="liked-book-card">
+                    <div class="title">${escapeHtml(book.title)}</div>
+                    <div class="meta">${escapeHtml(book.author)} • ${escapeHtml(book.genre)}</div>
+                </div>
+            `).join('');
+            document.getElementById('liked-books-display').innerHTML = likedBooksHtml;
+            
+            // Display content-based recommendations
+            const contentHtml = data.content_based.length > 0 
+                ? data.content_based.map((rec, i) => createRecCard(rec, i + 1, 'content')).join('')
+                : '<div class="empty-state"><div class="icon">📭</div><p>No content-based recommendations found</p></div>';
+            document.getElementById('content-based-results').innerHTML = contentHtml;
+            
+            // Display similar users
+            if (data.similar_users && data.similar_users.length > 0) {
+                const usersHtml = `
+                    <div class="similar-users-label">Readers with similar taste:</div>
+                    ${data.similar_users.map(u => `
+                        <span class="similar-user-tag">${escapeHtml(u.name)} <span class="overlap">(${u.overlap_count} shared)</span></span>
+                    `).join('')}
+                `;
+                document.getElementById('similar-users-display').innerHTML = usersHtml;
+                document.getElementById('similar-users-display').style.display = 'block';
+            } else {
+                document.getElementById('similar-users-display').style.display = 'none';
+            }
+            
+            // Display collaborative recommendations
+            const collabHtml = data.collaborative.length > 0
+                ? data.collaborative.map((rec, i) => createRecCard(rec, i + 1, 'collab')).join('')
+                : '<div class="empty-state"><div class="icon">👥</div><p>No collaborative recommendations found</p></div>';
+            document.getElementById('collaborative-results').innerHTML = collabHtml;
+            
+            // Show results section
+            document.getElementById('results-section').classList.add('visible');
+        }
+
+        function createRecCard(rec, rank, type) {
+            const scoreLabel = type === 'content' ? 'Similarity' : 'Score';
+            const recommendedBy = rec.recommended_by && rec.recommended_by.length > 0
+                ? `<div class="recommended-by">Liked by: ${rec.recommended_by.join(', ')}</div>`
+                : '';
+            
+            return `
+                <div class="rec-card">
+                    <span class="rank">${rank}</span>
+                    <span class="title">${escapeHtml(rec.title)}</span>
+                    <div class="meta">${escapeHtml(rec.author)} • ${escapeHtml(rec.genre)} • ⭐ ${rec.rating}</div>
+                    <div class="description">${escapeHtml(rec.description || '')}</div>
+                    <span class="score-badge ${type}">${scoreLabel}: ${rec.score}</span>
+                    ${recommendedBy}
+                </div>
+            `;
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+</html>

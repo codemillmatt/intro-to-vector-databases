@@ -26,6 +26,9 @@ from pinecone_utils import get_pinecone_index
 
 console = Console()
 
+# Set Ollama host for devcontainer environment
+os.environ.setdefault("OLLAMA_HOST", "http://ollama:11434")
+
 # Try to import ollama for actual LLM responses
 try:
     import ollama
@@ -126,7 +129,7 @@ Answer:"""
     if OLLAMA_AVAILABLE:
         try:
             response = ollama.chat(
-                model="llama3.2:1b",  # Use a small model for quick responses
+                model="llama3.2:3b",  # Use a small model for quick responses
                 messages=[{"role": "user", "content": prompt}]
             )
             return response["message"]["content"]
