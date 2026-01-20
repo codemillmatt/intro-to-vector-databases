@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finding Meaning - SQL vs Semantic Search | Module 1</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #eee;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 1px solid #0f3460;
+        }
+        
+        header h1 {
+            font-size: 2em;
+            margin-bottom: 8px;
+            color: #e94560;
+        }
+        
+        header p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        
+        /* Search Section */
+        .search-section {
+            background: #0f3460;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 1px solid #16213e;
+        }
+        
+        .search-form {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 15px;
+            font-size: 1em;
+            border: 2px solid #16213e;
+            border-radius: 8px;
+            background: #16213e;
+            color: #eee;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #e94560;
+        }
+        
+        .search-button {
+            padding: 15px 40px;
+            font-size: 1em;
+            font-weight: bold;
+            background: #e94560;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .search-button:hover {
+            background: #d63651;
+        }
+        
+        .search-button:disabled {
+            background: #555;
+            cursor: not-allowed;
+        }
+        
+        /* Example Queries */
+        .examples {
+            margin-top: 20px;
+        }
+        
+        .examples h3 {
+            font-size: 0.9em;
+            opacity: 0.7;
+            margin-bottom: 10px;
+        }
+        
+        .example-queries {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .example-query {
+            padding: 8px 16px;
+            background: #16213e;
+            border: 1px solid #1a1a2e;
+            border-radius: 20px;
+            font-size: 0.85em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .example-query:hover {
+            background: #1a1a2e;
+            border-color: #e94560;
+        }
+        
+        /* Results Grid */
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 900px) {
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .results-panel {
+            background: #0f3460;
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid #16213e;
+        }
+        
+        .results-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #16213e;
+        }
+        
+        .results-header h2 {
+            font-size: 1.3em;
+        }
+        
+        .sql-panel .results-header h2 {
+            color: #4ecdc4;
+        }
+        
+        .semantic-panel .results-header h2 {
+            color: #e94560;
+        }
+        
+        .result-count {
+            background: #16213e;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            opacity: 0.9;
+        }
+        
+        /* Result Cards */
+        .result-card {
+            background: #16213e;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .sql-panel .result-card {
+            border-left-color: #4ecdc4;
+        }
+        
+        .semantic-panel .result-card {
+            border-left-color: #e94560;
+        }
+        
+        .result-card:hover {
+            background: #1a1a2e;
+            transform: translateX(5px);
+        }
+        
+        .result-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        
+        .result-author {
+            color: #4ecdc4;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        
+        .result-description {
+            color: #ccc;
+            font-size: 0.9em;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+        
+        .result-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 0.85em;
+            opacity: 0.8;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .score-badge {
+            background: #e94560;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: bold;
+        }
+        
+        .rating-badge {
+            color: #ffd700;
+        }
+        
+        /* Loading State */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            opacity: 0.6;
+        }
+        
+        .spinner {
+            border: 4px solid #16213e;
+            border-top: 4px solid #e94560;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            opacity: 0.6;
+        }
+        
+        .empty-state-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        
+        /* Info Box */
+        .info-box {
+            background: #0f3460;
+            border-left: 4px solid #e94560;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .info-box h3 {
+            color: #e94560;
+            margin-bottom: 10px;
+        }
+        
+        .info-box ul {
+            margin-left: 20px;
+        }
+        
+        .info-box li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Finding Meaning: SQL vs Semantic Search</h1>
+            <p>Compare traditional keyword matching with vector similarity search</p>
+        </header>
+        
+        <div class="info-box">
+            <h3>🎯 What This Demo Shows</h3>
+            <ul>
+                <li><strong>SQL Search (Left):</strong> Traditional keyword matching - finds books containing your exact words</li>
+                <li><strong>Semantic Search (Right):</strong> Vector similarity - understands meaning and finds conceptually related books</li>
+            </ul>
+        </div>
+        
+        <div class="search-section">
+            <form id="searchForm" class="search-form">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    class="search-input" 
+                    placeholder="Enter your search query (e.g., 'stories about healing and recovery')"
+                    required
+                >
+                <button type="submit" class="search-button" id="searchButton">
+                    Search
+                </button>
+            </form>
+            
+            <div class="examples">
+                <h3>Try these example queries:</h3>
+                <div class="example-queries">
+                    <span class="example-query" data-query="books about space exploration and adventure">🚀 Space exploration</span>
+                    <span class="example-query" data-query="stories dealing with loss and healing">💙 Loss and healing</span>
+                    <span class="example-query" data-query="thriller with technology and hacking">💻 Tech thrillers</span>
+                    <span class="example-query" data-query="fantasy with magical creatures">🧙 Magical fantasy</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="results-grid" id="resultsGrid" style="display: none;">
+            <!-- SQL Results -->
+            <div class="results-panel sql-panel">
+                <div class="results-header">
+                    <h2>SQL Keyword Search</h2>
+                    <span class="result-count" id="sqlCount">0 results</span>
+                </div>
+                <div id="sqlResults"></div>
+            </div>
+            
+            <!-- Semantic Results -->
+            <div class="results-panel semantic-panel">
+                <div class="results-header">
+                    <h2>Semantic Vector Search</h2>
+                    <span class="result-count" id="semanticCount">0 results</span>
+                </div>
+                <div id="semanticResults"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const searchForm = document.getElementById('searchForm');
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+        const resultsGrid = document.getElementById('resultsGrid');
+        const sqlResults = document.getElementById('sqlResults');
+        const semanticResults = document.getElementById('semanticResults');
+        const sqlCount = document.getElementById('sqlCount');
+        const semanticCount = document.getElementById('semanticCount');
+        
+        // Handle example queries
+        document.querySelectorAll('.example-query').forEach(element => {
+            element.addEventListener('click', () => {
+                searchInput.value = element.dataset.query;
+                searchForm.dispatchEvent(new Event('submit'));
+            });
+        });
+        
+        // Handle form submission
+        searchForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const query = searchInput.value.trim();
+            if (!query) return;
+            
+            // Show loading state
+            searchButton.disabled = true;
+            searchButton.textContent = 'Searching...';
+            resultsGrid.style.display = 'grid';
+            
+            sqlResults.innerHTML = '<div class="loading"><div class="spinner"></div><p>Searching with SQL...</p></div>';
+            semanticResults.innerHTML = '<div class="loading"><div class="spinner"></div><p>Searching with vectors...</p></div>';
+            
+            try {
+                const response = await fetch('/api/search', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ query })
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Search failed');
+                }
+                
+                const data = await response.json();
+                
+                // Display SQL results
+                displaySQLResults(data.sql_results);
+                sqlCount.textContent = `${data.sql_results.length} results`;
+                
+                // Display semantic results
+                displaySemanticResults(data.semantic_results);
+                semanticCount.textContent = `${data.semantic_results.length} results`;
+                
+            } catch (error) {
+                console.error('Search error:', error);
+                sqlResults.innerHTML = '<div class="empty-state"><p>❌ Search failed</p></div>';
+                semanticResults.innerHTML = '<div class="empty-state"><p>❌ Search failed</p></div>';
+            } finally {
+                searchButton.disabled = false;
+                searchButton.textContent = 'Search';
+            }
+        });
+        
+        function displaySQLResults(results) {
+            if (results.length === 0) {
+                sqlResults.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">🔍</div>
+                        <p>No books found with those keywords</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            sqlResults.innerHTML = results.map(book => `
+                <div class="result-card">
+                    <div class="result-title">${escapeHtml(book.title)}</div>
+                    <div class="result-author">by ${escapeHtml(book.author)}</div>
+                    <div class="result-description">${escapeHtml(book.description)}</div>
+                    <div class="result-meta">
+                        <span class="meta-item">
+                            <span>📚</span>
+                            <span>${escapeHtml(book.genre)}</span>
+                        </span>
+                        <span class="meta-item rating-badge">
+                            <span>⭐</span>
+                            <span>${book.rating.toFixed(1)}</span>
+                        </span>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function displaySemanticResults(results) {
+            if (results.length === 0) {
+                semanticResults.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">🔍</div>
+                        <p>No semantically similar books found</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            semanticResults.innerHTML = results.map(book => `
+                <div class="result-card">
+                    <div class="result-title">${escapeHtml(book.title)}</div>
+                    <div class="result-author">by ${escapeHtml(book.author)}</div>
+                    <div class="result-description">${escapeHtml(book.description)}</div>
+                    <div class="result-meta">
+                        <span class="meta-item">
+                            <span>📚</span>
+                            <span>${escapeHtml(book.genre)}</span>
+                        </span>
+                        <span class="meta-item rating-badge">
+                            <span>⭐</span>
+                            <span>${book.rating.toFixed(1)}</span>
+                        </span>
+                        <span class="meta-item">
+                            <span class="score-badge">${book.score.toFixed(3)}</span>
+                        </span>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+</html>
