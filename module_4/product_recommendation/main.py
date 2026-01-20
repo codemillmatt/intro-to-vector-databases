@@ -59,7 +59,9 @@ def get_book_embeddings(book_ids: list[str]) -> list[list[float]]:
 def average_embeddings(embeddings: list[list[float]]) -> list[float]:
     """Calculate the average of multiple embedding vectors."""
     if not embeddings:
-        return [0.0] * 384
+        # Get dimension from embedding client for consistency
+        embedding_client = get_embedding_client()
+        return [0.0] * embedding_client.dimension
     
     num_dims = len(embeddings[0])
     avg = []
@@ -80,6 +82,11 @@ def recommend_similar_books(
     
     This is content-based filtering - finding books with similar
     semantic content to what the user already enjoys.
+    
+    The approach:
+    1. Get embeddings for all books the user liked
+    2. Average them to create a "preference vector"
+    3. Search for books with similar embeddings
     """
     # Get embeddings for liked books
     embeddings = get_book_embeddings(liked_books)
@@ -88,11 +95,13 @@ def recommend_similar_books(
         return []
     
     # Create a "preference vector" by averaging liked book embeddings
+    # This represents the user's overall taste
     preference_vector = average_embeddings(embeddings)
     
     # Search for similar books
     index = get_pinecone_index()
     
+    # Request extra results to account for filtering out already-read books
     results = index.query(
         vector=preference_vector,
         top_k=top_k + len(liked_books or []) + len(exclude_books or []),
@@ -115,6 +124,7 @@ def recommend_similar_books(
                 "score": match.score
             })
             
+            # Stop once we have enough recommendations
             if len(recommendations) >= top_k:
                 break
     
@@ -132,6 +142,11 @@ def recommend_collaborative(
     
     This is collaborative filtering - finding users with similar
     tastes and recommending books they liked.
+    
+    The approach:
+    1. Find users who liked some of the same books
+    2. Calculate similarity scores based on overlap
+    3. Recommend books that similar users enjoyed
     """
     books = load_books()
     exclude_set = set(user_liked_books or []) | set(exclude_books or [])
@@ -139,8 +154,11 @@ def recommend_collaborative(
     # Find users with overlapping tastes
     similar_users = []
     for user in all_users:
+        # Find books that both the current user and this user liked
         overlap = set(user["liked_books"]) & set(user_liked_books)
         if overlap:
+            # Calculate similarity: Jaccard coefficient
+            # (size of intersection / size of union)
             similarity = len(overlap) / max(
                 len(user["liked_books"]), len(user_liked_books)
             )
@@ -150,16 +168,18 @@ def recommend_collaborative(
                 "overlap": overlap
             })
     
-    # Sort by similarity
+    # Sort by similarity (most similar users first)
     similar_users.sort(key=lambda x: x["similarity"], reverse=True)
     
     # Collect book recommendations from similar users
+    # Books get higher scores if recommended by more similar users
     book_scores = {}
     for similar_user in similar_users:
         for book_id in similar_user["user"]["liked_books"]:
             if book_id not in exclude_set:
                 if book_id not in book_scores:
                     book_scores[book_id] = 0
+                # Weight by user similarity
                 book_scores[book_id] += similar_user["similarity"]
     
     # Sort by score and return top k

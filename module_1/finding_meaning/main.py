@@ -40,13 +40,15 @@ def sql_search(query: str) -> list[dict]:
     Search books using traditional SQL LIKE pattern matching.
     
     This represents how traditional databases handle text search -
-    keyword matching that misses semantic meaning.
+    keyword matching that misses semantic meaning. For example,
+    searching for "space" will only find books with the word "space",
+    not books about "cosmos" or "universe".
     """
     conn = psycopg2.connect(**POSTGRES_CONFIG)
     try:
         with conn.cursor() as cur:
-            # Use ILIKE for case-insensitive search
-            # Search in title and description
+            # Use ILIKE for case-insensitive search (PostgreSQL specific)
+            # Search across title, description, and genre fields
             sql = """
                 SELECT id, title, author, description, genre, rating
                 FROM books
@@ -56,6 +58,7 @@ def sql_search(query: str) -> list[dict]:
                 ORDER BY rating DESC
                 LIMIT 5
             """
+            # Add wildcards to match the query anywhere in the text
             search_pattern = f"%{query}%"
             cur.execute(sql, (search_pattern, search_pattern, search_pattern))
             
@@ -72,15 +75,18 @@ def semantic_search(query: str) -> list[dict]:
     
     This demonstrates how vector databases understand meaning -
     finding conceptually similar content even without keyword matches.
+    For example, searching for "space" will also find books about
+    "cosmos", "universe", "astronomy" because the concepts are similar.
     """
-    # Get embedding for the query
+    # Convert the query text into a vector embedding
     embedding_client = get_embedding_client()
     query_embedding = embedding_client.embed(query)
     
-    # Search in Pinecone
+    # Search in Pinecone vector database
     index = get_pinecone_index()
     
     # Only search book descriptions, not text chunks
+    # This keeps results focused on whole books rather than passages
     results = index.query(
         vector=query_embedding,
         top_k=5,
@@ -133,17 +139,14 @@ def get_pinecone_sample() -> tuple[list[dict], dict]:
     
     Returns a few vectors with their metadata to show what's stored.
     """
-    pc = Pinecone(api_key=PINECONE_API_KEY, host=PINECONE_HOST)
-    index_host = _get_pinecone_index_host()
-    index = pc.Index(INDEX_NAME, host=index_host) if index_host else pc.Index(INDEX_NAME)
+    index = get_pinecone_index()
     
     # Query with a dummy vector to get some results
     stats = index.describe_index_stats()
     
     # Get dimension from embedding client to ensure consistency
     embedding_client = get_embedding_client()
-    dummy_dimension = embedding_client.dimension
-    dummy_vector = [0.0] * dummy_dimension
+    dummy_vector = [0.0] * embedding_client.dimension
     
     results = index.query(
         vector=dummy_vector,
