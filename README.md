@@ -90,10 +90,20 @@ Notes:
 
 Compares traditional SQL keyword-based search against semantic vector similarity search, demonstrating the immediate value proposition of vector databases.
 
+**Command-Line Version:**
 ```bash
 cd module_1/finding_meaning
 python main.py
 ```
+
+**Web Application:**
+```bash
+cd module_1/finding_meaning_webapp
+python app.py
+# Open http://localhost:5000 in your browser
+```
+
+The web app provides an interactive side-by-side comparison of SQL and semantic search, making it easy to see the differences in real-time.
 
 ### Module 2: Embeddings (No demos)
 
