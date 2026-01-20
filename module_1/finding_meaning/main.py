@@ -21,7 +21,7 @@ from rich.panel import Panel
 from rich.prompt import Prompt
 
 from embeddings import get_embedding_client
-from pinecone_utils import get_pinecone_index, get_pinecone_client, get_pinecone_index_host
+from pinecone_utils import get_pinecone_index
 
 # Configuration
 POSTGRES_CONFIG = {
