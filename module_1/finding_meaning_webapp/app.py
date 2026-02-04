@@ -133,7 +133,7 @@ def api_search():
 
 
 if __name__ == "__main__":
-    port = int(os.getenv("PORT", 5000))
+    port = int(os.getenv("PORT", 8080))
     debug = os.getenv("FLASK_DEBUG", "true").lower() == "true"
     
     print(f"\n📚 Finding Meaning - SQL vs Semantic Search Demo")
