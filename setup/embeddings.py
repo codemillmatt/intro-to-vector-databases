@@ -87,7 +87,15 @@ class EmbeddingClient:
         if self._st_model is None:
             if not SENTENCE_TRANSFORMERS_AVAILABLE:
                 raise RuntimeError("sentence-transformers is not installed")
-            self._st_model = SentenceTransformer(self.model)
+            import sys
+            import io
+            # Suppress the MLX "LOAD REPORT" message printed to stdout
+            old_stdout = sys.stdout
+            sys.stdout = io.StringIO()
+            try:
+                self._st_model = SentenceTransformer(self.model)
+            finally:
+                sys.stdout = old_stdout
         return self._st_model
     
     def embed(self, text: str) -> list[float]:

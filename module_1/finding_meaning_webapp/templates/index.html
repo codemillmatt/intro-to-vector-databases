@@ -334,10 +334,10 @@
             <div class="examples">
                 <h3>Try these example queries:</h3>
                 <div class="example-queries">
-                    <span class="example-query" data-query="books about space exploration and adventure">🚀 Space exploration</span>
-                    <span class="example-query" data-query="stories dealing with loss and healing">💙 Loss and healing</span>
-                    <span class="example-query" data-query="thriller with technology and hacking">💻 Tech thrillers</span>
-                    <span class="example-query" data-query="fantasy with magical creatures">🧙 Magical fantasy</span>
+                    <span class="example-query" data-query="dragon">🐉 dragon (SQL works)</span>
+                    <span class="example-query" data-query="stories about loss and healing">💙 Loss and healing</span>
+                    <span class="example-query" data-query="mystery">🔍 mystery (SQL works)</span>
+                    <span class="example-query" data-query="books about space exploration">🚀 Space exploration</span>
                 </div>
             </div>
         </div>
@@ -452,7 +452,7 @@
                         </span>
                         <span class="meta-item rating-badge">
                             <span>⭐</span>
-                            <span>${book.rating.toFixed(1)}</span>
+                            <span>${parseFloat(book.rating).toFixed(1)}</span>
                         </span>
                     </div>
                 </div>
