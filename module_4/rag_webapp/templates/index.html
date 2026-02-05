@@ -497,6 +497,151 @@
             font-size: 0.85em;
             color: #888;
         }
+
+        /* View Full Text button on book cards */
+        .view-text-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 10px;
+            padding: 5px 10px;
+            background: rgba(233, 69, 96, 0.15);
+            border: 1px solid rgba(233, 69, 96, 0.4);
+            border-radius: 5px;
+            color: #e94560;
+            font-size: 0.8em;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .view-text-btn:hover {
+            background: rgba(233, 69, 96, 0.3);
+            border-color: #e94560;
+        }
+
+        .banner-btn-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        .banner-view-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background 0.2s;
+        }
+
+        .banner-view-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* Book text modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .modal-overlay.visible {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #16213e;
+            border: 1px solid #0f3460;
+            border-radius: 12px;
+            max-width: 750px;
+            width: 100%;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 24px;
+            border-bottom: 1px solid #0f3460;
+            flex-shrink: 0;
+        }
+
+        .modal-header h2 {
+            font-size: 1.1em;
+            color: #e94560;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: #888;
+            font-size: 1.5em;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .modal-close:hover {
+            color: #fff;
+            background: rgba(233, 69, 96, 0.3);
+        }
+
+        .modal-body {
+            padding: 24px;
+            overflow-y: auto;
+            line-height: 1.8;
+            color: #ccc;
+        }
+
+        .modal-body h1, .modal-body h2, .modal-body h3 {
+            color: #e94560;
+            margin: 20px 0 10px;
+        }
+
+        .modal-body h1 { font-size: 1.4em; }
+        .modal-body h2 { font-size: 1.2em; }
+        .modal-body h3 { font-size: 1.05em; }
+
+        .modal-body p {
+            margin-bottom: 12px;
+        }
+
+        .modal-body hr {
+            border: none;
+            border-top: 1px solid #0f3460;
+            margin: 20px 0;
+        }
+
+        .modal-loading {
+            text-align: center;
+            padding: 40px;
+            color: #888;
+        }
+
+        /* Streaming cursor */
+        .streaming-cursor {
+            display: inline;
+            animation: blink 0.7s step-end infinite;
+            color: #e94560;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
     </style>
 </head>
 <body>
@@ -524,6 +669,7 @@
                     <span class="checkmark">✓</span>
                     <h3>{{ book.title }}</h3>
                     <span class="author">by {{ book.author }}</span>
+                    <button class="view-text-btn" onclick="event.stopPropagation(); showBookText('{{ book.id }}', '{{ book.title }}')">📄 Read Full Text</button>
                 </div>
                 {% endfor %}
                 
@@ -544,7 +690,10 @@
                     <div class="subtitle">Currently using as knowledge base</div>
                 </div>
             </div>
-            <button class="clear-btn" onclick="clearSelection()">Change Book</button>
+            <div class="banner-btn-group">
+                <button class="banner-view-btn" onclick="showBookText(selectedBook.id, selectedBook.title)">📄 Full Text</button>
+                <button class="clear-btn" onclick="clearSelection()">Change Book</button>
+            </div>
         </div>
         
         <!-- Chat Interface -->
@@ -700,16 +849,108 @@
                         book_id: selectedBook.id
                     })
                 });
-                
-                const data = await response.json();
-                
-                // Remove loading
-                document.getElementById(loadingId)?.remove();
-                
-                if (data.error) {
-                    addMessage('assistant', `Error: ${data.error}`);
-                } else {
-                    addAssistantResponse(data);
+
+                if (!response.ok) {
+                    const err = await response.json();
+                    document.getElementById(loadingId)?.remove();
+                    addMessage('assistant', `Error: ${err.error || 'Request failed'}`);
+                    askBtn.disabled = false;
+                    input.focus();
+                    return;
+                }
+
+                // --- Stream SSE response ---
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder();
+                let buffer = '';
+                let passagesRendered = false;
+                let responseDiv = null;   // the assistant message container
+                let answerBubble = null;   // the bubble where tokens accumulate
+                let answerText = '';
+                let passagesId = 'passages-' + Date.now();
+
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+                    buffer += decoder.decode(value, { stream: true });
+
+                    // SSE lines are separated by \n\n
+                    let boundary;
+                    while ((boundary = buffer.indexOf('\n\n')) !== -1) {
+                        const line = buffer.slice(0, boundary).trim();
+                        buffer = buffer.slice(boundary + 2);
+                        if (!line.startsWith('data: ')) continue;
+                        const payload = JSON.parse(line.slice(6));
+
+                        if (payload.type === 'passages') {
+                            // Remove loading spinner
+                            document.getElementById(loadingId)?.remove();
+
+                            // Build passages + answer container
+                            responseDiv = document.createElement('div');
+                            responseDiv.className = 'message assistant';
+                            let html = `<div class="message-label">Assistant</div>`;
+
+                            if (payload.passages && payload.passages.length > 0) {
+                                html += `<div class="passages-section">
+                                    <div class="passages-header" onclick="togglePassages('${passagesId}', this)">
+                                        <span class="arrow">▶</span>
+                                        <span>View ${payload.passages.length} retrieved passages</span>
+                                    </div>
+                                    <div class="passages-list" id="${passagesId}">`;
+                                payload.passages.forEach((p, i) => {
+                                    html += `<div class="passage-item">
+                                        <div class="passage-header">
+                                            <span>Passage ${i+1}</span>
+                                            <span class="passage-score">Score: ${p.score}</span>
+                                        </div>
+                                        <div class="passage-text">${escapeHtml(p.text)}</div>
+                                    </div>`;
+                                });
+                                html += `</div></div>`;
+                            }
+
+                            // Placeholder bubble for streaming answer
+                            html += `<div class="message-bubble answer-bubble">
+                                <span class="streaming-cursor">▍</span>
+                            </div>`;
+                            responseDiv.innerHTML = html;
+                            messagesDiv.appendChild(responseDiv);
+                            answerBubble = responseDiv.querySelector('.answer-bubble');
+                            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+                            passagesRendered = true;
+
+                        } else if (payload.type === 'token') {
+                            answerText += payload.token;
+                            if (answerBubble) {
+                                answerBubble.innerHTML = escapeHtml(answerText) + '<span class="streaming-cursor">▍</span>';
+                                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+                            }
+
+                        } else if (payload.type === 'done') {
+                            // Finalize answer bubble
+                            if (answerBubble) {
+                                if (answerText) {
+                                    answerBubble.innerHTML = escapeHtml(answerText);
+                                } else if (payload.message) {
+                                    answerBubble.innerHTML = `<span class="fallback-notice">⚠️ ${escapeHtml(payload.message)}</span>`;
+                                } else {
+                                    answerBubble.remove();
+                                }
+                            }
+                            if (!passagesRendered) {
+                                document.getElementById(loadingId)?.remove();
+                                if (payload.message) {
+                                    addMessage('assistant', payload.message);
+                                }
+                            }
+
+                        } else if (payload.type === 'error') {
+                            if (answerBubble) {
+                                answerBubble.innerHTML = `<span class="fallback-notice">⚠️ LLM error: ${escapeHtml(payload.message)}. Showing retrieved passages instead.</span>`;
+                            }
+                        }
+                    }
                 }
             } catch (error) {
                 document.getElementById(loadingId)?.remove();
@@ -733,55 +974,6 @@
             messagesDiv.scrollTop = messagesDiv.scrollHeight;
         }
         
-        function addAssistantResponse(data) {
-            const messagesDiv = document.getElementById('chatMessages');
-            const passagesId = 'passages-' + Date.now();
-            
-            let html = `<div class="message assistant">
-                <div class="message-label">Assistant</div>`;
-            
-            // Show fallback notice if no LLM
-            if (!data.llm_available && data.message) {
-                html += `<div class="fallback-notice">⚠️ ${escapeHtml(data.message)}</div>`;
-            }
-            
-            // Show answer if available
-            if (data.answer) {
-                html += `<div class="message-bubble">${escapeHtml(data.answer)}</div>`;
-            }
-            
-            // Show passages
-            if (data.passages && data.passages.length > 0) {
-                html += `
-                    <div class="passages-section">
-                        <div class="passages-header" onclick="togglePassages('${passagesId}', this)">
-                            <span class="arrow">▶</span>
-                            <span>View ${data.passages.length} retrieved passages</span>
-                        </div>
-                        <div class="passages-list" id="${passagesId}">
-                `;
-                
-                data.passages.forEach((passage, i) => {
-                    html += `
-                        <div class="passage-item">
-                            <div class="passage-header">
-                                <span>Passage ${i + 1}</span>
-                                <span class="passage-score">Score: ${passage.score}</span>
-                            </div>
-                            <div class="passage-text">${escapeHtml(passage.text)}</div>
-                        </div>
-                    `;
-                });
-                
-                html += `</div></div>`;
-            }
-            
-            html += `</div>`;
-            
-            messagesDiv.innerHTML += html;
-            messagesDiv.scrollTop = messagesDiv.scrollHeight;
-        }
-        
         function togglePassages(id, header) {
             const list = document.getElementById(id);
             list.classList.toggle('visible');
@@ -793,6 +985,63 @@
             div.textContent = text;
             return div.innerHTML;
         }
+
+        // --- Book text modal ---
+        const bookTextCache = {};  // Cache fetched book texts
+
+        async function showBookText(bookId, bookTitle) {
+            const overlay = document.getElementById('bookTextModal');
+            const modalTitle = document.getElementById('modalBookTitle');
+            const modalBody = document.getElementById('modalBookBody');
+
+            modalTitle.textContent = bookTitle;
+            overlay.classList.add('visible');
+
+            // Show cached content immediately, or fetch
+            if (bookTextCache[bookId]) {
+                modalBody.innerHTML = bookTextCache[bookId];
+                return;
+            }
+
+            modalBody.innerHTML = '<div class="modal-loading">Loading book text…</div>';
+
+            try {
+                const resp = await fetch(`/api/book-text/${bookId}`);
+                const data = await resp.json();
+                if (data.error) {
+                    modalBody.innerHTML = `<p style="color:#e94560">${escapeHtml(data.error)}</p>`;
+                } else {
+                    bookTextCache[bookId] = data.html;
+                    modalBody.innerHTML = data.html;
+                }
+            } catch (err) {
+                modalBody.innerHTML = `<p style="color:#e94560">Failed to load book text.</p>`;
+            }
+        }
+
+        function closeBookTextModal() {
+            document.getElementById('bookTextModal').classList.remove('visible');
+        }
+
+        // Close modal on Escape key or clicking outside
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeBookTextModal();
+        });
+
+        document.getElementById('bookTextModal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) closeBookTextModal();
+        });
     </script>
+
+    <!-- Book Text Modal -->
+    <div class="modal-overlay" id="bookTextModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalBookTitle">Book Title</h2>
+                <button class="modal-close" onclick="closeBookTextModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBookBody"></div>
+        </div>
+    </div>
 </body>
 </html>

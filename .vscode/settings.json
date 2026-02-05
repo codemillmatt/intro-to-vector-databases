@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^cd /workspace && python3 -c \"\nimport json\nwith open\\('setup/data/books\\.json'\\) as f:\n    books = json\\.load\\(f\\)\nids = \\['book_001','book_002','book_003','book_005','book_007'\\]\nfor b in books:\n    if b\\['id'\\] in ids:\n        print\\(json\\.dumps\\(b, indent=2\\)\\)\n\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
