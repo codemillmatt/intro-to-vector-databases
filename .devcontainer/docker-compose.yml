@@ -9,6 +9,8 @@ services:
       - ..:/workspace:cached
     command: sleep infinity
     network_mode: service:db
+    environment:
+      OLLAMA_HOST: http://host.docker.internal:11434
     depends_on:
       - db
       - pinecone
