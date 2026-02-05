@@ -20,6 +20,14 @@ from pinecone_utils import get_pinecone_index
 
 app = Flask(__name__)
 
+# Cache embedding client and Pinecone index as singletons to avoid
+# re-initializing on every request (the main source of latency).
+_embedding_client = get_embedding_client()
+_pinecone_index = get_pinecone_index()
+
+# Pre-warm the embedding model so the first user query isn't slow
+_embedding_client.embed("warmup")
+
 # PostgreSQL Configuration
 POSTGRES_CONFIG = {
     "host": os.getenv("POSTGRES_HOST", "localhost"),
@@ -68,12 +76,11 @@ def semantic_search(query: str) -> list[dict]:
     This demonstrates how vector databases understand meaning -
     finding conceptually similar content even without keyword matches.
     """
-    # Get embedding for the query
-    embedding_client = get_embedding_client()
-    query_embedding = embedding_client.embed(query)
+    # Get embedding for the query (using cached singleton)
+    query_embedding = _embedding_client.embed(query)
     
-    # Search in Pinecone
-    index = get_pinecone_index()
+    # Search in Pinecone (using cached singleton)
+    index = _pinecone_index
     
     # Only search book descriptions, not text chunks
     results = index.query(
@@ -103,6 +110,38 @@ def semantic_search(query: str) -> list[dict]:
 def index():
     """Render the main comparison interface."""
     return render_template("index.html")
+
+
+@app.route("/api/books")
+def api_books():
+    """Return all books from PostgreSQL for the Browse tab."""
+    conn = psycopg2.connect(**POSTGRES_CONFIG)
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT id, title, author, description, genre, rating, price, pages, publish_date, in_stock
+                FROM books
+                ORDER BY title
+            """)
+            columns = ["id", "title", "author", "description", "genre", "rating",
+                        "price", "pages", "publish_date", "in_stock"]
+            results = []
+            for row in cur.fetchall():
+                book = dict(zip(columns, row))
+                # Convert date to string for JSON serialization
+                if book.get("publish_date"):
+                    book["publish_date"] = str(book["publish_date"])
+                # Convert Decimal to float
+                if book.get("rating"):
+                    book["rating"] = float(book["rating"])
+                if book.get("price"):
+                    book["price"] = float(book["price"])
+                results.append(book)
+            return jsonify(results)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    finally:
+        conn.close()
 
 
 @app.route("/api/search", methods=["POST"])

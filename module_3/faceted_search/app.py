@@ -22,6 +22,14 @@ from pinecone_utils import get_pinecone_index
 
 app = Flask(__name__)
 
+# Cache embedding client and Pinecone index as singletons to avoid
+# re-initializing on every request (the main source of latency).
+_embedding_client = get_embedding_client()
+_pinecone_index = get_pinecone_index()
+
+# Pre-warm the embedding model so the first user query isn't slow
+_embedding_client.embed("warmup")
+
 
 def get_available_genres() -> list[str]:
     """Get list of genres from the database."""
@@ -53,14 +61,12 @@ def search_books(
     This is the same search pattern as the other demos, but driven
     by structured UI inputs rather than parsed natural language.
     """
-    embedding_client = get_embedding_client()
-    
-    # If no query provided, use a generic embedding
+    # If no query provided, use a generic embedding (using cached singleton)
     if query.strip():
-        query_embedding = embedding_client.embed(query)
+        query_embedding = _embedding_client.embed(query)
     else:
         # Search for "books" as a fallback
-        query_embedding = embedding_client.embed("popular books")
+        query_embedding = _embedding_client.embed("popular books")
     
     # Build metadata filters
     filters = {"type": "book"}
@@ -81,10 +87,8 @@ def search_books(
     if in_stock_only:
         filters["in_stock"] = True
     
-    # Query Pinecone
-    index = get_pinecone_index()
-    
-    results = index.query(
+    # Query Pinecone (using cached singleton)
+    results = _pinecone_index.query(
         vector=query_embedding,
         top_k=top_k,
         include_metadata=True,
