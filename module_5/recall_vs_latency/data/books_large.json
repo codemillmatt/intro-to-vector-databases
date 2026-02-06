@@ -1,0 +1,5002 @@
+[
+  {
+    "id": "book_0001",
+    "title": "The Rain Legacy",
+    "author": "Oliver Morrison",
+    "description": "a brilliant scientist has always been destined for greatness. But when a stranger arrives with dire news, everything changes.",
+    "genre": "Adventure",
+    "publish_year": 2002,
+    "pages": 349,
+    "rating": 4.6
+  },
+  {
+    "id": "book_0002",
+    "title": "Whispers of Wisdom",
+    "author": "Dmitri Chen",
+    "description": "A intimate exploration of loss, following an aging detective as they navigate lost love in a remote village.",
+    "genre": "Mystery",
+    "publish_year": 2003,
+    "pages": 487,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0003",
+    "title": "A Tiger of Loss",
+    "author": "Nia Nakamura",
+    "description": "A gripping tale of freedom and honor, following a street-smart thief through a search for answers.",
+    "genre": "Magical Realism",
+    "publish_year": 2005,
+    "pages": 530,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0004",
+    "title": "The Broken Hour",
+    "author": "Ahmed Morrison",
+    "description": "After a natural disaster, an ambitious politician embarks on a web of intrigue to escape their past, uncovering a path to redemption along the way.",
+    "genre": "Thriller",
+    "publish_year": 2014,
+    "pages": 540,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0005",
+    "title": "The Sacred Bear of Stormhold",
+    "author": "Viktor Volkov",
+    "description": "After a mysterious plague, a mysterious stranger embarks on a battle for survival to prevent a catastrophe, uncovering a hidden power within themselves along the way.",
+    "genre": "Urban Fantasy",
+    "publish_year": 2023,
+    "pages": 217,
+    "rating": 4.2
+  },
+  {
+    "id": "book_0006",
+    "title": "Castle Rising",
+    "author": "Sofia Okonkwo",
+    "description": "a curious journalist never expected to a terrible truth. Now, with all is lost, they must escape their past.",
+    "genre": "Paranormal Romance",
+    "publish_year": 2014,
+    "pages": 379,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0007",
+    "title": "The Secret Throne",
+    "author": "Yuki Larsson",
+    "description": "In a magical academy, where the dead walk among the living, a brilliant scientist faces an impossible choice between sacrifice and loss.",
+    "genre": "Mystery",
+    "publish_year": 2003,
+    "pages": 209,
+    "rating": 4.6
+  },
+  {
+    "id": "book_0008",
+    "title": "Whispers of Desire",
+    "author": "Rosa Williams",
+    "description": "In a tropical paradise, where technology has replaced nature, a brilliant scientist faces an impossible choice between hope and freedom.",
+    "genre": "Romance",
+    "publish_year": 2006,
+    "pages": 377,
+    "rating": 4.5
+  },
+  {
+    "id": "book_0009",
+    "title": "Between Bridges",
+    "author": "Zara Kim",
+    "description": "A thrilling exploration of betrayal, following a street-smart thief as they navigate supernatural forces in a thriving metropolis.",
+    "genre": "Adventure",
+    "publish_year": 2003,
+    "pages": 642,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0010",
+    "title": "The Glory Protocol",
+    "author": "Nia Fernandez",
+    "description": "A gripping tale of identity and survival, following a young scholar through a battle for survival.",
+    "genre": "Thriller",
+    "publish_year": 2007,
+    "pages": 481,
+    "rating": 3.6
+  },
+  {
+    "id": "book_0011",
+    "title": "The Blessed Bear",
+    "author": "Dmitri Morrison",
+    "description": "When a dark prophecy begins to unfold, a skilled assassin must confront moral ambiguity while a path of self-discovery.",
+    "genre": "Mystery",
+    "publish_year": 2016,
+    "pages": 518,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0012",
+    "title": "The Memory Paradox",
+    "author": "Chen Andersen",
+    "description": "In a world where magic flows through bloodlines, an ambitious politician must save their family before the prophecy fulfills itself.",
+    "genre": "Cozy Mystery",
+    "publish_year": 2007,
+    "pages": 377,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0013",
+    "title": "The Secret Tower",
+    "author": "Ingrid Kim",
+    "description": "When a loved one vanishes, an exiled prince must confront impossible odds while a journey through darkness.",
+    "genre": "Adventure",
+    "publish_year": 2023,
+    "pages": 255,
+    "rating": 3.3
+  },
+  {
+    "id": "book_0014",
+    "title": "The Dark Prophecy",
+    "author": "Ananya Chen",
+    "description": "Set in a remote village, this intimate story explores family as a curious journalist struggles with supernatural forces.",
+    "genre": "Adventure",
+    "publish_year": 2009,
+    "pages": 210,
+    "rating": 4.5
+  },
+  {
+    "id": "book_0015",
+    "title": "Chronicles of Mistwood",
+    "author": "Nia Okonkwo",
+    "description": "When a chance encounter threatens a sprawling desert, an ambitious politician discovers a terrible truth that could rewrite history.",
+    "genre": "Military Fiction",
+    "publish_year": 1990,
+    "pages": 500,
+    "rating": 3.6
+  },
+  {
+    "id": "book_0016",
+    "title": "Under Frozen Skies",
+    "author": "Samuel Fernandez",
+    "description": "Set in a small coastal town, this epic story explores hope as a powerful sorceress struggles with moral ambiguity.",
+    "genre": "Military Fiction",
+    "publish_year": 1990,
+    "pages": 357,
+    "rating": 4.5
+  },
+  {
+    "id": "book_0017",
+    "title": "The Stone Paradox",
+    "author": "Oliver Novak",
+    "description": "Set in a small coastal town, this epic story explores betrayal as a village healer struggles with lost love.",
+    "genre": "Cozy Mystery",
+    "publish_year": 1993,
+    "pages": 295,
+    "rating": 3.6
+  },
+  {
+    "id": "book_0018",
+    "title": "Fierce Serpents",
+    "author": "Emma Santos",
+    "description": "A sweeping exploration of loss, following a rebellious princess as they navigate moral ambiguity in a tropical paradise.",
+    "genre": "Psychological Thriller",
+    "publish_year": 2017,
+    "pages": 182,
+    "rating": 3.0
+  },
+  {
+    "id": "book_0019",
+    "title": "The Crystal Wolf",
+    "author": "Ahmed Kim",
+    "description": "A gripping tale of honor and survival, following a village healer through a journey through darkness.",
+    "genre": "Science Fiction",
+    "publish_year": 1994,
+    "pages": 633,
+    "rating": 4.6
+  },
+  {
+    "id": "book_0020",
+    "title": "The Silent Phoenix of Silverdale",
+    "author": "Nia Andersen",
+    "description": "When a natural disaster threatens a thriving metropolis, an exiled prince discovers a secret identity that could end a centuries-old conflict.",
+    "genre": "Epic Fantasy",
+    "publish_year": 2002,
+    "pages": 397,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0021",
+    "title": "Stormy Dreams",
+    "author": "Rosa Sharma",
+    "description": "a devoted priest never expected to a path to redemption. Now, with all is lost, they must forge a new destiny.",
+    "genre": "Psychological Thriller",
+    "publish_year": 2014,
+    "pages": 556,
+    "rating": 3.4
+  },
+  {
+    "id": "book_0022",
+    "title": "Dancing with Shadows",
+    "author": "Amara Thompson",
+    "description": "Set in a sprawling desert, this intimate story explores betrayal as a cunning merchant struggles with technological threats.",
+    "genre": "Crime",
+    "publish_year": 2019,
+    "pages": 228,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0023",
+    "title": "The Freedom Protocol",
+    "author": "Viktor Liu",
+    "description": "an exiled prince never expected to a hidden power within themselves. Now, with it's too late, they must uncover the truth.",
+    "genre": "Science Fiction",
+    "publish_year": 2013,
+    "pages": 264,
+    "rating": 3.0
+  },
+  {
+    "id": "book_0024",
+    "title": "Whispers of Hope",
+    "author": "Ahmed Thompson",
+    "description": "When a shocking murder threatens a remote village, an exiled prince discovers a hidden power within themselves that could rewrite history.",
+    "genre": "Crime",
+    "publish_year": 1994,
+    "pages": 248,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0025",
+    "title": "The Forest Legacy",
+    "author": "Dmitri Novak",
+    "description": "an ambitious politician never expected to a forbidden love. Now, with it's too late, they must uncover the truth.",
+    "genre": "Mystery",
+    "publish_year": 2024,
+    "pages": 377,
+    "rating": 3.4
+  },
+  {
+    "id": "book_0026",
+    "title": "Shadows of Order",
+    "author": "Michael Chen",
+    "description": "When a dark prophecy begins to unfold, a village healer must confront political intrigue while a web of intrigue.",
+    "genre": "Thriller",
+    "publish_year": 2024,
+    "pages": 343,
+    "rating": 3.7
+  },
+  {
+    "id": "book_0027",
+    "title": "The River Paradox",
+    "author": "James Singh",
+    "description": "A gripping tale of loss and family, following a mysterious stranger through a race against time.",
+    "genre": "Mystery",
+    "publish_year": 2007,
+    "pages": 505,
+    "rating": 3.2
+  },
+  {
+    "id": "book_0028",
+    "title": "A Raven of Fear",
+    "author": "James Singh",
+    "description": "a cunning merchant has always sought to escape their past. But when a loved one vanishes, everything changes.",
+    "genre": "Adventure",
+    "publish_year": 2000,
+    "pages": 371,
+    "rating": 3.0
+  },
+  {
+    "id": "book_0029",
+    "title": "Rain and Queens",
+    "author": "Carlos Okonkwo",
+    "description": "a skilled assassin has always been destined for greatness. But when war erupts without warning, everything changes.",
+    "genre": "Fantasy",
+    "publish_year": 2017,
+    "pages": 574,
+    "rating": 5.0
+  },
+  {
+    "id": "book_0030",
+    "title": "The Forest Paradox",
+    "author": "Priya Gupta",
+    "description": "A suspenseful exploration of love, following an ambitious politician as they navigate technological threats in a tropical paradise.",
+    "genre": "Crime",
+    "publish_year": 1993,
+    "pages": 266,
+    "rating": 3.3
+  },
+  {
+    "id": "book_0031",
+    "title": "The Ocean Keeper",
+    "author": "Oliver Anderson",
+    "description": "When a technological breakthrough threatens a small coastal town, a rebellious princess discovers a lost civilization that could end a centuries-old conflict.",
+    "genre": "Mystery",
+    "publish_year": 2008,
+    "pages": 415,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0032",
+    "title": "The Eternal Prophecy",
+    "author": "Priya Morrison",
+    "description": "When a dark prophecy begins to unfold, a skilled assassin must confront social injustice while a dangerous quest.",
+    "genre": "Dystopian",
+    "publish_year": 1993,
+    "pages": 430,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0033",
+    "title": "The Cursed Path",
+    "author": "Isabella Volkov",
+    "description": "A epic exploration of identity, following a curious journalist as they navigate impossible odds in a tropical paradise.",
+    "genre": "Dystopian",
+    "publish_year": 1992,
+    "pages": 441,
+    "rating": 4.0
+  },
+  {
+    "id": "book_0034",
+    "title": "Between Stars",
+    "author": "Sofia Park",
+    "description": "After a mysterious plague, a skilled assassin embarks on a dangerous quest to destroy an ancient evil, uncovering a forbidden love along the way.",
+    "genre": "Adventure",
+    "publish_year": 2006,
+    "pages": 310,
+    "rating": 4.1
+  },
+  {
+    "id": "book_0035",
+    "title": "A Castle of Loss",
+    "author": "Elena Mueller",
+    "description": "A epic exploration of redemption, following a cunning merchant as they navigate technological threats in a dystopian society.",
+    "genre": "Steampunk",
+    "publish_year": 2008,
+    "pages": 275,
+    "rating": 3.7
+  },
+  {
+    "id": "book_0036",
+    "title": "The Secret River",
+    "author": "Amara Mueller",
+    "description": "A gripping tale of power and loss, following a seasoned captain through a battle for survival.",
+    "genre": "Paranormal Romance",
+    "publish_year": 2021,
+    "pages": 533,
+    "rating": 3.4
+  },
+  {
+    "id": "book_0037",
+    "title": "The Burning Hour",
+    "author": "Antonio Kowalski",
+    "description": "Set in a war-torn kingdom, this thought-provoking story explores redemption as a devoted priest struggles with moral ambiguity.",
+    "genre": "Science Fiction",
+    "publish_year": 1996,
+    "pages": 195,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0038",
+    "title": "The Eagle Keeper",
+    "author": "Ahmed Patel",
+    "description": "A gripping tale of ambition and justice, following a young scholar through a battle for survival.",
+    "genre": "Space Opera",
+    "publish_year": 2022,
+    "pages": 599,
+    "rating": 3.4
+  },
+  {
+    "id": "book_0039",
+    "title": "Crimson Minds",
+    "author": "Emma Tanaka",
+    "description": "In a world where parallel worlds collide, a young scholar must claim their birthright before darkness falls forever.",
+    "genre": "Space Opera",
+    "publish_year": 2018,
+    "pages": 613,
+    "rating": 4.5
+  },
+  {
+    "id": "book_0040",
+    "title": "Under Shattered Skies",
+    "author": "Nia Larsson",
+    "description": "a rebellious princess has always been destined for greatness. But when an ancient seal breaks, everything changes.",
+    "genre": "Thriller",
+    "publish_year": 1992,
+    "pages": 381,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0041",
+    "title": "Road Rising",
+    "author": "James Singh",
+    "description": "a brilliant scientist has always lived in the shadows. But when war erupts without warning, everything changes.",
+    "genre": "Magical Realism",
+    "publish_year": 2020,
+    "pages": 448,
+    "rating": 4.2
+  },
+  {
+    "id": "book_0042",
+    "title": "Beyond the Bridge",
+    "author": "Ananya Anderson",
+    "description": "When an ancient awakening threatens a small coastal town, a mysterious stranger discovers a mysterious artifact that could save countless lives.",
+    "genre": "Historical Fiction",
+    "publish_year": 2012,
+    "pages": 606,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0043",
+    "title": "Whispers of Destiny",
+    "author": "Ananya Petrov",
+    "description": "When a natural disaster threatens a space station, a mysterious stranger discovers a path to redemption that could end a centuries-old conflict.",
+    "genre": "Cozy Mystery",
+    "publish_year": 2007,
+    "pages": 494,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0044",
+    "title": "Beyond the Phoenix",
+    "author": "Kofi Novak",
+    "description": "A gripping tale of friendship and betrayal, following a reluctant hero through a search for answers.",
+    "genre": "Magical Realism",
+    "publish_year": 2023,
+    "pages": 296,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0045",
+    "title": "Beyond the Wolf",
+    "author": "Luna Santos",
+    "description": "A intense exploration of love, following a devoted priest as they navigate supernatural forces in a tropical paradise.",
+    "genre": "Space Opera",
+    "publish_year": 1998,
+    "pages": 228,
+    "rating": 4.5
+  },
+  {
+    "id": "book_0046",
+    "title": "Dancing with Oceans",
+    "author": "David Morrison",
+    "description": "In a world where artificial minds dream of freedom, a reluctant hero must save their family before war consumes everything.",
+    "genre": "Adventure",
+    "publish_year": 2012,
+    "pages": 490,
+    "rating": 4.5
+  },
+  {
+    "id": "book_0047",
+    "title": "The Secret Soul",
+    "author": "Mei Mueller",
+    "description": "In an underground city, where magic flows through bloodlines, a devoted priest faces an impossible choice between duty and redemption.",
+    "genre": "Epic Fantasy",
+    "publish_year": 1990,
+    "pages": 605,
+    "rating": 4.2
+  },
+  {
+    "id": "book_0048",
+    "title": "The Map Keeper",
+    "author": "Sofia Andersen",
+    "description": "After a political assassination, a seasoned captain embarks on a search for answers to prevent a catastrophe, uncovering a lost civilization along the way.",
+    "genre": "Fantasy",
+    "publish_year": 1991,
+    "pages": 448,
+    "rating": 4.1
+  },
+  {
+    "id": "book_0049",
+    "title": "Courage Falls",
+    "author": "Isabella Santos",
+    "description": "A intense exploration of ambition, following a gentle librarian as they navigate supernatural forces in a sprawling desert.",
+    "genre": "Dystopian",
+    "publish_year": 1998,
+    "pages": 586,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0050",
+    "title": "Sacrifice Falls",
+    "author": "Dmitri Liu",
+    "description": "A gripping tale of survival and love, following a young scholar through a journey through darkness.",
+    "genre": "Military Fiction",
+    "publish_year": 1993,
+    "pages": 452,
+    "rating": 3.2
+  },
+  {
+    "id": "book_0051",
+    "title": "Mountain and Warriors",
+    "author": "Maria Mueller",
+    "description": "A thrilling exploration of betrayal, following a devoted priest as they navigate political intrigue in a war-torn kingdom.",
+    "genre": "Romance",
+    "publish_year": 2023,
+    "pages": 357,
+    "rating": 4.1
+  },
+  {
+    "id": "book_0052",
+    "title": "Path and Shadows",
+    "author": "Sarah Reyes",
+    "description": "a skilled assassin has always dreamed of something more. But when an ancient seal breaks, everything changes.",
+    "genre": "Space Opera",
+    "publish_year": 2003,
+    "pages": 621,
+    "rating": 3.2
+  },
+  {
+    "id": "book_0053",
+    "title": "Between Storms",
+    "author": "Chloe Okonkwo",
+    "description": "In a tropical paradise, where magic flows through bloodlines, a fierce warrior faces an impossible choice between love and family.",
+    "genre": "Literary Fiction",
+    "publish_year": 2022,
+    "pages": 235,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0054",
+    "title": "Whispers of Vengeance",
+    "author": "Grace Sharma",
+    "description": "Set in a frozen wasteland, this thought-provoking story explores freedom as an ambitious politician struggles with lost love.",
+    "genre": "Magical Realism",
+    "publish_year": 2021,
+    "pages": 560,
+    "rating": 4.1
+  },
+  {
+    "id": "book_0055",
+    "title": "Dancing with Ices",
+    "author": "Aisha Yamamoto",
+    "description": "an aging detective never expected to a path to redemption. Now, with hope dies, they must protect the innocent.",
+    "genre": "Romance",
+    "publish_year": 1998,
+    "pages": 183,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0056",
+    "title": "Beyond the Ghost",
+    "author": "James Johansson",
+    "description": "a powerful sorceress has always sought to escape their past. But when a dark prophecy begins to unfold, everything changes.",
+    "genre": "Historical Fiction",
+    "publish_year": 2022,
+    "pages": 310,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0057",
+    "title": "Shadows of Glory",
+    "author": "David Yamamoto",
+    "description": "After a mysterious plague, a mysterious stranger embarks on a web of intrigue to claim their birthright, uncovering a dangerous weapon along the way.",
+    "genre": "Crime",
+    "publish_year": 2010,
+    "pages": 457,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0058",
+    "title": "Between Rings",
+    "author": "Michael Kowalski",
+    "description": "When a forbidden text is discovered, a seasoned captain must confront political intrigue while a search for answers.",
+    "genre": "Steampunk",
+    "publish_year": 2000,
+    "pages": 637,
+    "rating": 4.2
+  },
+  {
+    "id": "book_0059",
+    "title": "Road and Queens",
+    "author": "Amara Reyes",
+    "description": "When a political assassination threatens a war-torn kingdom, a devoted priest discovers an ancient conspiracy that could bridge two worlds.",
+    "genre": "Horror",
+    "publish_year": 2003,
+    "pages": 470,
+    "rating": 3.2
+  },
+  {
+    "id": "book_0060",
+    "title": "Fire and Scholars",
+    "author": "Mei Volkov",
+    "description": "When an unexpected inheritance threatens an underground city, a village healer discovers a forbidden love that could rewrite history.",
+    "genre": "Adventure",
+    "publish_year": 2015,
+    "pages": 511,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0061",
+    "title": "The Secret Key",
+    "author": "Amara Fernandez",
+    "description": "When a chance encounter threatens a war-torn kingdom, a curious journalist discovers a secret identity that could change everything.",
+    "genre": "Horror",
+    "publish_year": 2005,
+    "pages": 635,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0062",
+    "title": "Sacred Dreams",
+    "author": "Carlos Yamamoto",
+    "description": "Set in a magical academy, this suspenseful story explores justice as a brilliant scientist struggles with a deadly enemy.",
+    "genre": "Steampunk",
+    "publish_year": 2001,
+    "pages": 521,
+    "rating": 4.1
+  },
+  {
+    "id": "book_0063",
+    "title": "The Mind Legacy",
+    "author": "Mei Liu",
+    "description": "a gentle librarian has always hidden their true nature. But when a stranger arrives with dire news, everything changes.",
+    "genre": "Military Fiction",
+    "publish_year": 1999,
+    "pages": 564,
+    "rating": 4.2
+  },
+  {
+    "id": "book_0064",
+    "title": "Shadows of Redemption",
+    "author": "Sofia Yamamoto",
+    "description": "When a technological breakthrough threatens a magical academy, a cunning merchant discovers a secret identity that could save countless lives.",
+    "genre": "Paranormal Romance",
+    "publish_year": 2010,
+    "pages": 305,
+    "rating": 3.3
+  },
+  {
+    "id": "book_0065",
+    "title": "Shadows of Justice",
+    "author": "Mei Santos",
+    "description": "In a crumbling empire, where memories can be traded like currency, an ambitious politician faces an impossible choice between love and ambition.",
+    "genre": "Thriller",
+    "publish_year": 2020,
+    "pages": 268,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0066",
+    "title": "Echoes of Chaos",
+    "author": "Amara Blackwood",
+    "description": "A gripping tale of ambition and duty, following a gifted musician through a journey through darkness.",
+    "genre": "Crime",
+    "publish_year": 1992,
+    "pages": 243,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0067",
+    "title": "The Cursed River",
+    "author": "Isabella Williams",
+    "description": "In a world where ancient prophecies shape reality, a skilled assassin must escape their past before hope dies.",
+    "genre": "Mystery",
+    "publish_year": 1998,
+    "pages": 276,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0068",
+    "title": "The Silver Dream",
+    "author": "Leila Rodriguez",
+    "description": "When a forbidden discovery threatens a war-torn kingdom, a cunning merchant discovers a hidden power within themselves that could bridge two worlds.",
+    "genre": "Urban Fantasy",
+    "publish_year": 2019,
+    "pages": 513,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0069",
+    "title": "The Serpent Conspiracy",
+    "author": "Pierre Chen",
+    "description": "When an unexpected inheritance threatens a small coastal town, an aging detective discovers an ancient conspiracy that could change everything.",
+    "genre": "Urban Fantasy",
+    "publish_year": 2024,
+    "pages": 611,
+    "rating": 4.9
+  },
+  {
+    "id": "book_0070",
+    "title": "Shadows of Memory",
+    "author": "Isabella Volkov",
+    "description": "After a devastating war, a cunning merchant embarks on a web of intrigue to find redemption, uncovering a lost civilization along the way.",
+    "genre": "Military Fiction",
+    "publish_year": 1991,
+    "pages": 442,
+    "rating": 3.2
+  },
+  {
+    "id": "book_0071",
+    "title": "A Ring of Honor",
+    "author": "Amara Chen",
+    "description": "a gentle librarian never expected to a hidden power within themselves. Now, with hope dies, they must prevent a catastrophe.",
+    "genre": "Adventure",
+    "publish_year": 1991,
+    "pages": 337,
+    "rating": 3.0
+  },
+  {
+    "id": "book_0072",
+    "title": "The Last Soul",
+    "author": "Emma Santos",
+    "description": "After an ancient awakening, a village healer embarks on a path of self-discovery to save their family, uncovering a dangerous weapon along the way.",
+    "genre": "Mystery",
+    "publish_year": 2001,
+    "pages": 524,
+    "rating": 3.2
+  },
+  {
+    "id": "book_0073",
+    "title": "Desire Falls",
+    "author": "Nia Kowalski",
+    "description": "A gripping tale of family and freedom, following a mysterious stranger through a battle for survival.",
+    "genre": "Military Fiction",
+    "publish_year": 1996,
+    "pages": 437,
+    "rating": 4.1
+  },
+  {
+    "id": "book_0074",
+    "title": "The Crimson Dragon",
+    "author": "Isabella Costa",
+    "description": "A gripping tale of duty and justice, following a haunted veteran through a path of self-discovery.",
+    "genre": "Psychological Thriller",
+    "publish_year": 2010,
+    "pages": 509,
+    "rating": 5.0
+  },
+  {
+    "id": "book_0075",
+    "title": "Crown Rising",
+    "author": "Hassan Chen",
+    "description": "After a forbidden discovery, a curious journalist embarks on a battle for survival to save their family, uncovering a path to redemption along the way.",
+    "genre": "Cozy Mystery",
+    "publish_year": 2005,
+    "pages": 574,
+    "rating": 3.6
+  },
+  {
+    "id": "book_0076",
+    "title": "Truth Falls",
+    "author": "Nia O'Brien",
+    "description": "A intimate exploration of sacrifice, following an exiled prince as they navigate supernatural forces in a dystopian society.",
+    "genre": "Military Fiction",
+    "publish_year": 2011,
+    "pages": 599,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0077",
+    "title": "Freedom Falls",
+    "author": "Sarah Liu",
+    "description": "When a forbidden text is discovered, a seasoned captain must confront impossible odds while a race against time.",
+    "genre": "Epic Fantasy",
+    "publish_year": 2017,
+    "pages": 558,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0078",
+    "title": "The Last Moon",
+    "author": "Chloe Anderson",
+    "description": "a young scholar has always lived in the shadows. But when war erupts without warning, everything changes.",
+    "genre": "Crime",
+    "publish_year": 2009,
+    "pages": 566,
+    "rating": 4.5
+  },
+  {
+    "id": "book_0079",
+    "title": "Shadows of Time",
+    "author": "Samuel Novak",
+    "description": "an aging detective has always sought to escape their past. But when a loved one vanishes, everything changes.",
+    "genre": "Cozy Mystery",
+    "publish_year": 2007,
+    "pages": 461,
+    "rating": 3.3
+  },
+  {
+    "id": "book_0080",
+    "title": "Vengeance Falls",
+    "author": "Emma Williams",
+    "description": "In a world where ancient prophecies shape reality, a gentle librarian must save their family before the world crumbles.",
+    "genre": "Literary Fiction",
+    "publish_year": 1995,
+    "pages": 463,
+    "rating": 3.7
+  },
+  {
+    "id": "book_0081",
+    "title": "The Throne's Order",
+    "author": "Yuki Novak",
+    "description": "In a tropical paradise, where the dead walk among the living, a young scholar faces an impossible choice between justice and ambition.",
+    "genre": "Dystopian",
+    "publish_year": 2017,
+    "pages": 300,
+    "rating": 4.0
+  },
+  {
+    "id": "book_0082",
+    "title": "Letter and Hunters",
+    "author": "Chloe Andersen",
+    "description": "Set in a remote village, this thrilling story explores duty as a cunning merchant struggles with a deadly enemy.",
+    "genre": "Military Fiction",
+    "publish_year": 2020,
+    "pages": 528,
+    "rating": 3.7
+  },
+  {
+    "id": "book_0083",
+    "title": "The Broken Path",
+    "author": "Samuel Gupta",
+    "description": "A suspenseful exploration of redemption, following an ambitious politician as they navigate political intrigue in a thriving metropolis.",
+    "genre": "Cozy Mystery",
+    "publish_year": 2001,
+    "pages": 517,
+    "rating": 5.0
+  },
+  {
+    "id": "book_0084",
+    "title": "Under Wild Skies",
+    "author": "Ahmed Chen",
+    "description": "Set in a tropical paradise, this thrilling story explores power as a village healer struggles with moral ambiguity.",
+    "genre": "Mystery",
+    "publish_year": 1996,
+    "pages": 282,
+    "rating": 3.7
+  },
+  {
+    "id": "book_0085",
+    "title": "The Path's Truth",
+    "author": "Rosa Williams",
+    "description": "a devoted priest never expected to a terrible truth. Now, with the prophecy fulfills itself, they must claim their birthright.",
+    "genre": "Adventure",
+    "publish_year": 1991,
+    "pages": 333,
+    "rating": 4.0
+  },
+  {
+    "id": "book_0086",
+    "title": "Ring and Warriors",
+    "author": "Viktor Rodriguez",
+    "description": "After a chance encounter, a mysterious stranger embarks on a race against time to forge a new destiny, uncovering a mysterious artifact along the way.",
+    "genre": "Dystopian",
+    "publish_year": 2017,
+    "pages": 389,
+    "rating": 3.3
+  },
+  {
+    "id": "book_0087",
+    "title": "Burning Dreams",
+    "author": "Emma Gupta",
+    "description": "a street-smart thief never expected to a secret identity. Now, with all is lost, they must find redemption.",
+    "genre": "Crime",
+    "publish_year": 2002,
+    "pages": 352,
+    "rating": 3.7
+  },
+  {
+    "id": "book_0088",
+    "title": "Forgotten Dreams",
+    "author": "Fatima Andersen",
+    "description": "When a stranger arrives with dire news, a brilliant scientist must confront a deadly enemy while a web of intrigue.",
+    "genre": "Steampunk",
+    "publish_year": 2014,
+    "pages": 582,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0089",
+    "title": "Under Wicked Skies",
+    "author": "Ananya Novak",
+    "description": "A haunting exploration of loss, following a reluctant hero as they navigate social injustice in a crumbling empire.",
+    "genre": "Urban Fantasy",
+    "publish_year": 2002,
+    "pages": 217,
+    "rating": 3.3
+  },
+  {
+    "id": "book_0090",
+    "title": "Shadows of Wisdom",
+    "author": "Oliver Larsson",
+    "description": "When an ancient seal breaks, a brilliant scientist must confront inner demons while a race against time.",
+    "genre": "Dystopian",
+    "publish_year": 2010,
+    "pages": 438,
+    "rating": 3.0
+  },
+  {
+    "id": "book_0091",
+    "title": "Raging Dreams",
+    "author": "Yuki O'Brien",
+    "description": "a rebellious princess never expected to a mysterious artifact. Now, with the prophecy fulfills itself, they must unite warring factions.",
+    "genre": "Historical Fiction",
+    "publish_year": 1990,
+    "pages": 363,
+    "rating": 3.9
+  },
+  {
+    "id": "book_0092",
+    "title": "The Crown Legacy",
+    "author": "Maria Petrov",
+    "description": "When a dark prophecy begins to unfold, a cunning merchant must confront social injustice while a path of self-discovery.",
+    "genre": "Thriller",
+    "publish_year": 2022,
+    "pages": 575,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0093",
+    "title": "The Fierce Prophecy",
+    "author": "Aisha Kowalski",
+    "description": "In a thriving metropolis, where parallel worlds collide, a haunted veteran faces an impossible choice between ambition and betrayal.",
+    "genre": "Paranormal Romance",
+    "publish_year": 1995,
+    "pages": 391,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0094",
+    "title": "Between Ravens",
+    "author": "Aisha Tanaka",
+    "description": "Set in a war-torn kingdom, this whimsical story explores love as an ambitious politician struggles with inner demons.",
+    "genre": "Dystopian",
+    "publish_year": 1994,
+    "pages": 610,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0095",
+    "title": "The Frozen Mountain of Winterfell",
+    "author": "Zara Kowalski",
+    "description": "In a crumbling empire, where artificial minds dream of freedom, a curious journalist faces an impossible choice between hope and ambition.",
+    "genre": "Magical Realism",
+    "publish_year": 2010,
+    "pages": 313,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0096",
+    "title": "The Iron Forest of Eastmark",
+    "author": "Marcus Novak",
+    "description": "a village healer has always hidden their true nature. But when a dark prophecy begins to unfold, everything changes.",
+    "genre": "Thriller",
+    "publish_year": 2019,
+    "pages": 400,
+    "rating": 3.7
+  },
+  {
+    "id": "book_0097",
+    "title": "Under Crimson Skies",
+    "author": "Kofi Yamamoto",
+    "description": "When a technological breakthrough threatens a dystopian society, a gifted musician discovers a secret identity that could unlock unimaginable power.",
+    "genre": "Romance",
+    "publish_year": 2006,
+    "pages": 556,
+    "rating": 4.9
+  },
+  {
+    "id": "book_0098",
+    "title": "Echoes of Fear",
+    "author": "Fatima Park",
+    "description": "Set in a sprawling desert, this heartwarming story explores sacrifice as a fierce warrior struggles with inner demons.",
+    "genre": "Steampunk",
+    "publish_year": 2001,
+    "pages": 421,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0099",
+    "title": "Between Tigers",
+    "author": "Pierre Morrison",
+    "description": "In a crumbling empire, where parallel worlds collide, a mysterious stranger faces an impossible choice between justice and sacrifice.",
+    "genre": "Magical Realism",
+    "publish_year": 2008,
+    "pages": 195,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0100",
+    "title": "Memory Rising",
+    "author": "Marcus Thompson",
+    "description": "After an ancient awakening, a rebellious princess embarks on a dangerous quest to uncover the truth, uncovering a lost civilization along the way.",
+    "genre": "Military Fiction",
+    "publish_year": 2008,
+    "pages": 488,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0101",
+    "title": "A Clock of Time",
+    "author": "Viktor Singh",
+    "description": "a curious journalist has always sought to escape their past. But when war erupts without warning, everything changes.",
+    "genre": "Literary Fiction",
+    "publish_year": 2001,
+    "pages": 289,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0102",
+    "title": "Beyond the Window",
+    "author": "Fatima Morrison",
+    "description": "After an unexpected inheritance, an exiled prince embarks on a web of intrigue to unite warring factions, uncovering a secret identity along the way.",
+    "genre": "Epic Fantasy",
+    "publish_year": 2001,
+    "pages": 334,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0103",
+    "title": "Throne Rising",
+    "author": "Dmitri Liu",
+    "description": "In a world where secrets hold the power of life and death, a reluctant hero must claim their birthright before hope dies.",
+    "genre": "Crime",
+    "publish_year": 1994,
+    "pages": 463,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0104",
+    "title": "A Door of Loss",
+    "author": "Chloe Reyes",
+    "description": "In a world where artificial minds dream of freedom, a brilliant scientist must destroy an ancient evil before time runs out.",
+    "genre": "Steampunk",
+    "publish_year": 2016,
+    "pages": 354,
+    "rating": 3.0
+  },
+  {
+    "id": "book_0105",
+    "title": "The Wild Key",
+    "author": "Ananya Anderson",
+    "description": "Set in a thriving metropolis, this emotional story explores sacrifice as a devoted priest struggles with inner demons.",
+    "genre": "Space Opera",
+    "publish_year": 2000,
+    "pages": 571,
+    "rating": 4.2
+  },
+  {
+    "id": "book_0106",
+    "title": "Between Bears",
+    "author": "Oliver Liu",
+    "description": "In an underground city, where empires rise and fall overnight, a devoted priest faces an impossible choice between betrayal and justice.",
+    "genre": "Historical Fiction",
+    "publish_year": 1995,
+    "pages": 366,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0107",
+    "title": "The Wolf's Truth",
+    "author": "Luna O'Brien",
+    "description": "a cunning merchant never expected to an ancient conspiracy. Now, with time runs out, they must prevent a catastrophe.",
+    "genre": "Space Opera",
+    "publish_year": 2013,
+    "pages": 577,
+    "rating": 4.0
+  },
+  {
+    "id": "book_0108",
+    "title": "The Golden Memory of Eastmark",
+    "author": "Grace Santos",
+    "description": "After an unexpected inheritance, a powerful sorceress embarks on a journey through darkness to destroy an ancient evil, uncovering a terrible truth along the way.",
+    "genre": "Science Fiction",
+    "publish_year": 2020,
+    "pages": 414,
+    "rating": 4.6
+  },
+  {
+    "id": "book_0109",
+    "title": "Whispers of Light",
+    "author": "Priya Morrison",
+    "description": "After a devastating war, a rebellious princess embarks on a dangerous quest to prevent a catastrophe, uncovering a path to redemption along the way.",
+    "genre": "Epic Fantasy",
+    "publish_year": 2002,
+    "pages": 319,
+    "rating": 4.5
+  },
+  {
+    "id": "book_0110",
+    "title": "Glory Falls",
+    "author": "Chen Chen",
+    "description": "After an ancient awakening, a village healer embarks on a race against time to save their family, uncovering a mysterious artifact along the way.",
+    "genre": "Adventure",
+    "publish_year": 2005,
+    "pages": 454,
+    "rating": 4.2
+  },
+  {
+    "id": "book_0111",
+    "title": "Shadows of Silence",
+    "author": "Ahmed Fernandez",
+    "description": "In a world where magic flows through bloodlines, a reluctant hero must escape their past before darkness falls forever.",
+    "genre": "Historical Fiction",
+    "publish_year": 1999,
+    "pages": 323,
+    "rating": 3.4
+  },
+  {
+    "id": "book_0112",
+    "title": "Darkness Falls",
+    "author": "Dmitri Fernandez",
+    "description": "When an ancient awakening threatens a war-torn kingdom, a mysterious stranger discovers a secret identity that could change everything.",
+    "genre": "Cozy Mystery",
+    "publish_year": 2004,
+    "pages": 182,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0113",
+    "title": "Dancing with Storms",
+    "author": "Priya Kowalski",
+    "description": "After a devastating war, a young scholar embarks on a race against time to find redemption, uncovering a mysterious artifact along the way.",
+    "genre": "Dystopian",
+    "publish_year": 2000,
+    "pages": 275,
+    "rating": 3.6
+  },
+  {
+    "id": "book_0114",
+    "title": "The Fierce Hour",
+    "author": "Viktor Tanaka",
+    "description": "In a world where secrets hold the power of life and death, an exiled prince must protect the innocent before the world crumbles.",
+    "genre": "Military Fiction",
+    "publish_year": 2000,
+    "pages": 401,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0115",
+    "title": "The Blessed Ocean",
+    "author": "Mei Volkov",
+    "description": "In a space station, where the dead walk among the living, a street-smart thief faces an impossible choice between identity and honor.",
+    "genre": "Space Opera",
+    "publish_year": 2024,
+    "pages": 315,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0116",
+    "title": "The Door Keeper",
+    "author": "Dmitri Rodriguez",
+    "description": "A gripping tale of justice and duty, following an exiled prince through a search for answers.",
+    "genre": "Psychological Thriller",
+    "publish_year": 1996,
+    "pages": 607,
+    "rating": 3.9
+  },
+  {
+    "id": "book_0117",
+    "title": "Shield Rising",
+    "author": "Priya Singh",
+    "description": "a street-smart thief has always dreamed of something more. But when a dark prophecy begins to unfold, everything changes.",
+    "genre": "Urban Fantasy",
+    "publish_year": 2011,
+    "pages": 467,
+    "rating": 3.2
+  },
+  {
+    "id": "book_0118",
+    "title": "The Heart Legacy",
+    "author": "Marcus Rodriguez",
+    "description": "A gripping tale of honor and friendship, following a powerful sorceress through a dangerous quest.",
+    "genre": "Romance",
+    "publish_year": 2016,
+    "pages": 360,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0119",
+    "title": "The Dark Heart",
+    "author": "Ingrid Kowalski",
+    "description": "Set in a tropical paradise, this dark story explores love as a haunted veteran struggles with supernatural forces.",
+    "genre": "Steampunk",
+    "publish_year": 2002,
+    "pages": 517,
+    "rating": 4.6
+  },
+  {
+    "id": "book_0120",
+    "title": "Between Moons",
+    "author": "Isabella Novak",
+    "description": "Set in a magical academy, this sweeping story explores redemption as a cunning merchant struggles with impossible odds.",
+    "genre": "Urban Fantasy",
+    "publish_year": 2012,
+    "pages": 341,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0121",
+    "title": "The Shattered Tiger",
+    "author": "David Reyes",
+    "description": "In a world where time moves differently, an exiled prince must find redemption before hope dies.",
+    "genre": "Romance",
+    "publish_year": 2024,
+    "pages": 213,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0122",
+    "title": "Chronicles of Avalon",
+    "author": "Takeshi Kowalski",
+    "description": "A thrilling exploration of family, following a brilliant scientist as they navigate supernatural forces in a crumbling empire.",
+    "genre": "Urban Fantasy",
+    "publish_year": 2002,
+    "pages": 547,
+    "rating": 3.7
+  },
+  {
+    "id": "book_0123",
+    "title": "The River Legacy",
+    "author": "Ahmed Volkov",
+    "description": "In a world where the dead walk among the living, a young scholar must forge a new destiny before it's too late.",
+    "genre": "Romance",
+    "publish_year": 2015,
+    "pages": 316,
+    "rating": 4.2
+  },
+  {
+    "id": "book_0124",
+    "title": "The Frozen Book of Shadowvale",
+    "author": "Mei Patel",
+    "description": "In a world where the dead walk among the living, a seasoned captain must uncover the truth before hope dies.",
+    "genre": "Thriller",
+    "publish_year": 2018,
+    "pages": 633,
+    "rating": 4.5
+  },
+  {
+    "id": "book_0125",
+    "title": "The Secret Gate",
+    "author": "Sarah Okonkwo",
+    "description": "A suspenseful exploration of duty, following a cunning merchant as they navigate lost love in a magical academy.",
+    "genre": "Paranormal Romance",
+    "publish_year": 2018,
+    "pages": 427,
+    "rating": 4.2
+  },
+  {
+    "id": "book_0126",
+    "title": "Between Forests",
+    "author": "Dmitri Larsson",
+    "description": "In a world where artificial minds dream of freedom, an aging detective must save their family before all is lost.",
+    "genre": "Paranormal Romance",
+    "publish_year": 2008,
+    "pages": 556,
+    "rating": 4.5
+  },
+  {
+    "id": "book_0127",
+    "title": "Under Blessed Skies",
+    "author": "Priya Johansson",
+    "description": "a powerful sorceress never expected to a path to redemption. Now, with hope dies, they must forge a new destiny.",
+    "genre": "Magical Realism",
+    "publish_year": 2017,
+    "pages": 198,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0128",
+    "title": "Echoes of Redemption",
+    "author": "Rosa Okonkwo",
+    "description": "a cunning merchant never expected to an ancient conspiracy. Now, with time runs out, they must find redemption.",
+    "genre": "Science Fiction",
+    "publish_year": 2024,
+    "pages": 267,
+    "rating": 3.6
+  },
+  {
+    "id": "book_0129",
+    "title": "Whispers of Eternity",
+    "author": "Ananya Blackwood",
+    "description": "When a loved one vanishes, a street-smart thief must confront political intrigue while a web of intrigue.",
+    "genre": "Romance",
+    "publish_year": 2005,
+    "pages": 489,
+    "rating": 3.7
+  },
+  {
+    "id": "book_0130",
+    "title": "The Noble Prophecy",
+    "author": "Rosa Petrov",
+    "description": "a young scholar has always dreamed of something more. But when a dark prophecy begins to unfold, everything changes.",
+    "genre": "Steampunk",
+    "publish_year": 2019,
+    "pages": 535,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0131",
+    "title": "The Ice Legacy",
+    "author": "Sofia Gupta",
+    "description": "a gifted musician never expected to a mysterious artifact. Now, with war consumes everything, they must destroy an ancient evil.",
+    "genre": "Military Fiction",
+    "publish_year": 2014,
+    "pages": 313,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0132",
+    "title": "The Secret Mirror",
+    "author": "Samuel Johansson",
+    "description": "When a political assassination threatens a sprawling desert, a curious journalist discovers a forbidden love that could change everything.",
+    "genre": "Urban Fantasy",
+    "publish_year": 2011,
+    "pages": 398,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0133",
+    "title": "Hidden Books",
+    "author": "Fatima Costa",
+    "description": "When a shocking murder threatens a tropical paradise, a reluctant hero discovers a lost civilization that could bridge two worlds.",
+    "genre": "Crime",
+    "publish_year": 2006,
+    "pages": 483,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0134",
+    "title": "The Secret Raven",
+    "author": "Sarah Singh",
+    "description": "After a technological breakthrough, a mysterious stranger embarks on a journey through darkness to prevent a catastrophe, uncovering an unlikely alliance along the way.",
+    "genre": "Space Opera",
+    "publish_year": 2000,
+    "pages": 403,
+    "rating": 3.9
+  },
+  {
+    "id": "book_0135",
+    "title": "Shadows of Fear",
+    "author": "Hassan Kowalski",
+    "description": "In a world where magic flows through bloodlines, a fierce warrior must claim their birthright before time runs out.",
+    "genre": "Mystery",
+    "publish_year": 2008,
+    "pages": 351,
+    "rating": 4.5
+  },
+  {
+    "id": "book_0136",
+    "title": "Forgotten Roads",
+    "author": "Fatima Patel",
+    "description": "In a world where parallel worlds collide, a gifted musician must unite warring factions before all is lost.",
+    "genre": "Horror",
+    "publish_year": 2012,
+    "pages": 308,
+    "rating": 3.3
+  },
+  {
+    "id": "book_0137",
+    "title": "The Silent Hour",
+    "author": "Marcus Okonkwo",
+    "description": "When a forbidden text is discovered, a fierce warrior must confront technological threats while a search for answers.",
+    "genre": "Adventure",
+    "publish_year": 1996,
+    "pages": 188,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0138",
+    "title": "Echoes of Desire",
+    "author": "Michael Kowalski",
+    "description": "a village healer has always lived in the shadows. But when a stranger arrives with dire news, everything changes.",
+    "genre": "Steampunk",
+    "publish_year": 2021,
+    "pages": 297,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0139",
+    "title": "Wolf and Seekers",
+    "author": "Dmitri Chen",
+    "description": "When a mysterious plague threatens a war-torn kingdom, a devoted priest discovers a secret identity that could rewrite history.",
+    "genre": "Adventure",
+    "publish_year": 1997,
+    "pages": 356,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0140",
+    "title": "Beyond the River",
+    "author": "Hassan Blackwood",
+    "description": "A intense exploration of justice, following a reluctant hero as they navigate impossible odds in a crumbling empire.",
+    "genre": "Literary Fiction",
+    "publish_year": 1998,
+    "pages": 575,
+    "rating": 4.9
+  },
+  {
+    "id": "book_0141",
+    "title": "The Gentle Falcon",
+    "author": "Michael Tanaka",
+    "description": "When a forbidden text is discovered, a fierce warrior must confront a deadly enemy while a path of self-discovery.",
+    "genre": "Historical Fiction",
+    "publish_year": 1997,
+    "pages": 398,
+    "rating": 3.7
+  },
+  {
+    "id": "book_0142",
+    "title": "Eternity Falls",
+    "author": "Samuel Novak",
+    "description": "Set in a dystopian society, this whimsical story explores hope as a brilliant scientist struggles with technological threats.",
+    "genre": "Thriller",
+    "publish_year": 2023,
+    "pages": 512,
+    "rating": 3.4
+  },
+  {
+    "id": "book_0143",
+    "title": "Dancing with Roads",
+    "author": "Ananya Johansson",
+    "description": "When a forbidden text is discovered, an aging detective must confront inner demons while a race against time.",
+    "genre": "Paranormal Romance",
+    "publish_year": 2010,
+    "pages": 550,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0144",
+    "title": "Beyond the Rain",
+    "author": "Antonio Johansson",
+    "description": "A heartwarming exploration of ambition, following a young scholar as they navigate supernatural forces in a sprawling desert.",
+    "genre": "Horror",
+    "publish_year": 2023,
+    "pages": 415,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0145",
+    "title": "Under Silent Skies",
+    "author": "Yuki Chen",
+    "description": "In an underground city, where time moves differently, a devoted priest faces an impossible choice between hope and ambition.",
+    "genre": "Urban Fantasy",
+    "publish_year": 1992,
+    "pages": 583,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0146",
+    "title": "The Betrayal Protocol",
+    "author": "Leila Reyes",
+    "description": "After a shocking murder, a rebellious princess embarks on a battle for survival to destroy an ancient evil, uncovering a secret identity along the way.",
+    "genre": "Historical Fiction",
+    "publish_year": 1994,
+    "pages": 327,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0147",
+    "title": "Silent Ghosts",
+    "author": "Samuel Gupta",
+    "description": "a powerful sorceress never expected to a secret identity. Now, with war consumes everything, they must find redemption.",
+    "genre": "Space Opera",
+    "publish_year": 1993,
+    "pages": 568,
+    "rating": 3.6
+  },
+  {
+    "id": "book_0148",
+    "title": "Bear in the Highcliff",
+    "author": "Ingrid Johansson",
+    "description": "After a political assassination, an ambitious politician embarks on a dangerous quest to claim their birthright, uncovering an unlikely alliance along the way.",
+    "genre": "Adventure",
+    "publish_year": 2022,
+    "pages": 405,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0149",
+    "title": "The Sword Legacy",
+    "author": "Nia Kim",
+    "description": "A gripping tale of survival and loss, following a reluctant hero through a web of intrigue.",
+    "genre": "Space Opera",
+    "publish_year": 2000,
+    "pages": 378,
+    "rating": 4.5
+  },
+  {
+    "id": "book_0150",
+    "title": "Garden in the Silverdale",
+    "author": "Sofia O'Brien",
+    "description": "A intense exploration of ambition, following a mysterious stranger as they navigate lost love in a small coastal town.",
+    "genre": "Paranormal Romance",
+    "publish_year": 1990,
+    "pages": 409,
+    "rating": 3.6
+  },
+  {
+    "id": "book_0151",
+    "title": "Echoes of Time",
+    "author": "Antonio Andersen",
+    "description": "a gentle librarian never expected to a path to redemption. Now, with it's too late, they must escape their past.",
+    "genre": "Steampunk",
+    "publish_year": 2021,
+    "pages": 452,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0152",
+    "title": "The Silence Protocol",
+    "author": "Ananya Johansson",
+    "description": "In a remote village, where ancient prophecies shape reality, a powerful sorceress faces an impossible choice between family and survival.",
+    "genre": "Historical Fiction",
+    "publish_year": 2008,
+    "pages": 301,
+    "rating": 3.6
+  },
+  {
+    "id": "book_0153",
+    "title": "The Secret Crown",
+    "author": "Thomas Anderson",
+    "description": "When war erupts without warning, a street-smart thief must confront social injustice while a path of self-discovery.",
+    "genre": "Adventure",
+    "publish_year": 2009,
+    "pages": 498,
+    "rating": 4.2
+  },
+  {
+    "id": "book_0154",
+    "title": "Dancing with Swords",
+    "author": "Nia Fernandez",
+    "description": "In a world where magic flows through bloodlines, a gentle librarian must save their family before war consumes everything.",
+    "genre": "Horror",
+    "publish_year": 1992,
+    "pages": 421,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0155",
+    "title": "Between Paths",
+    "author": "Sarah Thompson",
+    "description": "an aging detective has always hidden their true nature. But when a forbidden text is discovered, everything changes.",
+    "genre": "Paranormal Romance",
+    "publish_year": 2022,
+    "pages": 615,
+    "rating": 3.4
+  },
+  {
+    "id": "book_0156",
+    "title": "Under Bright Skies",
+    "author": "Nia Kim",
+    "description": "After a shocking murder, a village healer embarks on a journey through darkness to forge a new destiny, uncovering a forbidden love along the way.",
+    "genre": "Dystopian",
+    "publish_year": 1998,
+    "pages": 599,
+    "rating": 4.6
+  },
+  {
+    "id": "book_0157",
+    "title": "The Gentle Sword of Shadowvale",
+    "author": "Sofia Volkov",
+    "description": "After a forbidden discovery, a devoted priest embarks on a journey through darkness to find redemption, uncovering a hidden power within themselves along the way.",
+    "genre": "Steampunk",
+    "publish_year": 2016,
+    "pages": 274,
+    "rating": 3.6
+  },
+  {
+    "id": "book_0158",
+    "title": "The Path Conspiracy",
+    "author": "Grace Andersen",
+    "description": "In a dystopian society, where the dead walk among the living, a brilliant scientist faces an impossible choice between justice and loss.",
+    "genre": "Thriller",
+    "publish_year": 1997,
+    "pages": 401,
+    "rating": 4.6
+  },
+  {
+    "id": "book_0159",
+    "title": "The Twisted Shield",
+    "author": "Yuki Novak",
+    "description": "a gifted musician never expected to a terrible truth. Now, with the prophecy fulfills itself, they must prevent a catastrophe.",
+    "genre": "Military Fiction",
+    "publish_year": 2006,
+    "pages": 457,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0160",
+    "title": "Midnight Dreams",
+    "author": "Viktor Andersen",
+    "description": "When a political assassination threatens a crumbling empire, a young scholar discovers an unlikely alliance that could end a centuries-old conflict.",
+    "genre": "Adventure",
+    "publish_year": 2010,
+    "pages": 424,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0161",
+    "title": "The Fire Legacy",
+    "author": "Grace Reyes",
+    "description": "In a space station, where time moves differently, a mysterious stranger faces an impossible choice between friendship and redemption.",
+    "genre": "Science Fiction",
+    "publish_year": 2015,
+    "pages": 393,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0162",
+    "title": "Chronicles of Whitestone",
+    "author": "Fatima Thompson",
+    "description": "A heartwarming exploration of duty, following a haunted veteran as they navigate political intrigue in a space station.",
+    "genre": "Romance",
+    "publish_year": 1995,
+    "pages": 606,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0163",
+    "title": "Chronicles of Sunhaven",
+    "author": "Luna Park",
+    "description": "After a shocking murder, a brilliant scientist embarks on a journey through darkness to find redemption, uncovering a lost civilization along the way.",
+    "genre": "Science Fiction",
+    "publish_year": 2019,
+    "pages": 467,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0164",
+    "title": "Shadows of Loss",
+    "author": "Mei O'Brien",
+    "description": "A gripping tale of betrayal and love, following a fierce warrior through a web of intrigue.",
+    "genre": "Urban Fantasy",
+    "publish_year": 2002,
+    "pages": 390,
+    "rating": 4.5
+  },
+  {
+    "id": "book_0165",
+    "title": "Under Dark Skies",
+    "author": "Ananya Volkov",
+    "description": "In a crumbling empire, where artificial minds dream of freedom, a haunted veteran faces an impossible choice between friendship and justice.",
+    "genre": "Literary Fiction",
+    "publish_year": 2013,
+    "pages": 598,
+    "rating": 3.4
+  },
+  {
+    "id": "book_0166",
+    "title": "Twisted Mountains",
+    "author": "Chloe Singh",
+    "description": "After a forbidden discovery, a fierce warrior embarks on a path of self-discovery to uncover the truth, uncovering a terrible truth along the way.",
+    "genre": "Thriller",
+    "publish_year": 2010,
+    "pages": 574,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0167",
+    "title": "Beyond the Path",
+    "author": "Thomas Blackwood",
+    "description": "A gripping tale of ambition and power, following a seasoned captain through a dangerous quest.",
+    "genre": "Epic Fantasy",
+    "publish_year": 2022,
+    "pages": 417,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0168",
+    "title": "Quiet Dreams",
+    "author": "Thomas Yamamoto",
+    "description": "an aging detective never expected to a terrible truth. Now, with the world crumbles, they must forge a new destiny.",
+    "genre": "Military Fiction",
+    "publish_year": 2004,
+    "pages": 183,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0169",
+    "title": "A Eagle of Fate",
+    "author": "Michael Morrison",
+    "description": "In a magical academy, where technology has replaced nature, a gifted musician faces an impossible choice between identity and identity.",
+    "genre": "Cozy Mystery",
+    "publish_year": 2012,
+    "pages": 220,
+    "rating": 5.0
+  },
+  {
+    "id": "book_0170",
+    "title": "The Phoenix Conspiracy",
+    "author": "Pierre Costa",
+    "description": "In a world where magic flows through bloodlines, a curious journalist must uncover the truth before time runs out.",
+    "genre": "Cozy Mystery",
+    "publish_year": 1996,
+    "pages": 260,
+    "rating": 4.2
+  },
+  {
+    "id": "book_0171",
+    "title": "The Ghost Paradox",
+    "author": "Ananya Okonkwo",
+    "description": "Set in a sprawling desert, this haunting story explores ambition as a seasoned captain struggles with impossible odds.",
+    "genre": "Epic Fantasy",
+    "publish_year": 2001,
+    "pages": 466,
+    "rating": 4.1
+  },
+  {
+    "id": "book_0172",
+    "title": "The Last Bear",
+    "author": "Maria Singh",
+    "description": "Set in a space station, this whimsical story explores love as a street-smart thief struggles with moral ambiguity.",
+    "genre": "Magical Realism",
+    "publish_year": 2000,
+    "pages": 526,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0173",
+    "title": "Chaos Falls",
+    "author": "Priya Sharma",
+    "description": "Set in a magical academy, this sweeping story explores justice as a haunted veteran struggles with supernatural forces.",
+    "genre": "Military Fiction",
+    "publish_year": 2020,
+    "pages": 515,
+    "rating": 4.6
+  },
+  {
+    "id": "book_0174",
+    "title": "The Ghost's Vengeance",
+    "author": "Leila Okonkwo",
+    "description": "a powerful sorceress never expected to a mysterious artifact. Now, with war consumes everything, they must unite warring factions.",
+    "genre": "Horror",
+    "publish_year": 2015,
+    "pages": 180,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0175",
+    "title": "Whispers of Fear",
+    "author": "Chloe Blackwood",
+    "description": "A gripping tale of identity and hope, following a rebellious princess through a race against time.",
+    "genre": "Urban Fantasy",
+    "publish_year": 2018,
+    "pages": 228,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0176",
+    "title": "The Crimson Prophecy",
+    "author": "Carlos Thompson",
+    "description": "In a small coastal town, where the dead walk among the living, a reluctant hero faces an impossible choice between duty and justice.",
+    "genre": "Epic Fantasy",
+    "publish_year": 2000,
+    "pages": 627,
+    "rating": 3.9
+  },
+  {
+    "id": "book_0177",
+    "title": "Dragon in the Northlands",
+    "author": "Grace Yamamoto",
+    "description": "A gripping tale of identity and love, following a reluctant hero through a search for answers.",
+    "genre": "Horror",
+    "publish_year": 1996,
+    "pages": 326,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0178",
+    "title": "Soul Rising",
+    "author": "Leila Kim",
+    "description": "In a dystopian society, where secrets hold the power of life and death, a skilled assassin faces an impossible choice between hope and hope.",
+    "genre": "Space Opera",
+    "publish_year": 1990,
+    "pages": 232,
+    "rating": 3.4
+  },
+  {
+    "id": "book_0179",
+    "title": "Hope Falls",
+    "author": "Antonio Reyes",
+    "description": "a young scholar never expected to an ancient conspiracy. Now, with darkness falls forever, they must prevent a catastrophe.",
+    "genre": "Epic Fantasy",
+    "publish_year": 2006,
+    "pages": 198,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0180",
+    "title": "The Tower Legacy",
+    "author": "Ingrid Rodriguez",
+    "description": "After an unexpected inheritance, a fierce warrior embarks on a web of intrigue to destroy an ancient evil, uncovering a secret identity along the way.",
+    "genre": "Magical Realism",
+    "publish_year": 1998,
+    "pages": 434,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0181",
+    "title": "Between Oceans",
+    "author": "Isabella Patel",
+    "description": "Set in a space station, this epic story explores justice as a haunted veteran struggles with social injustice.",
+    "genre": "Steampunk",
+    "publish_year": 2001,
+    "pages": 494,
+    "rating": 4.1
+  },
+  {
+    "id": "book_0182",
+    "title": "Hidden Falcons",
+    "author": "Chloe Nakamura",
+    "description": "A gripping tale of friendship and family, following an aging detective through a battle for survival.",
+    "genre": "Adventure",
+    "publish_year": 1995,
+    "pages": 531,
+    "rating": 4.0
+  },
+  {
+    "id": "book_0183",
+    "title": "The Wolf Paradox",
+    "author": "Hassan Blackwood",
+    "description": "In a world where ancient prophecies shape reality, an ambitious politician must claim their birthright before war consumes everything.",
+    "genre": "Space Opera",
+    "publish_year": 2006,
+    "pages": 295,
+    "rating": 3.4
+  },
+  {
+    "id": "book_0184",
+    "title": "The Golden Hour",
+    "author": "Amara Anderson",
+    "description": "After an ancient awakening, an ambitious politician embarks on a dangerous quest to save their family, uncovering a mysterious artifact along the way.",
+    "genre": "Crime",
+    "publish_year": 1992,
+    "pages": 499,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0185",
+    "title": "The Key Paradox",
+    "author": "Sofia Nakamura",
+    "description": "a gentle librarian never expected to a forbidden love. Now, with hope dies, they must forge a new destiny.",
+    "genre": "Science Fiction",
+    "publish_year": 1992,
+    "pages": 564,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0186",
+    "title": "Dream Rising",
+    "author": "Samuel Kowalski",
+    "description": "A gripping tale of friendship and duty, following an exiled prince through a journey through darkness.",
+    "genre": "Urban Fantasy",
+    "publish_year": 2018,
+    "pages": 633,
+    "rating": 4.1
+  },
+  {
+    "id": "book_0187",
+    "title": "Betrayal Falls",
+    "author": "Ahmed Patel",
+    "description": "a haunted veteran has always questioned everything. But when a stranger arrives with dire news, everything changes.",
+    "genre": "Steampunk",
+    "publish_year": 2005,
+    "pages": 337,
+    "rating": 3.0
+  },
+  {
+    "id": "book_0188",
+    "title": "Gate in the Blackmoor",
+    "author": "Rosa Gupta",
+    "description": "A gripping tale of survival and ambition, following an exiled prince through a path of self-discovery.",
+    "genre": "Romance",
+    "publish_year": 2010,
+    "pages": 394,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0189",
+    "title": "Chronicles of Moonrise",
+    "author": "Ingrid Petrov",
+    "description": "When a forbidden text is discovered, a skilled assassin must confront moral ambiguity while a web of intrigue.",
+    "genre": "Science Fiction",
+    "publish_year": 1994,
+    "pages": 439,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0190",
+    "title": "The Garden Legacy",
+    "author": "Samuel Thompson",
+    "description": "In a world where memories can be traded like currency, a street-smart thief must find redemption before darkness falls forever.",
+    "genre": "Historical Fiction",
+    "publish_year": 2010,
+    "pages": 577,
+    "rating": 3.2
+  },
+  {
+    "id": "book_0191",
+    "title": "The Burning Prophecy",
+    "author": "Yuki Singh",
+    "description": "A sweeping exploration of power, following a young scholar as they navigate lost love in a space station.",
+    "genre": "Space Opera",
+    "publish_year": 2021,
+    "pages": 242,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0192",
+    "title": "Dancing with Phoenixs",
+    "author": "Ingrid Nakamura",
+    "description": "A sweeping exploration of duty, following an ambitious politician as they navigate moral ambiguity in a sprawling desert.",
+    "genre": "Epic Fantasy",
+    "publish_year": 2004,
+    "pages": 601,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0193",
+    "title": "The Secret Dream",
+    "author": "Elena Reyes",
+    "description": "When a forbidden discovery threatens a space station, a fierce warrior discovers a path to redemption that could bridge two worlds.",
+    "genre": "Crime",
+    "publish_year": 1996,
+    "pages": 600,
+    "rating": 4.2
+  },
+  {
+    "id": "book_0194",
+    "title": "The Raging Lion",
+    "author": "Emma Al-Hassan",
+    "description": "When a natural disaster threatens a dystopian society, a village healer discovers a secret identity that could end a centuries-old conflict.",
+    "genre": "Adventure",
+    "publish_year": 1999,
+    "pages": 398,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0195",
+    "title": "The Crown Conspiracy",
+    "author": "Sarah Johansson",
+    "description": "a curious journalist has always questioned everything. But when a loved one vanishes, everything changes.",
+    "genre": "Romance",
+    "publish_year": 1997,
+    "pages": 554,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0196",
+    "title": "Road in the Eastmark",
+    "author": "Ahmed Chen",
+    "description": "a skilled assassin has always lived in the shadows. But when an ancient seal breaks, everything changes.",
+    "genre": "Romance",
+    "publish_year": 2013,
+    "pages": 194,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0197",
+    "title": "The Eagle Paradox",
+    "author": "Yuki Petrov",
+    "description": "In a world where magic flows through bloodlines, a gentle librarian must claim their birthright before all is lost.",
+    "genre": "Horror",
+    "publish_year": 1997,
+    "pages": 220,
+    "rating": 5.0
+  },
+  {
+    "id": "book_0198",
+    "title": "The Lost Ring",
+    "author": "Hassan Andersen",
+    "description": "In a dystopian society, where the dead walk among the living, a cunning merchant faces an impossible choice between honor and friendship.",
+    "genre": "Horror",
+    "publish_year": 2023,
+    "pages": 592,
+    "rating": 4.9
+  },
+  {
+    "id": "book_0199",
+    "title": "The Gate Keeper",
+    "author": "Leila Kowalski",
+    "description": "Set in a dystopian society, this thrilling story explores loss as a devoted priest struggles with moral ambiguity.",
+    "genre": "Paranormal Romance",
+    "publish_year": 2005,
+    "pages": 613,
+    "rating": 3.4
+  },
+  {
+    "id": "book_0200",
+    "title": "The Soul Conspiracy",
+    "author": "Elena Thompson",
+    "description": "a curious journalist never expected to a path to redemption. Now, with the prophecy fulfills itself, they must save their family.",
+    "genre": "Psychological Thriller",
+    "publish_year": 1999,
+    "pages": 453,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0201",
+    "title": "The Last Memory",
+    "author": "Yuki Thompson",
+    "description": "Set in a war-torn kingdom, this dark story explores ambition as an exiled prince struggles with inner demons.",
+    "genre": "Dystopian",
+    "publish_year": 2014,
+    "pages": 386,
+    "rating": 3.3
+  },
+  {
+    "id": "book_0202",
+    "title": "The Quiet Prophecy",
+    "author": "Emma Chen",
+    "description": "a rebellious princess has always sought to escape their past. But when a forbidden text is discovered, everything changes.",
+    "genre": "Paranormal Romance",
+    "publish_year": 2007,
+    "pages": 301,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0203",
+    "title": "Dancing with Stones",
+    "author": "Ingrid Al-Hassan",
+    "description": "A gripping tale of honor and ambition, following a curious journalist through a path of self-discovery.",
+    "genre": "Thriller",
+    "publish_year": 2002,
+    "pages": 633,
+    "rating": 4.1
+  },
+  {
+    "id": "book_0204",
+    "title": "Door Rising",
+    "author": "David Tanaka",
+    "description": "In a magical academy, where secrets hold the power of life and death, a rebellious princess faces an impossible choice between ambition and family.",
+    "genre": "Magical Realism",
+    "publish_year": 2019,
+    "pages": 245,
+    "rating": 4.1
+  },
+  {
+    "id": "book_0205",
+    "title": "Road and Truths",
+    "author": "Maria Santos",
+    "description": "a curious journalist never expected to an unlikely alliance. Now, with it's too late, they must unite warring factions.",
+    "genre": "Romance",
+    "publish_year": 2020,
+    "pages": 260,
+    "rating": 4.6
+  },
+  {
+    "id": "book_0206",
+    "title": "Wicked Rivers",
+    "author": "Dmitri Larsson",
+    "description": "A haunting exploration of justice, following a skilled assassin as they navigate moral ambiguity in an underground city.",
+    "genre": "Mystery",
+    "publish_year": 1996,
+    "pages": 194,
+    "rating": 3.9
+  },
+  {
+    "id": "book_0207",
+    "title": "Between Windows",
+    "author": "Kofi Larsson",
+    "description": "A heartwarming exploration of freedom, following a powerful sorceress as they navigate technological threats in an underground city.",
+    "genre": "Horror",
+    "publish_year": 2010,
+    "pages": 377,
+    "rating": 4.0
+  },
+  {
+    "id": "book_0208",
+    "title": "Echoes of Honor",
+    "author": "Hassan Rodriguez",
+    "description": "Set in a crumbling empire, this heartwarming story explores freedom as a rebellious princess struggles with lost love.",
+    "genre": "Science Fiction",
+    "publish_year": 2007,
+    "pages": 246,
+    "rating": 3.6
+  },
+  {
+    "id": "book_0209",
+    "title": "Soul in the Starfall",
+    "author": "Kenji Sharma",
+    "description": "In an underground city, where ancient prophecies shape reality, a skilled assassin faces an impossible choice between justice and survival.",
+    "genre": "Historical Fiction",
+    "publish_year": 2008,
+    "pages": 265,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0210",
+    "title": "Wind and Strangers",
+    "author": "Rosa Patel",
+    "description": "Set in a thriving metropolis, this thrilling story explores love as a devoted priest struggles with supernatural forces.",
+    "genre": "Thriller",
+    "publish_year": 2000,
+    "pages": 498,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0211",
+    "title": "Under Broken Skies",
+    "author": "Leila Singh",
+    "description": "In a world where technology has replaced nature, a haunted veteran must find redemption before time runs out.",
+    "genre": "Adventure",
+    "publish_year": 1998,
+    "pages": 195,
+    "rating": 4.1
+  },
+  {
+    "id": "book_0212",
+    "title": "Under Gentle Skies",
+    "author": "Hassan Larsson",
+    "description": "After a forbidden discovery, an ambitious politician embarks on a path of self-discovery to destroy an ancient evil, uncovering a forbidden love along the way.",
+    "genre": "Cozy Mystery",
+    "publish_year": 2015,
+    "pages": 182,
+    "rating": 4.0
+  },
+  {
+    "id": "book_0213",
+    "title": "The Book Paradox",
+    "author": "Chen Nakamura",
+    "description": "Set in a sprawling desert, this heartwarming story explores duty as a powerful sorceress struggles with impossible odds.",
+    "genre": "Dystopian",
+    "publish_year": 2021,
+    "pages": 463,
+    "rating": 3.3
+  },
+  {
+    "id": "book_0214",
+    "title": "The Dragon Legacy",
+    "author": "Fatima Singh",
+    "description": "A intense exploration of family, following a brilliant scientist as they navigate moral ambiguity in a dystopian society.",
+    "genre": "Romance",
+    "publish_year": 1992,
+    "pages": 529,
+    "rating": 4.6
+  },
+  {
+    "id": "book_0215",
+    "title": "The Raging Prophecy",
+    "author": "Oliver Rodriguez",
+    "description": "Set in a magical academy, this suspenseful story explores friendship as a mysterious stranger struggles with inner demons.",
+    "genre": "Military Fiction",
+    "publish_year": 2022,
+    "pages": 598,
+    "rating": 4.2
+  },
+  {
+    "id": "book_0216",
+    "title": "The Secret Wolf",
+    "author": "Viktor Al-Hassan",
+    "description": "A gripping tale of family and friendship, following a skilled assassin through a web of intrigue.",
+    "genre": "Literary Fiction",
+    "publish_year": 2021,
+    "pages": 510,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0217",
+    "title": "A Throne of Light",
+    "author": "Amara Tanaka",
+    "description": "In an underground city, where the dead walk among the living, an ambitious politician faces an impossible choice between family and survival.",
+    "genre": "Thriller",
+    "publish_year": 2011,
+    "pages": 419,
+    "rating": 4.1
+  },
+  {
+    "id": "book_0218",
+    "title": "The Last Crown",
+    "author": "Chen Santos",
+    "description": "In a dystopian society, where the dead walk among the living, a street-smart thief faces an impossible choice between betrayal and honor.",
+    "genre": "Thriller",
+    "publish_year": 2015,
+    "pages": 514,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0219",
+    "title": "The Storm's Love",
+    "author": "Isabella Volkov",
+    "description": "Set in an underground city, this heartwarming story explores love as a mysterious stranger struggles with inner demons.",
+    "genre": "Horror",
+    "publish_year": 2010,
+    "pages": 644,
+    "rating": 4.5
+  },
+  {
+    "id": "book_0220",
+    "title": "Beyond the Clock",
+    "author": "Isabella Williams",
+    "description": "When a forbidden discovery threatens an underground city, an ambitious politician discovers a terrible truth that could unlock unimaginable power.",
+    "genre": "Steampunk",
+    "publish_year": 2023,
+    "pages": 377,
+    "rating": 4.0
+  },
+  {
+    "id": "book_0221",
+    "title": "The Darkness Protocol",
+    "author": "Aisha Novak",
+    "description": "an aging detective never expected to a terrible truth. Now, with all is lost, they must find redemption.",
+    "genre": "Romance",
+    "publish_year": 1995,
+    "pages": 208,
+    "rating": 3.2
+  },
+  {
+    "id": "book_0222",
+    "title": "The Shadow Paradox",
+    "author": "Fatima Santos",
+    "description": "a street-smart thief never expected to an unlikely alliance. Now, with darkness falls forever, they must find redemption.",
+    "genre": "Epic Fantasy",
+    "publish_year": 2016,
+    "pages": 290,
+    "rating": 4.0
+  },
+  {
+    "id": "book_0223",
+    "title": "The Ancient Prophecy",
+    "author": "Amara Johansson",
+    "description": "a reluctant hero never expected to a lost civilization. Now, with hope dies, they must forge a new destiny.",
+    "genre": "Romance",
+    "publish_year": 1999,
+    "pages": 575,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0224",
+    "title": "Map Rising",
+    "author": "Luna Williams",
+    "description": "A haunting exploration of friendship, following a fierce warrior as they navigate technological threats in a thriving metropolis.",
+    "genre": "Epic Fantasy",
+    "publish_year": 1992,
+    "pages": 278,
+    "rating": 3.3
+  },
+  {
+    "id": "book_0225",
+    "title": "Ghost in the Mistwood",
+    "author": "Kenji Petrov",
+    "description": "a brilliant scientist has always dreamed of something more. But when a loved one vanishes, everything changes.",
+    "genre": "Crime",
+    "publish_year": 1992,
+    "pages": 637,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0226",
+    "title": "The Mind Conspiracy",
+    "author": "Takeshi Rodriguez",
+    "description": "When a political assassination threatens a magical academy, a cunning merchant discovers a hidden power within themselves that could rewrite history.",
+    "genre": "Cozy Mystery",
+    "publish_year": 1999,
+    "pages": 440,
+    "rating": 4.1
+  },
+  {
+    "id": "book_0227",
+    "title": "Between Gardens",
+    "author": "Aisha Andersen",
+    "description": "When an ancient seal breaks, a devoted priest must confront inner demons while a journey through darkness.",
+    "genre": "Adventure",
+    "publish_year": 1999,
+    "pages": 271,
+    "rating": 4.5
+  },
+  {
+    "id": "book_0228",
+    "title": "Star and Memories",
+    "author": "Sofia Kim",
+    "description": "When a mysterious plague threatens a dystopian society, a powerful sorceress discovers a path to redemption that could save countless lives.",
+    "genre": "Dystopian",
+    "publish_year": 2019,
+    "pages": 245,
+    "rating": 3.2
+  },
+  {
+    "id": "book_0229",
+    "title": "A Ghost of Memory",
+    "author": "Priya Okonkwo",
+    "description": "When an ancient awakening threatens a sprawling desert, a cunning merchant discovers an unlikely alliance that could unlock unimaginable power.",
+    "genre": "Paranormal Romance",
+    "publish_year": 2005,
+    "pages": 195,
+    "rating": 3.3
+  },
+  {
+    "id": "book_0230",
+    "title": "Between Hearts",
+    "author": "Sarah Blackwood",
+    "description": "After a natural disaster, a devoted priest embarks on a journey through darkness to prevent a catastrophe, uncovering an unlikely alliance along the way.",
+    "genre": "Romance",
+    "publish_year": 1994,
+    "pages": 601,
+    "rating": 4.2
+  },
+  {
+    "id": "book_0231",
+    "title": "Chronicles of Thornfield",
+    "author": "Kofi Sharma",
+    "description": "When a dark prophecy begins to unfold, a seasoned captain must confront technological threats while a web of intrigue.",
+    "genre": "Horror",
+    "publish_year": 2024,
+    "pages": 425,
+    "rating": 4.0
+  },
+  {
+    "id": "book_0232",
+    "title": "The Crimson Storm of Blackmoor",
+    "author": "Pierre Al-Hassan",
+    "description": "In a world where empires rise and fall overnight, an ambitious politician must claim their birthright before the world crumbles.",
+    "genre": "Psychological Thriller",
+    "publish_year": 1997,
+    "pages": 570,
+    "rating": 3.6
+  },
+  {
+    "id": "book_0233",
+    "title": "The Gentle Soul",
+    "author": "Luna Nakamura",
+    "description": "When a natural disaster threatens a frozen wasteland, an aging detective discovers a secret identity that could unlock unimaginable power.",
+    "genre": "Psychological Thriller",
+    "publish_year": 2013,
+    "pages": 494,
+    "rating": 3.2
+  },
+  {
+    "id": "book_0234",
+    "title": "The Soul's Love",
+    "author": "Chloe Park",
+    "description": "After a mysterious plague, a devoted priest embarks on a journey through darkness to destroy an ancient evil, uncovering an ancient conspiracy along the way.",
+    "genre": "Horror",
+    "publish_year": 2016,
+    "pages": 508,
+    "rating": 4.6
+  },
+  {
+    "id": "book_0235",
+    "title": "The Rain Conspiracy",
+    "author": "Pierre Anderson",
+    "description": "After a natural disaster, a fierce warrior embarks on a dangerous quest to find redemption, uncovering a secret identity along the way.",
+    "genre": "Fantasy",
+    "publish_year": 2000,
+    "pages": 454,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0236",
+    "title": "The Window Keeper",
+    "author": "Rosa Santos",
+    "description": "In a world where time moves differently, an aging detective must find redemption before darkness falls forever.",
+    "genre": "Steampunk",
+    "publish_year": 2021,
+    "pages": 485,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0237",
+    "title": "Between Ices",
+    "author": "Maria Williams",
+    "description": "Set in a space station, this intense story explores hope as a gifted musician struggles with lost love.",
+    "genre": "Mystery",
+    "publish_year": 1998,
+    "pages": 374,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0238",
+    "title": "The Secret Bear",
+    "author": "Leila Blackwood",
+    "description": "Set in a small coastal town, this intense story explores survival as a curious journalist struggles with political intrigue.",
+    "genre": "Psychological Thriller",
+    "publish_year": 1999,
+    "pages": 256,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0239",
+    "title": "Dancing with Keys",
+    "author": "Amara Okonkwo",
+    "description": "In a sprawling desert, where time moves differently, a powerful sorceress faces an impossible choice between family and sacrifice.",
+    "genre": "Paranormal Romance",
+    "publish_year": 2011,
+    "pages": 353,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0240",
+    "title": "Beyond the Moon",
+    "author": "Ivan Williams",
+    "description": "In a crumbling empire, where technology has replaced nature, a street-smart thief faces an impossible choice between redemption and sacrifice.",
+    "genre": "Magical Realism",
+    "publish_year": 2014,
+    "pages": 183,
+    "rating": 4.6
+  },
+  {
+    "id": "book_0241",
+    "title": "The Raven Conspiracy",
+    "author": "Leila Singh",
+    "description": "In a world where memories can be traded like currency, a brilliant scientist must unite warring factions before the prophecy fulfills itself.",
+    "genre": "Paranormal Romance",
+    "publish_year": 1993,
+    "pages": 470,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0242",
+    "title": "Beyond the Map",
+    "author": "Nia Patel",
+    "description": "A gripping tale of justice and friendship, following a cunning merchant through a path of self-discovery.",
+    "genre": "Psychological Thriller",
+    "publish_year": 2020,
+    "pages": 231,
+    "rating": 3.9
+  },
+  {
+    "id": "book_0243",
+    "title": "Tower and Seekers",
+    "author": "Chen Thompson",
+    "description": "In a world where the dead walk among the living, an aging detective must save their family before it's too late.",
+    "genre": "Literary Fiction",
+    "publish_year": 2000,
+    "pages": 645,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0244",
+    "title": "A Ice of Order",
+    "author": "Hassan Reyes",
+    "description": "When a forbidden text is discovered, an ambitious politician must confront political intrigue while a race against time.",
+    "genre": "Military Fiction",
+    "publish_year": 2023,
+    "pages": 568,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0245",
+    "title": "Burning Books",
+    "author": "Oliver Chen",
+    "description": "A gripping tale of identity and loss, following a curious journalist through a search for answers.",
+    "genre": "Fantasy",
+    "publish_year": 2016,
+    "pages": 311,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0246",
+    "title": "Eagle in the Whitestone",
+    "author": "Mei Johansson",
+    "description": "A heartwarming exploration of identity, following a fierce warrior as they navigate supernatural forces in a magical academy.",
+    "genre": "Steampunk",
+    "publish_year": 2015,
+    "pages": 459,
+    "rating": 4.2
+  },
+  {
+    "id": "book_0247",
+    "title": "The Last Gate",
+    "author": "Chloe Kim",
+    "description": "A gripping tale of hope and power, following a mysterious stranger through a path of self-discovery.",
+    "genre": "Crime",
+    "publish_year": 2023,
+    "pages": 217,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0248",
+    "title": "Golden Dreams",
+    "author": "Thomas Singh",
+    "description": "a skilled assassin has always lived in the shadows. But when a dark prophecy begins to unfold, everything changes.",
+    "genre": "Military Fiction",
+    "publish_year": 2009,
+    "pages": 204,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0249",
+    "title": "The Love Protocol",
+    "author": "Maria Sharma",
+    "description": "Set in a magical academy, this thought-provoking story explores betrayal as a haunted veteran struggles with impossible odds.",
+    "genre": "Historical Fiction",
+    "publish_year": 2004,
+    "pages": 476,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0250",
+    "title": "The Garden Keeper",
+    "author": "Ahmed Santos",
+    "description": "When a devastating war threatens a frozen wasteland, an aging detective discovers a lost civilization that could unlock unimaginable power.",
+    "genre": "Dystopian",
+    "publish_year": 2008,
+    "pages": 612,
+    "rating": 3.4
+  },
+  {
+    "id": "book_0251",
+    "title": "Crimson Mountains",
+    "author": "Michael Okonkwo",
+    "description": "a young scholar has always been destined for greatness. But when a forbidden text is discovered, everything changes.",
+    "genre": "Paranormal Romance",
+    "publish_year": 2001,
+    "pages": 468,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0252",
+    "title": "The Gate Conspiracy",
+    "author": "Takeshi Thompson",
+    "description": "A haunting exploration of hope, following a young scholar as they navigate social injustice in a space station.",
+    "genre": "Cozy Mystery",
+    "publish_year": 2022,
+    "pages": 564,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0253",
+    "title": "The Dark Mirror of Stormhold",
+    "author": "Chen Al-Hassan",
+    "description": "a reluctant hero has always sought to escape their past. But when war erupts without warning, everything changes.",
+    "genre": "Magical Realism",
+    "publish_year": 2011,
+    "pages": 622,
+    "rating": 4.9
+  },
+  {
+    "id": "book_0254",
+    "title": "The Last Window",
+    "author": "Ivan Morrison",
+    "description": "In a world where magic flows through bloodlines, a devoted priest must prevent a catastrophe before time runs out.",
+    "genre": "Crime",
+    "publish_year": 1992,
+    "pages": 503,
+    "rating": 3.6
+  },
+  {
+    "id": "book_0255",
+    "title": "The Path Legacy",
+    "author": "Pierre Kim",
+    "description": "After a natural disaster, a young scholar embarks on a path of self-discovery to prevent a catastrophe, uncovering a mysterious artifact along the way.",
+    "genre": "Fantasy",
+    "publish_year": 1992,
+    "pages": 492,
+    "rating": 3.6
+  },
+  {
+    "id": "book_0256",
+    "title": "Beyond the Star",
+    "author": "Chen Chen",
+    "description": "a village healer never expected to a lost civilization. Now, with darkness falls forever, they must destroy an ancient evil.",
+    "genre": "Urban Fantasy",
+    "publish_year": 2015,
+    "pages": 447,
+    "rating": 4.2
+  },
+  {
+    "id": "book_0257",
+    "title": "The Moon Legacy",
+    "author": "Thomas Anderson",
+    "description": "In a frozen wasteland, where memories can be traded like currency, a devoted priest faces an impossible choice between identity and power.",
+    "genre": "Crime",
+    "publish_year": 2011,
+    "pages": 401,
+    "rating": 3.2
+  },
+  {
+    "id": "book_0258",
+    "title": "The Forgotten Prophecy",
+    "author": "Yuki Sharma",
+    "description": "After a shocking murder, a devoted priest embarks on a web of intrigue to claim their birthright, uncovering a lost civilization along the way.",
+    "genre": "Military Fiction",
+    "publish_year": 2010,
+    "pages": 509,
+    "rating": 4.2
+  },
+  {
+    "id": "book_0259",
+    "title": "Memory and Dreams",
+    "author": "Kenji Novak",
+    "description": "When a forbidden text is discovered, a devoted priest must confront lost love while a battle for survival.",
+    "genre": "Steampunk",
+    "publish_year": 1995,
+    "pages": 494,
+    "rating": 4.1
+  },
+  {
+    "id": "book_0260",
+    "title": "Echoes of Sacrifice",
+    "author": "Amara Okonkwo",
+    "description": "In a frozen wasteland, where memories can be traded like currency, an ambitious politician faces an impossible choice between betrayal and power.",
+    "genre": "Paranormal Romance",
+    "publish_year": 1992,
+    "pages": 264,
+    "rating": 4.9
+  },
+  {
+    "id": "book_0261",
+    "title": "The Ancient Hour",
+    "author": "Thomas Kowalski",
+    "description": "A gripping tale of power and redemption, following a young scholar through a search for answers.",
+    "genre": "Steampunk",
+    "publish_year": 2005,
+    "pages": 214,
+    "rating": 3.3
+  },
+  {
+    "id": "book_0262",
+    "title": "Door and Strangers",
+    "author": "Amara Kim",
+    "description": "an exiled prince has always been destined for greatness. But when a dark prophecy begins to unfold, everything changes.",
+    "genre": "Epic Fantasy",
+    "publish_year": 2002,
+    "pages": 248,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0263",
+    "title": "The Crown Keeper",
+    "author": "Luna Okonkwo",
+    "description": "A thrilling exploration of ambition, following a cunning merchant as they navigate supernatural forces in a sprawling desert.",
+    "genre": "Space Opera",
+    "publish_year": 2013,
+    "pages": 604,
+    "rating": 3.0
+  },
+  {
+    "id": "book_0264",
+    "title": "Dancing with Ravens",
+    "author": "Leila Gupta",
+    "description": "In a world where technology has replaced nature, a rebellious princess must prevent a catastrophe before time runs out.",
+    "genre": "Romance",
+    "publish_year": 1993,
+    "pages": 476,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0265",
+    "title": "The Secret Fire",
+    "author": "Leila Thompson",
+    "description": "Set in a war-torn kingdom, this whimsical story explores friendship as a village healer struggles with supernatural forces.",
+    "genre": "Cozy Mystery",
+    "publish_year": 2019,
+    "pages": 372,
+    "rating": 4.6
+  },
+  {
+    "id": "book_0266",
+    "title": "Forest in the Deepwater",
+    "author": "Nia Kowalski",
+    "description": "When a mysterious plague threatens a war-torn kingdom, a gifted musician discovers a terrible truth that could destroy the world.",
+    "genre": "Horror",
+    "publish_year": 2013,
+    "pages": 286,
+    "rating": 4.5
+  },
+  {
+    "id": "book_0267",
+    "title": "The Wicked Ice",
+    "author": "Zara Park",
+    "description": "a mysterious stranger has always questioned everything. But when an ancient seal breaks, everything changes.",
+    "genre": "Psychological Thriller",
+    "publish_year": 1997,
+    "pages": 536,
+    "rating": 3.4
+  },
+  {
+    "id": "book_0268",
+    "title": "A Mountain of Light",
+    "author": "Yuki Morrison",
+    "description": "Set in a war-torn kingdom, this heartwarming story explores freedom as a powerful sorceress struggles with impossible odds.",
+    "genre": "Psychological Thriller",
+    "publish_year": 2021,
+    "pages": 270,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0269",
+    "title": "Between Ghosts",
+    "author": "Kenji Rodriguez",
+    "description": "a fierce warrior never expected to a secret identity. Now, with all is lost, they must claim their birthright.",
+    "genre": "Mystery",
+    "publish_year": 1994,
+    "pages": 645,
+    "rating": 3.3
+  },
+  {
+    "id": "book_0270",
+    "title": "The Power Protocol",
+    "author": "Samuel Yamamoto",
+    "description": "In a small coastal town, where magic flows through bloodlines, a rebellious princess faces an impossible choice between honor and freedom.",
+    "genre": "Dystopian",
+    "publish_year": 2023,
+    "pages": 579,
+    "rating": 4.6
+  },
+  {
+    "id": "book_0271",
+    "title": "Between Gates",
+    "author": "Yuki Tanaka",
+    "description": "After an ancient awakening, a powerful sorceress embarks on a race against time to claim their birthright, uncovering a dangerous weapon along the way.",
+    "genre": "Paranormal Romance",
+    "publish_year": 1994,
+    "pages": 211,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0272",
+    "title": "The Castle Conspiracy",
+    "author": "Fatima Liu",
+    "description": "an ambitious politician has always questioned everything. But when an ancient seal breaks, everything changes.",
+    "genre": "Cozy Mystery",
+    "publish_year": 1990,
+    "pages": 401,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0273",
+    "title": "The Last Phoenix",
+    "author": "Pierre Yamamoto",
+    "description": "Set in a frozen wasteland, this heartwarming story explores love as a reluctant hero struggles with social injustice.",
+    "genre": "Dystopian",
+    "publish_year": 2012,
+    "pages": 469,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0274",
+    "title": "The Letter Legacy",
+    "author": "Emma Tanaka",
+    "description": "When a loved one vanishes, a cunning merchant must confront lost love while a path of self-discovery.",
+    "genre": "Dystopian",
+    "publish_year": 1997,
+    "pages": 375,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0275",
+    "title": "The Last Ghost",
+    "author": "Mei Volkov",
+    "description": "When an unexpected inheritance threatens a small coastal town, a seasoned captain discovers a path to redemption that could rewrite history.",
+    "genre": "Fantasy",
+    "publish_year": 2018,
+    "pages": 287,
+    "rating": 3.7
+  },
+  {
+    "id": "book_0276",
+    "title": "Honor Falls",
+    "author": "Grace Kim",
+    "description": "a brilliant scientist has always hidden their true nature. But when a stranger arrives with dire news, everything changes.",
+    "genre": "Psychological Thriller",
+    "publish_year": 2004,
+    "pages": 470,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0277",
+    "title": "Cursed Dreams",
+    "author": "Ahmed Anderson",
+    "description": "a haunted veteran never expected to a mysterious artifact. Now, with hope dies, they must find redemption.",
+    "genre": "Horror",
+    "publish_year": 2024,
+    "pages": 184,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0278",
+    "title": "The Mirror's Power",
+    "author": "Ananya Liu",
+    "description": "After a political assassination, a cunning merchant embarks on a web of intrigue to escape their past, uncovering a forbidden love along the way.",
+    "genre": "Horror",
+    "publish_year": 1997,
+    "pages": 431,
+    "rating": 4.9
+  },
+  {
+    "id": "book_0279",
+    "title": "Ring in the Winterfell",
+    "author": "Viktor Novak",
+    "description": "a village healer has always dreamed of something more. But when a stranger arrives with dire news, everything changes.",
+    "genre": "Psychological Thriller",
+    "publish_year": 1995,
+    "pages": 490,
+    "rating": 3.9
+  },
+  {
+    "id": "book_0280",
+    "title": "The Ancient Lion of Blackmoor",
+    "author": "Mei Park",
+    "description": "When an ancient seal breaks, a devoted priest must confront inner demons while a battle for survival.",
+    "genre": "Steampunk",
+    "publish_year": 2022,
+    "pages": 227,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0281",
+    "title": "Crimson Dreams",
+    "author": "Priya Okonkwo",
+    "description": "a skilled assassin never expected to an ancient conspiracy. Now, with war consumes everything, they must unite warring factions.",
+    "genre": "Literary Fiction",
+    "publish_year": 2000,
+    "pages": 540,
+    "rating": 3.4
+  },
+  {
+    "id": "book_0282",
+    "title": "Shadows of Love",
+    "author": "Aisha Tanaka",
+    "description": "an aging detective never expected to an unlikely alliance. Now, with the prophecy fulfills itself, they must claim their birthright.",
+    "genre": "Science Fiction",
+    "publish_year": 2020,
+    "pages": 310,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0283",
+    "title": "Shadows of Power",
+    "author": "Thomas Gupta",
+    "description": "A gripping tale of redemption and duty, following a curious journalist through a search for answers.",
+    "genre": "Literary Fiction",
+    "publish_year": 2021,
+    "pages": 378,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0284",
+    "title": "The Desire Protocol",
+    "author": "Samuel Thompson",
+    "description": "In a small coastal town, where time moves differently, a mysterious stranger faces an impossible choice between sacrifice and hope.",
+    "genre": "Historical Fiction",
+    "publish_year": 2009,
+    "pages": 311,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0285",
+    "title": "Echoes of Order",
+    "author": "Antonio Larsson",
+    "description": "In a world where ancient prophecies shape reality, a haunted veteran must forge a new destiny before it's too late.",
+    "genre": "Romance",
+    "publish_year": 2012,
+    "pages": 397,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0286",
+    "title": "Under Noble Skies",
+    "author": "Takeshi Tanaka",
+    "description": "Set in a dystopian society, this haunting story explores freedom as an ambitious politician struggles with inner demons.",
+    "genre": "Cozy Mystery",
+    "publish_year": 2006,
+    "pages": 611,
+    "rating": 3.4
+  },
+  {
+    "id": "book_0287",
+    "title": "Dancing with Stars",
+    "author": "Sarah Petrov",
+    "description": "In a world where parallel worlds collide, a mysterious stranger must forge a new destiny before time runs out.",
+    "genre": "Horror",
+    "publish_year": 1998,
+    "pages": 200,
+    "rating": 3.9
+  },
+  {
+    "id": "book_0288",
+    "title": "The Ice Keeper",
+    "author": "Amara Nakamura",
+    "description": "A gripping tale of identity and ambition, following a haunted veteran through a dangerous quest.",
+    "genre": "Military Fiction",
+    "publish_year": 2014,
+    "pages": 574,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0289",
+    "title": "The Gentle Crown of Ironforge",
+    "author": "Zara Sharma",
+    "description": "In a crumbling empire, where artificial minds dream of freedom, an ambitious politician faces an impossible choice between survival and honor.",
+    "genre": "Steampunk",
+    "publish_year": 1990,
+    "pages": 424,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0290",
+    "title": "The Mirror's Redemption",
+    "author": "Chen Blackwood",
+    "description": "Set in a frozen wasteland, this sweeping story explores survival as a street-smart thief struggles with lost love.",
+    "genre": "Adventure",
+    "publish_year": 1997,
+    "pages": 445,
+    "rating": 4.2
+  },
+  {
+    "id": "book_0291",
+    "title": "The Peaceful Hour",
+    "author": "Aisha Thompson",
+    "description": "After a technological breakthrough, a gifted musician embarks on a web of intrigue to find redemption, uncovering a secret identity along the way.",
+    "genre": "Military Fiction",
+    "publish_year": 2005,
+    "pages": 406,
+    "rating": 3.6
+  },
+  {
+    "id": "book_0292",
+    "title": "The Last Map",
+    "author": "Sarah Novak",
+    "description": "A gripping tale of sacrifice and survival, following an ambitious politician through a search for answers.",
+    "genre": "Magical Realism",
+    "publish_year": 2024,
+    "pages": 468,
+    "rating": 3.3
+  },
+  {
+    "id": "book_0293",
+    "title": "A Path of Redemption",
+    "author": "Priya Williams",
+    "description": "a seasoned captain never expected to a mysterious artifact. Now, with time runs out, they must find redemption.",
+    "genre": "Magical Realism",
+    "publish_year": 2021,
+    "pages": 613,
+    "rating": 5.0
+  },
+  {
+    "id": "book_0294",
+    "title": "The Chaos Protocol",
+    "author": "Hassan Anderson",
+    "description": "After a forbidden discovery, a skilled assassin embarks on a web of intrigue to escape their past, uncovering a lost civilization along the way.",
+    "genre": "Dystopian",
+    "publish_year": 2012,
+    "pages": 256,
+    "rating": 4.9
+  },
+  {
+    "id": "book_0295",
+    "title": "Soul in the Moonrise",
+    "author": "Priya O'Brien",
+    "description": "In a sprawling desert, where the dead walk among the living, a seasoned captain faces an impossible choice between freedom and betrayal.",
+    "genre": "Dystopian",
+    "publish_year": 2011,
+    "pages": 583,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0296",
+    "title": "The Last Sword",
+    "author": "Chen Andersen",
+    "description": "When a devastating war threatens a tropical paradise, a haunted veteran discovers a secret identity that could change everything.",
+    "genre": "Horror",
+    "publish_year": 1995,
+    "pages": 263,
+    "rating": 4.0
+  },
+  {
+    "id": "book_0297",
+    "title": "The Last Bridge",
+    "author": "Kenji Volkov",
+    "description": "a young scholar never expected to a terrible truth. Now, with hope dies, they must unite warring factions.",
+    "genre": "Cozy Mystery",
+    "publish_year": 2018,
+    "pages": 204,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0298",
+    "title": "The Dragon Keeper",
+    "author": "Thomas Anderson",
+    "description": "A gripping tale of redemption and identity, following a gifted musician through a path of self-discovery.",
+    "genre": "Urban Fantasy",
+    "publish_year": 2011,
+    "pages": 264,
+    "rating": 4.5
+  },
+  {
+    "id": "book_0299",
+    "title": "Eternal Dreams",
+    "author": "Takeshi Liu",
+    "description": "a mysterious stranger has always dreamed of something more. But when a stranger arrives with dire news, everything changes.",
+    "genre": "Mystery",
+    "publish_year": 2024,
+    "pages": 241,
+    "rating": 4.0
+  },
+  {
+    "id": "book_0300",
+    "title": "The Peaceful Eagle",
+    "author": "Amara Sharma",
+    "description": "When war erupts without warning, an ambitious politician must confront moral ambiguity while a web of intrigue.",
+    "genre": "Paranormal Romance",
+    "publish_year": 2012,
+    "pages": 400,
+    "rating": 4.9
+  },
+  {
+    "id": "book_0301",
+    "title": "Path in the Starfall",
+    "author": "Oliver Mueller",
+    "description": "In a world where memories can be traded like currency, a powerful sorceress must claim their birthright before time runs out.",
+    "genre": "Historical Fiction",
+    "publish_year": 2008,
+    "pages": 629,
+    "rating": 4.2
+  },
+  {
+    "id": "book_0302",
+    "title": "The Forgotten Hour",
+    "author": "Michael Liu",
+    "description": "A gripping tale of power and hope, following a rebellious princess through a search for answers.",
+    "genre": "Epic Fantasy",
+    "publish_year": 2017,
+    "pages": 462,
+    "rating": 3.0
+  },
+  {
+    "id": "book_0303",
+    "title": "The Burning Dragon",
+    "author": "David Larsson",
+    "description": "When a devastating war threatens a small coastal town, a fierce warrior discovers a path to redemption that could destroy the world.",
+    "genre": "Crime",
+    "publish_year": 2007,
+    "pages": 192,
+    "rating": 4.9
+  },
+  {
+    "id": "book_0304",
+    "title": "Chronicles of Northlands",
+    "author": "Nia Larsson",
+    "description": "a rebellious princess never expected to a mysterious artifact. Now, with time runs out, they must save their family.",
+    "genre": "Steampunk",
+    "publish_year": 2002,
+    "pages": 562,
+    "rating": 3.0
+  },
+  {
+    "id": "book_0305",
+    "title": "The Light Protocol",
+    "author": "Ivan Andersen",
+    "description": "A gripping tale of sacrifice and power, following an exiled prince through a path of self-discovery.",
+    "genre": "Thriller",
+    "publish_year": 2006,
+    "pages": 524,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0306",
+    "title": "The Door Conspiracy",
+    "author": "Elena Morrison",
+    "description": "When an ancient seal breaks, a mysterious stranger must confront inner demons while a race against time.",
+    "genre": "Epic Fantasy",
+    "publish_year": 2008,
+    "pages": 622,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0307",
+    "title": "The Wisdom Protocol",
+    "author": "Nia Morrison",
+    "description": "Set in a frozen wasteland, this epic story explores identity as a rebellious princess struggles with supernatural forces.",
+    "genre": "Magical Realism",
+    "publish_year": 2010,
+    "pages": 332,
+    "rating": 4.6
+  },
+  {
+    "id": "book_0308",
+    "title": "Under Hidden Skies",
+    "author": "Thomas Costa",
+    "description": "After a political assassination, a seasoned captain embarks on a path of self-discovery to prevent a catastrophe, uncovering a forbidden love along the way.",
+    "genre": "Dystopian",
+    "publish_year": 2009,
+    "pages": 260,
+    "rating": 3.6
+  },
+  {
+    "id": "book_0309",
+    "title": "The Gentle Path of Highcliff",
+    "author": "Elena Johansson",
+    "description": "In a world where parallel worlds collide, a gentle librarian must prevent a catastrophe before hope dies.",
+    "genre": "Military Fiction",
+    "publish_year": 2001,
+    "pages": 420,
+    "rating": 3.2
+  },
+  {
+    "id": "book_0310",
+    "title": "Shadows of Betrayal",
+    "author": "Ahmed Thompson",
+    "description": "When a dark prophecy begins to unfold, a skilled assassin must confront impossible odds while a web of intrigue.",
+    "genre": "Literary Fiction",
+    "publish_year": 2011,
+    "pages": 563,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0311",
+    "title": "Shattered Dreams",
+    "author": "Maria Andersen",
+    "description": "a powerful sorceress never expected to a secret identity. Now, with all is lost, they must unite warring factions.",
+    "genre": "Horror",
+    "publish_year": 2019,
+    "pages": 521,
+    "rating": 5.0
+  },
+  {
+    "id": "book_0312",
+    "title": "Beyond the Castle",
+    "author": "Carlos Chen",
+    "description": "a village healer has always questioned everything. But when a forbidden text is discovered, everything changes.",
+    "genre": "Mystery",
+    "publish_year": 2024,
+    "pages": 650,
+    "rating": 3.7
+  },
+  {
+    "id": "book_0313",
+    "title": "The Throne Paradox",
+    "author": "Priya Johansson",
+    "description": "In a world where secrets hold the power of life and death, an ambitious politician must find redemption before the world crumbles.",
+    "genre": "Paranormal Romance",
+    "publish_year": 2011,
+    "pages": 340,
+    "rating": 3.6
+  },
+  {
+    "id": "book_0314",
+    "title": "Beyond the Shadow",
+    "author": "Fatima Morrison",
+    "description": "A dark exploration of friendship, following a powerful sorceress as they navigate lost love in a dystopian society.",
+    "genre": "Magical Realism",
+    "publish_year": 2004,
+    "pages": 597,
+    "rating": 5.0
+  },
+  {
+    "id": "book_0315",
+    "title": "The Gentle Prophecy",
+    "author": "Rosa Johansson",
+    "description": "a brilliant scientist never expected to a path to redemption. Now, with darkness falls forever, they must claim their birthright.",
+    "genre": "Space Opera",
+    "publish_year": 2016,
+    "pages": 193,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0316",
+    "title": "Dragon Rising",
+    "author": "James Morrison",
+    "description": "a village healer has always sought to escape their past. But when war erupts without warning, everything changes.",
+    "genre": "Thriller",
+    "publish_year": 2019,
+    "pages": 189,
+    "rating": 4.2
+  },
+  {
+    "id": "book_0317",
+    "title": "Shadows of Desire",
+    "author": "Kenji Blackwood",
+    "description": "In a world where ancient prophecies shape reality, an aging detective must uncover the truth before darkness falls forever.",
+    "genre": "Psychological Thriller",
+    "publish_year": 1999,
+    "pages": 227,
+    "rating": 4.9
+  },
+  {
+    "id": "book_0318",
+    "title": "Sacred Castles",
+    "author": "David Park",
+    "description": "When war erupts without warning, a village healer must confront a deadly enemy while a journey through darkness.",
+    "genre": "Adventure",
+    "publish_year": 2013,
+    "pages": 575,
+    "rating": 3.7
+  },
+  {
+    "id": "book_0319",
+    "title": "Stone in the Sunhaven",
+    "author": "Emma Liu",
+    "description": "After a chance encounter, an ambitious politician embarks on a race against time to unite warring factions, uncovering an ancient conspiracy along the way.",
+    "genre": "Historical Fiction",
+    "publish_year": 2002,
+    "pages": 602,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0320",
+    "title": "The Letter Keeper",
+    "author": "Maria Park",
+    "description": "A gripping tale of love and hope, following a mysterious stranger through a journey through darkness.",
+    "genre": "Psychological Thriller",
+    "publish_year": 1996,
+    "pages": 450,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0321",
+    "title": "Between Books",
+    "author": "Amara Andersen",
+    "description": "When a technological breakthrough threatens a small coastal town, a reluctant hero discovers a mysterious artifact that could save countless lives.",
+    "genre": "Magical Realism",
+    "publish_year": 2020,
+    "pages": 545,
+    "rating": 3.7
+  },
+  {
+    "id": "book_0322",
+    "title": "Dancing with Windows",
+    "author": "Leila Novak",
+    "description": "Set in a space station, this intense story explores duty as an aging detective struggles with social injustice.",
+    "genre": "Steampunk",
+    "publish_year": 1994,
+    "pages": 349,
+    "rating": 4.5
+  },
+  {
+    "id": "book_0323",
+    "title": "Echoes of Darkness",
+    "author": "Ahmed Morrison",
+    "description": "Set in a frozen wasteland, this heartwarming story explores power as a street-smart thief struggles with supernatural forces.",
+    "genre": "Mystery",
+    "publish_year": 2014,
+    "pages": 575,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0324",
+    "title": "Whispers of Betrayal",
+    "author": "Chloe Santos",
+    "description": "A thought-provoking exploration of survival, following a gifted musician as they navigate technological threats in a remote village.",
+    "genre": "Dystopian",
+    "publish_year": 2019,
+    "pages": 205,
+    "rating": 5.0
+  },
+  {
+    "id": "book_0325",
+    "title": "The Last Rain",
+    "author": "David Williams",
+    "description": "a young scholar has always been destined for greatness. But when a stranger arrives with dire news, everything changes.",
+    "genre": "Fantasy",
+    "publish_year": 2003,
+    "pages": 366,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0326",
+    "title": "The Golden Prophecy",
+    "author": "Ingrid Kowalski",
+    "description": "When a stranger arrives with dire news, an aging detective must confront impossible odds while a journey through darkness.",
+    "genre": "Epic Fantasy",
+    "publish_year": 2007,
+    "pages": 221,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0327",
+    "title": "Clock and Wanderers",
+    "author": "Ahmed Park",
+    "description": "a brilliant scientist never expected to a secret identity. Now, with darkness falls forever, they must forge a new destiny.",
+    "genre": "Science Fiction",
+    "publish_year": 2007,
+    "pages": 353,
+    "rating": 3.7
+  },
+  {
+    "id": "book_0328",
+    "title": "The Wolf's Hope",
+    "author": "Rosa Patel",
+    "description": "When an ancient awakening threatens a crumbling empire, a cunning merchant discovers an unlikely alliance that could change everything.",
+    "genre": "Psychological Thriller",
+    "publish_year": 2007,
+    "pages": 364,
+    "rating": 4.6
+  },
+  {
+    "id": "book_0329",
+    "title": "A Mind of Order",
+    "author": "Luna Costa",
+    "description": "A gripping tale of power and loss, following a seasoned captain through a journey through darkness.",
+    "genre": "Literary Fiction",
+    "publish_year": 2014,
+    "pages": 633,
+    "rating": 3.7
+  },
+  {
+    "id": "book_0330",
+    "title": "Whispers of Power",
+    "author": "Carlos Mueller",
+    "description": "a devoted priest never expected to a mysterious artifact. Now, with darkness falls forever, they must find redemption.",
+    "genre": "Adventure",
+    "publish_year": 2021,
+    "pages": 484,
+    "rating": 3.4
+  },
+  {
+    "id": "book_0331",
+    "title": "The Tiger Legacy",
+    "author": "Pierre Park",
+    "description": "Set in a crumbling empire, this suspenseful story explores survival as a fierce warrior struggles with supernatural forces.",
+    "genre": "Crime",
+    "publish_year": 2012,
+    "pages": 292,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0332",
+    "title": "Dancing with Wolfs",
+    "author": "Maria Anderson",
+    "description": "In a world where artificial minds dream of freedom, a reluctant hero must claim their birthright before all is lost.",
+    "genre": "Thriller",
+    "publish_year": 2020,
+    "pages": 454,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0333",
+    "title": "Rain in the Moonrise",
+    "author": "Luna Liu",
+    "description": "Set in a small coastal town, this emotional story explores power as a seasoned captain struggles with political intrigue.",
+    "genre": "Paranormal Romance",
+    "publish_year": 2000,
+    "pages": 537,
+    "rating": 5.0
+  },
+  {
+    "id": "book_0334",
+    "title": "The Ring Paradox",
+    "author": "Carlos Al-Hassan",
+    "description": "When a natural disaster threatens a crumbling empire, a brilliant scientist discovers a dangerous weapon that could save countless lives.",
+    "genre": "Mystery",
+    "publish_year": 2003,
+    "pages": 341,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0335",
+    "title": "The Wicked Hour",
+    "author": "Marcus Reyes",
+    "description": "Set in a magical academy, this intense story explores friendship as a curious journalist struggles with inner demons.",
+    "genre": "Space Opera",
+    "publish_year": 2000,
+    "pages": 235,
+    "rating": 4.9
+  },
+  {
+    "id": "book_0336",
+    "title": "Shadow and Strangers",
+    "author": "Michael Blackwood",
+    "description": "a skilled assassin never expected to a forbidden love. Now, with hope dies, they must prevent a catastrophe.",
+    "genre": "Cozy Mystery",
+    "publish_year": 2019,
+    "pages": 558,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0337",
+    "title": "Chronicles of Greenhollow",
+    "author": "Grace Kowalski",
+    "description": "Set in a thriving metropolis, this haunting story explores freedom as a fierce warrior struggles with moral ambiguity.",
+    "genre": "Magical Realism",
+    "publish_year": 2010,
+    "pages": 618,
+    "rating": 4.0
+  },
+  {
+    "id": "book_0338",
+    "title": "The Bridge Conspiracy",
+    "author": "Maria Andersen",
+    "description": "A epic exploration of identity, following a young scholar as they navigate political intrigue in an underground city.",
+    "genre": "Romance",
+    "publish_year": 1991,
+    "pages": 286,
+    "rating": 4.9
+  },
+  {
+    "id": "book_0339",
+    "title": "Shadows of Hope",
+    "author": "Carlos Nakamura",
+    "description": "After a political assassination, a devoted priest embarks on a battle for survival to find redemption, uncovering an unlikely alliance along the way.",
+    "genre": "Psychological Thriller",
+    "publish_year": 2015,
+    "pages": 405,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0340",
+    "title": "Map and Memories",
+    "author": "Hassan O'Brien",
+    "description": "After a forbidden discovery, an exiled prince embarks on a search for answers to find redemption, uncovering a dangerous weapon along the way.",
+    "genre": "Horror",
+    "publish_year": 2008,
+    "pages": 521,
+    "rating": 3.3
+  },
+  {
+    "id": "book_0341",
+    "title": "The Memory Keeper",
+    "author": "Yuki Chen",
+    "description": "A sweeping exploration of identity, following a seasoned captain as they navigate a deadly enemy in a frozen wasteland.",
+    "genre": "Paranormal Romance",
+    "publish_year": 2020,
+    "pages": 315,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0342",
+    "title": "Chronicles of Ironforge",
+    "author": "Elena Costa",
+    "description": "In a frozen wasteland, where parallel worlds collide, a haunted veteran faces an impossible choice between freedom and identity.",
+    "genre": "Science Fiction",
+    "publish_year": 1990,
+    "pages": 528,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0343",
+    "title": "The Bridge Keeper",
+    "author": "Antonio Reyes",
+    "description": "In a sprawling desert, where time moves differently, a haunted veteran faces an impossible choice between identity and sacrifice.",
+    "genre": "Military Fiction",
+    "publish_year": 2009,
+    "pages": 217,
+    "rating": 3.7
+  },
+  {
+    "id": "book_0344",
+    "title": "The Crystal Ocean",
+    "author": "Isabella Volkov",
+    "description": "When a shocking murder threatens a tropical paradise, a cunning merchant discovers a path to redemption that could save countless lives.",
+    "genre": "Literary Fiction",
+    "publish_year": 2007,
+    "pages": 541,
+    "rating": 3.6
+  },
+  {
+    "id": "book_0345",
+    "title": "The Tower Conspiracy",
+    "author": "Maria Mueller",
+    "description": "In a world where secrets hold the power of life and death, a young scholar must unite warring factions before it's too late.",
+    "genre": "Mystery",
+    "publish_year": 1991,
+    "pages": 646,
+    "rating": 3.9
+  },
+  {
+    "id": "book_0346",
+    "title": "The Tower's Silence",
+    "author": "Kofi Blackwood",
+    "description": "A thought-provoking exploration of justice, following a devoted priest as they navigate inner demons in an underground city.",
+    "genre": "Steampunk",
+    "publish_year": 1995,
+    "pages": 244,
+    "rating": 4.2
+  },
+  {
+    "id": "book_0347",
+    "title": "Between Shields",
+    "author": "Aisha Al-Hassan",
+    "description": "A gripping tale of justice and ambition, following a haunted veteran through a dangerous quest.",
+    "genre": "Historical Fiction",
+    "publish_year": 2009,
+    "pages": 208,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0348",
+    "title": "Beyond the Falcon",
+    "author": "Pierre Kowalski",
+    "description": "A gripping tale of survival and freedom, following an ambitious politician through a path of self-discovery.",
+    "genre": "Steampunk",
+    "publish_year": 2022,
+    "pages": 599,
+    "rating": 3.9
+  },
+  {
+    "id": "book_0349",
+    "title": "Rain Rising",
+    "author": "Isabella Novak",
+    "description": "Set in a war-torn kingdom, this suspenseful story explores power as a street-smart thief struggles with social injustice.",
+    "genre": "Science Fiction",
+    "publish_year": 2006,
+    "pages": 396,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0350",
+    "title": "The Twisted Prophecy",
+    "author": "Pierre Kim",
+    "description": "A gripping tale of love and loss, following an exiled prince through a journey through darkness.",
+    "genre": "Cozy Mystery",
+    "publish_year": 2013,
+    "pages": 508,
+    "rating": 4.1
+  },
+  {
+    "id": "book_0351",
+    "title": "Fate Falls",
+    "author": "Carlos Novak",
+    "description": "When a devastating war threatens an underground city, an ambitious politician discovers a hidden power within themselves that could bridge two worlds.",
+    "genre": "Adventure",
+    "publish_year": 2009,
+    "pages": 501,
+    "rating": 4.2
+  },
+  {
+    "id": "book_0352",
+    "title": "The Dream's Hope",
+    "author": "Priya Kowalski",
+    "description": "A gripping tale of friendship and power, following a curious journalist through a path of self-discovery.",
+    "genre": "Paranormal Romance",
+    "publish_year": 2011,
+    "pages": 221,
+    "rating": 3.4
+  },
+  {
+    "id": "book_0353",
+    "title": "The Shield Conspiracy",
+    "author": "Viktor Santos",
+    "description": "a brilliant scientist has always dreamed of something more. But when an ancient seal breaks, everything changes.",
+    "genre": "Fantasy",
+    "publish_year": 2016,
+    "pages": 649,
+    "rating": 4.0
+  },
+  {
+    "id": "book_0354",
+    "title": "The Wicked Mountain",
+    "author": "Priya Novak",
+    "description": "A dark exploration of honor, following a haunted veteran as they navigate lost love in a frozen wasteland.",
+    "genre": "Cozy Mystery",
+    "publish_year": 2024,
+    "pages": 448,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0355",
+    "title": "The Falcon's Courage",
+    "author": "Samuel Blackwood",
+    "description": "After a political assassination, a skilled assassin embarks on a journey through darkness to find redemption, uncovering an ancient conspiracy along the way.",
+    "genre": "Urban Fantasy",
+    "publish_year": 2014,
+    "pages": 429,
+    "rating": 3.2
+  },
+  {
+    "id": "book_0356",
+    "title": "The Twisted Lion",
+    "author": "David Rodriguez",
+    "description": "Set in a space station, this thrilling story explores loss as a haunted veteran struggles with moral ambiguity.",
+    "genre": "Military Fiction",
+    "publish_year": 2005,
+    "pages": 227,
+    "rating": 3.2
+  },
+  {
+    "id": "book_0357",
+    "title": "Beyond the Serpent",
+    "author": "Leila Gupta",
+    "description": "When a natural disaster threatens a remote village, a village healer discovers a secret identity that could unlock unimaginable power.",
+    "genre": "Romance",
+    "publish_year": 2011,
+    "pages": 192,
+    "rating": 3.6
+  },
+  {
+    "id": "book_0358",
+    "title": "The Heart Paradox",
+    "author": "Kenji Gupta",
+    "description": "In a tropical paradise, where ancient prophecies shape reality, a haunted veteran faces an impossible choice between sacrifice and power.",
+    "genre": "Epic Fantasy",
+    "publish_year": 2006,
+    "pages": 190,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0359",
+    "title": "Echoes of Vengeance",
+    "author": "Ivan Mueller",
+    "description": "In a world where time moves differently, a village healer must claim their birthright before all is lost.",
+    "genre": "Psychological Thriller",
+    "publish_year": 1994,
+    "pages": 471,
+    "rating": 3.2
+  },
+  {
+    "id": "book_0360",
+    "title": "The Throne Legacy",
+    "author": "Ivan Rodriguez",
+    "description": "a young scholar never expected to a terrible truth. Now, with war consumes everything, they must uncover the truth.",
+    "genre": "Science Fiction",
+    "publish_year": 1999,
+    "pages": 193,
+    "rating": 4.5
+  },
+  {
+    "id": "book_0361",
+    "title": "Chronicles of Eastmark",
+    "author": "Marcus Costa",
+    "description": "When a forbidden discovery threatens a thriving metropolis, a curious journalist discovers a lost civilization that could rewrite history.",
+    "genre": "Space Opera",
+    "publish_year": 2023,
+    "pages": 449,
+    "rating": 4.6
+  },
+  {
+    "id": "book_0362",
+    "title": "Under Crystal Skies",
+    "author": "Fatima Morrison",
+    "description": "A haunting exploration of honor, following a gifted musician as they navigate inner demons in a small coastal town.",
+    "genre": "Horror",
+    "publish_year": 2008,
+    "pages": 182,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0363",
+    "title": "The Secret Wind",
+    "author": "Rosa Tanaka",
+    "description": "In a world where parallel worlds collide, a cunning merchant must prevent a catastrophe before the world crumbles.",
+    "genre": "Mystery",
+    "publish_year": 2013,
+    "pages": 452,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0364",
+    "title": "The Star's Glory",
+    "author": "Emma Okonkwo",
+    "description": "In a world where artificial minds dream of freedom, a gifted musician must unite warring factions before the world crumbles.",
+    "genre": "Historical Fiction",
+    "publish_year": 2006,
+    "pages": 305,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0365",
+    "title": "Chronicles of Deepwater",
+    "author": "Grace Blackwood",
+    "description": "In a war-torn kingdom, where artificial minds dream of freedom, a powerful sorceress faces an impossible choice between redemption and duty.",
+    "genre": "Science Fiction",
+    "publish_year": 1994,
+    "pages": 226,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0366",
+    "title": "Under Cursed Skies",
+    "author": "Marcus Costa",
+    "description": "When war erupts without warning, a curious journalist must confront a deadly enemy while a web of intrigue.",
+    "genre": "Space Opera",
+    "publish_year": 2012,
+    "pages": 390,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0367",
+    "title": "The Silver Ice",
+    "author": "Oliver Novak",
+    "description": "When a forbidden text is discovered, a haunted veteran must confront impossible odds while a battle for survival.",
+    "genre": "Urban Fantasy",
+    "publish_year": 1990,
+    "pages": 264,
+    "rating": 4.2
+  },
+  {
+    "id": "book_0368",
+    "title": "Key and Scholars",
+    "author": "Maria Nakamura",
+    "description": "In a world where secrets hold the power of life and death, a rebellious princess must protect the innocent before the prophecy fulfills itself.",
+    "genre": "Thriller",
+    "publish_year": 2015,
+    "pages": 320,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0369",
+    "title": "The Window Paradox",
+    "author": "Marcus Sharma",
+    "description": "When a shocking murder threatens an underground city, a seasoned captain discovers an ancient conspiracy that could unlock unimaginable power.",
+    "genre": "Thriller",
+    "publish_year": 2018,
+    "pages": 252,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0370",
+    "title": "The Peaceful Memory of Thornfield",
+    "author": "Rosa Fernandez",
+    "description": "After a chance encounter, a gifted musician embarks on a web of intrigue to find redemption, uncovering an ancient conspiracy along the way.",
+    "genre": "Psychological Thriller",
+    "publish_year": 2010,
+    "pages": 622,
+    "rating": 3.4
+  },
+  {
+    "id": "book_0371",
+    "title": "The Path Keeper",
+    "author": "Nia Okonkwo",
+    "description": "an aging detective never expected to a mysterious artifact. Now, with the world crumbles, they must uncover the truth.",
+    "genre": "Science Fiction",
+    "publish_year": 2012,
+    "pages": 593,
+    "rating": 4.0
+  },
+  {
+    "id": "book_0372",
+    "title": "Dancing with Dreams",
+    "author": "James Larsson",
+    "description": "When a dark prophecy begins to unfold, a young scholar must confront moral ambiguity while a journey through darkness.",
+    "genre": "Historical Fiction",
+    "publish_year": 2016,
+    "pages": 391,
+    "rating": 4.6
+  },
+  {
+    "id": "book_0373",
+    "title": "The Shattered Hour",
+    "author": "David Gupta",
+    "description": "a seasoned captain never expected to a forbidden love. Now, with the world crumbles, they must uncover the truth.",
+    "genre": "Urban Fantasy",
+    "publish_year": 2018,
+    "pages": 197,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0374",
+    "title": "The Secret Castle",
+    "author": "Ingrid Kowalski",
+    "description": "In a world where ancient prophecies shape reality, a gifted musician must destroy an ancient evil before it's too late.",
+    "genre": "Horror",
+    "publish_year": 1992,
+    "pages": 644,
+    "rating": 3.3
+  },
+  {
+    "id": "book_0375",
+    "title": "Dancing with Rivers",
+    "author": "James Patel",
+    "description": "In a world where artificial minds dream of freedom, a young scholar must destroy an ancient evil before darkness falls forever.",
+    "genre": "Literary Fiction",
+    "publish_year": 2010,
+    "pages": 512,
+    "rating": 4.0
+  },
+  {
+    "id": "book_0376",
+    "title": "Between Keys",
+    "author": "Ahmed Kim",
+    "description": "a curious journalist has always questioned everything. But when a loved one vanishes, everything changes.",
+    "genre": "Cozy Mystery",
+    "publish_year": 1990,
+    "pages": 634,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0377",
+    "title": "Whispers of Chaos",
+    "author": "Elena Costa",
+    "description": "When a technological breakthrough threatens a war-torn kingdom, an exiled prince discovers a forbidden love that could destroy the world.",
+    "genre": "Adventure",
+    "publish_year": 2006,
+    "pages": 296,
+    "rating": 3.3
+  },
+  {
+    "id": "book_0378",
+    "title": "Ghost Rising",
+    "author": "Emma Kim",
+    "description": "After a natural disaster, a curious journalist embarks on a web of intrigue to save their family, uncovering a secret identity along the way.",
+    "genre": "Mystery",
+    "publish_year": 1995,
+    "pages": 442,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0379",
+    "title": "The Letter's Redemption",
+    "author": "Sarah Al-Hassan",
+    "description": "A heartwarming exploration of family, following a gifted musician as they navigate a deadly enemy in a war-torn kingdom.",
+    "genre": "Historical Fiction",
+    "publish_year": 2008,
+    "pages": 267,
+    "rating": 3.3
+  },
+  {
+    "id": "book_0380",
+    "title": "The Forest's Destiny",
+    "author": "Luna Tanaka",
+    "description": "When an unexpected inheritance threatens a remote village, a reluctant hero discovers a dangerous weapon that could end a centuries-old conflict.",
+    "genre": "Fantasy",
+    "publish_year": 1993,
+    "pages": 481,
+    "rating": 4.1
+  },
+  {
+    "id": "book_0381",
+    "title": "Dancing with Fires",
+    "author": "Thomas Rodriguez",
+    "description": "In a war-torn kingdom, where the dead walk among the living, a skilled assassin faces an impossible choice between ambition and justice.",
+    "genre": "Horror",
+    "publish_year": 2006,
+    "pages": 452,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0382",
+    "title": "The Key Keeper",
+    "author": "Isabella Tanaka",
+    "description": "a rebellious princess has always sought to escape their past. But when war erupts without warning, everything changes.",
+    "genre": "Crime",
+    "publish_year": 1998,
+    "pages": 272,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0383",
+    "title": "Eagle in the Sunhaven",
+    "author": "Aisha Blackwood",
+    "description": "a cunning merchant never expected to an unlikely alliance. Now, with hope dies, they must forge a new destiny.",
+    "genre": "Psychological Thriller",
+    "publish_year": 2016,
+    "pages": 202,
+    "rating": 5.0
+  },
+  {
+    "id": "book_0384",
+    "title": "Letter Rising",
+    "author": "Fatima Kowalski",
+    "description": "a haunted veteran has always questioned everything. But when an ancient seal breaks, everything changes.",
+    "genre": "Crime",
+    "publish_year": 1994,
+    "pages": 264,
+    "rating": 3.9
+  },
+  {
+    "id": "book_0385",
+    "title": "The Dragon's Hope",
+    "author": "Ivan Costa",
+    "description": "a brilliant scientist never expected to a secret identity. Now, with time runs out, they must claim their birthright.",
+    "genre": "Epic Fantasy",
+    "publish_year": 1999,
+    "pages": 287,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0386",
+    "title": "Dancing with Bridges",
+    "author": "David Mueller",
+    "description": "In a world where technology has replaced nature, a haunted veteran must find redemption before time runs out.",
+    "genre": "Epic Fantasy",
+    "publish_year": 2011,
+    "pages": 256,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0387",
+    "title": "The Sword's Fate",
+    "author": "Rosa Larsson",
+    "description": "In a thriving metropolis, where the dead walk among the living, a street-smart thief faces an impossible choice between identity and honor.",
+    "genre": "Paranormal Romance",
+    "publish_year": 2007,
+    "pages": 586,
+    "rating": 3.7
+  },
+  {
+    "id": "book_0388",
+    "title": "Ring and Stars",
+    "author": "Ingrid Thompson",
+    "description": "After a chance encounter, a curious journalist embarks on a path of self-discovery to claim their birthright, uncovering an ancient conspiracy along the way.",
+    "genre": "Adventure",
+    "publish_year": 2016,
+    "pages": 184,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0389",
+    "title": "Shattered Minds",
+    "author": "Ingrid Blackwood",
+    "description": "In a frozen wasteland, where time moves differently, a young scholar faces an impossible choice between duty and redemption.",
+    "genre": "Horror",
+    "publish_year": 2018,
+    "pages": 488,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0390",
+    "title": "The Fire Conspiracy",
+    "author": "Fatima O'Brien",
+    "description": "Set in a thriving metropolis, this intense story explores freedom as a devoted priest struggles with lost love.",
+    "genre": "Historical Fiction",
+    "publish_year": 2014,
+    "pages": 587,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0391",
+    "title": "The Midnight Prophecy",
+    "author": "Takeshi Petrov",
+    "description": "When an ancient seal breaks, a young scholar must confront a deadly enemy while a path of self-discovery.",
+    "genre": "Cozy Mystery",
+    "publish_year": 1999,
+    "pages": 333,
+    "rating": 3.6
+  },
+  {
+    "id": "book_0392",
+    "title": "Wild Shields",
+    "author": "Thomas Fernandez",
+    "description": "an ambitious politician never expected to a terrible truth. Now, with time runs out, they must protect the innocent.",
+    "genre": "Fantasy",
+    "publish_year": 1994,
+    "pages": 533,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0393",
+    "title": "A Ocean of Eternity",
+    "author": "Pierre O'Brien",
+    "description": "Set in a crumbling empire, this heartwarming story explores redemption as a rebellious princess struggles with social injustice.",
+    "genre": "Epic Fantasy",
+    "publish_year": 2001,
+    "pages": 252,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0394",
+    "title": "Hollow Thrones",
+    "author": "Ingrid Kim",
+    "description": "In an underground city, where magic flows through bloodlines, a gifted musician faces an impossible choice between friendship and power.",
+    "genre": "Historical Fiction",
+    "publish_year": 2023,
+    "pages": 434,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0395",
+    "title": "Whispers of Fate",
+    "author": "Maria Santos",
+    "description": "After a forbidden discovery, a street-smart thief embarks on a web of intrigue to uncover the truth, uncovering an unlikely alliance along the way.",
+    "genre": "Steampunk",
+    "publish_year": 1993,
+    "pages": 497,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0396",
+    "title": "The Clock Conspiracy",
+    "author": "Sofia Patel",
+    "description": "A haunting exploration of friendship, following a reluctant hero as they navigate social injustice in a frozen wasteland.",
+    "genre": "Horror",
+    "publish_year": 2019,
+    "pages": 642,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0397",
+    "title": "The Last Letter",
+    "author": "Elena Rodriguez",
+    "description": "After a mysterious plague, a powerful sorceress embarks on a dangerous quest to protect the innocent, uncovering a secret identity along the way.",
+    "genre": "Paranormal Romance",
+    "publish_year": 2009,
+    "pages": 251,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0398",
+    "title": "Shadows of Honor",
+    "author": "Priya Johansson",
+    "description": "a brilliant scientist never expected to a path to redemption. Now, with war consumes everything, they must prevent a catastrophe.",
+    "genre": "Magical Realism",
+    "publish_year": 2021,
+    "pages": 416,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0399",
+    "title": "The Vengeance Protocol",
+    "author": "Viktor Anderson",
+    "description": "A intimate exploration of betrayal, following an ambitious politician as they navigate inner demons in a crumbling empire.",
+    "genre": "Dystopian",
+    "publish_year": 2018,
+    "pages": 591,
+    "rating": 3.2
+  },
+  {
+    "id": "book_0400",
+    "title": "Ocean and Dreams",
+    "author": "Grace Nakamura",
+    "description": "Set in a war-torn kingdom, this thought-provoking story explores survival as an aging detective struggles with inner demons.",
+    "genre": "Fantasy",
+    "publish_year": 2015,
+    "pages": 343,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0401",
+    "title": "The Dream's Memory",
+    "author": "Carlos Reyes",
+    "description": "After an unexpected inheritance, a gentle librarian embarks on a battle for survival to unite warring factions, uncovering a hidden power within themselves along the way.",
+    "genre": "Historical Fiction",
+    "publish_year": 1990,
+    "pages": 576,
+    "rating": 3.6
+  },
+  {
+    "id": "book_0402",
+    "title": "A Lion of Silence",
+    "author": "Emma Al-Hassan",
+    "description": "In a thriving metropolis, where parallel worlds collide, a cunning merchant faces an impossible choice between love and friendship.",
+    "genre": "Mystery",
+    "publish_year": 2005,
+    "pages": 534,
+    "rating": 3.3
+  },
+  {
+    "id": "book_0403",
+    "title": "The Last Door",
+    "author": "Michael Santos",
+    "description": "When a stranger arrives with dire news, a street-smart thief must confront supernatural forces while a journey through darkness.",
+    "genre": "Historical Fiction",
+    "publish_year": 2011,
+    "pages": 210,
+    "rating": 3.2
+  },
+  {
+    "id": "book_0404",
+    "title": "Beyond the Tower",
+    "author": "Fatima Reyes",
+    "description": "A gripping tale of ambition and survival, following a gentle librarian through a battle for survival.",
+    "genre": "Dystopian",
+    "publish_year": 2016,
+    "pages": 350,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0405",
+    "title": "The Noble Hour",
+    "author": "Chloe Blackwood",
+    "description": "In a war-torn kingdom, where ancient prophecies shape reality, a rebellious princess faces an impossible choice between love and friendship.",
+    "genre": "Literary Fiction",
+    "publish_year": 1991,
+    "pages": 453,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0406",
+    "title": "Under Ancient Skies",
+    "author": "Thomas Kim",
+    "description": "A gripping tale of ambition and love, following a rebellious princess through a journey through darkness.",
+    "genre": "Literary Fiction",
+    "publish_year": 1992,
+    "pages": 336,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0407",
+    "title": "Under Stormy Skies",
+    "author": "Takeshi Kim",
+    "description": "an aging detective never expected to a hidden power within themselves. Now, with the prophecy fulfills itself, they must protect the innocent.",
+    "genre": "Mystery",
+    "publish_year": 2018,
+    "pages": 393,
+    "rating": 4.9
+  },
+  {
+    "id": "book_0408",
+    "title": "Shadows of Darkness",
+    "author": "Priya Volkov",
+    "description": "Set in a dystopian society, this dark story explores freedom as an exiled prince struggles with a deadly enemy.",
+    "genre": "Mystery",
+    "publish_year": 2004,
+    "pages": 365,
+    "rating": 4.1
+  },
+  {
+    "id": "book_0409",
+    "title": "The Secret Letter",
+    "author": "Ahmed O'Brien",
+    "description": "After an unexpected inheritance, a village healer embarks on a battle for survival to claim their birthright, uncovering a hidden power within themselves along the way.",
+    "genre": "Space Opera",
+    "publish_year": 1993,
+    "pages": 252,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0410",
+    "title": "Golden Fires",
+    "author": "Viktor Petrov",
+    "description": "a devoted priest never expected to a lost civilization. Now, with hope dies, they must prevent a catastrophe.",
+    "genre": "Urban Fantasy",
+    "publish_year": 2013,
+    "pages": 533,
+    "rating": 4.1
+  },
+  {
+    "id": "book_0411",
+    "title": "Shadow and Thieves",
+    "author": "Ananya Blackwood",
+    "description": "Set in a crumbling empire, this thrilling story explores love as a gifted musician struggles with technological threats.",
+    "genre": "Thriller",
+    "publish_year": 2021,
+    "pages": 602,
+    "rating": 4.6
+  },
+  {
+    "id": "book_0412",
+    "title": "Under Golden Skies",
+    "author": "Amara Costa",
+    "description": "When an ancient seal breaks, a gifted musician must confront inner demons while a race against time.",
+    "genre": "Mystery",
+    "publish_year": 2017,
+    "pages": 647,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0413",
+    "title": "The Eternal Path",
+    "author": "Michael Kim",
+    "description": "After an unexpected inheritance, a cunning merchant embarks on a web of intrigue to find redemption, uncovering a lost civilization along the way.",
+    "genre": "Science Fiction",
+    "publish_year": 2014,
+    "pages": 243,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0414",
+    "title": "Falcon Rising",
+    "author": "Grace Anderson",
+    "description": "In a world where memories can be traded like currency, a gifted musician must prevent a catastrophe before time runs out.",
+    "genre": "Mystery",
+    "publish_year": 2014,
+    "pages": 235,
+    "rating": 4.6
+  },
+  {
+    "id": "book_0415",
+    "title": "Moon and Dreams",
+    "author": "Priya Al-Hassan",
+    "description": "When war erupts without warning, a cunning merchant must confront a deadly enemy while a race against time.",
+    "genre": "Urban Fantasy",
+    "publish_year": 1992,
+    "pages": 499,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0416",
+    "title": "Between Eagles",
+    "author": "Mei O'Brien",
+    "description": "In a space station, where artificial minds dream of freedom, a reluctant hero faces an impossible choice between love and identity.",
+    "genre": "Steampunk",
+    "publish_year": 1999,
+    "pages": 189,
+    "rating": 3.2
+  },
+  {
+    "id": "book_0417",
+    "title": "The Dark Hour",
+    "author": "Mei Gupta",
+    "description": "In a world where secrets hold the power of life and death, an ambitious politician must prevent a catastrophe before hope dies.",
+    "genre": "Cozy Mystery",
+    "publish_year": 2002,
+    "pages": 593,
+    "rating": 4.5
+  },
+  {
+    "id": "book_0418",
+    "title": "The Gate's Light",
+    "author": "Aisha Singh",
+    "description": "a village healer never expected to an unlikely alliance. Now, with all is lost, they must unite warring factions.",
+    "genre": "Adventure",
+    "publish_year": 2008,
+    "pages": 585,
+    "rating": 4.6
+  },
+  {
+    "id": "book_0419",
+    "title": "Shadow and Kings",
+    "author": "Mei Thompson",
+    "description": "After a devastating war, a street-smart thief embarks on a journey through darkness to protect the innocent, uncovering a secret identity along the way.",
+    "genre": "Historical Fiction",
+    "publish_year": 2004,
+    "pages": 385,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0420",
+    "title": "Under Fierce Skies",
+    "author": "James Singh",
+    "description": "After a natural disaster, an exiled prince embarks on a path of self-discovery to protect the innocent, uncovering a forbidden love along the way.",
+    "genre": "Space Opera",
+    "publish_year": 2015,
+    "pages": 270,
+    "rating": 3.2
+  },
+  {
+    "id": "book_0421",
+    "title": "The Dark Wind of Ravenwood",
+    "author": "Aisha Chen",
+    "description": "A thrilling exploration of freedom, following a curious journalist as they navigate technological threats in a space station.",
+    "genre": "Urban Fantasy",
+    "publish_year": 2005,
+    "pages": 283,
+    "rating": 3.9
+  },
+  {
+    "id": "book_0422",
+    "title": "A Shield of Love",
+    "author": "James Costa",
+    "description": "a street-smart thief has always hidden their true nature. But when war erupts without warning, everything changes.",
+    "genre": "Adventure",
+    "publish_year": 2024,
+    "pages": 537,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0423",
+    "title": "Shadows of Fate",
+    "author": "Emma Novak",
+    "description": "In a space station, where artificial minds dream of freedom, a powerful sorceress faces an impossible choice between friendship and betrayal.",
+    "genre": "Literary Fiction",
+    "publish_year": 2009,
+    "pages": 368,
+    "rating": 3.9
+  },
+  {
+    "id": "book_0424",
+    "title": "The Gentle Hour",
+    "author": "Sofia Patel",
+    "description": "A gripping tale of justice and identity, following a fierce warrior through a web of intrigue.",
+    "genre": "Epic Fantasy",
+    "publish_year": 1997,
+    "pages": 339,
+    "rating": 3.9
+  },
+  {
+    "id": "book_0425",
+    "title": "The Silver Prophecy",
+    "author": "Yuki Chen",
+    "description": "A intense exploration of identity, following a gentle librarian as they navigate inner demons in a crumbling empire.",
+    "genre": "Crime",
+    "publish_year": 2012,
+    "pages": 508,
+    "rating": 4.5
+  },
+  {
+    "id": "book_0426",
+    "title": "Stone Rising",
+    "author": "Pierre O'Brien",
+    "description": "Set in a frozen wasteland, this thought-provoking story explores ambition as a gifted musician struggles with a deadly enemy.",
+    "genre": "Cozy Mystery",
+    "publish_year": 2011,
+    "pages": 593,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0427",
+    "title": "The Sun's Justice",
+    "author": "James Liu",
+    "description": "In a world where time moves differently, a young scholar must claim their birthright before it's too late.",
+    "genre": "Magical Realism",
+    "publish_year": 2011,
+    "pages": 277,
+    "rating": 4.2
+  },
+  {
+    "id": "book_0428",
+    "title": "Echoes of Freedom",
+    "author": "Sofia Novak",
+    "description": "an ambitious politician never expected to a hidden power within themselves. Now, with darkness falls forever, they must protect the innocent.",
+    "genre": "Steampunk",
+    "publish_year": 1994,
+    "pages": 649,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0429",
+    "title": "Echoes of Light",
+    "author": "Chen Rodriguez",
+    "description": "A sweeping exploration of freedom, following a gifted musician as they navigate impossible odds in an underground city.",
+    "genre": "Dystopian",
+    "publish_year": 2016,
+    "pages": 218,
+    "rating": 4.1
+  },
+  {
+    "id": "book_0430",
+    "title": "Dancing with Serpents",
+    "author": "Ananya Patel",
+    "description": "When a loved one vanishes, a seasoned captain must confront political intrigue while a battle for survival.",
+    "genre": "Urban Fantasy",
+    "publish_year": 1998,
+    "pages": 562,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0431",
+    "title": "Under Raging Skies",
+    "author": "Viktor Petrov",
+    "description": "a gentle librarian never expected to a lost civilization. Now, with hope dies, they must prevent a catastrophe.",
+    "genre": "Adventure",
+    "publish_year": 2015,
+    "pages": 528,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0432",
+    "title": "Hollow Stars",
+    "author": "Fatima Volkov",
+    "description": "In a war-torn kingdom, where ancient prophecies shape reality, a street-smart thief faces an impossible choice between identity and honor.",
+    "genre": "Horror",
+    "publish_year": 2008,
+    "pages": 287,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0433",
+    "title": "Echoes of Fate",
+    "author": "Hassan Al-Hassan",
+    "description": "Set in a war-torn kingdom, this sweeping story explores duty as a brilliant scientist struggles with a deadly enemy.",
+    "genre": "Paranormal Romance",
+    "publish_year": 2010,
+    "pages": 336,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0434",
+    "title": "Under Twisted Skies",
+    "author": "Samuel Mueller",
+    "description": "a street-smart thief has always sought to escape their past. But when a stranger arrives with dire news, everything changes.",
+    "genre": "Thriller",
+    "publish_year": 2018,
+    "pages": 589,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0435",
+    "title": "Golden Ices",
+    "author": "Emma Anderson",
+    "description": "a village healer has always hidden their true nature. But when war erupts without warning, everything changes.",
+    "genre": "Thriller",
+    "publish_year": 2012,
+    "pages": 436,
+    "rating": 3.9
+  },
+  {
+    "id": "book_0436",
+    "title": "The Eternity Protocol",
+    "author": "Priya Volkov",
+    "description": "Set in a sprawling desert, this sweeping story explores sacrifice as a haunted veteran struggles with supernatural forces.",
+    "genre": "Romance",
+    "publish_year": 2020,
+    "pages": 232,
+    "rating": 4.0
+  },
+  {
+    "id": "book_0437",
+    "title": "Silver Shadows",
+    "author": "Luna Andersen",
+    "description": "When a forbidden text is discovered, a skilled assassin must confront social injustice while a dangerous quest.",
+    "genre": "Horror",
+    "publish_year": 1999,
+    "pages": 476,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0438",
+    "title": "Dancing with Suns",
+    "author": "Pierre Yamamoto",
+    "description": "After a mysterious plague, an exiled prince embarks on a journey through darkness to escape their past, uncovering a forbidden love along the way.",
+    "genre": "Crime",
+    "publish_year": 2023,
+    "pages": 461,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0439",
+    "title": "Rain and Dreams",
+    "author": "Maria Gupta",
+    "description": "After an ancient awakening, a devoted priest embarks on a path of self-discovery to prevent a catastrophe, uncovering a forbidden love along the way.",
+    "genre": "Romance",
+    "publish_year": 2007,
+    "pages": 305,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0440",
+    "title": "The Soul Legacy",
+    "author": "Fatima Johansson",
+    "description": "Set in a sprawling desert, this suspenseful story explores duty as an aging detective struggles with lost love.",
+    "genre": "Fantasy",
+    "publish_year": 1992,
+    "pages": 397,
+    "rating": 3.3
+  },
+  {
+    "id": "book_0441",
+    "title": "Lion and Ghosts",
+    "author": "Sarah Tanaka",
+    "description": "After a devastating war, an exiled prince embarks on a race against time to destroy an ancient evil, uncovering a path to redemption along the way.",
+    "genre": "Historical Fiction",
+    "publish_year": 2019,
+    "pages": 614,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0442",
+    "title": "The Storm Paradox",
+    "author": "Ivan Nakamura",
+    "description": "a young scholar never expected to an unlikely alliance. Now, with darkness falls forever, they must find redemption.",
+    "genre": "Adventure",
+    "publish_year": 2016,
+    "pages": 205,
+    "rating": 4.2
+  },
+  {
+    "id": "book_0443",
+    "title": "The Wild Prophecy",
+    "author": "Ingrid O'Brien",
+    "description": "When a forbidden text is discovered, a village healer must confront political intrigue while a race against time.",
+    "genre": "Military Fiction",
+    "publish_year": 1998,
+    "pages": 539,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0444",
+    "title": "Shadows of Courage",
+    "author": "James Sharma",
+    "description": "Set in a small coastal town, this thought-provoking story explores betrayal as a gifted musician struggles with moral ambiguity.",
+    "genre": "Paranormal Romance",
+    "publish_year": 2005,
+    "pages": 501,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0445",
+    "title": "The Soul's Truth",
+    "author": "Priya Novak",
+    "description": "a street-smart thief has always sought to escape their past. But when a loved one vanishes, everything changes.",
+    "genre": "Crime",
+    "publish_year": 2015,
+    "pages": 508,
+    "rating": 3.2
+  },
+  {
+    "id": "book_0446",
+    "title": "Beyond the Lion",
+    "author": "Takeshi Petrov",
+    "description": "In a world where ancient prophecies shape reality, a street-smart thief must uncover the truth before war consumes everything.",
+    "genre": "Mystery",
+    "publish_year": 2021,
+    "pages": 446,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0447",
+    "title": "A Ice of Justice",
+    "author": "James Sharma",
+    "description": "When a forbidden discovery threatens a thriving metropolis, an aging detective discovers a terrible truth that could save countless lives.",
+    "genre": "Thriller",
+    "publish_year": 2024,
+    "pages": 465,
+    "rating": 3.7
+  },
+  {
+    "id": "book_0448",
+    "title": "Dancing with Forests",
+    "author": "Dmitri Fernandez",
+    "description": "A dark exploration of family, following a rebellious princess as they navigate supernatural forces in an underground city.",
+    "genre": "Psychological Thriller",
+    "publish_year": 1994,
+    "pages": 522,
+    "rating": 4.0
+  },
+  {
+    "id": "book_0449",
+    "title": "Window in the Silverdale",
+    "author": "Amara Chen",
+    "description": "Set in a war-torn kingdom, this emotional story explores identity as a young scholar struggles with impossible odds.",
+    "genre": "Fantasy",
+    "publish_year": 2007,
+    "pages": 209,
+    "rating": 3.4
+  },
+  {
+    "id": "book_0450",
+    "title": "Power Falls",
+    "author": "Michael Larsson",
+    "description": "When war erupts without warning, an exiled prince must confront lost love while a search for answers.",
+    "genre": "Horror",
+    "publish_year": 2018,
+    "pages": 252,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0451",
+    "title": "The Broken Prophecy",
+    "author": "Ananya Thompson",
+    "description": "a brilliant scientist has always dreamed of something more. But when a stranger arrives with dire news, everything changes.",
+    "genre": "Horror",
+    "publish_year": 2005,
+    "pages": 405,
+    "rating": 4.6
+  },
+  {
+    "id": "book_0452",
+    "title": "The Stone Conspiracy",
+    "author": "Chloe Liu",
+    "description": "After a technological breakthrough, a young scholar embarks on a journey through darkness to claim their birthright, uncovering a forbidden love along the way.",
+    "genre": "Thriller",
+    "publish_year": 2022,
+    "pages": 208,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0453",
+    "title": "Sun and Truths",
+    "author": "Sofia Anderson",
+    "description": "In a world where magic flows through bloodlines, a mysterious stranger must uncover the truth before darkness falls forever.",
+    "genre": "Crime",
+    "publish_year": 2019,
+    "pages": 407,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0454",
+    "title": "A River of Memory",
+    "author": "Pierre Reyes",
+    "description": "a mysterious stranger has always been destined for greatness. But when a stranger arrives with dire news, everything changes.",
+    "genre": "Cozy Mystery",
+    "publish_year": 2003,
+    "pages": 269,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0455",
+    "title": "The Clock Keeper",
+    "author": "Ahmed Liu",
+    "description": "A suspenseful exploration of betrayal, following a cunning merchant as they navigate supernatural forces in a war-torn kingdom.",
+    "genre": "Historical Fiction",
+    "publish_year": 2014,
+    "pages": 293,
+    "rating": 4.1
+  },
+  {
+    "id": "book_0456",
+    "title": "The Mirror Legacy",
+    "author": "Michael Park",
+    "description": "a brilliant scientist has always sought to escape their past. But when a stranger arrives with dire news, everything changes.",
+    "genre": "Urban Fantasy",
+    "publish_year": 2011,
+    "pages": 307,
+    "rating": 4.1
+  },
+  {
+    "id": "book_0457",
+    "title": "Memory Falls",
+    "author": "Isabella O'Brien",
+    "description": "A intimate exploration of survival, following a young scholar as they navigate inner demons in an underground city.",
+    "genre": "Dystopian",
+    "publish_year": 1998,
+    "pages": 331,
+    "rating": 4.1
+  },
+  {
+    "id": "book_0458",
+    "title": "Lost Dreams",
+    "author": "Fatima Anderson",
+    "description": "In a world where empires rise and fall overnight, a gifted musician must protect the innocent before war consumes everything.",
+    "genre": "Urban Fantasy",
+    "publish_year": 2001,
+    "pages": 535,
+    "rating": 3.0
+  },
+  {
+    "id": "book_0459",
+    "title": "The Silver Key",
+    "author": "Luna Chen",
+    "description": "A gripping tale of freedom and power, following a mysterious stranger through a journey through darkness.",
+    "genre": "Urban Fantasy",
+    "publish_year": 1995,
+    "pages": 619,
+    "rating": 3.0
+  },
+  {
+    "id": "book_0460",
+    "title": "The Wicked Storm of Deepwater",
+    "author": "Chen Okonkwo",
+    "description": "When an ancient seal breaks, a young scholar must confront social injustice while a race against time.",
+    "genre": "Dystopian",
+    "publish_year": 2005,
+    "pages": 182,
+    "rating": 3.7
+  },
+  {
+    "id": "book_0461",
+    "title": "Frozen Dreams",
+    "author": "Leila Blackwood",
+    "description": "A gripping tale of family and freedom, following a mysterious stranger through a search for answers.",
+    "genre": "Crime",
+    "publish_year": 2019,
+    "pages": 192,
+    "rating": 3.3
+  },
+  {
+    "id": "book_0462",
+    "title": "Whispers of Order",
+    "author": "Ananya Kim",
+    "description": "After an ancient awakening, a devoted priest embarks on a search for answers to prevent a catastrophe, uncovering an unlikely alliance along the way.",
+    "genre": "Urban Fantasy",
+    "publish_year": 2001,
+    "pages": 512,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0463",
+    "title": "A Heart of Truth",
+    "author": "David Andersen",
+    "description": "When an ancient seal breaks, a young scholar must confront technological threats while a race against time.",
+    "genre": "Steampunk",
+    "publish_year": 1995,
+    "pages": 433,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0464",
+    "title": "Beyond the Memory",
+    "author": "Ahmed Santos",
+    "description": "When an ancient awakening threatens a sprawling desert, a gentle librarian discovers a hidden power within themselves that could destroy the world.",
+    "genre": "Space Opera",
+    "publish_year": 2013,
+    "pages": 528,
+    "rating": 4.5
+  },
+  {
+    "id": "book_0465",
+    "title": "The Hollow Wolf of Moonrise",
+    "author": "Marcus Liu",
+    "description": "Set in a sprawling desert, this suspenseful story explores survival as a reluctant hero struggles with moral ambiguity.",
+    "genre": "Paranormal Romance",
+    "publish_year": 2004,
+    "pages": 212,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0466",
+    "title": "Echoes of Courage",
+    "author": "Maria Fernandez",
+    "description": "A heartwarming exploration of hope, following a street-smart thief as they navigate inner demons in a thriving metropolis.",
+    "genre": "Crime",
+    "publish_year": 2011,
+    "pages": 207,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0467",
+    "title": "Wicked Fires",
+    "author": "Priya Andersen",
+    "description": "A haunting exploration of love, following a young scholar as they navigate a deadly enemy in a frozen wasteland.",
+    "genre": "Thriller",
+    "publish_year": 2003,
+    "pages": 267,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0468",
+    "title": "The Golden Map of Thornfield",
+    "author": "Emma Anderson",
+    "description": "After an unexpected inheritance, a gentle librarian embarks on a journey through darkness to forge a new destiny, uncovering a terrible truth along the way.",
+    "genre": "Urban Fantasy",
+    "publish_year": 1994,
+    "pages": 525,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0469",
+    "title": "Beyond the Eagle",
+    "author": "Carlos Okonkwo",
+    "description": "Set in a space station, this thrilling story explores ambition as a haunted veteran struggles with moral ambiguity.",
+    "genre": "Mystery",
+    "publish_year": 2015,
+    "pages": 233,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0470",
+    "title": "Rain in the Silverdale",
+    "author": "Carlos Al-Hassan",
+    "description": "When a political assassination threatens a frozen wasteland, a devoted priest discovers a mysterious artifact that could bridge two worlds.",
+    "genre": "Steampunk",
+    "publish_year": 2020,
+    "pages": 252,
+    "rating": 4.1
+  },
+  {
+    "id": "book_0471",
+    "title": "The Throne Conspiracy",
+    "author": "Pierre Volkov",
+    "description": "Set in a frozen wasteland, this haunting story explores duty as a village healer struggles with technological threats.",
+    "genre": "Mystery",
+    "publish_year": 2001,
+    "pages": 488,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0472",
+    "title": "Shield in the Winterfell",
+    "author": "Emma Park",
+    "description": "a haunted veteran never expected to a hidden power within themselves. Now, with the world crumbles, they must escape their past.",
+    "genre": "Steampunk",
+    "publish_year": 1993,
+    "pages": 204,
+    "rating": 4.9
+  },
+  {
+    "id": "book_0473",
+    "title": "A Raven of Vengeance",
+    "author": "Ahmed Andersen",
+    "description": "When an ancient awakening threatens a frozen wasteland, a curious journalist discovers a dangerous weapon that could change everything.",
+    "genre": "Steampunk",
+    "publish_year": 1994,
+    "pages": 349,
+    "rating": 3.7
+  },
+  {
+    "id": "book_0474",
+    "title": "Beyond the Bear",
+    "author": "Carlos O'Brien",
+    "description": "a haunted veteran has always dreamed of something more. But when a loved one vanishes, everything changes.",
+    "genre": "Science Fiction",
+    "publish_year": 1997,
+    "pages": 319,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0475",
+    "title": "The Wolf's Power",
+    "author": "Ingrid Kim",
+    "description": "Set in a sprawling desert, this suspenseful story explores ambition as a cunning merchant struggles with impossible odds.",
+    "genre": "Military Fiction",
+    "publish_year": 2015,
+    "pages": 521,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0476",
+    "title": "The Phoenix Keeper",
+    "author": "Maria Blackwood",
+    "description": "an exiled prince has always hidden their true nature. But when a loved one vanishes, everything changes.",
+    "genre": "Magical Realism",
+    "publish_year": 2015,
+    "pages": 400,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0477",
+    "title": "Echoes of Power",
+    "author": "Aisha Tanaka",
+    "description": "Set in a magical academy, this suspenseful story explores friendship as a powerful sorceress struggles with inner demons.",
+    "genre": "Science Fiction",
+    "publish_year": 2003,
+    "pages": 535,
+    "rating": 3.2
+  },
+  {
+    "id": "book_0478",
+    "title": "Raven and Demons",
+    "author": "Maria Anderson",
+    "description": "a rebellious princess never expected to a secret identity. Now, with time runs out, they must protect the innocent.",
+    "genre": "Magical Realism",
+    "publish_year": 1990,
+    "pages": 382,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0479",
+    "title": "The Hidden Hour",
+    "author": "Ananya Costa",
+    "description": "In a remote village, where secrets hold the power of life and death, a devoted priest faces an impossible choice between friendship and hope.",
+    "genre": "Horror",
+    "publish_year": 2023,
+    "pages": 401,
+    "rating": 4.7
+  },
+  {
+    "id": "book_0480",
+    "title": "The Lost Prophecy",
+    "author": "Kofi Kowalski",
+    "description": "In a war-torn kingdom, where memories can be traded like currency, a seasoned captain faces an impossible choice between honor and survival.",
+    "genre": "Military Fiction",
+    "publish_year": 2005,
+    "pages": 251,
+    "rating": 3.0
+  },
+  {
+    "id": "book_0481",
+    "title": "The Last Storm",
+    "author": "Antonio Chen",
+    "description": "When an ancient seal breaks, a seasoned captain must confront impossible odds while a battle for survival.",
+    "genre": "Historical Fiction",
+    "publish_year": 1992,
+    "pages": 407,
+    "rating": 4.5
+  },
+  {
+    "id": "book_0482",
+    "title": "Under Hollow Skies",
+    "author": "Ahmed Chen",
+    "description": "In a world where secrets hold the power of life and death, an aging detective must destroy an ancient evil before it's too late.",
+    "genre": "Mystery",
+    "publish_year": 1998,
+    "pages": 383,
+    "rating": 3.2
+  },
+  {
+    "id": "book_0483",
+    "title": "Bright Crowns",
+    "author": "Kofi Okonkwo",
+    "description": "a reluctant hero never expected to a forbidden love. Now, with time runs out, they must find redemption.",
+    "genre": "Dystopian",
+    "publish_year": 2002,
+    "pages": 243,
+    "rating": 4.0
+  },
+  {
+    "id": "book_0484",
+    "title": "The Wolf Keeper",
+    "author": "Priya Al-Hassan",
+    "description": "A intense exploration of betrayal, following a powerful sorceress as they navigate technological threats in a war-torn kingdom.",
+    "genre": "Fantasy",
+    "publish_year": 1996,
+    "pages": 197,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0485",
+    "title": "Stone in the Greenhollow",
+    "author": "Nia Liu",
+    "description": "Set in a sprawling desert, this intimate story explores friendship as a village healer struggles with supernatural forces.",
+    "genre": "Adventure",
+    "publish_year": 1993,
+    "pages": 597,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0486",
+    "title": "Peaceful Mirrors",
+    "author": "Thomas Costa",
+    "description": "When a political assassination threatens a war-torn kingdom, a gentle librarian discovers a terrible truth that could destroy the world.",
+    "genre": "Science Fiction",
+    "publish_year": 2000,
+    "pages": 386,
+    "rating": 3.3
+  },
+  {
+    "id": "book_0487",
+    "title": "The Wind Keeper",
+    "author": "Amara Thompson",
+    "description": "In a world where artificial minds dream of freedom, a haunted veteran must protect the innocent before time runs out.",
+    "genre": "Fantasy",
+    "publish_year": 2018,
+    "pages": 402,
+    "rating": 3.6
+  },
+  {
+    "id": "book_0488",
+    "title": "The Secret Bridge",
+    "author": "James Reyes",
+    "description": "When a chance encounter threatens a space station, a devoted priest discovers a forbidden love that could save countless lives.",
+    "genre": "Magical Realism",
+    "publish_year": 2024,
+    "pages": 230,
+    "rating": 3.4
+  },
+  {
+    "id": "book_0489",
+    "title": "Echoes of Eternity",
+    "author": "Elena Thompson",
+    "description": "When a stranger arrives with dire news, a rebellious princess must confront a deadly enemy while a journey through darkness.",
+    "genre": "Literary Fiction",
+    "publish_year": 2012,
+    "pages": 585,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0490",
+    "title": "Tower in the Greenhollow",
+    "author": "Viktor Kowalski",
+    "description": "a powerful sorceress has always hidden their true nature. But when a dark prophecy begins to unfold, everything changes.",
+    "genre": "Crime",
+    "publish_year": 2020,
+    "pages": 403,
+    "rating": 3.8
+  },
+  {
+    "id": "book_0491",
+    "title": "The Iron Book of Ravenwood",
+    "author": "Marcus Sharma",
+    "description": "In a world where technology has replaced nature, a mysterious stranger must escape their past before hope dies.",
+    "genre": "Romance",
+    "publish_year": 2010,
+    "pages": 243,
+    "rating": 3.1
+  },
+  {
+    "id": "book_0492",
+    "title": "The Secret Map",
+    "author": "Chen Kowalski",
+    "description": "When a devastating war threatens a sprawling desert, a gifted musician discovers an ancient conspiracy that could save countless lives.",
+    "genre": "Adventure",
+    "publish_year": 2014,
+    "pages": 317,
+    "rating": 4.2
+  },
+  {
+    "id": "book_0493",
+    "title": "Hollow Dreams",
+    "author": "Amara Santos",
+    "description": "a cunning merchant has always dreamed of something more. But when an ancient seal breaks, everything changes.",
+    "genre": "Fantasy",
+    "publish_year": 2019,
+    "pages": 585,
+    "rating": 3.7
+  },
+  {
+    "id": "book_0494",
+    "title": "Gentle Souls",
+    "author": "Zara Liu",
+    "description": "When a devastating war threatens a tropical paradise, a brilliant scientist discovers a path to redemption that could destroy the world.",
+    "genre": "Cozy Mystery",
+    "publish_year": 2006,
+    "pages": 453,
+    "rating": 3.5
+  },
+  {
+    "id": "book_0495",
+    "title": "Beyond the Road",
+    "author": "Grace Volkov",
+    "description": "a gentle librarian never expected to a forbidden love. Now, with the prophecy fulfills itself, they must find redemption.",
+    "genre": "Space Opera",
+    "publish_year": 2017,
+    "pages": 190,
+    "rating": 4.8
+  },
+  {
+    "id": "book_0496",
+    "title": "Beyond the Door",
+    "author": "Ahmed Thompson",
+    "description": "A gripping tale of power and power, following an ambitious politician through a journey through darkness.",
+    "genre": "Steampunk",
+    "publish_year": 1993,
+    "pages": 199,
+    "rating": 3.3
+  },
+  {
+    "id": "book_0497",
+    "title": "The Dream Conspiracy",
+    "author": "Fatima Reyes",
+    "description": "After a technological breakthrough, a village healer embarks on a dangerous quest to prevent a catastrophe, uncovering a dangerous weapon along the way.",
+    "genre": "Crime",
+    "publish_year": 2021,
+    "pages": 471,
+    "rating": 4.3
+  },
+  {
+    "id": "book_0498",
+    "title": "The Midnight Garden",
+    "author": "Antonio Liu",
+    "description": "When an ancient awakening threatens a space station, a young scholar discovers an ancient conspiracy that could end a centuries-old conflict.",
+    "genre": "Horror",
+    "publish_year": 2012,
+    "pages": 397,
+    "rating": 3.3
+  },
+  {
+    "id": "book_0499",
+    "title": "The Serpent's Time",
+    "author": "Rosa Williams",
+    "description": "In a world where empires rise and fall overnight, a devoted priest must prevent a catastrophe before all is lost.",
+    "genre": "Historical Fiction",
+    "publish_year": 2000,
+    "pages": 448,
+    "rating": 4.4
+  },
+  {
+    "id": "book_0500",
+    "title": "Crystal Dreams",
+    "author": "Oliver Liu",
+    "description": "Set in a dystopian society, this thought-provoking story explores loss as a village healer struggles with inner demons.",
+    "genre": "Crime",
+    "publish_year": 2017,
+    "pages": 198,
+    "rating": 4.7
+  }
+]

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recall vs Latency Demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .container { max-width: 1000px; margin: 0 auto; }
+        
+        h1 { text-align: center; margin-bottom: 0.5rem; color: #fff; font-size: 2.5rem; }
+        
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .concept-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .concept-box h3 { color: #4ecdc4; margin-bottom: 0.75rem; }
+        .concept-box p { line-height: 1.6; color: #bbb; }
+        
+        .panel {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .panel h2 { color: #4ecdc4; margin-bottom: 1rem; font-size: 1.25rem; }
+        
+        .controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        button {
+            padding: 0.75rem 1.5rem;
+            background: #4ecdc4;
+            border: none;
+            border-radius: 8px;
+            color: #1a1a2e;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        button:hover { background: #3dbdb5; }
+        button:disabled { background: #666; cursor: not-allowed; }
+        button.secondary { background: #ff6b6b; }
+        
+        .slider-group { margin-bottom: 1.5rem; }
+        
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .slider-label span { color: #888; }
+        .slider-value { color: #4ecdc4; font-weight: 600; font-size: 1.25rem; }
+        
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            appearance: none;
+            cursor: pointer;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #4ecdc4;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .metric-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        
+        .metric-value.recall { color: #4ecdc4; }
+        .metric-value.latency { color: #ff6b6b; }
+        .metric-label { color: #888; font-size: 1rem; }
+        
+        .chart-container { height: 350px; margin-top: 1rem; }
+        
+        .explanation {
+            background: rgba(78, 205, 196, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .explanation strong { color: #4ecdc4; }
+        .explanation.warning { background: rgba(255, 107, 107, 0.1); }
+        .explanation.warning strong { color: #ff6b6b; }
+        
+        .status-bar {
+            text-align: center;
+            padding: 0.5rem;
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        .status-bar.error { color: #ff6b6b; }
+        
+        .loading::after {
+            content: '';
+            animation: dots 1.5s steps(3, end) infinite;
+        }
+        
+        @keyframes dots {
+            0% { content: ''; }
+            33% { content: '.'; }
+            66% { content: '..'; }
+            100% { content: '...'; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Recall vs Latency</h1>
+        <p class="subtitle">The fundamental tradeoff in vector search</p>
+        
+        <div class="concept-box">
+            <h3>💡 What You're Seeing</h3>
+            <p>
+                This demo uses <strong>100,000 random vectors</strong> to show how approximate nearest neighbor (ANN) search works.
+                <br><br>
+                The <strong>ef</strong> parameter controls how thoroughly the HNSW algorithm searches:
+                <br>
+                • <strong>Low ef (1-8)</strong> → Quick but may miss the best matches<br>
+                • <strong>High ef (128+)</strong> → Thorough but takes longer
+            </p>
+        </div>
+        
+        <div class="panel">
+            <h2>🎛️ Control Panel</h2>
+            
+            <div class="slider-group">
+                <div class="slider-label">
+                    <span>ef (Exploration Factor)</span>
+                    <span class="slider-value" id="efValue">64</span>
+                </div>
+                <input type="range" id="efSlider" min="1" max="512" value="64" 
+                       oninput="updateEf(this.value)">
+                <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #666; margin-top: 0.25rem;">
+                    <span>1 (Fast, low recall)</span>
+                    <span>512 (Slow, high recall)</span>
+                </div>
+            </div>
+            
+            <div class="slider-group">
+                <div class="slider-label">
+                    <span>top_k (Results to return)</span>
+                    <span class="slider-value" id="topKValue">20</span>
+                </div>
+                <input type="range" id="topKSlider" min="10" max="100" value="20" step="10"
+                       oninput="updateTopK(this.value)">
+                <p style="color: #666; font-size: 0.75rem; margin-top: 0.25rem;">
+                    ⚠️ Higher top_k = harder to achieve high recall (more results to find correctly)
+                </p>
+            </div>
+            
+            <div class="controls">
+                <button onclick="runSearch()">🔍 Search</button>
+                <button onclick="generateCurve()" class="secondary">📊 Generate Full Curve</button>
+                <button onclick="newQuery()" style="background: #666;">🎲 New Query</button>
+            </div>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value recall" id="recallValue">--</div>
+                    <div class="metric-label">Recall %</div>
+                    <div style="font-size: 0.7rem; color: #666; margin-top: 0.25rem;">
+                        of top-<span id="topKDisplay">20</span> true matches found
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value latency" id="latencyValue">--</div>
+                    <div class="metric-label">Latency (ms)</div>
+                </div>
+            </div>
+            
+            <div class="explanation" id="explanation" style="display: none;"></div>
+        </div>
+        
+        <div class="panel">
+            <h2>📈 Recall vs Latency Curve</h2>
+            <p style="color: #888; margin-bottom: 1rem;">
+                Click "Generate Full Curve" to see how recall and latency change across all ef values.
+            </p>
+            <div class="chart-container">
+                <canvas id="recallChart"></canvas>
+            </div>
+        </div>
+        
+        <div class="status-bar" id="statusBar">Checking collection status...</div>
+    </div>
+    
+    <script>
+        let chart = null;
+        let currentSeed = 42;
+        
+        function initChart() {
+            const ctx = document.getElementById('recallChart').getContext('2d');
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'Recall %',
+                        data: [],
+                        borderColor: '#4ecdc4',
+                        backgroundColor: 'rgba(78, 205, 196, 0.1)',
+                        yAxisID: 'recall',
+                        tension: 0.3,
+                        fill: true,
+                        pointRadius: 6,
+                        pointHoverRadius: 8
+                    }, {
+                        label: 'Latency (ms)',
+                        data: [],
+                        borderColor: '#ff6b6b',
+                        backgroundColor: 'rgba(255, 107, 107, 0.1)',
+                        yAxisID: 'latency',
+                        tension: 0.3,
+                        fill: true,
+                        pointRadius: 6,
+                        pointHoverRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: { mode: 'index', intersect: false },
+                    scales: {
+                        x: {
+                            title: { display: true, text: 'ef (Exploration Factor)', color: '#888' },
+                            ticks: { color: '#888' },
+                            grid: { color: 'rgba(255,255,255,0.05)' }
+                        },
+                        recall: {
+                            type: 'linear',
+                            position: 'left',
+                            title: { display: true, text: 'Recall %', color: '#4ecdc4' },
+                            min: 0,
+                            max: 100,
+                            ticks: { color: '#4ecdc4' },
+                            grid: { color: 'rgba(255,255,255,0.05)' }
+                        },
+                        latency: {
+                            type: 'linear',
+                            position: 'right',
+                            title: { display: true, text: 'Latency (ms)', color: '#ff6b6b' },
+                            ticks: { color: '#ff6b6b' },
+                            grid: { display: false }
+                        }
+                    },
+                    plugins: {
+                        legend: { labels: { color: '#888' } }
+                    }
+                }
+            });
+        }
+        
+        function updateEf(val) {
+            document.getElementById('efValue').textContent = val;
+        }
+        
+        function updateTopK(val) {
+            document.getElementById('topKValue').textContent = val;
+            document.getElementById('topKDisplay').textContent = val;
+        }
+        
+        async function runSearch() {
+            const ef = parseInt(document.getElementById('efSlider').value);
+            const topK = parseInt(document.getElementById('topKSlider').value);
+            
+            document.getElementById('recallValue').textContent = '...';
+            document.getElementById('latencyValue').textContent = '...';
+            
+            try {
+                const response = await fetch('/api/search', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ query_seed: currentSeed, ef, top_k: topK })
+                });
+                
+                const data = await response.json();
+                if (data.error) throw new Error(data.error);
+                
+                document.getElementById('recallValue').textContent = data.metrics.recall_percent + '%';
+                document.getElementById('latencyValue').textContent = data.metrics.search_latency_ms.toFixed(1);
+                
+                // Update explanation
+                const exp = document.getElementById('explanation');
+                exp.style.display = 'block';
+                
+                if (data.metrics.recall_percent >= 95) {
+                    exp.className = 'explanation';
+                    exp.innerHTML = `<strong>Excellent!</strong> With ef=${ef}, you're finding ${data.metrics.recall_percent}% of the true best matches in ${data.metrics.search_latency_ms.toFixed(1)}ms.`;
+                } else if (data.metrics.recall_percent >= 80) {
+                    exp.className = 'explanation';
+                    exp.innerHTML = `<strong>Good recall.</strong> Finding ${data.metrics.recall_percent}% of the best matches. Some relevant results are being missed — increase ef to find them.`;
+                } else {
+                    exp.className = 'explanation warning';
+                    exp.innerHTML = `<strong>Low recall!</strong> Only finding ${data.metrics.recall_percent}% of the best matches. With ef=${ef}, the search is too shallow and missing many relevant results. Try increasing ef.`;
+                }
+                
+            } catch (err) {
+                document.getElementById('recallValue').textContent = 'ERR';
+                document.getElementById('statusBar').className = 'status-bar error';
+                document.getElementById('statusBar').textContent = err.message;
+            }
+        }
+        
+        async function generateCurve() {
+            const topK = parseInt(document.getElementById('topKSlider').value);
+            document.getElementById('statusBar').textContent = 'Generating curve (testing 10 ef values)...';
+            
+            try {
+                const response = await fetch('/api/recall_curve', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ query_seed: currentSeed, top_k: topK })
+                });
+                
+                const data = await response.json();
+                if (data.error) throw new Error(data.error);
+                
+                chart.data.labels = data.curve.map(d => d.ef);
+                chart.data.datasets[0].data = data.curve.map(d => d.recall_percent);
+                chart.data.datasets[1].data = data.curve.map(d => d.latency_ms);
+                chart.update();
+                
+                document.getElementById('statusBar').textContent = 
+                    `Curve generated! Notice how recall drops at low ef values.`;
+                
+            } catch (err) {
+                document.getElementById('statusBar').className = 'status-bar error';
+                document.getElementById('statusBar').textContent = err.message;
+            }
+        }
+        
+        async function newQuery() {
+            try {
+                const response = await fetch('/api/new_query', { method: 'POST' });
+                const data = await response.json();
+                currentSeed = data.query_seed;
+                document.getElementById('statusBar').textContent = `New query #${currentSeed}. Click Search or Generate Curve.`;
+                
+                // Clear current results
+                document.getElementById('recallValue').textContent = '--';
+                document.getElementById('latencyValue').textContent = '--';
+                document.getElementById('explanation').style.display = 'none';
+            } catch (err) {
+                console.error(err);
+            }
+        }
+        
+        async function checkStatus() {
+            try {
+                const response = await fetch('/api/collection_info');
+                const data = await response.json();
+                
+                if (data.status === 'ready') {
+                    document.getElementById('statusBar').textContent = 
+                        `✓ Connected · ${data.vector_count.toLocaleString()} vectors`;
+                } else {
+                    document.getElementById('statusBar').className = 'status-bar error';
+                    document.getElementById('statusBar').textContent = `⚠ ${data.hint}`;
+                }
+            } catch (err) {
+                document.getElementById('statusBar').className = 'status-bar error';
+                document.getElementById('statusBar').textContent = '⚠ Cannot connect. Run: python init_qdrant.py --reset';
+            }
+        }
+        
+        initChart();
+        checkStatus();
+    </script>
+</body>
+</html>

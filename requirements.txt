@@ -2,6 +2,7 @@
 pinecone>=3.0.0
 psycopg2-binary>=2.9.9
 ollama>=0.1.0
+qdrant-client>=1.7.0
 
 # Embedding models
 sentence-transformers>=2.2.0

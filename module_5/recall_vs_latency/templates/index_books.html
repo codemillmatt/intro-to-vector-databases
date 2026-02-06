@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recall vs Latency Demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .concept-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .concept-box h3 {
+            color: #4ecdc4;
+            margin-bottom: 0.75rem;
+        }
+        
+        .concept-box p {
+            line-height: 1.6;
+            color: #bbb;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .panel {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .panel h2 {
+            color: #4ecdc4;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        
+        .search-box {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        input[type="text"] {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            font-size: 1rem;
+        }
+        
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #4ecdc4;
+        }
+        
+        button {
+            padding: 0.75rem 1.5rem;
+            background: #4ecdc4;
+            border: none;
+            border-radius: 8px;
+            color: #1a1a2e;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        button:hover {
+            background: #3dbdb5;
+        }
+        
+        button:disabled {
+            background: #666;
+            cursor: not-allowed;
+        }
+        
+        .slider-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .slider-label span {
+            color: #888;
+        }
+        
+        .slider-value {
+            color: #4ecdc4;
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+        
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            appearance: none;
+            cursor: pointer;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #4ecdc4;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .metric-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        
+        .metric-value.recall {
+            color: #4ecdc4;
+        }
+        
+        .metric-value.latency {
+            color: #ff6b6b;
+        }
+        
+        .metric-value.total {
+            color: #ffd93d;
+        }
+        
+        .metric-label {
+            color: #888;
+            font-size: 0.85rem;
+        }
+        
+        .chart-container {
+            height: 300px;
+            margin-top: 1rem;
+        }
+        
+        .results-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .result-item {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            border-left: 3px solid transparent;
+        }
+        
+        .result-item.in-ground-truth {
+            border-left-color: #4ecdc4;
+        }
+        
+        .result-item.missed {
+            border-left-color: #ff6b6b;
+            opacity: 0.7;
+        }
+        
+        .result-title {
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+        
+        .result-meta {
+            font-size: 0.85rem;
+            color: #888;
+        }
+        
+        .result-score {
+            float: right;
+            background: rgba(78, 205, 196, 0.2);
+            color: #4ecdc4;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+        
+        .status-bar {
+            text-align: center;
+            padding: 0.5rem;
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        .status-bar.error {
+            color: #ff6b6b;
+        }
+        
+        .explanation {
+            background: rgba(78, 205, 196, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .explanation strong {
+            color: #4ecdc4;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #888;
+        }
+        
+        .loading::after {
+            content: '';
+            animation: dots 1.5s steps(3, end) infinite;
+        }
+        
+        @keyframes dots {
+            0% { content: ''; }
+            33% { content: '.'; }
+            66% { content: '..'; }
+            100% { content: '...'; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Recall vs Latency</h1>
+        <p class="subtitle">Understanding the fundamental tradeoff in vector search</p>
+        
+        <div class="concept-box">
+            <h3>💡 The Core Concept</h3>
+            <p>
+                Vector databases use <strong>approximate</strong> algorithms (like HNSW) to search billions of vectors quickly.
+                The <strong>ef</strong> (exploration factor) parameter controls how thorough the search is:
+                <br><br>
+                • <strong>Low ef</strong> → Explores fewer nodes → Faster, but may miss relevant results<br>
+                • <strong>High ef</strong> → Explores more nodes → Slower, but finds more relevant results
+                <br><br>
+                Adjust the slider below to see this tradeoff in action!
+            </p>
+        </div>
+        
+        <div class="grid">
+            <div class="panel">
+                <h2>🔍 Search Controls</h2>
+                
+                <div class="search-box">
+                    <input type="text" id="query" placeholder="Try: mystery novel with detective" 
+                           value="epic fantasy adventure with dragons">
+                    <button id="searchBtn" onclick="runSearch()">Search</button>
+                </div>
+                
+                <div class="slider-group">
+                    <div class="slider-label">
+                        <span>ef (Exploration Factor)</span>
+                        <span class="slider-value" id="efValue">64</span>
+                    </div>
+                    <input type="range" id="efSlider" min="1" max="256" value="64" 
+                           oninput="updateEfValue(this.value)">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #666;">
+                        <span>1 (Fast)</span>
+                        <span>256 (Accurate)</span>
+                    </div>
+                </div>
+                
+                <div class="slider-group">
+                    <div class="slider-label">
+                        <span>top_k (Results to return)</span>
+                        <span class="slider-value" id="topKValue">20</span>
+                    </div>
+                    <input type="range" id="topKSlider" min="5" max="50" value="20" step="5"
+                           oninput="updateTopKValue(this.value)">
+                </div>
+                
+                <button onclick="generateCurve()" style="width: 100%; margin-top: 1rem; background: #ff6b6b;">
+                    📊 Generate Recall Curve
+                </button>
+                
+                <div class="metrics-grid" id="metricsGrid" style="margin-top: 1.5rem;">
+                    <div class="metric-card">
+                        <div class="metric-value recall" id="recallValue">--</div>
+                        <div class="metric-label">Recall %</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value latency" id="latencyValue">--</div>
+                        <div class="metric-label">Search (ms)</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value total" id="totalValue">--</div>
+                        <div class="metric-label">Total (ms)</div>
+                    </div>
+                </div>
+                
+                <div class="explanation" id="explanation" style="display: none;"></div>
+            </div>
+            
+            <div class="panel">
+                <h2>📈 Recall vs Latency Curve</h2>
+                <div class="chart-container">
+                    <canvas id="recallChart"></canvas>
+                </div>
+                <p style="text-align: center; color: #666; margin-top: 0.5rem; font-size: 0.85rem;">
+                    Each point represents a different ef value
+                </p>
+            </div>
+        </div>
+        
+        <div class="panel" style="margin-top: 2rem;">
+            <h2>📚 Search Results</h2>
+            <p style="color: #888; margin-bottom: 1rem; font-size: 0.9rem;">
+                <span style="color: #4ecdc4;">●</span> In ground truth (correct) &nbsp;
+                <span style="color: #ff6b6b;">●</span> Missed (would be found with higher ef)
+            </p>
+            <div class="results-list" id="resultsList">
+                <div class="loading">Enter a query and click Search</div>
+            </div>
+        </div>
+        
+        <div class="status-bar" id="statusBar">
+            Checking collection status...
+        </div>
+    </div>
+    
+    <script>
+        let chart = null;
+        
+        // Initialize chart
+        function initChart() {
+            const ctx = document.getElementById('recallChart').getContext('2d');
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'Recall %',
+                        data: [],
+                        borderColor: '#4ecdc4',
+                        backgroundColor: 'rgba(78, 205, 196, 0.1)',
+                        yAxisID: 'recall',
+                        tension: 0.3,
+                        fill: true
+                    }, {
+                        label: 'Latency (ms)',
+                        data: [],
+                        borderColor: '#ff6b6b',
+                        backgroundColor: 'rgba(255, 107, 107, 0.1)',
+                        yAxisID: 'latency',
+                        tension: 0.3,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'ef (Exploration Factor)',
+                                color: '#888'
+                            },
+                            ticks: { color: '#888' },
+                            grid: { color: 'rgba(255,255,255,0.05)' }
+                        },
+                        recall: {
+                            type: 'linear',
+                            position: 'left',
+                            title: {
+                                display: true,
+                                text: 'Recall %',
+                                color: '#4ecdc4'
+                            },
+                            min: 0,
+                            max: 100,
+                            ticks: { color: '#4ecdc4' },
+                            grid: { color: 'rgba(255,255,255,0.05)' }
+                        },
+                        latency: {
+                            type: 'linear',
+                            position: 'right',
+                            title: {
+                                display: true,
+                                text: 'Latency (ms)',
+                                color: '#ff6b6b'
+                            },
+                            ticks: { color: '#ff6b6b' },
+                            grid: { display: false }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: { color: '#888' }
+                        }
+                    }
+                }
+            });
+        }
+        
+        function updateEfValue(val) {
+            document.getElementById('efValue').textContent = val;
+        }
+        
+        function updateTopKValue(val) {
+            document.getElementById('topKValue').textContent = val;
+        }
+        
+        async function runSearch() {
+            const query = document.getElementById('query').value;
+            const ef = parseInt(document.getElementById('efSlider').value);
+            const topK = parseInt(document.getElementById('topKSlider').value);
+            
+            if (!query) return;
+            
+            document.getElementById('searchBtn').disabled = true;
+            document.getElementById('resultsList').innerHTML = '<div class="loading">Searching</div>';
+            
+            try {
+                const response = await fetch('/api/search', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ query, ef, top_k: topK })
+                });
+                
+                const data = await response.json();
+                
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+                
+                // Update metrics
+                document.getElementById('recallValue').textContent = data.metrics.recall_percent + '%';
+                document.getElementById('latencyValue').textContent = data.metrics.search_latency_ms;
+                document.getElementById('totalValue').textContent = data.metrics.total_latency_ms;
+                
+                // Update explanation
+                const exp = document.getElementById('explanation');
+                exp.style.display = 'block';
+                if (data.metrics.recall_percent >= 90) {
+                    exp.innerHTML = `<strong>Excellent recall!</strong> With ef=${ef}, you're finding ${data.metrics.recall_percent}% of the best results. This comes at a cost of ${data.metrics.search_latency_ms}ms latency.`;
+                } else if (data.metrics.recall_percent >= 70) {
+                    exp.innerHTML = `<strong>Good recall.</strong> You're finding ${data.metrics.recall_percent}% of the best results. Try increasing ef to improve accuracy, or keep it low for faster responses.`;
+                } else {
+                    exp.innerHTML = `<strong>Low recall warning!</strong> With ef=${ef}, you're only finding ${data.metrics.recall_percent}% of the best results. Many relevant books are being missed! Increase ef to improve accuracy.`;
+                }
+                
+                // Update results list
+                let resultsHtml = '';
+                for (const r of data.results) {
+                    const className = r.in_ground_truth ? 'in-ground-truth' : 'missed';
+                    resultsHtml += `
+                        <div class="result-item ${className}">
+                            <span class="result-score">${r.score}</span>
+                            <div class="result-title">${r.title}</div>
+                            <div class="result-meta">${r.author} · ${r.genre}</div>
+                        </div>
+                    `;
+                }
+                document.getElementById('resultsList').innerHTML = resultsHtml;
+                
+            } catch (err) {
+                document.getElementById('resultsList').innerHTML = 
+                    `<div class="status-bar error">Error: ${err.message}</div>`;
+            }
+            
+            document.getElementById('searchBtn').disabled = false;
+        }
+        
+        async function generateCurve() {
+            const query = document.getElementById('query').value;
+            const topK = parseInt(document.getElementById('topKSlider').value);
+            
+            if (!query) return;
+            
+            document.getElementById('statusBar').textContent = 'Generating curve...';
+            
+            try {
+                const response = await fetch('/api/recall_curve', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ query, top_k: topK })
+                });
+                
+                const data = await response.json();
+                
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+                
+                // Update chart
+                chart.data.labels = data.curve.map(d => d.ef);
+                chart.data.datasets[0].data = data.curve.map(d => d.recall_percent);
+                chart.data.datasets[1].data = data.curve.map(d => d.latency_ms);
+                chart.update();
+                
+                document.getElementById('statusBar').textContent = 
+                    `Curve generated for "${query}" with top_k=${topK}`;
+                
+            } catch (err) {
+                document.getElementById('statusBar').className = 'status-bar error';
+                document.getElementById('statusBar').textContent = `Error: ${err.message}`;
+            }
+        }
+        
+        async function checkStatus() {
+            try {
+                const response = await fetch('/api/collection_info');
+                const data = await response.json();
+                
+                if (data.status === 'ready') {
+                    document.getElementById('statusBar').textContent = 
+                        `✓ Connected to Qdrant · ${data.vector_count.toLocaleString()} vectors`;
+                } else {
+                    document.getElementById('statusBar').className = 'status-bar error';
+                    document.getElementById('statusBar').textContent = 
+                        `⚠ ${data.hint || 'Collection not initialized'}`;
+                }
+            } catch (err) {
+                document.getElementById('statusBar').className = 'status-bar error';
+                document.getElementById('statusBar').textContent = 
+                    '⚠ Cannot connect to Qdrant. Is it running?';
+            }
+        }
+        
+        // Initialize
+        initChart();
+        checkStatus();
+        
+        // Handle Enter key
+        document.getElementById('query').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') runSearch();
+        });
+    </script>
+</body>
+</html>
