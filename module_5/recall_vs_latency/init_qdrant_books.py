@@ -7,12 +7,17 @@ The dataset is specifically designed to show how approximate search
 degrades at low ef values.
 """
 
+import json
 import os
 import sys
 import struct
 import urllib.request
 import gzip
 
+# Add setup directory to path for shared utilities
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "setup"))
+
+from embeddings import get_embedding_client
 from qdrant_client import QdrantClient
 from qdrant_client.models import (
     Distance,

@@ -273,7 +273,7 @@ def api_status():
 
 
 if __name__ == "__main__":
-    port = int(os.getenv("PORT", 8001))
+    port = int(os.getenv("PORT", 8008))
     debug = os.getenv("FLASK_DEBUG", "true").lower() == "true"
     
     print(f"\n🔍 RAG Web Application")
