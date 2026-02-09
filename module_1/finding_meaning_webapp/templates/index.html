@@ -13,8 +13,8 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: #eee;
+            background: #f5f5f5;
+            color: #333;
             line-height: 1.6;
             min-height: 100vh;
             padding: 20px;
@@ -27,10 +27,10 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+            background: #fff;
             padding: 30px;
             border-radius: 12px 12px 0 0;
-            border: 1px solid #0f3460;
+            border: 1px solid #ddd;
             border-bottom: none;
         }
 
@@ -41,16 +41,17 @@
         }
 
         header p {
-            opacity: 0.9;
+            color: #666;
             font-size: 1.1em;
         }
 
         /* Tab Bar */
         .tab-bar {
             display: flex;
-            background: #0f3460;
-            border-left: 1px solid #0f3460;
-            border-right: 1px solid #0f3460;
+            background: #fff;
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
             border-radius: 0 0 12px 12px;
             overflow: hidden;
             margin-bottom: 30px;
@@ -61,7 +62,7 @@
             padding: 16px 20px;
             background: none;
             border: none;
-            color: #aaa;
+            color: #999;
             font-size: 0.95em;
             font-weight: 600;
             cursor: pointer;
@@ -71,14 +72,14 @@
         }
 
         .tab-button:hover {
-            color: #eee;
-            background: rgba(78, 205, 196, 0.08);
+            color: #333;
+            background: rgba(78, 205, 196, 0.06);
         }
 
         .tab-button.active {
-            color: #4ecdc4;
-            border-bottom-color: #4ecdc4;
-            background: rgba(78, 205, 196, 0.1);
+            color: #0f3460;
+            border-bottom-color: #0f3460;
+            background: rgba(15, 52, 96, 0.05);
         }
 
         /* Tab Content */
@@ -92,11 +93,11 @@
 
         /* Search Section */
         .search-section {
-            background: #0f3460;
+            background: #fff;
             padding: 30px;
             border-radius: 12px;
             margin-bottom: 30px;
-            border: 1px solid #16213e;
+            border: 1px solid #ddd;
         }
 
         .search-form {
@@ -108,10 +109,10 @@
             flex: 1;
             padding: 15px;
             font-size: 1em;
-            border: 2px solid #16213e;
+            border: 2px solid #ddd;
             border-radius: 8px;
-            background: #16213e;
-            color: #eee;
+            background: #fff;
+            color: #333;
         }
 
         .search-input:focus {
@@ -136,7 +137,7 @@
         }
 
         .search-button:disabled {
-            background: #555;
+            background: #ccc;
             cursor: not-allowed;
         }
 
@@ -147,7 +148,7 @@
 
         .examples h3 {
             font-size: 0.9em;
-            opacity: 0.7;
+            color: #999;
             margin-bottom: 10px;
         }
 
@@ -159,18 +160,19 @@
 
         .example-query {
             padding: 8px 16px;
-            background: #16213e;
-            border: 1px solid #1a1a2e;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
             border-radius: 20px;
             font-size: 0.85em;
             cursor: pointer;
             transition: all 0.3s;
-            color: #eee;
+            color: #555;
         }
 
         .example-query:hover {
-            background: #1a1a2e;
+            background: #eee;
             border-color: #e94560;
+            color: #333;
         }
 
         /* Results Grid (side-by-side) */
@@ -187,16 +189,11 @@
             }
         }
 
-        /* Single results container */
-        .results-single {
-            margin-top: 30px;
-        }
-
         .results-panel {
-            background: #0f3460;
+            background: #fff;
             border-radius: 12px;
             padding: 25px;
-            border: 1px solid #16213e;
+            border: 1px solid #ddd;
         }
 
         .results-header {
@@ -205,7 +202,7 @@
             justify-content: space-between;
             margin-bottom: 20px;
             padding-bottom: 15px;
-            border-bottom: 2px solid #16213e;
+            border-bottom: 2px solid #eee;
         }
 
         .results-header h2 {
@@ -213,7 +210,7 @@
         }
 
         .sql-panel .results-header h2 {
-            color: #4ecdc4;
+            color: #0f3460;
         }
 
         .semantic-panel .results-header h2 {
@@ -221,16 +218,16 @@
         }
 
         .result-count {
-            background: #16213e;
+            background: #f5f5f5;
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.85em;
-            opacity: 0.9;
+            color: #666;
         }
 
         /* Result Cards */
         .result-card {
-            background: #16213e;
+            background: #f9f9f9;
             border-radius: 8px;
             padding: 20px;
             margin-bottom: 15px;
@@ -238,9 +235,8 @@
             transition: all 0.3s;
         }
 
-        .sql-panel .result-card,
-        .browse-card {
-            border-left-color: #4ecdc4;
+        .sql-panel .result-card {
+            border-left-color: #0f3460;
         }
 
         .semantic-panel .result-card {
@@ -248,24 +244,24 @@
         }
 
         .result-card:hover {
-            background: #1a1a2e;
+            background: #f0f0f0;
         }
 
         .result-title {
             font-size: 1.1em;
             font-weight: bold;
             margin-bottom: 8px;
-            color: #fff;
+            color: #222;
         }
 
         .result-author {
-            color: #4ecdc4;
+            color: #0f3460;
             font-size: 0.9em;
             margin-bottom: 10px;
         }
 
         .result-description {
-            color: #ccc;
+            color: #555;
             font-size: 0.9em;
             line-height: 1.5;
             margin-bottom: 12px;
@@ -276,7 +272,7 @@
             flex-wrap: wrap;
             gap: 15px;
             font-size: 0.85em;
-            opacity: 0.8;
+            color: #666;
         }
 
         .meta-item {
@@ -294,41 +290,38 @@
         }
 
         .rating-badge {
-            color: #ffd700;
+            color: #d4a017;
         }
 
-        .price-badge {
-            color: #4ecdc4;
+        /* Books List for Browse tab */
+        .books-list {
+            list-style: none;
+            background: #fff;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            padding: 10px 0;
         }
 
-        .stock-badge {
-            color: #4ecdc4;
+        .books-list li {
+            padding: 10px 24px;
+            font-size: 1em;
+            color: #333;
+            border-bottom: 1px solid #f0f0f0;
         }
 
-        .stock-badge.out-of-stock {
-            color: #e94560;
-        }
-
-        /* Books Grid for Browse tab */
-        .books-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-            gap: 20px;
-        }
-
-        .books-grid .result-card {
-            margin-bottom: 0;
+        .books-list li:last-child {
+            border-bottom: none;
         }
 
         /* Loading State */
         .loading {
             text-align: center;
             padding: 40px;
-            opacity: 0.6;
+            color: #999;
         }
 
         .spinner {
-            border: 4px solid #16213e;
+            border: 4px solid #eee;
             border-top: 4px solid #e94560;
             border-radius: 50%;
             width: 40px;
@@ -346,7 +339,7 @@
         .empty-state {
             text-align: center;
             padding: 40px;
-            opacity: 0.6;
+            color: #999;
         }
 
         .empty-state-icon {
@@ -356,21 +349,19 @@
 
         /* Tab description */
         .tab-description {
-            background: #0f3460;
-            border-left: 4px solid #4ecdc4;
+            background: #fff;
+            border-left: 4px solid #0f3460;
             padding: 15px 20px;
             border-radius: 8px;
             margin-bottom: 20px;
             font-size: 0.95em;
-            color: #ccc;
+            color: #666;
+            border: 1px solid #ddd;
+            border-left: 4px solid #0f3460;
         }
 
-        .tab-description.semantic {
+        .tab-description.search {
             border-left-color: #e94560;
-        }
-
-        .tab-description.sidebyside {
-            border-left-color: #ffd700;
         }
     </style>
 </head>
@@ -383,9 +374,7 @@
 
         <nav class="tab-bar">
             <button class="tab-button active" data-tab="browse">📖 All Books</button>
-            <button class="tab-button" data-tab="sql">🔎 SQL Search</button>
-            <button class="tab-button" data-tab="semantic">🧠 Semantic Search</button>
-            <button class="tab-button" data-tab="sidebyside">⚖️ Side by Side</button>
+            <button class="tab-button" data-tab="search">🔎 Search</button>
         </nav>
 
         <!-- Tab 1: Browse All Books -->
@@ -401,75 +390,13 @@
             </div>
         </div>
 
-        <!-- Tab 2: SQL Search -->
-        <div class="tab-content" id="tab-sql">
-            <div class="tab-description">
-                Traditional SQL keyword matching — finds books containing your exact words in the title, description, or genre.
-            </div>
-            <div class="search-section">
-                <form class="search-form" data-tab="sql">
-                    <input type="text" class="search-input" placeholder="Search by keyword (e.g., 'dragon', 'mystery')" required>
-                    <button type="submit" class="search-button">Search</button>
-                </form>
-                <div class="examples">
-                    <h3>Try these example queries:</h3>
-                    <div class="example-queries">
-                        <span class="example-query" data-query="dragon">🐉 dragon</span>
-                        <span class="example-query" data-query="stories about loss and healing">💙 Loss and healing</span>
-                        <span class="example-query" data-query="mystery">🔍 mystery</span>
-                        <span class="example-query" data-query="books about space exploration">🚀 Space exploration</span>
-                    </div>
-                </div>
-            </div>
-            <div class="results-single" id="sqlResultsContainer" style="display: none;">
-                <div class="results-panel sql-panel">
-                    <div class="results-header">
-                        <h2>SQL Keyword Results</h2>
-                        <span class="result-count" id="sqlCount">0 results</span>
-                    </div>
-                    <div id="sqlResults"></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tab 3: Semantic Search -->
-        <div class="tab-content" id="tab-semantic">
-            <div class="tab-description semantic">
-                Semantic vector search — understands meaning and finds conceptually related books, even without exact keyword matches.
-            </div>
-            <div class="search-section">
-                <form class="search-form" data-tab="semantic">
-                    <input type="text" class="search-input" placeholder="Describe what you're looking for (e.g., 'stories about healing and recovery')" required>
-                    <button type="submit" class="search-button">Search</button>
-                </form>
-                <div class="examples">
-                    <h3>Try these example queries:</h3>
-                    <div class="example-queries">
-                        <span class="example-query" data-query="dragon">🐉 dragon</span>
-                        <span class="example-query" data-query="stories about loss and healing">💙 Loss and healing</span>
-                        <span class="example-query" data-query="mystery">🔍 mystery</span>
-                        <span class="example-query" data-query="books about space exploration">🚀 Space exploration</span>
-                    </div>
-                </div>
-            </div>
-            <div class="results-single" id="semanticResultsContainer" style="display: none;">
-                <div class="results-panel semantic-panel">
-                    <div class="results-header">
-                        <h2>Semantic Vector Results</h2>
-                        <span class="result-count" id="semanticCount">0 results</span>
-                    </div>
-                    <div id="semanticResults"></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tab 4: Side by Side -->
-        <div class="tab-content" id="tab-sidebyside">
-            <div class="tab-description sidebyside">
+        <!-- Tab 2: Search (SQL + Semantic side by side) -->
+        <div class="tab-content" id="tab-search">
+            <div class="tab-description search">
                 Compare both search methods side by side — see how SQL keyword matching and semantic vector search return different results for the same query.
             </div>
             <div class="search-section">
-                <form class="search-form" data-tab="sidebyside">
+                <form class="search-form" data-tab="search">
                     <input type="text" class="search-input" placeholder="Enter a query to compare both search methods" required>
                     <button type="submit" class="search-button">Search</button>
                 </form>
@@ -483,20 +410,20 @@
                     </div>
                 </div>
             </div>
-            <div class="results-grid" id="sideBySideGrid" style="display: none;">
+            <div class="results-grid" id="searchGrid" style="display: none;">
                 <div class="results-panel sql-panel">
                     <div class="results-header">
                         <h2>SQL Keyword Search</h2>
-                        <span class="result-count" id="sbsSqlCount">0 results</span>
+                        <span class="result-count" id="sqlCount">0 results</span>
                     </div>
-                    <div id="sbsSqlResults"></div>
+                    <div id="sqlResults"></div>
                 </div>
                 <div class="results-panel semantic-panel">
                     <div class="results-header">
                         <h2>Semantic Vector Search</h2>
-                        <span class="result-count" id="sbsSemanticCount">0 results</span>
+                        <span class="result-count" id="semanticCount">0 results</span>
                     </div>
-                    <div id="sbsSemanticResults"></div>
+                    <div id="semanticResults"></div>
                 </div>
             </div>
         </div>
@@ -504,13 +431,11 @@
 
     <script>
         // ============================================================
-        // Per-tab state — each tab maintains independent query & results
+        // Per-tab state
         // ============================================================
         const tabState = {
-            browse:     { loaded: false, data: null },
-            sql:        { query: '', results: null },
-            semantic:   { query: '', results: null },
-            sidebyside: { query: '', sqlResults: null, semanticResults: null }
+            browse: { loaded: false, data: null },
+            search: { query: '', sqlResults: null, semanticResults: null }
         };
 
         // ============================================================
@@ -519,13 +444,10 @@
         document.querySelectorAll('.tab-button').forEach(btn => {
             btn.addEventListener('click', () => {
                 const tabName = btn.dataset.tab;
-                // Deactivate all
                 document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
                 document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-                // Activate selected
                 btn.classList.add('active');
                 document.getElementById('tab-' + tabName).classList.add('active');
-                // Lazy-load browse tab
                 if (tabName === 'browse' && !tabState.browse.loaded) {
                     loadAllBooks();
                 }
@@ -533,7 +455,7 @@
         });
 
         // ============================================================
-        // Browse tab — lazy load all books on first visit
+        // Browse tab — simple title list
         // ============================================================
         async function loadAllBooks() {
             const container = document.getElementById('browseResults');
@@ -556,33 +478,18 @@
                 container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📚</div><p>No books in the database</p></div>';
                 return;
             }
-            container.innerHTML = '<div class="books-grid">' + books.map(book => `
-                <div class="result-card browse-card">
-                    <div class="result-title">${escapeHtml(book.title)}</div>
-                    <div class="result-author">by ${escapeHtml(book.author)}</div>
-                    <div class="result-description">${escapeHtml(book.description)}</div>
-                    <div class="result-meta">
-                        <span class="meta-item"><span>📚</span><span>${escapeHtml(book.genre)}</span></span>
-                        <span class="meta-item rating-badge"><span>⭐</span><span>${parseFloat(book.rating).toFixed(1)}</span></span>
-                        <span class="meta-item price-badge"><span>💲</span><span>${parseFloat(book.price).toFixed(2)}</span></span>
-                        <span class="meta-item ${book.in_stock ? 'stock-badge' : 'stock-badge out-of-stock'}">
-                            <span>${book.in_stock ? '✅' : '❌'}</span>
-                            <span>${book.in_stock ? 'In Stock' : 'Out of Stock'}</span>
-                        </span>
-                    </div>
-                </div>
-            `).join('') + '</div>';
+            container.innerHTML = '<ul class="books-list">' +
+                books.map(book => `<li>${escapeHtml(book.title)}</li>`).join('') +
+                '</ul>';
         }
 
         // ============================================================
-        // Search forms — each wired to its own tab
+        // Search form
         // ============================================================
         document.querySelectorAll('.search-form').forEach(form => {
-            const tabName = form.dataset.tab;
             const input = form.querySelector('.search-input');
             const button = form.querySelector('.search-button');
 
-            // Wire example chips within this tab's search section
             form.closest('.tab-content').querySelectorAll('.example-query').forEach(chip => {
                 chip.addEventListener('click', () => {
                     input.value = chip.dataset.query;
@@ -607,37 +514,17 @@
                     if (!response.ok) throw new Error('Search failed');
                     const data = await response.json();
 
-                    if (tabName === 'sql') {
-                        tabState.sql.query = query;
-                        tabState.sql.results = data.sql_results;
-                        document.getElementById('sqlResultsContainer').style.display = 'block';
-                        renderSQLResults(data.sql_results, document.getElementById('sqlResults'), document.getElementById('sqlCount'));
-                    } else if (tabName === 'semantic') {
-                        tabState.semantic.query = query;
-                        tabState.semantic.results = data.semantic_results;
-                        document.getElementById('semanticResultsContainer').style.display = 'block';
-                        renderSemanticResults(data.semantic_results, document.getElementById('semanticResults'), document.getElementById('semanticCount'));
-                    } else if (tabName === 'sidebyside') {
-                        tabState.sidebyside.query = query;
-                        tabState.sidebyside.sqlResults = data.sql_results;
-                        tabState.sidebyside.semanticResults = data.semantic_results;
-                        document.getElementById('sideBySideGrid').style.display = 'grid';
-                        renderSQLResults(data.sql_results, document.getElementById('sbsSqlResults'), document.getElementById('sbsSqlCount'));
-                        renderSemanticResults(data.semantic_results, document.getElementById('sbsSemanticResults'), document.getElementById('sbsSemanticCount'));
-                    }
+                    tabState.search.query = query;
+                    tabState.search.sqlResults = data.sql_results;
+                    tabState.search.semanticResults = data.semantic_results;
+                    document.getElementById('searchGrid').style.display = 'grid';
+                    renderSQLResults(data.sql_results, document.getElementById('sqlResults'), document.getElementById('sqlCount'));
+                    renderSemanticResults(data.semantic_results, document.getElementById('semanticResults'), document.getElementById('semanticCount'));
                 } catch (error) {
                     console.error('Search error:', error);
-                    if (tabName === 'sql') {
-                        document.getElementById('sqlResultsContainer').style.display = 'block';
-                        document.getElementById('sqlResults').innerHTML = '<div class="empty-state"><p>❌ Search failed</p></div>';
-                    } else if (tabName === 'semantic') {
-                        document.getElementById('semanticResultsContainer').style.display = 'block';
-                        document.getElementById('semanticResults').innerHTML = '<div class="empty-state"><p>❌ Search failed</p></div>';
-                    } else if (tabName === 'sidebyside') {
-                        document.getElementById('sideBySideGrid').style.display = 'grid';
-                        document.getElementById('sbsSqlResults').innerHTML = '<div class="empty-state"><p>❌ Search failed</p></div>';
-                        document.getElementById('sbsSemanticResults').innerHTML = '<div class="empty-state"><p>❌ Search failed</p></div>';
-                    }
+                    document.getElementById('searchGrid').style.display = 'grid';
+                    document.getElementById('sqlResults').innerHTML = '<div class="empty-state"><p>❌ Search failed</p></div>';
+                    document.getElementById('semanticResults').innerHTML = '<div class="empty-state"><p>❌ Search failed</p></div>';
                 } finally {
                     button.disabled = false;
                     button.textContent = 'Search';
@@ -646,7 +533,7 @@
         });
 
         // ============================================================
-        // Render helpers — accept target containers so they work in any tab
+        // Render helpers
         // ============================================================
         function renderSQLResults(results, container, countEl) {
             countEl.textContent = `${results.length} results`;
