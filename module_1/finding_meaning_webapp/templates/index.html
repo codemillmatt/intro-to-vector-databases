@@ -16,45 +16,41 @@
             background: #f5f5f5;
             color: #333;
             line-height: 1.6;
-            min-height: 100vh;
-            padding: 20px;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 20px;
         }
 
         /* Header */
         header {
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px 12px 0 0;
-            border: 1px solid #ddd;
-            border-bottom: none;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
         }
 
         header h1 {
-            font-size: 2em;
-            margin-bottom: 8px;
-            color: #e94560;
+            font-size: 1.8em;
+            margin-bottom: 5px;
         }
 
         header p {
-            color: #666;
-            font-size: 1.1em;
+            opacity: 0.9;
+            font-size: 0.95em;
         }
 
         /* Tab Bar */
         .tab-bar {
             display: flex;
-            background: #fff;
-            border-left: 1px solid #ddd;
-            border-right: 1px solid #ddd;
-            border-bottom: 1px solid #ddd;
-            border-radius: 0 0 12px 12px;
+            background: white;
+            border-radius: 8px;
             overflow: hidden;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .tab-button {
@@ -73,13 +69,13 @@
 
         .tab-button:hover {
             color: #333;
-            background: rgba(78, 205, 196, 0.06);
+            background: rgba(102, 126, 234, 0.06);
         }
 
         .tab-button.active {
-            color: #0f3460;
-            border-bottom-color: #0f3460;
-            background: rgba(15, 52, 96, 0.05);
+            color: #667eea;
+            border-bottom-color: #667eea;
+            background: rgba(102, 126, 234, 0.05);
         }
 
         /* Tab Content */
@@ -93,11 +89,11 @@
 
         /* Search Section */
         .search-section {
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            border: 1px solid #ddd;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .search-form {
@@ -107,38 +103,42 @@
 
         .search-input {
             flex: 1;
-            padding: 15px;
+            padding: 12px 15px;
             font-size: 1em;
-            border: 2px solid #ddd;
-            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
             background: #fff;
             color: #333;
+            outline: none;
+            transition: border-color 0.2s;
         }
 
         .search-input:focus {
-            outline: none;
-            border-color: #e94560;
+            border-color: #667eea;
         }
 
         .search-button {
-            padding: 15px 40px;
+            padding: 12px 25px;
             font-size: 1em;
             font-weight: bold;
-            background: #e94560;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 6px;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: transform 0.1s, box-shadow 0.2s;
         }
 
         .search-button:hover {
-            background: #d63651;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
         }
 
         .search-button:disabled {
             background: #ccc;
             cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
         }
 
         /* Example Queries */
@@ -171,7 +171,7 @@
 
         .example-query:hover {
             background: #eee;
-            border-color: #e94560;
+            border-color: #667eea;
             color: #333;
         }
 
@@ -180,7 +180,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
         @media (max-width: 900px) {
@@ -190,10 +190,10 @@
         }
 
         .results-panel {
-            background: #fff;
-            border-radius: 12px;
+            background: white;
+            border-radius: 8px;
             padding: 25px;
-            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .results-header {
@@ -202,7 +202,7 @@
             justify-content: space-between;
             margin-bottom: 20px;
             padding-bottom: 15px;
-            border-bottom: 2px solid #eee;
+            border-bottom: 2px solid #667eea;
         }
 
         .results-header h2 {
@@ -210,11 +210,11 @@
         }
 
         .sql-panel .results-header h2 {
-            color: #0f3460;
+            color: #667eea;
         }
 
         .semantic-panel .results-header h2 {
-            color: #e94560;
+            color: #764ba2;
         }
 
         .result-count {
@@ -227,42 +227,35 @@
 
         /* Result Cards */
         .result-card {
-            background: #f9f9f9;
+            background: white;
             border-radius: 8px;
             padding: 20px;
             margin-bottom: 15px;
-            border-left: 4px solid transparent;
-            transition: all 0.3s;
-        }
-
-        .sql-panel .result-card {
-            border-left-color: #0f3460;
-        }
-
-        .semantic-panel .result-card {
-            border-left-color: #e94560;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .result-card:hover {
-            background: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         .result-title {
             font-size: 1.1em;
             font-weight: bold;
-            margin-bottom: 8px;
-            color: #222;
+            margin-bottom: 5px;
+            color: #333;
         }
 
         .result-author {
-            color: #0f3460;
+            color: #666;
             font-size: 0.9em;
             margin-bottom: 10px;
         }
 
         .result-description {
-            color: #555;
-            font-size: 0.9em;
+            color: #666;
+            font-size: 0.85em;
             line-height: 1.5;
             margin-bottom: 12px;
         }
@@ -270,7 +263,7 @@
         .result-meta {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 10px;
             font-size: 0.85em;
             color: #666;
         }
@@ -281,8 +274,16 @@
             gap: 5px;
         }
 
+        .genre-tag {
+            background: #f0f0f0;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
         .score-badge {
-            background: #e94560;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 4px 10px;
             border-radius: 12px;
@@ -290,15 +291,23 @@
         }
 
         .rating-badge {
-            color: #d4a017;
+            color: #f5a623;
+        }
+
+        /* SQL match highlight */
+        mark {
+            background: #fff3cd;
+            color: #333;
+            padding: 1px 2px;
+            border-radius: 2px;
         }
 
         /* Books List for Browse tab */
         .books-list {
             list-style: none;
-            background: #fff;
-            border-radius: 12px;
-            border: 1px solid #ddd;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             padding: 10px 0;
         }
 
@@ -317,22 +326,24 @@
         .loading {
             text-align: center;
             padding: 40px;
-            color: #999;
+            color: #666;
         }
 
-        .spinner {
-            border: 4px solid #eee;
-            border-top: 4px solid #e94560;
+        .loading::after {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #667eea;
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            border-top-color: transparent;
             animation: spin 1s linear infinite;
-            margin: 0 auto 15px;
+            margin-left: 10px;
+            vertical-align: middle;
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            to { transform: rotate(360deg); }
         }
 
         /* Empty State */
@@ -349,19 +360,18 @@
 
         /* Tab description */
         .tab-description {
-            background: #fff;
-            border-left: 4px solid #0f3460;
+            background: white;
+            border-left: 4px solid #667eea;
             padding: 15px 20px;
             border-radius: 8px;
             margin-bottom: 20px;
             font-size: 0.95em;
             color: #666;
-            border: 1px solid #ddd;
-            border-left: 4px solid #0f3460;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .tab-description.search {
-            border-left-color: #e94560;
+            border-left-color: #764ba2;
         }
     </style>
 </head>
@@ -459,7 +469,7 @@
         // ============================================================
         async function loadAllBooks() {
             const container = document.getElementById('browseResults');
-            container.innerHTML = '<div class="loading"><div class="spinner"></div><p>Loading all books...</p></div>';
+            container.innerHTML = '<div class="loading">Loading all books</div>';
             try {
                 const response = await fetch('/api/books');
                 if (!response.ok) throw new Error('Failed to load books');
@@ -535,7 +545,16 @@
         // ============================================================
         // Render helpers
         // ============================================================
+        function highlightMatch(text, query) {
+            if (!query) return escapeHtml(text);
+            const escaped = escapeHtml(text);
+            const escapedQuery = escapeHtml(query);
+            const regex = new RegExp(`(${escapedQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+            return escaped.replace(regex, '<mark>$1</mark>');
+        }
+
         function renderSQLResults(results, container, countEl) {
+            const query = tabState.search.query;
             countEl.textContent = `${results.length} results`;
             if (results.length === 0) {
                 container.innerHTML = `
@@ -547,12 +566,12 @@
             }
             container.innerHTML = results.map(book => `
                 <div class="result-card">
-                    <div class="result-title">${escapeHtml(book.title)}</div>
-                    <div class="result-author">by ${escapeHtml(book.author)}</div>
-                    <div class="result-description">${escapeHtml(book.description)}</div>
+                    <div class="result-title">${highlightMatch(book.title, query)}</div>
+                    <div class="result-author">by ${highlightMatch(book.author, query)}</div>
+                    <div class="result-description">${highlightMatch(book.description, query)}</div>
                     <div class="result-meta">
-                        <span class="meta-item"><span>📚</span><span>${escapeHtml(book.genre)}</span></span>
-                        <span class="meta-item rating-badge"><span>⭐</span><span>${parseFloat(book.rating).toFixed(1)}</span></span>
+                        <span class="genre-tag">${highlightMatch(book.genre, query)}</span>
+                        <span class="meta-item rating-badge"><span>★</span><span>${parseFloat(book.rating).toFixed(1)}</span></span>
                     </div>
                 </div>
             `).join('');
@@ -574,8 +593,8 @@
                     <div class="result-author">by ${escapeHtml(book.author)}</div>
                     <div class="result-description">${escapeHtml(book.description)}</div>
                     <div class="result-meta">
-                        <span class="meta-item"><span>📚</span><span>${escapeHtml(book.genre)}</span></span>
-                        <span class="meta-item rating-badge"><span>⭐</span><span>${book.rating.toFixed(1)}</span></span>
+                        <span class="genre-tag">${escapeHtml(book.genre)}</span>
+                        <span class="meta-item rating-badge"><span>★</span><span>${book.rating.toFixed(1)}</span></span>
                         <span class="meta-item"><span class="score-badge">${book.score.toFixed(3)}</span></span>
                     </div>
                 </div>
