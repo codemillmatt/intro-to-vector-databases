@@ -10,7 +10,12 @@
     "rating": 4.5,
     "price": 14.99,
     "in_stock": true,
-    "tags": ["magic", "adventure", "young adult", "nature"]
+    "tags": [
+      "magic",
+      "adventure",
+      "young adult",
+      "nature"
+    ]
   },
   {
     "id": "book_002",
@@ -23,7 +28,12 @@
     "rating": 4.7,
     "price": 18.99,
     "in_stock": true,
-    "tags": ["physics", "thriller", "parallel universes", "science"]
+    "tags": [
+      "physics",
+      "thriller",
+      "parallel universes",
+      "science"
+    ]
   },
   {
     "id": "book_003",
@@ -36,7 +46,12 @@
     "rating": 4.3,
     "price": 12.99,
     "in_stock": true,
-    "tags": ["solitude", "reflection", "ocean", "aging"]
+    "tags": [
+      "solitude",
+      "reflection",
+      "ocean",
+      "aging"
+    ]
   },
   {
     "id": "book_004",
@@ -49,7 +64,12 @@
     "rating": 4.6,
     "price": 16.99,
     "in_stock": true,
-    "tags": ["world war 2", "cryptography", "espionage", "history"]
+    "tags": [
+      "world war 2",
+      "cryptography",
+      "espionage",
+      "history"
+    ]
   },
   {
     "id": "book_005",
@@ -62,7 +82,12 @@
     "rating": 4.4,
     "price": 15.99,
     "in_stock": true,
-    "tags": ["artificial intelligence", "detective", "future", "technology"]
+    "tags": [
+      "artificial intelligence",
+      "detective",
+      "future",
+      "technology"
+    ]
   },
   {
     "id": "book_006",
@@ -75,7 +100,13 @@
     "rating": 4.2,
     "price": 13.99,
     "in_stock": false,
-    "tags": ["ireland", "herbs", "healing", "witchcraft", "history"]
+    "tags": [
+      "ireland",
+      "herbs",
+      "healing",
+      "witchcraft",
+      "history"
+    ]
   },
   {
     "id": "book_007",
@@ -88,7 +119,12 @@
     "rating": 4.8,
     "price": 19.99,
     "in_stock": true,
-    "tags": ["space opera", "aliens", "adventure", "smugglers"]
+    "tags": [
+      "space opera",
+      "aliens",
+      "adventure",
+      "smugglers"
+    ]
   },
   {
     "id": "book_008",
@@ -101,7 +137,12 @@
     "rating": 4.1,
     "price": 11.99,
     "in_stock": true,
-    "tags": ["france", "baking", "cozy", "village life"]
+    "tags": [
+      "france",
+      "baking",
+      "cozy",
+      "village life"
+    ]
   },
   {
     "id": "book_009",
@@ -114,7 +155,12 @@
     "rating": 4.6,
     "price": 20.99,
     "in_stock": true,
-    "tags": ["physics", "mind", "reality", "sequel"]
+    "tags": [
+      "physics",
+      "mind",
+      "reality",
+      "sequel"
+    ]
   },
   {
     "id": "book_010",
@@ -127,7 +173,12 @@
     "rating": 4.7,
     "price": 14.99,
     "in_stock": true,
-    "tags": ["tibet", "spirituality", "mountains", "journey"]
+    "tags": [
+      "tibet",
+      "spirituality",
+      "mountains",
+      "journey"
+    ]
   },
   {
     "id": "book_011",
@@ -140,7 +191,12 @@
     "rating": 4.3,
     "price": 15.99,
     "in_stock": true,
-    "tags": ["steampunk", "romance", "invention", "emotions"]
+    "tags": [
+      "steampunk",
+      "romance",
+      "invention",
+      "emotions"
+    ]
   },
   {
     "id": "book_012",
@@ -153,7 +209,12 @@
     "rating": 4.5,
     "price": 16.99,
     "in_stock": true,
-    "tags": ["sweden", "forest", "detective", "supernatural"]
+    "tags": [
+      "sweden",
+      "forest",
+      "detective",
+      "supernatural"
+    ]
   },
   {
     "id": "book_013",
@@ -166,7 +227,12 @@
     "rating": 4.4,
     "price": 17.99,
     "in_stock": true,
-    "tags": ["cooking", "family", "mexican", "memoir"]
+    "tags": [
+      "cooking",
+      "family",
+      "mexican",
+      "memoir"
+    ]
   },
   {
     "id": "book_014",
@@ -179,7 +245,12 @@
     "rating": 4.6,
     "price": 16.99,
     "in_stock": true,
-    "tags": ["dragons", "magic", "war", "young adult"]
+    "tags": [
+      "dragons",
+      "magic",
+      "war",
+      "young adult"
+    ]
   },
   {
     "id": "book_015",
@@ -192,7 +263,12 @@
     "rating": 4.5,
     "price": 17.99,
     "in_stock": true,
-    "tags": ["artificial intelligence", "love", "consciousness", "programming"]
+    "tags": [
+      "artificial intelligence",
+      "love",
+      "consciousness",
+      "programming"
+    ]
   },
   {
     "id": "book_016",
@@ -205,7 +281,12 @@
     "rating": 4.4,
     "price": 14.99,
     "in_stock": true,
-    "tags": ["library", "magic", "secrets", "books"]
+    "tags": [
+      "library",
+      "magic",
+      "secrets",
+      "books"
+    ]
   },
   {
     "id": "book_017",
@@ -218,7 +299,12 @@
     "rating": 4.3,
     "price": 18.99,
     "in_stock": true,
-    "tags": ["climate", "arctic", "science", "discovery"]
+    "tags": [
+      "climate",
+      "arctic",
+      "science",
+      "discovery"
+    ]
   },
   {
     "id": "book_018",
@@ -231,7 +317,12 @@
     "rating": 4.6,
     "price": 15.99,
     "in_stock": true,
-    "tags": ["jazz", "1920s", "harlem", "murder mystery"]
+    "tags": [
+      "jazz",
+      "1920s",
+      "harlem",
+      "murder mystery"
+    ]
   },
   {
     "id": "book_019",
@@ -244,7 +335,12 @@
     "rating": 4.5,
     "price": 13.99,
     "in_stock": true,
-    "tags": ["japan", "gardens", "grief", "healing"]
+    "tags": [
+      "japan",
+      "gardens",
+      "grief",
+      "healing"
+    ]
   },
   {
     "id": "book_020",
@@ -257,6 +353,1492 @@
     "rating": 4.4,
     "price": 17.99,
     "in_stock": true,
-    "tags": ["hacking", "cyber security", "thriller", "technology"]
+    "tags": [
+      "hacking",
+      "cyber security",
+      "thriller",
+      "technology"
+    ]
+  },
+  {
+    "id": "book_021",
+    "title": "A Blueprint in Orion Station",
+    "author": "Isla Stone",
+    "description": "A missing person case turns personal when the clues point back to the investigator.",
+    "genre": "Mystery",
+    "publish_date": "2023-03-31",
+    "pages": 476,
+    "rating": 3.4,
+    "price": 15.99,
+    "in_stock": true,
+    "tags": [
+      "invention",
+      "mindfulness",
+      "nature",
+      "secrets",
+      "small town"
+    ]
+  },
+  {
+    "id": "book_022",
+    "title": "The Canyon Equation",
+    "author": "Ava Vega",
+    "description": "A narrative history that connects events to the people living through them.",
+    "genre": "History",
+    "publish_date": "2019-06-25",
+    "pages": 364,
+    "rating": 3.8,
+    "price": 16.99,
+    "in_stock": true,
+    "tags": [
+      "betrayal",
+      "science",
+      "survival"
+    ]
+  },
+  {
+    "id": "book_023",
+    "title": "The Ledger Pact",
+    "author": "Darius Stone",
+    "description": "A time-sensitive threat forces unlikely allies to move fast and trust even less.",
+    "genre": "Thriller",
+    "publish_date": "2018-06-28",
+    "pages": 300,
+    "rating": 4.2,
+    "price": 16.99,
+    "in_stock": true,
+    "tags": [
+      "friendship",
+      "health",
+      "nature",
+      "small town",
+      "suspense"
+    ]
+  },
+  {
+    "id": "book_024",
+    "title": "The Riddle of Vega Colony",
+    "author": "Isla Okoye",
+    "description": "A charming small-town puzzle with warm characters and low gore.",
+    "genre": "Cozy Mystery",
+    "publish_date": "2020-03-03",
+    "pages": 446,
+    "rating": 3.6,
+    "price": 16.99,
+    "in_stock": true,
+    "tags": [
+      "architecture",
+      "cozy",
+      "folklore",
+      "friendship",
+      "invention",
+      "psychology"
+    ]
+  },
+  {
+    "id": "book_025",
+    "title": "Ember and the Pavilion",
+    "author": "Kiran Mercer",
+    "description": "A pragmatic playbook for decision-making, teams, and sustainable growth.",
+    "genre": "Business",
+    "publish_date": "2017-04-10",
+    "pages": 218,
+    "rating": 3.7,
+    "price": 13.99,
+    "in_stock": true,
+    "tags": [
+      "espionage",
+      "friendship",
+      "health",
+      "nature",
+      "strategy"
+    ]
+  },
+  {
+    "id": "book_026",
+    "title": "The Beacon Witness",
+    "author": "Owen Larsson",
+    "description": "A character-driven story about memory, change, and the people we become.",
+    "genre": "Literary Fiction",
+    "publish_date": "2015-07-14",
+    "pages": 507,
+    "rating": 4.2,
+    "price": 18.99,
+    "in_stock": true,
+    "tags": [
+      "artificial intelligence",
+      "detective",
+      "heist",
+      "law",
+      "music"
+    ]
+  },
+  {
+    "id": "book_027",
+    "title": "The Orchard Principle",
+    "author": "Hugo Moreau",
+    "description": "A gritty case where motives blur and every witness hides something.",
+    "genre": "Crime",
+    "publish_date": "2018-07-24",
+    "pages": 499,
+    "rating": 4.2,
+    "price": 19.99,
+    "in_stock": false,
+    "tags": [
+      "architecture",
+      "exploration",
+      "technology"
+    ]
+  },
+  {
+    "id": "book_028",
+    "title": "The Beacon Equation",
+    "author": "Hugo Vega",
+    "description": "A creeping dread builds as an ordinary place refuses to stay ordinary.",
+    "genre": "Horror",
+    "publish_date": "2010-01-27",
+    "pages": 394,
+    "rating": 4.9,
+    "price": 17.99,
+    "in_stock": true,
+    "tags": [
+      "folklore",
+      "law",
+      "redemption"
+    ]
+  },
+  {
+    "id": "book_029",
+    "title": "The Workshop Conspiracy",
+    "author": "Greta Bailey",
+    "description": "A reluctant hero uncovers an old power tied to a place no map admits exists.",
+    "genre": "Fantasy",
+    "publish_date": "2023-06-08",
+    "pages": 485,
+    "rating": 4.1,
+    "price": 15.99,
+    "in_stock": true,
+    "tags": [
+      "betrayal",
+      "climate",
+      "health",
+      "magic",
+      "mystery"
+    ]
+  },
+  {
+    "id": "book_030",
+    "title": "Cipher at Willow Crossing",
+    "author": "Maya Hollis",
+    "description": "A deeply reported life story that traces private choices and public consequences.",
+    "genre": "Biography",
+    "publish_date": "2013-09-14",
+    "pages": 325,
+    "rating": 4.2,
+    "price": 17.99,
+    "in_stock": false,
+    "tags": [
+      "art",
+      "exploration",
+      "nature",
+      "redemption",
+      "small town"
+    ]
+  },
+  {
+    "id": "book_031",
+    "title": "The Stone Map",
+    "author": "Jasper Mercer",
+    "description": "A missing person case turns personal when the clues point back to the investigator.",
+    "genre": "Mystery",
+    "publish_date": "2017-08-01",
+    "pages": 270,
+    "rating": 4.3,
+    "price": 12.99,
+    "in_stock": true,
+    "tags": [
+      "folklore",
+      "mystery",
+      "nature"
+    ]
+  },
+  {
+    "id": "book_032",
+    "title": "The Last Compass Diary",
+    "author": "Jasper Khan",
+    "description": "A pragmatic playbook for decision-making, teams, and sustainable growth.",
+    "genre": "Business",
+    "publish_date": "2020-11-20",
+    "pages": 299,
+    "rating": 4.2,
+    "price": 17.99,
+    "in_stock": false,
+    "tags": [
+      "climate",
+      "cooking",
+      "small town",
+      "strategy",
+      "survival",
+      "war"
+    ]
+  },
+  {
+    "id": "book_033",
+    "title": "A Quarry in Frostfall",
+    "author": "Ethan Reed",
+    "description": "A near-future discovery pushes a small team to the edge of what reality will tolerate.",
+    "genre": "Science Fiction",
+    "publish_date": "2019-01-12",
+    "pages": 493,
+    "rating": 4.6,
+    "price": 15.99,
+    "in_stock": true,
+    "tags": [
+      "artificial intelligence",
+      "future",
+      "mountains",
+      "myth",
+      "romance",
+      "travel"
+    ]
+  },
+  {
+    "id": "book_034",
+    "title": "The Cipher Season",
+    "author": "Isla Sato",
+    "description": "A structured approach to building habits, resilience, and better days.",
+    "genre": "Self-Help",
+    "publish_date": "2022-02-15",
+    "pages": 197,
+    "rating": 4.9,
+    "price": 15.99,
+    "in_stock": false,
+    "tags": [
+      "cooking",
+      "politics",
+      "war"
+    ]
+  },
+  {
+    "id": "book_035",
+    "title": "Letters from Glass Coast",
+    "author": "Rowan Larsson",
+    "description": "An immersive look at landscapes, ecosystems, and the humans who depend on them.",
+    "genre": "Nature Writing",
+    "publish_date": "2020-03-16",
+    "pages": 366,
+    "rating": 4.0,
+    "price": 18.99,
+    "in_stock": false,
+    "tags": [
+      "nature",
+      "politics",
+      "small town",
+      "space",
+      "startups"
+    ]
+  },
+  {
+    "id": "book_036",
+    "title": "Beyond Stonebridge",
+    "author": "Ethan Fischer",
+    "description": "A near-future discovery pushes a small team to the edge of what reality will tolerate.",
+    "genre": "Science Fiction",
+    "publish_date": "2011-02-15",
+    "pages": 619,
+    "rating": 4.1,
+    "price": 21.99,
+    "in_stock": true,
+    "tags": [
+      "betrayal",
+      "future",
+      "law",
+      "mountains"
+    ]
+  },
+  {
+    "id": "book_037",
+    "title": "Chamber at Marrow Bay",
+    "author": "Jasper Patel",
+    "description": "A clear, engaging guide that turns complex ideas into practical understanding.",
+    "genre": "Nonfiction",
+    "publish_date": "2011-11-03",
+    "pages": 404,
+    "rating": 4.4,
+    "price": 18.99,
+    "in_stock": true,
+    "tags": [
+      "espionage",
+      "grief",
+      "nature",
+      "startups"
+    ]
+  },
+  {
+    "id": "book_038",
+    "title": "The Radiant Vault Diary",
+    "author": "Darius Fischer",
+    "description": "Approachable recipes and techniques designed for real kitchens and busy weeks.",
+    "genre": "Cooking",
+    "publish_date": "2011-08-18",
+    "pages": 194,
+    "rating": 4.1,
+    "price": 17.99,
+    "in_stock": false,
+    "tags": [
+      "espionage",
+      "law",
+      "leadership",
+      "recipes"
+    ]
+  },
+  {
+    "id": "book_039",
+    "title": "Under the Broken Quarry",
+    "author": "Kei Delacroix",
+    "description": "A richly researched story of ordinary people navigating extraordinary times.",
+    "genre": "Historical Fiction",
+    "publish_date": "2019-10-30",
+    "pages": 498,
+    "rating": 4.5,
+    "price": 18.99,
+    "in_stock": false,
+    "tags": [
+      "business",
+      "family",
+      "mindfulness",
+      "redemption",
+      "startups"
+    ]
+  },
+  {
+    "id": "book_040",
+    "title": "A Threshold in Lotus House",
+    "author": "Kiran Cho",
+    "description": "A charming small-town puzzle with warm characters and low gore.",
+    "genre": "Cozy Mystery",
+    "publish_date": "2016-04-27",
+    "pages": 367,
+    "rating": 4.5,
+    "price": 14.99,
+    "in_stock": true,
+    "tags": [
+      "cozy",
+      "history",
+      "law",
+      "mystery",
+      "politics"
+    ]
+  },
+  {
+    "id": "book_041",
+    "title": "Blueprint at North Harbor",
+    "author": "Maya Larsson",
+    "description": "A richly researched story of ordinary people navigating extraordinary times.",
+    "genre": "Historical Fiction",
+    "publish_date": "2019-11-29",
+    "pages": 502,
+    "rating": 4.5,
+    "price": 17.99,
+    "in_stock": true,
+    "tags": [
+      "adventure",
+      "crime",
+      "detective",
+      "leadership",
+      "space"
+    ]
+  },
+  {
+    "id": "book_042",
+    "title": "The Waypoint Equation",
+    "author": "Kei Patel",
+    "description": "A journey with high stakes, unfamiliar terrain, and a secret worth fighting for.",
+    "genre": "Adventure",
+    "publish_date": "2014-09-17",
+    "pages": 669,
+    "rating": 3.8,
+    "price": 18.99,
+    "in_stock": true,
+    "tags": [
+      "climate",
+      "ocean",
+      "space",
+      "supernatural"
+    ]
+  },
+  {
+    "id": "book_043",
+    "title": "Archive and the Atlas",
+    "author": "Clara Ito",
+    "description": "A charming small-town puzzle with warm characters and low gore.",
+    "genre": "Cozy Mystery",
+    "publish_date": "2013-07-28",
+    "pages": 315,
+    "rating": 4.0,
+    "price": 12.99,
+    "in_stock": true,
+    "tags": [
+      "cozy",
+      "identity",
+      "magic",
+      "redemption"
+    ]
+  },
+  {
+    "id": "book_044",
+    "title": "The Wandering Archive Diary",
+    "author": "Theo Moreau",
+    "description": "Approachable recipes and techniques designed for real kitchens and busy weeks.",
+    "genre": "Cooking",
+    "publish_date": "2016-04-05",
+    "pages": 369,
+    "rating": 4.4,
+    "price": 17.99,
+    "in_stock": false,
+    "tags": [
+      "courage",
+      "history",
+      "mountains",
+      "recipes",
+      "secrets",
+      "technology"
+    ]
+  },
+  {
+    "id": "book_045",
+    "title": "The Compass Exchange",
+    "author": "Inez Fischer",
+    "description": "Science meets suspense as a breakthrough reveals a darker cost.",
+    "genre": "Science Thriller",
+    "publish_date": "2023-08-07",
+    "pages": 319,
+    "rating": 4.0,
+    "price": 15.99,
+    "in_stock": true,
+    "tags": [
+      "architecture",
+      "business",
+      "family",
+      "leadership",
+      "suspense",
+      "travel"
+    ]
+  },
+  {
+    "id": "book_046",
+    "title": "Letters from Driftwood",
+    "author": "Zara Kowalski",
+    "description": "A travelogue that mixes place, culture, and practical tips with curiosity.",
+    "genre": "Travel",
+    "publish_date": "2016-09-26",
+    "pages": 449,
+    "rating": 3.9,
+    "price": 18.99,
+    "in_stock": true,
+    "tags": [
+      "artificial intelligence",
+      "cooking",
+      "mindfulness",
+      "small town",
+      "travel"
+    ]
+  },
+  {
+    "id": "book_047",
+    "title": "The Refuge Map",
+    "author": "Kiran Hale",
+    "description": "Two people with mismatched plans find common ground where they least expect it.",
+    "genre": "Romance",
+    "publish_date": "2016-06-08",
+    "pages": 327,
+    "rating": 4.0,
+    "price": 15.99,
+    "in_stock": true,
+    "tags": [
+      "architecture",
+      "espionage",
+      "law",
+      "myth"
+    ]
+  },
+  {
+    "id": "book_048",
+    "title": "The Moon Principle",
+    "author": "Jonah Alvarez",
+    "description": "A tense story where perception is unreliable and motives are layered.",
+    "genre": "Psychological Thriller",
+    "publish_date": "2015-04-09",
+    "pages": 418,
+    "rating": 3.7,
+    "price": 14.99,
+    "in_stock": true,
+    "tags": [
+      "friendship",
+      "supernatural",
+      "suspense",
+      "war"
+    ]
+  },
+  {
+    "id": "book_049",
+    "title": "The Crescent Season",
+    "author": "Micah Hartley",
+    "description": "A fast-paced chase through systems, signals, and the humans behind them.",
+    "genre": "Techno Thriller",
+    "publish_date": "2013-04-23",
+    "pages": 262,
+    "rating": 4.7,
+    "price": 16.99,
+    "in_stock": false,
+    "tags": [
+      "art",
+      "business",
+      "heist",
+      "mountains",
+      "suspense"
+    ]
+  },
+  {
+    "id": "book_050",
+    "title": "The Strand Season",
+    "author": "Darius Bennett",
+    "description": "An immersive look at landscapes, ecosystems, and the humans who depend on them.",
+    "genre": "Nature Writing",
+    "publish_date": "2020-06-03",
+    "pages": 491,
+    "rating": 4.9,
+    "price": 17.99,
+    "in_stock": false,
+    "tags": [
+      "exploration",
+      "law",
+      "supernatural",
+      "travel"
+    ]
+  },
+  {
+    "id": "book_051",
+    "title": "The Crescent Paradox",
+    "author": "Sofia Delacroix",
+    "description": "A fast-paced chase through systems, signals, and the humans behind them.",
+    "genre": "Techno Thriller",
+    "publish_date": "2016-02-04",
+    "pages": 431,
+    "rating": 3.9,
+    "price": 16.99,
+    "in_stock": true,
+    "tags": [
+      "art",
+      "science",
+      "space",
+      "suspense"
+    ]
+  },
+  {
+    "id": "book_052",
+    "title": "Letters from The Highlands",
+    "author": "Darius Whitaker",
+    "description": "A near-future discovery pushes a small team to the edge of what reality will tolerate.",
+    "genre": "Science Fiction",
+    "publish_date": "2014-08-22",
+    "pages": 535,
+    "rating": 4.0,
+    "price": 19.99,
+    "in_stock": false,
+    "tags": [
+      "future",
+      "health",
+      "science",
+      "war"
+    ]
+  },
+  {
+    "id": "book_053",
+    "title": "Velvet Terminal",
+    "author": "Greta Stone",
+    "description": "An immersive look at landscapes, ecosystems, and the humans who depend on them.",
+    "genre": "Nature Writing",
+    "publish_date": "2023-07-13",
+    "pages": 332,
+    "rating": 4.1,
+    "price": 14.99,
+    "in_stock": true,
+    "tags": [
+      "architecture",
+      "courage",
+      "music",
+      "startups"
+    ]
+  },
+  {
+    "id": "book_054",
+    "title": "Mirror and the Refuge",
+    "author": "Amir Nguyen",
+    "description": "A missing person case turns personal when the clues point back to the investigator.",
+    "genre": "Mystery",
+    "publish_date": "2024-06-01",
+    "pages": 479,
+    "rating": 3.6,
+    "price": 17.99,
+    "in_stock": true,
+    "tags": [
+      "courage",
+      "espionage",
+      "grief",
+      "magic"
+    ]
+  },
+  {
+    "id": "book_055",
+    "title": "The Portrait Map",
+    "author": "Talia Nguyen",
+    "description": "A travelogue that mixes place, culture, and practical tips with curiosity.",
+    "genre": "Travel",
+    "publish_date": "2022-02-05",
+    "pages": 216,
+    "rating": 4.9,
+    "price": 14.99,
+    "in_stock": true,
+    "tags": [
+      "adventure",
+      "climate",
+      "secrets",
+      "small town",
+      "supernatural",
+      "travel"
+    ]
+  },
+  {
+    "id": "book_056",
+    "title": "When Mirror Vanished",
+    "author": "Arjun Black",
+    "description": "A narrative history that connects events to the people living through them.",
+    "genre": "History",
+    "publish_date": "2015-10-01",
+    "pages": 378,
+    "rating": 3.7,
+    "price": 18.99,
+    "in_stock": true,
+    "tags": [
+      "ocean",
+      "redemption",
+      "survival"
+    ]
+  },
+  {
+    "id": "book_057",
+    "title": "The Terminal Exchange",
+    "author": "Amir Ibrahim",
+    "description": "A missing person case turns personal when the clues point back to the investigator.",
+    "genre": "Mystery",
+    "publish_date": "2023-04-13",
+    "pages": 384,
+    "rating": 3.6,
+    "price": 17.99,
+    "in_stock": false,
+    "tags": [
+      "adventure",
+      "health",
+      "identity",
+      "leadership",
+      "technology"
+    ]
+  },
+  {
+    "id": "book_058",
+    "title": "The Cipher Signal",
+    "author": "Ava Whitaker",
+    "description": "A tense story where perception is unreliable and motives are layered.",
+    "genre": "Psychological Thriller",
+    "publish_date": "2020-12-29",
+    "pages": 314,
+    "rating": 4.1,
+    "price": 14.99,
+    "in_stock": false,
+    "tags": [
+      "mountains",
+      "nature",
+      "space",
+      "suspense",
+      "travel"
+    ]
+  },
+  {
+    "id": "book_059",
+    "title": "The Refuge Paradox",
+    "author": "Darius Nakamoto",
+    "description": "A tense story where perception is unreliable and motives are layered.",
+    "genre": "Psychological Thriller",
+    "publish_date": "2023-04-16",
+    "pages": 397,
+    "rating": 3.9,
+    "price": 14.99,
+    "in_stock": false,
+    "tags": [
+      "climate",
+      "health",
+      "magic",
+      "myth",
+      "suspense"
+    ]
+  },
+  {
+    "id": "book_060",
+    "title": "The Circuit Conspiracy",
+    "author": "Caleb Yamamoto",
+    "description": "A period mystery where social rules matter as much as evidence.",
+    "genre": "Historical Mystery",
+    "publish_date": "2017-12-16",
+    "pages": 352,
+    "rating": 3.9,
+    "price": 17.99,
+    "in_stock": true,
+    "tags": [
+      "business",
+      "family",
+      "mindfulness",
+      "small town"
+    ]
+  },
+  {
+    "id": "book_061",
+    "title": "Portrait at Saffron Quarter",
+    "author": "Talia Yamamoto",
+    "description": "A creeping dread builds as an ordinary place refuses to stay ordinary.",
+    "genre": "Horror",
+    "publish_date": "2010-05-22",
+    "pages": 307,
+    "rating": 3.8,
+    "price": 14.99,
+    "in_stock": true,
+    "tags": [
+      "business",
+      "crime",
+      "detective",
+      "mindfulness",
+      "war"
+    ]
+  },
+  {
+    "id": "book_062",
+    "title": "The Strand Pact",
+    "author": "Theo Morgan",
+    "description": "A charming small-town puzzle with warm characters and low gore.",
+    "genre": "Cozy Mystery",
+    "publish_date": "2015-03-04",
+    "pages": 321,
+    "rating": 4.5,
+    "price": 14.99,
+    "in_stock": true,
+    "tags": [
+      "cozy",
+      "espionage",
+      "mountains",
+      "romance",
+      "small town",
+      "war"
+    ]
+  },
+  {
+    "id": "book_063",
+    "title": "The Signal Exchange",
+    "author": "Kei Caldwell",
+    "description": "Two people with mismatched plans find common ground where they least expect it.",
+    "genre": "Romance",
+    "publish_date": "2010-04-26",
+    "pages": 493,
+    "rating": 3.6,
+    "price": 15.99,
+    "in_stock": true,
+    "tags": [
+      "art",
+      "artificial intelligence",
+      "folklore",
+      "politics"
+    ]
+  },
+  {
+    "id": "book_064",
+    "title": "A Paradox in Lumen District",
+    "author": "Selene Park",
+    "description": "A richly researched story of ordinary people navigating extraordinary times.",
+    "genre": "Historical Fiction",
+    "publish_date": "2011-02-25",
+    "pages": 349,
+    "rating": 4.8,
+    "price": 15.99,
+    "in_stock": false,
+    "tags": [
+      "folklore",
+      "friendship",
+      "health",
+      "politics"
+    ]
+  },
+  {
+    "id": "book_065",
+    "title": "The Workshop of Crown City",
+    "author": "Jasper Kowalski",
+    "description": "A deeply reported life story that traces private choices and public consequences.",
+    "genre": "Biography",
+    "publish_date": "2019-05-03",
+    "pages": 500,
+    "rating": 4.3,
+    "price": 20.99,
+    "in_stock": true,
+    "tags": [
+      "crime",
+      "myth",
+      "redemption",
+      "travel"
+    ]
+  },
+  {
+    "id": "book_066",
+    "title": "Beyond Willow Crossing",
+    "author": "Arjun Larsson",
+    "description": "A pragmatic playbook for decision-making, teams, and sustainable growth.",
+    "genre": "Business",
+    "publish_date": "2011-10-28",
+    "pages": 270,
+    "rating": 3.8,
+    "price": 16.99,
+    "in_stock": true,
+    "tags": [
+      "art",
+      "myth",
+      "psychology",
+      "strategy",
+      "war"
+    ]
+  },
+  {
+    "id": "book_067",
+    "title": "Beyond Night Market",
+    "author": "Darius Moreau",
+    "description": "A pragmatic playbook for decision-making, teams, and sustainable growth.",
+    "genre": "Business",
+    "publish_date": "2015-03-28",
+    "pages": 325,
+    "rating": 4.6,
+    "price": 17.99,
+    "in_stock": true,
+    "tags": [
+      "leadership",
+      "strategy",
+      "technology",
+      "travel"
+    ]
+  },
+  {
+    "id": "book_068",
+    "title": "The Golden Blueprint Diary",
+    "author": "Leah Morgan",
+    "description": "A clear, engaging guide that turns complex ideas into practical understanding.",
+    "genre": "Nonfiction",
+    "publish_date": "2022-10-07",
+    "pages": 337,
+    "rating": 4.1,
+    "price": 17.99,
+    "in_stock": true,
+    "tags": [
+      "law",
+      "leadership",
+      "politics",
+      "romance"
+    ]
+  },
+  {
+    "id": "book_069",
+    "title": "The Ledger Season",
+    "author": "Zara Larsson",
+    "description": "A reluctant hero uncovers an old power tied to a place no map admits exists.",
+    "genre": "Fantasy",
+    "publish_date": "2012-01-19",
+    "pages": 437,
+    "rating": 4.8,
+    "price": 18.99,
+    "in_stock": true,
+    "tags": [
+      "architecture",
+      "health",
+      "magic",
+      "romance"
+    ]
+  },
+  {
+    "id": "book_070",
+    "title": "The Satellite of Sunspire",
+    "author": "Theo Caldwell",
+    "description": "A personal narrative that blends candid reflection with hard-earned insight.",
+    "genre": "Memoir",
+    "publish_date": "2019-10-11",
+    "pages": 515,
+    "rating": 4.6,
+    "price": 20.99,
+    "in_stock": true,
+    "tags": [
+      "courage",
+      "grief",
+      "startups",
+      "survival"
+    ]
+  },
+  {
+    "id": "book_071",
+    "title": "Portrait and the Grove",
+    "author": "Kiran Patel",
+    "description": "A creeping dread builds as an ordinary place refuses to stay ordinary.",
+    "genre": "Horror",
+    "publish_date": "2011-12-23",
+    "pages": 421,
+    "rating": 3.8,
+    "price": 14.99,
+    "in_stock": true,
+    "tags": [
+      "cooking",
+      "family",
+      "leadership",
+      "magic",
+      "startups"
+    ]
+  },
+  {
+    "id": "book_072",
+    "title": "The Vessel of Hearthstone",
+    "author": "Selene Sato",
+    "description": "A period mystery where social rules matter as much as evidence.",
+    "genre": "Historical Mystery",
+    "publish_date": "2015-12-28",
+    "pages": 501,
+    "rating": 3.6,
+    "price": 16.99,
+    "in_stock": false,
+    "tags": [
+      "folklore",
+      "psychology",
+      "secrets",
+      "technology"
+    ]
+  },
+  {
+    "id": "book_073",
+    "title": "The Stormlit Terminal Diary",
+    "author": "Clara Alvarez",
+    "description": "A fast-paced chase through systems, signals, and the humans behind them.",
+    "genre": "Techno Thriller",
+    "publish_date": "2012-07-18",
+    "pages": 496,
+    "rating": 4.8,
+    "price": 18.99,
+    "in_stock": true,
+    "tags": [
+      "coming of age",
+      "cooking",
+      "law",
+      "nature",
+      "romance",
+      "suspense"
+    ]
+  },
+  {
+    "id": "book_074",
+    "title": "The Chamber Principle",
+    "author": "Rowan Ibrahim",
+    "description": "A clear, engaging guide that turns complex ideas into practical understanding.",
+    "genre": "Nonfiction",
+    "publish_date": "2021-05-26",
+    "pages": 259,
+    "rating": 4.7,
+    "price": 15.99,
+    "in_stock": true,
+    "tags": [
+      "courage",
+      "family",
+      "law",
+      "romance"
+    ]
+  },
+  {
+    "id": "book_075",
+    "title": "Beyond Driftwood",
+    "author": "Owen Serrano",
+    "description": "A deeply reported life story that traces private choices and public consequences.",
+    "genre": "Biography",
+    "publish_date": "2020-11-11",
+    "pages": 366,
+    "rating": 3.9,
+    "price": 19.99,
+    "in_stock": true,
+    "tags": [
+      "art",
+      "climate",
+      "health",
+      "small town"
+    ]
+  },
+  {
+    "id": "book_076",
+    "title": "The Beacon Map",
+    "author": "Maya Sanchez",
+    "description": "A personal narrative that blends candid reflection with hard-earned insight.",
+    "genre": "Memoir",
+    "publish_date": "2017-06-12",
+    "pages": 241,
+    "rating": 4.7,
+    "price": 13.99,
+    "in_stock": true,
+    "tags": [
+      "cooking",
+      "exploration",
+      "family",
+      "space"
+    ]
+  },
+  {
+    "id": "book_077",
+    "title": "When Satellite Whispers",
+    "author": "Amir Alvarez",
+    "description": "A courtroom-and-corridor thriller where the truth has a paper trail.",
+    "genre": "Legal Thriller",
+    "publish_date": "2017-05-15",
+    "pages": 454,
+    "rating": 4.8,
+    "price": 17.99,
+    "in_stock": false,
+    "tags": [
+      "adventure",
+      "friendship",
+      "leadership",
+      "supernatural",
+      "suspense"
+    ]
+  },
+  {
+    "id": "book_078",
+    "title": "The Dusty Canyon Diary",
+    "author": "Isla Serrano",
+    "description": "A richly researched story of ordinary people navigating extraordinary times.",
+    "genre": "Historical Fiction",
+    "publish_date": "2025-07-26",
+    "pages": 373,
+    "rating": 4.8,
+    "price": 13.99,
+    "in_stock": true,
+    "tags": [
+      "detective",
+      "identity",
+      "space",
+      "travel"
+    ]
+  },
+  {
+    "id": "book_079",
+    "title": "The Salted Paradox Diary",
+    "author": "Liam Okoye",
+    "description": "A clear, engaging guide that turns complex ideas into practical understanding.",
+    "genre": "Nonfiction",
+    "publish_date": "2025-04-28",
+    "pages": 313,
+    "rating": 4.1,
+    "price": 17.99,
+    "in_stock": true,
+    "tags": [
+      "coming of age",
+      "family",
+      "history",
+      "magic",
+      "startups"
+    ]
+  },
+  {
+    "id": "book_080",
+    "title": "The Cipher Equation",
+    "author": "Mateo Nakamoto",
+    "description": "A narrative history that connects events to the people living through them.",
+    "genre": "History",
+    "publish_date": "2015-08-11",
+    "pages": 423,
+    "rating": 4.7,
+    "price": 17.99,
+    "in_stock": true,
+    "tags": [
+      "climate",
+      "health",
+      "science",
+      "survival"
+    ]
+  },
+  {
+    "id": "book_081",
+    "title": "The Riddle Pact",
+    "author": "Theo Hale",
+    "description": "A personal narrative that blends candid reflection with hard-earned insight.",
+    "genre": "Memoir",
+    "publish_date": "2025-05-20",
+    "pages": 215,
+    "rating": 4.8,
+    "price": 14.99,
+    "in_stock": false,
+    "tags": [
+      "folklore",
+      "heist",
+      "identity",
+      "psychology"
+    ]
+  },
+  {
+    "id": "book_082",
+    "title": "Letters from Marrow Bay",
+    "author": "Mateo Serrano",
+    "description": "A near-future discovery pushes a small team to the edge of what reality will tolerate.",
+    "genre": "Science Fiction",
+    "publish_date": "2022-12-31",
+    "pages": 506,
+    "rating": 4.5,
+    "price": 15.99,
+    "in_stock": true,
+    "tags": [
+      "artificial intelligence",
+      "cooking",
+      "future",
+      "leadership",
+      "mountains",
+      "small town"
+    ]
+  },
+  {
+    "id": "book_083",
+    "title": "The Ember Pact",
+    "author": "Priya Park",
+    "description": "An immersive look at landscapes, ecosystems, and the humans who depend on them.",
+    "genre": "Nature Writing",
+    "publish_date": "2012-08-01",
+    "pages": 459,
+    "rating": 4.8,
+    "price": 15.99,
+    "in_stock": false,
+    "tags": [
+      "architecture",
+      "detective",
+      "exploration",
+      "mindfulness",
+      "music"
+    ]
+  },
+  {
+    "id": "book_084",
+    "title": "Harbor at Saffron Quarter",
+    "author": "Darius Ramirez",
+    "description": "A pragmatic playbook for decision-making, teams, and sustainable growth.",
+    "genre": "Business",
+    "publish_date": "2025-01-29",
+    "pages": 324,
+    "rating": 4.3,
+    "price": 18.99,
+    "in_stock": false,
+    "tags": [
+      "architecture",
+      "heist",
+      "strategy",
+      "war"
+    ]
+  },
+  {
+    "id": "book_085",
+    "title": "Emerald Refuge",
+    "author": "Darius Morgan",
+    "description": "A structured approach to building habits, resilience, and better days.",
+    "genre": "Self-Help",
+    "publish_date": "2019-02-27",
+    "pages": 249,
+    "rating": 3.6,
+    "price": 16.99,
+    "in_stock": true,
+    "tags": [
+      "climate",
+      "leadership",
+      "survival",
+      "technology"
+    ]
+  },
+  {
+    "id": "book_086",
+    "title": "When Pavilion Falls",
+    "author": "Clara Cho",
+    "description": "Science meets suspense as a breakthrough reveals a darker cost.",
+    "genre": "Science Thriller",
+    "publish_date": "2024-09-09",
+    "pages": 310,
+    "rating": 4.7,
+    "price": 15.99,
+    "in_stock": false,
+    "tags": [
+      "adventure",
+      "art",
+      "detective",
+      "espionage",
+      "suspense"
+    ]
+  },
+  {
+    "id": "book_087",
+    "title": "The Chamber Season",
+    "author": "Greta Olsen",
+    "description": "A near-future discovery pushes a small team to the edge of what reality will tolerate.",
+    "genre": "Science Fiction",
+    "publish_date": "2018-12-06",
+    "pages": 461,
+    "rating": 3.7,
+    "price": 15.99,
+    "in_stock": false,
+    "tags": [
+      "betrayal",
+      "espionage",
+      "future",
+      "invention",
+      "startups"
+    ]
+  },
+  {
+    "id": "book_088",
+    "title": "The Orchard Conspiracy",
+    "author": "Arjun Moreau",
+    "description": "A tense story where perception is unreliable and motives are layered.",
+    "genre": "Psychological Thriller",
+    "publish_date": "2022-06-07",
+    "pages": 366,
+    "rating": 4.3,
+    "price": 17.99,
+    "in_stock": true,
+    "tags": [
+      "family",
+      "psychology",
+      "romance",
+      "suspense"
+    ]
+  },
+  {
+    "id": "book_089",
+    "title": "When Equinox Awakens",
+    "author": "Lucas Nguyen",
+    "description": "A character-driven story about memory, change, and the people we become.",
+    "genre": "Literary Fiction",
+    "publish_date": "2010-05-02",
+    "pages": 403,
+    "rating": 4.6,
+    "price": 14.99,
+    "in_stock": true,
+    "tags": [
+      "artificial intelligence",
+      "history",
+      "mystery"
+    ]
+  },
+  {
+    "id": "book_090",
+    "title": "The Stone Paradox",
+    "author": "Mila Bailey",
+    "description": "Two people with mismatched plans find common ground where they least expect it.",
+    "genre": "Romance",
+    "publish_date": "2020-04-10",
+    "pages": 235,
+    "rating": 3.5,
+    "price": 13.99,
+    "in_stock": true,
+    "tags": [
+      "friendship",
+      "myth",
+      "nature",
+      "politics",
+      "survival"
+    ]
+  },
+  {
+    "id": "book_091",
+    "title": "Ledger at Ashford",
+    "author": "Theo Watanabe",
+    "description": "A narrative history that connects events to the people living through them.",
+    "genre": "History",
+    "publish_date": "2017-04-17",
+    "pages": 385,
+    "rating": 4.9,
+    "price": 18.99,
+    "in_stock": true,
+    "tags": [
+      "art",
+      "invention",
+      "survival",
+      "technology",
+      "travel"
+    ]
+  },
+  {
+    "id": "book_092",
+    "title": "The Pavilion Signal",
+    "author": "Zara Nakamoto",
+    "description": "A modern story of relationships, ambition, and second chances.",
+    "genre": "Contemporary Fiction",
+    "publish_date": "2024-12-01",
+    "pages": 350,
+    "rating": 4.0,
+    "price": 13.99,
+    "in_stock": false,
+    "tags": [
+      "betrayal",
+      "survival",
+      "travel"
+    ]
+  },
+  {
+    "id": "book_093",
+    "title": "The River Equation",
+    "author": "Ethan Delacroix",
+    "description": "A clear, engaging guide that turns complex ideas into practical understanding.",
+    "genre": "Nonfiction",
+    "publish_date": "2017-01-03",
+    "pages": 370,
+    "rating": 3.6,
+    "price": 17.99,
+    "in_stock": true,
+    "tags": [
+      "heist",
+      "identity",
+      "mindfulness",
+      "survival"
+    ]
+  },
+  {
+    "id": "book_094",
+    "title": "The Blueprint Pact",
+    "author": "Kiran Watanabe",
+    "description": "A reluctant hero uncovers an old power tied to a place no map admits exists.",
+    "genre": "Fantasy",
+    "publish_date": "2023-08-29",
+    "pages": 656,
+    "rating": 4.6,
+    "price": 18.99,
+    "in_stock": true,
+    "tags": [
+      "courage",
+      "family",
+      "identity",
+      "magic",
+      "mountains",
+      "redemption"
+    ]
+  },
+  {
+    "id": "book_095",
+    "title": "When Cipher Returns",
+    "author": "Liam Bailey",
+    "description": "A period mystery where social rules matter as much as evidence.",
+    "genre": "Historical Mystery",
+    "publish_date": "2018-06-09",
+    "pages": 434,
+    "rating": 4.1,
+    "price": 14.99,
+    "in_stock": true,
+    "tags": [
+      "betrayal",
+      "health",
+      "mystery",
+      "psychology"
+    ]
+  },
+  {
+    "id": "book_096",
+    "title": "When Refuge Vanished",
+    "author": "Theo Serrano",
+    "description": "A pragmatic playbook for decision-making, teams, and sustainable growth.",
+    "genre": "Business",
+    "publish_date": "2019-07-06",
+    "pages": 438,
+    "rating": 4.3,
+    "price": 18.99,
+    "in_stock": true,
+    "tags": [
+      "architecture",
+      "coming of age",
+      "identity",
+      "strategy",
+      "technology",
+      "travel"
+    ]
+  },
+  {
+    "id": "book_097",
+    "title": "The Vessel Exchange",
+    "author": "Amir Sato",
+    "description": "A reluctant hero uncovers an old power tied to a place no map admits exists.",
+    "genre": "Fantasy",
+    "publish_date": "2014-08-02",
+    "pages": 474,
+    "rating": 4.8,
+    "price": 18.99,
+    "in_stock": true,
+    "tags": [
+      "family",
+      "grief",
+      "magic",
+      "politics",
+      "technology"
+    ]
+  },
+  {
+    "id": "book_098",
+    "title": "The Mirror Signal",
+    "author": "Anya Watanabe",
+    "description": "A tense story where perception is unreliable and motives are layered.",
+    "genre": "Psychological Thriller",
+    "publish_date": "2024-12-25",
+    "pages": 441,
+    "rating": 3.5,
+    "price": 18.99,
+    "in_stock": true,
+    "tags": [
+      "friendship",
+      "grief",
+      "magic",
+      "suspense"
+    ]
+  },
+  {
+    "id": "book_099",
+    "title": "The Paradox Exchange",
+    "author": "Priya Kowalski",
+    "description": "A gritty case where motives blur and every witness hides something.",
+    "genre": "Crime",
+    "publish_date": "2010-06-20",
+    "pages": 426,
+    "rating": 3.7,
+    "price": 18.99,
+    "in_stock": true,
+    "tags": [
+      "betrayal",
+      "climate",
+      "detective",
+      "survival",
+      "travel"
+    ]
+  },
+  {
+    "id": "book_100",
+    "title": "The Vessel Signal",
+    "author": "Jonah Mercer",
+    "description": "A modern story of relationships, ambition, and second chances.",
+    "genre": "Contemporary Fiction",
+    "publish_date": "2013-10-09",
+    "pages": 259,
+    "rating": 4.2,
+    "price": 12.99,
+    "in_stock": true,
+    "tags": [
+      "exploration",
+      "identity",
+      "invention",
+      "space"
+    ]
   }
 ]
