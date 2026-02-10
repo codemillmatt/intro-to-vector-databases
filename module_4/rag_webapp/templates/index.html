@@ -28,28 +28,32 @@
         /* Header */
         header {
             background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
-            padding: 30px;
+            padding: 14px 24px;
             border-radius: 12px;
             margin-bottom: 20px;
             border: 1px solid #0f3460;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
         }
         
         header h1 {
-            font-size: 1.8em;
-            margin-bottom: 8px;
+            font-size: 1.4em;
+            margin-bottom: 0;
             color: #e94560;
         }
         
         header p {
-            opacity: 0.8;
-            font-size: 0.95em;
+            display: none;
         }
         
         .status-badge {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            margin-top: 12px;
+            margin-top: 0;
             padding: 6px 12px;
             border-radius: 20px;
             font-size: 0.85em;
@@ -219,7 +223,7 @@
         }
         
         .chat-messages {
-            height: 400px;
+            height: 320px;
             overflow-y: auto;
             padding: 20px;
             display: flex;
@@ -632,6 +636,103 @@
             color: #888;
         }
 
+        /* RAG / Direct toggle */
+        .mode-toggle-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85em;
+        }
+
+        .mode-toggle-container .mode-label {
+            color: #888;
+            transition: color 0.2s;
+            user-select: none;
+        }
+
+        .mode-toggle-container .mode-label.active {
+            color: #e94560;
+            font-weight: 600;
+        }
+
+        .mode-toggle {
+            position: relative;
+            width: 46px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+
+        .mode-toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .mode-slider {
+            position: absolute;
+            cursor: pointer;
+            inset: 0;
+            background: #0f3460;
+            border-radius: 24px;
+            transition: background 0.3s;
+        }
+
+        .mode-slider::before {
+            content: '';
+            position: absolute;
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background: #888;
+            border-radius: 50%;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .mode-toggle input:checked + .mode-slider {
+            background: rgba(233, 69, 96, 0.3);
+        }
+
+        .mode-toggle input:checked + .mode-slider::before {
+            transform: translateX(22px);
+            background: #e94560;
+        }
+
+        .mode-toggle input:disabled + .mode-slider {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        /* Mode badge on user messages */
+        .mode-badge {
+            display: inline-block;
+            font-size: 0.7em;
+            padding: 2px 7px;
+            border-radius: 10px;
+            margin-left: 6px;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+
+        .mode-badge.rag {
+            background: rgba(233, 69, 96, 0.2);
+            color: #e94560;
+        }
+
+        .mode-badge.direct {
+            background: rgba(241, 196, 15, 0.2);
+            color: #f1c40f;
+        }
+
+        /* Direct-mode chat container accent */
+        .chat-container.direct-mode {
+            border-color: rgba(241, 196, 15, 0.4);
+        }
+
+        .chat-container.direct-mode .chat-header {
+            border-bottom-color: rgba(241, 196, 15, 0.3);
+        }
+
         /* Streaming cursor */
         .streaming-cursor {
             display: inline;
@@ -647,8 +748,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>📚 RAG Book Q&A</h1>
-            <p>Ask questions about books using Retrieval Augmented Generation</p>
+            <h1>📚 RAG QnA</h1>
             <div class="status-badge {{ 'llm-available' if llm_available else 'llm-unavailable' }}">
                 <span class="status-dot"></span>
                 {% if llm_available %}
@@ -699,9 +799,21 @@
         <!-- Chat Interface -->
         <div class="chat-section" id="chatSection">
             <div class="chat-container">
-                <div class="chat-header">
-                    <span>💬</span>
-                    <h2>Ask a Question</h2>
+                <div class="chat-header" style="justify-content: space-between;">
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        <span>💬</span>
+                        <h2>Ask a Question</h2>
+                    </div>
+                    {% if llm_available %}
+                    <div class="mode-toggle-container" title="Toggle between RAG (grounded) and Direct LLM (ungrounded) answers">
+                        <span class="mode-label" id="labelDirect">Direct LLM</span>
+                        <label class="mode-toggle">
+                            <input type="checkbox" id="ragToggle" checked>
+                            <span class="mode-slider"></span>
+                        </label>
+                        <span class="mode-label active" id="labelRag">RAG</span>
+                    </div>
+                    {% endif %}
                 </div>
                 
                 <div class="chat-messages" id="chatMessages">
@@ -739,12 +851,39 @@
                     <p>LLM synthesizes an answer from passages</p>
                 </div>
             </div>
+            {% if llm_available %}
+            <p style="margin-top:18px; font-size:0.88em; color:#aaa; text-align:center;">
+                💡 Toggle <strong style="color:#e94560;">RAG off</strong> to see how the LLM answers without retrieved passages — notice the difference in accuracy and grounding.
+            </p>
+            {% endif %}
         </div>
     </div>
     
     <script>
         let selectedBook = null;
-        
+
+        // --- RAG toggle logic ---
+        const ragToggle = document.getElementById('ragToggle');
+        const labelRag = document.getElementById('labelRag');
+        const labelDirect = document.getElementById('labelDirect');
+
+        function isRagMode() {
+            return ragToggle ? ragToggle.checked : true;
+        }
+
+        function updateToggleLabels() {
+            if (!ragToggle) return;
+            const rag = ragToggle.checked;
+            labelRag.classList.toggle('active', rag);
+            labelDirect.classList.toggle('active', !rag);
+            const container = document.querySelector('.chat-container');
+            container.classList.toggle('direct-mode', !rag);
+        }
+
+        if (ragToggle) {
+            ragToggle.addEventListener('change', updateToggleLabels);
+        }
+
         // Initialize book selection handlers
         document.querySelectorAll('.book-option').forEach(option => {
             option.addEventListener('click', () => selectBook(option));
@@ -818,8 +957,14 @@
             // Remove empty state
             if (emptyState) emptyState.remove();
             
-            // Add user message
-            addMessage('user', question);
+            // Capture mode at time of question
+            const useRag = isRagMode();
+            const modeBadge = useRag
+                ? '<span class="mode-badge rag">RAG</span>'
+                : '<span class="mode-badge direct">Direct</span>';
+
+            // Add user message with mode badge
+            addMessageHtml('user', escapeHtml(question) + ' ' + modeBadge);
             
             // Clear input
             input.value = '';
@@ -846,7 +991,8 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         question: question,
-                        book_id: selectedBook.id
+                        book_id: selectedBook.id,
+                        use_rag: useRag
                     })
                 });
 
@@ -882,14 +1028,26 @@
                         if (!line.startsWith('data: ')) continue;
                         const payload = JSON.parse(line.slice(6));
 
-                        if (payload.type === 'passages') {
+                        if (payload.type === 'mode' && payload.mode === 'direct') {
+                            // Direct LLM mode — no passages, just stream tokens
+                            document.getElementById(loadingId)?.remove();
+                            responseDiv = document.createElement('div');
+                            responseDiv.className = 'message assistant';
+                            responseDiv.innerHTML = `<div class="message-label">Assistant <span class="mode-badge direct">Direct LLM</span></div>
+                                <div class="message-bubble answer-bubble"><span class="streaming-cursor">▍</span></div>`;
+                            messagesDiv.appendChild(responseDiv);
+                            answerBubble = responseDiv.querySelector('.answer-bubble');
+                            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+                            passagesRendered = true; // skip the passages-not-rendered fallback
+
+                        } else if (payload.type === 'passages') {
                             // Remove loading spinner
                             document.getElementById(loadingId)?.remove();
 
                             // Build passages + answer container
                             responseDiv = document.createElement('div');
                             responseDiv.className = 'message assistant';
-                            let html = `<div class="message-label">Assistant</div>`;
+                            let html = `<div class="message-label">Assistant <span class="mode-badge rag">RAG</span></div>`;
 
                             if (payload.passages && payload.passages.length > 0) {
                                 html += `<div class="passages-section">
@@ -962,13 +1120,17 @@
         }
         
         function addMessage(role, content) {
+            addMessageHtml(role, escapeHtml(content));
+        }
+
+        function addMessageHtml(role, html) {
             const messagesDiv = document.getElementById('chatMessages');
             const label = role === 'user' ? 'You' : 'Assistant';
             
             messagesDiv.innerHTML += `
                 <div class="message ${role}">
                     <div class="message-label">${label}</div>
-                    <div class="message-bubble">${escapeHtml(content)}</div>
+                    <div class="message-bubble">${html}</div>
                 </div>
             `;
             messagesDiv.scrollTop = messagesDiv.scrollHeight;
