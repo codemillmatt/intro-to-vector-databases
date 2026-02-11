@@ -1,11 +1,11 @@
 """
 Module 1: Finding Meaning (Enhanced) - Web Application
 
-A web-based demo comparing PostgreSQL full-text search (tsvector/tsquery)
-against semantic vector similarity search. Unlike the standard demo, this
-version:
+A web-based demo comparing PostgreSQL ILIKE substring matching against
+semantic vector similarity search. Unlike the standard demo, this version:
   - Removes the "Browse All Books" tab — focuses purely on search comparison.
-  - Uses PostgreSQL full-text search (ts_rank) instead of simple ILIKE.
+  - Uses case-insensitive ILIKE pattern matching across title, description,
+    genre, and full book text to illustrate keyword-based search limitations.
   - Queries both book-description AND book-text-chunk vectors in Pinecone,
     aggregating the best match per book for richer semantic results.
 
@@ -72,7 +72,9 @@ def sql_search(query: str) -> list[dict]:
                 ORDER BY rating DESC
                 LIMIT 5
             """
-            pattern = f"%{query}%"
+            # Escape SQL wildcard characters so user input is treated literally
+            escaped = query.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_")
+            pattern = f"%{escaped}%"
             cur.execute(sql, (pattern, pattern, pattern, pattern))
 
             columns = ["id", "title", "author", "description", "genre", "rating"]
@@ -176,7 +178,7 @@ def index():
 @app.route("/api/search", methods=["POST"])
 def api_search():
     """
-    Execute both SQL full-text and semantic searches and return results.
+    Execute both SQL keyword and semantic searches and return results.
 
     Expects JSON: { "query": "..." }
     Returns JSON: { "query": "...", "sql_results": [...], "semantic_results": [...] }
@@ -206,7 +208,7 @@ if __name__ == "__main__":
     port = int(os.getenv("PORT", 8081))
     debug = os.getenv("FLASK_DEBUG", "true").lower() == "true"
 
-    print(f"\n📚 Finding Meaning (Enhanced) — Full-Text vs Semantic Search")
+    print(f"\n📚 Finding Meaning (Enhanced) — SQL Keyword vs Semantic Search")
     print(f"   Running on: http://localhost:{port}\n")
 
     app.run(host="0.0.0.0", port=port, debug=debug)
