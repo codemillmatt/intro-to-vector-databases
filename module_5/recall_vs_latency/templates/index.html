@@ -316,20 +316,6 @@
         <h1>Recall vs Latency</h1>
         <p class="subtitle">The fundamental tradeoff in vector search</p>
 
-        <div class="concept-box">
-            <h3>The Core Concept</h3>
-            <p>
-                This demo uses <strong>100,000 random vectors</strong> (128 dimensions, HNSW with m=8)
-                to show how approximate nearest neighbor search works.
-                <br><br>
-                <strong>Exact search</strong> = checks every vector = 100% recall, but slow<br>
-                <strong>Approximate search (HNSW)</strong> = navigates a graph = fast, but may miss results<br>
-                <br>
-                The <strong>ef</strong> (exploration factor) controls how many nodes HNSW explores.
-                Higher ef = closer to exact results, but slower.
-            </p>
-        </div>
-
         <!-- Tabs -->
         <div class="tabs">
             <button class="tab-btn active" onclick="switchTab('compare', this)">Exact vs Approximate</button>
