@@ -21,11 +21,26 @@ The **ef** (exploration factor) parameter controls this tradeoff:
 
 Real data (like book embeddings) tends to cluster in semantic space, making ANN search easy — even low ef finds everything. To show the actual tradeoff, we use **100,000 uniformly random vectors** which spread across the space and make approximate search genuinely challenging.
 
+## Prerequisites
+
+- **DevContainer** — This project must run inside the DevContainer. Qdrant runs as a container service and is automatically started by Docker Compose.
+- **Python dependencies** — Install from the project root before running any demos:
+
+```bash
+pip install -r requirements.txt
+```
+
+This installs `qdrant-client`, `flask`, `numpy`, and other required packages.
+
 ## Running the Demo
 
 ### 1. Start the DevContainer
 
-The DevContainer includes Qdrant automatically.
+Open this repository in VS Code and reopen in the DevContainer. Docker Compose will start Qdrant automatically. You can verify it's running:
+
+```bash
+curl http://qdrant:6333/healthz
+```
 
 ### 2. Initialize the Database
 
@@ -34,7 +49,13 @@ cd module_5/recall_vs_latency
 python init_qdrant.py --reset
 ```
 
-This generates and inserts 100K random vectors. Takes 1-2 minutes.
+This generates and inserts **100,000 random vectors** (128 dimensions, cosine distance) with an HNSW index configured at `m=8` and `ef_construct=64`. Takes 1–2 minutes.
+
+To check the collection status at any time:
+
+```bash
+python init_qdrant.py --info
+```
 
 ### 3. Run the Flask App
 
@@ -46,14 +67,33 @@ Open http://localhost:8080 in your browser.
 
 ## Using the Demo
 
-1. **Adjust the ef slider** and click "Search" to see recall/latency for one ef value
-2. **Click "Generate Full Curve"** to see the complete tradeoff visualization
-3. **Click "New Random Query"** to try different query vectors
+The demo has two tabs:
+
+### Tab 1: Exact vs Approximate
+
+Compare brute-force (exact) search against HNSW approximate search side-by-side for a single query.
+
+1. **Adjust the ef slider** to control how thoroughly HNSW explores the graph
+2. **Click "Compare"** to see both result sets side-by-side
+3. **Click "New Random Query"** to try a different query vector
+
+Results are color-coded:
+- **Green** — Found by both exact and HNSW
+- **Red (MISSED)** — In exact results but HNSW missed it
+- **Yellow (WRONG)** — HNSW returned it but it's not in the true top-k
+
+### Tab 2: Batch Benchmark
+
+Runs many random queries at each ef value and measures aggregate timing to produce a clean recall-vs-latency curve.
+
+1. **Choose number of queries** (50 recommended) and **top_k**
+2. **Click "Run Benchmark"** — takes about a minute
+3. View the chart and raw data table
 
 ### What to Look For
 
-- At **ef=1-4**: Fast (~1-3ms) but recall drops to 40-70%
-- At **ef=64**: Good balance (~5-10ms) with 90-95% recall  
+- At **ef=1-4**: Fast but recall drops to 40-70% — HNSW is cutting too many corners
+- At **ef=64**: Good balance with 90-95% recall
 - At **ef=256+**: Near-perfect recall but noticeably slower
 
 ## Why This Matters
