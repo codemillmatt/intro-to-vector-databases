@@ -11,6 +11,7 @@ combined semantic + metadata search.
 
 import os
 import sys
+import json
 
 # Add setup directory to path for shared utilities
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "setup"))
@@ -32,19 +33,18 @@ _embedding_client.embed("warmup")
 
 
 def get_available_genres() -> list[str]:
-    """Get list of genres from the database."""
-    # In production, you'd query this from your database
-    # For this demo, we'll use a static list
-    return [
-        "Fantasy",
-        "Science Fiction", 
-        "Mystery",
-        "Historical Fiction",
-        "Literary Fiction",
-        "Thriller",
-        "Romance",
-        "Memoir"
-    ]
+    """Get all genres from the books catalog, sorted alphabetically."""
+    books_path = os.path.join(
+        os.path.dirname(__file__), "..", "..", "setup", "data", "books.json"
+    )
+    try:
+        with open(books_path) as f:
+            books = json.load(f)
+        genres = sorted({book["genre"] for book in books if "genre" in book})
+        return genres
+    except (FileNotFoundError, json.JSONDecodeError):
+        # Fallback if the file can't be read
+        return ["Fantasy", "Science Fiction", "Mystery", "Literary Fiction"]
 
 
 def search_books(
@@ -61,12 +61,17 @@ def search_books(
     This is the same search pattern as the other demos, but driven
     by structured UI inputs rather than parsed natural language.
     """
-    # If no query provided, use a generic embedding (using cached singleton)
-    if query.strip():
+    has_query = bool(query.strip())
+
+    if has_query:
         query_embedding = _embedding_client.embed(query)
     else:
-        # Search for "books" as a fallback
-        query_embedding = _embedding_client.embed("popular books")
+        # No search text — generate a random unit vector so Pinecone
+        # returns an essentially random sample of books.
+        import numpy as np
+        dim = len(_embedding_client.embed("test"))
+        vec = np.random.randn(dim).astype(np.float32)
+        query_embedding = (vec / np.linalg.norm(vec)).tolist()
     
     # Build metadata filters
     filters = {"type": "book"}
@@ -95,9 +100,14 @@ def search_books(
         filter=filters
     )
     
-    # Format results
+    # When the user typed a query, drop results below the similarity
+    # floor (0.3) to avoid clearly irrelevant matches.
+    MIN_SCORE = 0.3
+
     books = []
     for match in results.matches:
+        if has_query and match.score < MIN_SCORE:
+            continue
         books.append({
             "id": match.id,
             "title": match.metadata.get("title", ""),
