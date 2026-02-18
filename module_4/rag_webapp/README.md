@@ -1,52 +1,51 @@
 # RAG (Retrieval Augmented Generation)
+Ask questions about books and get answers grounded in the **actual text**, not just a generic LLM reply.
 
-Ask questions about books and get answers based on their actual content.
+## 🧠 What this app demonstrates
+- **Retrieval**: Embed the question, pull top-matching chunks from Pinecone.
+- **Augmentation**: Provide retrieved passages to the LLM for context.
+- **Generation**: Synthesize an answer using the provided evidence.
+- **Scoped retrieval**: filter by `book_id` to keep results tenant/book-specific.
 
-## Run
-
+## 🚀 Run (DevContainer/Codespaces preferred)
 ```bash
-cd module_4/rag_webapp
-python app.py
+# One-time data init (if not already done)
+cd setup
+python init_pinecone.py
+
+# Run the app
+cd ../module_4/rag_webapp
+python app.py   # http://localhost:5001
+```
+> 🤖 **LLM/embeddings**: Easiest path is local **Ollama** (`OLLAMA_HOST=http://localhost:11434`). Pull models:
+> ```bash
+> ollama pull mxbai-embed-large   # embeddings
+> ollama pull llama3.1           # optional for synthesized answers
+> ```
+> If Ollama isn’t available, retrieval still works; the app falls back to `sentence-transformers` for embeddings and shows the retrieved chunks so you can read the source directly.
+
+## 🔍 How RAG flows
+```
+Question → embed → Pinecone query (filter by book_id) → top-k chunks
+                                 ↓
+                         LLM (optional)
+                                 ↓
+                    Grounded answer + citations
 ```
 
-Open http://localhost:5001
+## 🧪 Try this
+1. Pick a book from the dropdown.
+2. Ask: `What challenge does the protagonist face?`
+3. Observe retrieved passages and the synthesized answer (if LLM enabled).
+4. Toggle to a different book and note how filtering avoids cross-book leakage.
 
-## What It Shows
-
-1. Select a book as your knowledge base
-2. Ask questions about it
-3. See the retrieved passages that answer your question
-4. Get a synthesized answer (if Ollama is running)
-
-## How RAG Works
-
-```
-Question: "What challenges does the protagonist face?"
-    ↓
-Convert to embedding
-    ↓
-Find similar text chunks in Pinecone (filtered by book_id)
-    ↓
-Pass chunks + question to LLM
-    ↓
-Answer grounded in actual book content
-```
-
-## With vs Without LLM
-
-| With Ollama | Without Ollama |
-|-------------|----------------|
-| Get synthesized answers | See relevant passages directly |
-| LLM summarizes the chunks | You read the source material |
-
-Both modes demonstrate the retrieval step - the "R" in RAG.
-
-## Key Concept: Scoped Retrieval
-
-The demo filters by `book_id` so questions only search within the selected book:
-
+## 📦 Key pattern: scoped retrieval
 ```python
 filter={"type": "chunk", "book_id": selected_book}
 ```
+Use this for multi-tenancy, access control, or user-specific partitions.
 
-This pattern is essential for multi-tenant apps, access control, and focused answers.
+## Reset / re-init
+```bash
+cd setup && python init_pinecone.py --reset
+```
