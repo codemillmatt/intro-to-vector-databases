@@ -1,78 +1,67 @@
 # Recall vs Latency Demo
+Explore the classic trade-off between **recall** (accuracy) and **latency** (speed) in ANN search using Qdrant + HNSW.
 
-This demo teaches the fundamental tradeoff between **recall** (search accuracy) and **latency** (search speed) in vector databases.
+## 🚀 Run (DevContainer/Codespaces preferred)
+```bash
+# One-time init
+cd module_5/recall_vs_latency
+python init_qdrant.py --reset   # inserts 100k random vectors
 
-## The Concept
+# Start the UI
+python app.py                    # http://localhost:8080
+```
+> This demo doesn’t depend on embeddings or Ollama—everything is synthetic. Qdrant is started by Docker Compose in the devcontainer. For running outside the container, see [RUNNING_LOCALLY.md](../../RUNNING_LOCALLY.md).
 
-Vector databases use approximate nearest neighbor (ANN) algorithms like HNSW to search quickly. The key insight:
-
-- **Exact search** scans every vector → 100% recall, but slow
-- **Approximate search** explores a subset → faster, but may miss results
-
-The **ef** (exploration factor) parameter controls this tradeoff:
+## 🧠 Concept recap
+- **Exact search** scans every vector → 100% recall, slower.
+- **Approximate search** (HNSW) explores a subset → fast, may miss some neighbors.
+- **`ef` (exploration factor)** controls the trade-off:
 
 | ef Value | Behavior |
 |----------|----------|
-| Low (1-8) | Very fast, but misses many relevant results |
-| Medium (32-64) | Good balance for most use cases |
-| High (128-512) | Near-perfect recall, but slower |
+| Low (1–8) | Very fast, low recall |
+| Medium (32–64) | Good balance |
+| High (128–512) | Near-perfect recall, slower |
 
-## Why 100K Random Vectors?
+## Why 100K random vectors?
+Real embeddings cluster; even small `ef` can look “too good”. Using **100,000 uniformly random vectors (128-D)** makes the ANN trade-off visible and measurable.
 
-Real data (like book embeddings) tends to cluster in semantic space, making ANN search easy — even low ef finds everything. To show the actual tradeoff, we use **100,000 uniformly random vectors** which spread across the space and make approximate search genuinely challenging.
+## 🔍 Using the app
+Two tabs:
+1. **Exact vs Approximate**
+   - Slider for `ef`
+   - “Compare” shows true top-k vs HNSW results (color-coded: ✅ both, ❌ missed, ⚠️ wrong)
+   - “New Random Query” generates a fresh query vector
+2. **Batch Benchmark**
+   - Runs many queries per `ef`
+   - Plots recall vs latency
+   - Table shows per-ef metrics
 
-## Running the Demo
+### What to look for
+- `ef=1–4`: blazing fast, recall can drop to 40–70%
+- `ef≈64`: 90–95% recall, good default
+- `ef≥256`: near-perfect recall, but latency increases
 
-### 1. Start the DevContainer
+## Key files
+- `init_qdrant.py` — sets up the collection (`m=8`, `ef_construct=64`)
+- `app.py` — Flask UI (port 8080)
+- `templates/index.html` — single-page UI
 
-The DevContainer includes Qdrant automatically.
-
-### 2. Initialize the Database
-
+## Bonus: Book embeddings variant
+There’s also a smaller book-focused variant:
 ```bash
-cd module_5/recall_vs_latency
-python init_qdrant.py --reset
+python init_qdrant_books.py --reset
+python app_books.py   # uses book embeddings instead of random vectors
 ```
 
-This generates and inserts 100K random vectors. Takes 1-2 minutes.
-
-### 3. Run the Flask App
-
+## Health checks
 ```bash
-python app.py
+curl http://qdrant:6333/healthz   # inside devcontainer
+curl http://localhost:6333/healthz  # running locally
 ```
 
-Open http://localhost:8080 in your browser.
-
-## Using the Demo
-
-1. **Adjust the ef slider** and click "Search" to see recall/latency for one ef value
-2. **Click "Generate Full Curve"** to see the complete tradeoff visualization
-3. **Click "New Random Query"** to try different query vectors
-
-### What to Look For
-
-- At **ef=1-4**: Fast (~1-3ms) but recall drops to 40-70%
-- At **ef=64**: Good balance (~5-10ms) with 90-95% recall  
-- At **ef=256+**: Near-perfect recall but noticeably slower
-
-## Why This Matters
-
-In production systems, you must choose where on this curve to operate:
-
-- **User-facing search**: Lower ef for fast response (<50ms), accept some missed results
-- **Recommendation systems**: Higher ef for quality, batch processing OK
-- **Hybrid approach**: Start with low ef, increase if results seem poor
-
-## Files
-
-- `app.py` - Flask web application
-- `init_qdrant.py` - Database initialization (100K random vectors)
-- `templates/index.html` - Interactive UI
-
-## Technical Details
-
-- **Vector DB**: Qdrant with HNSW index (m=8, ef_construct=64)
-- **Vectors**: 100,000 random unit vectors (128 dimensions)
-- **Ground Truth**: Computed via exact search for each query
-- **Recall**: % of true top-k results found by approximate search
+## Reset / info
+```bash
+python init_qdrant.py --reset   # wipe & rebuild
+python init_qdrant.py --info    # show collection stats
+```

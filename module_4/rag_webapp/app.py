@@ -177,6 +177,17 @@ QUESTION: {query}
 ANSWER:"""
 
 
+def _build_direct_prompt(query: str, book_title: str) -> str:
+    """Build a prompt that sends the question directly to the LLM without any
+    retrieved context.  This lets learners compare RAG-grounded answers against
+    the LLM's general knowledge to see how retrieval improves accuracy."""
+    return f"""You are a helpful assistant. Answer the following question using only your general knowledge. Keep your answer concise — ideally 2-4 sentences.
+
+QUESTION: {query}
+
+ANSWER:"""
+
+
 @app.route("/")
 def index():
     """Render the main RAG interface."""
@@ -219,18 +230,54 @@ def api_ask():
     data = request.get_json()
     question = data.get("question", "").strip()
     book_id = data.get("book_id", "").strip()
+    use_rag = data.get("use_rag", True)
 
     if not question:
         return jsonify({"error": "Question is required"}), 400
     if not book_id:
         return jsonify({"error": "Please select a book first"}), 400
 
+    # Look up book title from the catalog so both modes can reference it
+    book_title = "Unknown"
+    for b in CACHED_BOOKS:
+        if b["id"] == book_id:
+            book_title = b["title"]
+            break
+
     def generate():
+        nonlocal book_title
         import json as _json
 
+        # ----- Direct LLM mode (no RAG) -----
+        if not use_rag:
+            yield f"data: {_json.dumps({'type': 'mode', 'mode': 'direct'})}\n\n"
+
+            if not OLLAMA_AVAILABLE:
+                yield f"data: {_json.dumps({'type': 'done', 'llm_available': False, 'message': 'No LLM available. Direct mode requires an LLM.'})}\n\n"
+                return
+
+            prompt = _build_direct_prompt(question, book_title)
+            try:
+                stream = ollama.chat(
+                    model=OLLAMA_MODEL,
+                    messages=[{"role": "user", "content": prompt}],
+                    stream=True,
+                )
+                for chunk in stream:
+                    token = chunk.get("message", {}).get("content", "")
+                    if token:
+                        yield f"data: {_json.dumps({'type': 'token', 'token': token})}\n\n"
+            except Exception as e:
+                yield f"data: {_json.dumps({'type': 'error', 'message': str(e)})}\n\n"
+
+            yield f"data: {_json.dumps({'type': 'done', 'llm_available': True, 'model': OLLAMA_MODEL})}\n\n"
+            return
+
+        # ----- RAG mode (retrieve then generate) -----
         # Step 1: Retrieve passages (fast — cached singletons)
         passages = retrieve_passages(question, book_id, top_k=3)
-        book_title = passages[0]["title"] if passages else "Unknown"
+        if passages:
+            book_title = passages[0]["title"]
 
         yield f"data: {_json.dumps({'type': 'passages', 'passages': passages, 'book_title': book_title})}\n\n"
 

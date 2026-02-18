@@ -4,21 +4,22 @@ Module 5: Recall vs Latency Demo
 This Flask application demonstrates the fundamental tradeoff between
 recall (search accuracy) and latency (search speed) in vector databases.
 
-The key teaching concept:
-- HNSW index uses an 'ef' (exploration factor) parameter
-- Higher ef = more nodes explored = better recall, but slower
-- Lower ef = fewer nodes explored = faster, but may miss results
+Uses 100K random vectors (128D, HNSW with m=8) to clearly show how
+approximate search degrades at low ef values. Random vectors spread
+uniformly in high-dimensional space, making HNSW approximation errors
+much more visible than with clustered real-world data.
 
-Uses 100K random vectors to clearly show how approximate search
-degrades at low ef values.
+Two demo modes:
+1. Exact vs Approximate Comparison — side-by-side for a single query
+2. Batch Benchmark — many queries aggregated for a noise-free curve
 """
 
 import os
 import time
+import random
+
 import numpy as np
-
 from flask import Flask, render_template, request, jsonify
-
 from qdrant_client import QdrantClient
 from qdrant_client.models import SearchParams
 
@@ -30,8 +31,8 @@ QDRANT_PORT = int(os.getenv("QDRANT_PORT", "6333"))
 COLLECTION_NAME = "recall_demo"
 VECTOR_DIM = 128
 
-# Cache for ground truth and query vectors
-_cache = {}
+# Number of random queries for batch benchmark
+NUM_BATCH_QUERIES = 50
 
 
 def get_qdrant_client():
@@ -48,57 +49,58 @@ def get_random_query_vector(seed=None):
     return vec.tolist()
 
 
-def compute_ground_truth(query_vector, top_k=100):
+def search_exact(query_vector, top_k=20):
     """
-    Compute exact (brute-force) search results for a query.
-    This gives us the "perfect" results to compare against.
-    """
-    client = get_qdrant_client()
-    
-    results = client.query_points(
-        collection_name=COLLECTION_NAME,
-        query=query_vector,
-        limit=top_k,
-        search_params=SearchParams(exact=True)
-    )
-    
-    return [r.id for r in results.points]
-
-
-def search_with_ef(query_vector, ef, top_k=20):
-    """
-    Search with a specific ef parameter and measure latency.
+    Brute-force exact search. Checks every vector.
+    Always returns the true best results (100% recall).
     """
     client = get_qdrant_client()
-    
+
     start_time = time.perf_counter()
-    
     results = client.query_points(
         collection_name=COLLECTION_NAME,
         query=query_vector,
         limit=top_k,
-        search_params=SearchParams(hnsw_ef=ef)
+        search_params=SearchParams(exact=True),
     )
-    
     latency_ms = (time.perf_counter() - start_time) * 1000
-    
+
+    return results.points, latency_ms
+
+
+def search_approximate(query_vector, ef, top_k=20):
+    """
+    HNSW approximate search with specified ef.
+    Faster than exact, but may miss some results.
+    """
+    client = get_qdrant_client()
+
+    start_time = time.perf_counter()
+    results = client.query_points(
+        collection_name=COLLECTION_NAME,
+        query=query_vector,
+        limit=top_k,
+        search_params=SearchParams(hnsw_ef=ef),
+    )
+    latency_ms = (time.perf_counter() - start_time) * 1000
+
     return results.points, latency_ms
 
 
 def calculate_recall(retrieved_ids, ground_truth_ids):
     """
     Calculate recall: what fraction of ground truth results did we find?
+
+    Recall = |retrieved ∩ ground_truth| / |ground_truth|
     """
     if not ground_truth_ids:
         return 0.0
-    
+
     retrieved_set = set(retrieved_ids)
-    ground_truth_set = set(ground_truth_ids[:len(retrieved_ids)])
-    
+    ground_truth_set = set(ground_truth_ids[: len(retrieved_ids)])
+
     overlap = len(retrieved_set & ground_truth_set)
-    recall = overlap / len(ground_truth_set)
-    
-    return recall
+    return overlap / len(ground_truth_set)
 
 
 @app.route("/")
@@ -107,105 +109,143 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/api/search", methods=["POST"])
-def api_search():
+@app.route("/api/compare", methods=["POST"])
+def api_compare():
     """
-    Execute a search with specified ef parameter.
+    Compare exact vs approximate search side-by-side for a single query.
+
+    Uses random vectors, so results are identified by vector ID and score.
     """
     data = request.get_json()
     query_seed = data.get("query_seed", 42)
     ef = int(data.get("ef", 64))
     top_k = int(data.get("top_k", 20))
-    
+
     try:
-        # Generate query vector from seed (deterministic)
         query_vector = get_random_query_vector(seed=query_seed)
-        
-        # Get ground truth (cached per seed)
-        cache_key = f"gt_{query_seed}"
-        if cache_key not in _cache:
-            _cache[cache_key] = compute_ground_truth(query_vector, top_k=100)
-        ground_truth = _cache[cache_key]
-        
-        # Search with specified ef
-        results, search_latency = search_with_ef(query_vector, ef, top_k)
-        
+
+        # Run exact search (ground truth)
+        exact_results, exact_latency = search_exact(query_vector, top_k)
+        exact_ids = set(r.id for r in exact_results)
+
+        # Run approximate search
+        approx_results, approx_latency = search_approximate(query_vector, ef, top_k)
+        approx_ids = set(r.id for r in approx_results)
+
         # Calculate recall
-        retrieved_ids = [r.id for r in results]
-        recall = calculate_recall(retrieved_ids, ground_truth)
-        
-        # Format results
-        formatted_results = []
-        for r in results:
-            formatted_results.append({
+        recall = calculate_recall(
+            [r.id for r in approx_results],
+            [r.id for r in exact_results],
+        )
+
+        # Format exact results
+        exact_formatted = []
+        for r in exact_results:
+            exact_formatted.append({
                 "id": r.id,
-                "score": round(r.score, 4),
-                "in_ground_truth": r.id in ground_truth[:top_k]
+                "score": round(r.score, 6),
+                "found_by_approx": r.id in approx_ids,
             })
-        
+
+        # Format approx results
+        approx_formatted = []
+        for r in approx_results:
+            approx_formatted.append({
+                "id": r.id,
+                "score": round(r.score, 6),
+                "in_ground_truth": r.id in exact_ids,
+            })
+
         return jsonify({
-            "results": formatted_results,
-            "metrics": {
-                "recall_percent": round(recall * 100, 1),
-                "search_latency_ms": round(search_latency, 2),
+            "exact": {
+                "results": exact_formatted,
+                "latency_ms": round(exact_latency, 2),
             },
+            "approximate": {
+                "results": approx_formatted,
+                "latency_ms": round(approx_latency, 2),
+            },
+            "recall_percent": round(recall * 100, 1),
+            "speedup": round(exact_latency / max(approx_latency, 0.01), 1),
             "parameters": {
                 "ef": ef,
                 "top_k": top_k,
-                "query_seed": query_seed
-            }
+                "query_seed": query_seed,
+            },
         })
-        
+
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
 
-@app.route("/api/recall_curve", methods=["POST"])
-def api_recall_curve():
+@app.route("/api/benchmark", methods=["POST"])
+def api_benchmark():
     """
-    Generate recall vs latency curve for multiple ef values.
-    This is the key visualization showing the tradeoff.
+    Run a batch benchmark across multiple ef values.
+
+    Generates many random query vectors and measures aggregate latency
+    and average recall at each ef value. This eliminates per-query noise
+    and shows the true recall/latency tradeoff clearly.
     """
     data = request.get_json()
-    query_seed = data.get("query_seed", 42)
     top_k = int(data.get("top_k", 20))
-    
-    # ef values to test (log scale for better visualization)
-    ef_values = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
-    
+    num_queries = int(data.get("num_queries", NUM_BATCH_QUERIES))
+    num_queries = min(num_queries, 200)  # Safety cap
+
+    # ef values to benchmark (all >= top_k to be meaningful)
+    all_ef_values = [1, 2, 4, 8, 16, 20, 32, 48, 64, 96, 128, 192, 256, 512]
+    ef_values = [ef for ef in all_ef_values if ef >= top_k]
+    if not ef_values:
+        ef_values = [top_k]
+    if ef_values[0] != top_k and top_k not in ef_values:
+        ef_values.insert(0, top_k)
+
     try:
-        query_vector = get_random_query_vector(seed=query_seed)
-        ground_truth = compute_ground_truth(query_vector, top_k=100)
-        
+        # Generate deterministic random query vectors
+        query_vectors = []
+        for i in range(num_queries):
+            query_vectors.append(get_random_query_vector(seed=10000 + i))
+
+        # Pre-compute ground truth for all queries (exact search)
+        ground_truths = []
+        exact_total_time = 0.0
+        for qv in query_vectors:
+            results, latency = search_exact(qv, top_k)
+            ground_truths.append([r.id for r in results])
+            exact_total_time += latency
+
+        # Benchmark each ef value
         curve_data = []
         for ef in ef_values:
-            # Warm-up run (discard - avoids cold cache effects)
-            search_with_ef(query_vector, ef, top_k)
-            
-            # Run multiple iterations for stable timing (median is more robust)
-            latencies = []
-            for _ in range(10):
-                results, latency = search_with_ef(query_vector, ef, top_k)
-                latencies.append(latency)
-            
-            retrieved_ids = [r.id for r in results]
-            recall = calculate_recall(retrieved_ids, ground_truth)
-            
-            # Use median to reduce outlier impact
-            latencies.sort()
-            median_latency = latencies[len(latencies) // 2]
-            
+            total_latency = 0.0
+            total_recall = 0.0
+
+            for i, qv in enumerate(query_vectors):
+                results, latency = search_approximate(qv, ef, top_k)
+                retrieved_ids = [r.id for r in results]
+                recall = calculate_recall(retrieved_ids, ground_truths[i])
+
+                total_latency += latency
+                total_recall += recall
+
+            avg_recall = (total_recall / num_queries) * 100
+            avg_latency = total_latency / num_queries
+
             curve_data.append({
                 "ef": ef,
-                "recall_percent": round(recall * 100, 1),
-                "latency_ms": round(median_latency, 2)
+                "recall_percent": round(avg_recall, 1),
+                "avg_latency_ms": round(avg_latency, 2),
+                "total_latency_ms": round(total_latency, 1),
             })
-        
+
         return jsonify({
             "curve": curve_data,
-            "top_k": top_k
+            "exact_total_ms": round(exact_total_time, 1),
+            "exact_avg_ms": round(exact_total_time / num_queries, 2),
+            "num_queries": num_queries,
+            "top_k": top_k,
         })
-        
+
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
@@ -213,7 +253,6 @@ def api_recall_curve():
 @app.route("/api/new_query", methods=["POST"])
 def api_new_query():
     """Generate a new random query seed."""
-    import random
     new_seed = random.randint(1, 100000)
     return jsonify({"query_seed": new_seed})
 
@@ -224,18 +263,18 @@ def api_collection_info():
     try:
         client = get_qdrant_client()
         info = client.get_collection(COLLECTION_NAME)
-        
+
         return jsonify({
             "collection": COLLECTION_NAME,
             "vector_count": info.points_count,
             "dimension": info.config.params.vectors.size,
-            "status": "ready"
+            "status": "ready",
         })
     except Exception as e:
         return jsonify({
             "error": str(e),
             "status": "not_initialized",
-            "hint": "Run: python init_qdrant_new.py --reset"
+            "hint": "Run: python init_qdrant.py --reset",
         }), 500
 
 
