@@ -9,18 +9,15 @@ Ask questions about books and get answers grounded in the **actual text**, not j
 
 ## 🚀 Run (DevContainer/Codespaces preferred)
 ```bash
-# One-time data init (if not already done)
-cd setup
-python init_pinecone.py
-
-# Run the app
-cd ../module_4/rag_webapp
-python app.py   # http://localhost:5001
+# The DevContainer automatically initializes Pinecone on start.
+# Just run the app:
+cd module_4/rag_webapp
+python app.py   # http://localhost:8008
 ```
-> 🤖 **LLM/embeddings**: Easiest path is local **Ollama** (`OLLAMA_HOST=http://localhost:11434`). Pull models:
+> 🤖 **LLM/embeddings**: The DevContainer connects to Ollama on your host machine automatically. Install [Ollama](https://ollama.com/download) and pull models:
 > ```bash
-> ollama pull mxbai-embed-large   # embeddings
-> ollama pull llama3.1           # optional for synthesized answers
+> ollama pull all-minilm          # embeddings
+> ollama pull llama3.2:3b         # LLM for synthesized answers
 > ```
 > If Ollama isn’t available, retrieval still works; the app falls back to `sentence-transformers` for embeddings and shows the retrieved chunks so you can read the source directly.
 

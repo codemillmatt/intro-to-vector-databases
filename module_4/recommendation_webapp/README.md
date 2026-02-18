@@ -8,15 +8,12 @@ Content-based vs collaborative recommendations side-by-side, using the same book
 
 ## 🚀 Run (DevContainer/Codespaces preferred)
 ```bash
-# One-time init (if not already done)
-cd setup && python init_pinecone.py
-
-# Run the app
-cd ../module_4/recommendation_webapp
+# The DevContainer automatically initializes Pinecone on start.
+# Just run the app:
+cd module_4/recommendation_webapp
 python app.py   # http://localhost:5001
 ```
-> ⚠️ Port clash: shares port **5001** with the RAG demo. Stop one before starting the other.
-> 🤖 Embeddings: local **Ollama** is easiest (`OLLAMA_HOST=http://localhost:11434`). Fallback to `sentence-transformers` is automatic if Ollama is unavailable.
+> 🤖 Embeddings: the DevContainer connects to Ollama on your host machine automatically. If Ollama isn’t available, the app falls back to `sentence-transformers`.
 
 ## 🔍 How it works
 **Content-based**:

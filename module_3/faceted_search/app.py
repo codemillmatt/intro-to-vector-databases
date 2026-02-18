@@ -13,7 +13,12 @@ import os
 import sys
 import json
 
-# Add setup directory to path for shared utilities
+# ---------------------------------------------------------------------------
+# Allow Python to find the shared utilities in the setup/ directory.
+# This adds setup/ to the module search path so we can write:
+#     from embeddings import get_embedding_client
+# instead of dealing with complex relative imports.
+# ---------------------------------------------------------------------------
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "setup"))
 
 from flask import Flask, render_template, request, jsonify

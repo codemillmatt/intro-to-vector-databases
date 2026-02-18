@@ -68,8 +68,8 @@ python module_5/recall_vs_latency/init_qdrant_books.py --reset
 
 ## 4) Pull embedding / LLM models (Ollama)
 ```bash
-ollama pull mxbai-embed-large   # embeddings used across demos
-ollama pull llama3.1            # optional LLM for RAG synthesized answers
+ollama pull all-minilm           # embeddings used across demos
+ollama pull llama3.2:3b          # LLM for RAG synthesized answers (optional)
 ```
 > If Ollama isn’t available, the code falls back to `sentence-transformers` automatically—slower but works.
 
@@ -78,8 +78,8 @@ ollama pull llama3.1            # optional LLM for RAG synthesized answers
 |--------|------|---------|-------------|
 | 1 | `module_1/finding_meaning_enhanced` | `python app.py` | http://localhost:8081 |
 | 3 | `module_3/faceted_search` | `python app.py` | http://localhost:8001 |
-| 4 | `module_4/rag_webapp` | `python app.py` | http://localhost:5001 |
-| 4 | `module_4/recommendation_webapp` | `python app.py` | http://localhost:5001 (stop RAG first) |
+| 4 | `module_4/rag_webapp` | `python app.py` | http://localhost:8008 |
+| 4 | `module_4/recommendation_webapp` | `python app.py` | http://localhost:5001 |
 | 5 | `module_5/recall_vs_latency` | `python app.py` | http://localhost:8080 |
 
 > Some modules assume Docker DNS names (e.g., `pinecone`). Override with env vars above when running locally.

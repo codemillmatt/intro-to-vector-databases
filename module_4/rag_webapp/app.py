@@ -16,11 +16,18 @@ import re
 import sys
 from glob import glob
 
-# Add setup directory to path for shared utilities
+# ---------------------------------------------------------------------------
+# Allow Python to find the shared utilities in the setup/ directory.
+# This adds setup/ to the module search path so we can write:
+#     from embeddings import get_embedding_client
+# instead of dealing with complex relative imports.
+# ---------------------------------------------------------------------------
 SETUP_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "setup")
 sys.path.insert(0, SETUP_DIR)
 
-# Set Ollama host for devcontainer environment
+# In the DevContainer, OLLAMA_HOST is already set by docker-compose.yml
+# (http://host.docker.internal:11434). This fallback is only used when
+# running outside the DevContainer without setting the variable.
 os.environ.setdefault("OLLAMA_HOST", "http://ollama:11434")
 
 from flask import Flask, render_template, request, jsonify, Response

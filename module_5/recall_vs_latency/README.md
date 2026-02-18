@@ -3,14 +3,14 @@ Explore the classic trade-off between **recall** (accuracy) and **latency** (spe
 
 ## 🚀 Run (DevContainer/Codespaces preferred)
 ```bash
-# One-time init
+# One-time init (not done automatically by the DevContainer)
 cd module_5/recall_vs_latency
-python init_qdrant.py --reset   # inserts 100k random vectors
+python init_qdrant.py --reset   # generates and inserts 100K random vectors
 
 # Start the UI
 python app.py                    # http://localhost:8080
 ```
-> This demo doesn’t depend on embeddings or Ollama—everything is synthetic. Qdrant is started by Docker Compose in the devcontainer. For running outside the container, see [RUNNING_LOCALLY.md](../../RUNNING_LOCALLY.md).
+> This demo doesn’t depend on embeddings or Ollama — everything is synthetic. The Qdrant service is started automatically by Docker Compose in the DevContainer, but you must run `init_qdrant.py` yourself to populate it. For running outside the container, see [RUNNING_LOCALLY.md](../../RUNNING_LOCALLY.md).
 
 ## 🧠 Concept recap
 - **Exact search** scans every vector → 100% recall, slower.

@@ -41,7 +41,15 @@ python init_postgres.py
 echo "🔢 Initializing Pinecone (this may take a minute)..."
 python init_pinecone.py
 
+# Add enhanced full-text column for Module 1
+echo "📖 Adding full book text to PostgreSQL (Module 1 enhanced)..."
+cd /workspace/module_1/finding_meaning_enhanced
+python init_enhanced_postgres.py
+
 echo ""
 echo "✨ Database initialization complete!"
 echo "   You can now run any of the demo modules."
+echo ""
+echo "   Note: Module 5 (Recall vs Latency) requires separate Qdrant setup:"
+echo "     cd module_5/recall_vs_latency && python init_qdrant.py --reset"
 echo ""

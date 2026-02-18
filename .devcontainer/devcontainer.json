@@ -22,7 +22,7 @@
       }
     }
   },
-  "forwardPorts": [5432, 8000, 8080],
+  "forwardPorts": [5432, 8000, 8001, 8008, 8080, 8081, 5001],
   "postCreateCommand": "pip uninstall -y pinecone-client || true && pip install -r requirements.txt",
   "postStartCommand": "bash /workspace/setup/init_all.sh && (curl -fsSL http://ollama:11434/api/pull -d '{\"name\": \"llama3.2:3b\"}' || echo 'Ollama model pull will complete in background')",
   "remoteUser": "vscode"
