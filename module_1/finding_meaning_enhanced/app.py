@@ -1,11 +1,11 @@
 """
 Module 1: Finding Meaning (Enhanced) - Web Application
 
-A web-based demo comparing PostgreSQL full-text search (tsvector/tsquery)
+A web-based demo comparing SQL keyword search (ILIKE substring matching)
 against semantic vector similarity search. Unlike the standard demo, this
 version:
   - Removes the "Browse All Books" tab — focuses purely on search comparison.
-  - Uses PostgreSQL full-text search (ts_rank) instead of simple ILIKE.
+  - Searches across title, description, genre, and full book text via ILIKE.
   - Queries both book-description AND book-text-chunk vectors in Pinecone,
     aggregating the best match per book for richer semantic results.
 
@@ -13,13 +13,18 @@ Prerequisites:
     1. Run  setup/init_postgres.py       (creates the books table)
     2. Run  setup/init_pinecone.py       (creates description + chunk vectors)
     3. Run  module_1/finding_meaning_enhanced/init_enhanced_postgres.py
-       (adds full_text column and GIN index)
+       (adds full_text column)
 """
 
 import os
 import sys
 
-# Add setup directory to path for shared utilities
+# ---------------------------------------------------------------------------
+# Allow Python to find the shared utilities in the setup/ directory.
+# This adds setup/ to the module search path so we can write:
+#     from embeddings import get_embedding_client
+# instead of dealing with complex relative imports.
+# ---------------------------------------------------------------------------
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "setup"))
 
 import psycopg2

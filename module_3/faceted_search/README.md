@@ -8,14 +8,12 @@ Semantic search + metadata filters (like Amazon/Netflix). Natural language finds
 
 ## 🚀 Run (DevContainer/Codespaces preferred)
 ```bash
-# One-time init (if you haven’t run setup yet)
-cd setup && python init_pinecone.py
-
-# Run the app
-cd ../module_3/faceted_search
+# The DevContainer automatically initializes Pinecone on start.
+# Just run the app:
+cd module_3/faceted_search
 python app.py   # http://localhost:8001
 ```
-> 🤖 Embeddings: best experience with local **Ollama** (`OLLAMA_HOST=http://localhost:11434`), but the app falls back to `sentence-transformers` automatically.
+> 🤖 Embeddings: the DevContainer connects to Ollama on your host machine automatically. If Ollama isn’t available, the app falls back to `sentence-transformers`.
 
 ## 🧪 Try this flow
 1. Search: `magical adventure`

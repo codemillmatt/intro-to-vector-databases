@@ -8,6 +8,10 @@ services:
     volumes:
       - ..:/workspace:cached
     command: sleep infinity
+    # Share the db container's network so that "localhost" inside the app
+    # container reaches PostgreSQL on port 5432 (no cross-container DNS needed).
+    # This also means port mappings on the db service (8000, 8080) are
+    # available from the host — that's where the web demos are exposed.
     network_mode: service:db
     environment:
       OLLAMA_HOST: http://host.docker.internal:11434

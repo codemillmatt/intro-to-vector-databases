@@ -10,30 +10,15 @@ Search both **book descriptions** and **full book text** using two approaches si
 - Semantic search can surface *conceptual matches* in full book content, not just metadata.
 - How to merge hits from descriptions and content chunks into one per-book score.
 
-## ⚙️ What’s different vs the standard Module 1
-| Feature | Standard Demo | Enhanced Demo |
-|---------|---------------|---------------|
-| SQL search scope | title, description, genre | + **full book text** |
-| Semantic scope | description vectors | + **chunked book content vectors** |
-| UI | includes “Browse” tab | focused on search comparison |
-| Result labels | none | "Description match" vs "Content match" |
-| Default port | 8080 | **8081** |
-
 ## 🚀 Run (DevContainer/Codespaces preferred)
 ```bash
-# One-time init (if you haven’t run setup yet)
-cd setup
-python init_postgres.py
-python init_pinecone.py
-
-# Add enhanced SQL tables/indexes
-cd ../module_1/finding_meaning_enhanced
-python init_enhanced_postgres.py
-
-# Start the app
+# The DevContainer automatically initializes all databases on start,
+# including the enhanced full-text tables needed for this demo.
+# Just run the app:
+cd module_1/finding_meaning_enhanced
 python app.py   # http://localhost:8081
 ```
-> 🤖 Embeddings: easiest path is a local **Ollama** server (`OLLAMA_HOST=http://localhost:11434`). If Ollama isn’t available, the app automatically falls back to `sentence-transformers`.
+> 🤖 Embeddings: the DevContainer connects to Ollama on your host machine automatically. If Ollama isn’t available, the app falls back to `sentence-transformers`.
 
 ## 🧪 Try these queries
 | Query | What to notice |
