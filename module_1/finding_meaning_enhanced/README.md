@@ -10,15 +10,6 @@ Search both **book descriptions** and **full book text** using two approaches si
 - Semantic search can surface *conceptual matches* in full book content, not just metadata.
 - How to merge hits from descriptions and content chunks into one per-book score.
 
-## ⚙️ What’s different vs the standard Module 1
-| Feature | Standard Demo | Enhanced Demo |
-|---------|---------------|---------------|
-| SQL search scope | title, description, genre | + **full book text** |
-| Semantic scope | description vectors | + **chunked book content vectors** |
-| UI | includes “Browse” tab | focused on search comparison |
-| Result labels | none | "Description match" vs "Content match" |
-| Default port | 8080 | **8081** |
-
 ## 🚀 Run (DevContainer/Codespaces preferred)
 ```bash
 # The DevContainer automatically initializes all databases on start,
